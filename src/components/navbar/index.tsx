@@ -11,7 +11,7 @@ const NAV_LINKS: NavLink[] = [
 		href: "/",
 		title: "Home",
 	},
-	{
+	/* {
 		href: "/skills",
 		title: "Skills",
 	},
@@ -22,7 +22,7 @@ const NAV_LINKS: NavLink[] = [
 	{
 		href: "/projects",
 		title: "Projects",
-	},
+	}, */
 ];
 
 export const Navbar = () => {
