@@ -1,3 +1,3 @@
 export type HeadingProps = {
-	text: string;
+	text: string | React.ReactNode;
 };

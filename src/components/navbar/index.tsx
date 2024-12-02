@@ -11,6 +11,10 @@ const NAV_LINKS: NavLink[] = [
 		href: "/",
 		title: "Home",
 	},
+	{
+		href: "/skills",
+		title: "Skills",
+	},
 	/* {
 		href: "/skills",
 		title: "Skills",

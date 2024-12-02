@@ -21,9 +21,9 @@ export default async function Home() {
 						<SubHeading text="Transforming ideas into engaging digital experiences." />
 
 						<Description>
-							I am an experienced and ambitious <Highlight> frontend developer</Highlight> with over
-							3,5 years of experience in the industry. I possess the ability to write clean,
-							efficient code and have experience leading development teams. I am focused on
+							👨‍🎓💻🖥I am an experienced and ambitious <Highlight> frontend developer</Highlight>{" "}
+							with over 3,5 years of experience in the industry. I possess the ability to write
+							clean, efficient code and have experience leading development teams. I am focused on
 							delivering high-quality products and enthusiastically take on new challenges to
 							constantly expand my skill set.
 						</Description>
