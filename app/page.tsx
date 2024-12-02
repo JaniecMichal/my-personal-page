@@ -4,15 +4,17 @@ import { DownloadIcon, MailIcon } from "lucide-react";
 import { MainHeading, SubHeading } from "@/components/headings";
 import { Description } from "@/components/description";
 import { Highlight } from "@/components/highlight";
-import profilePic from "@/assets/profile.jpg";
+import { Recommendations } from "@/components/recommendations";
 import { PrimaryButton, SecondaryButton } from "@/components/buttons";
+
+import profilePic from "@/assets/profile.jpg";
 
 export default async function Home() {
 	return (
 		<section className="py-12">
 			<div className="container mx-auto px-4 md:px-6 lg:px-8">
 				<div className="flex flex-col items-center md:flex-row">
-					<Img src={profilePic} alt="my-photo" />
+					<Img src={profilePic} alt="my-photo" showBorder />
 
 					<div className="md:w-1/2 md:pl-8 lg:w-2/3 lg:pl-16">
 						<MainHeading text="Michal Janiec" />
@@ -41,6 +43,7 @@ export default async function Home() {
 						</div>
 					</div>
 				</div>
+				<Recommendations />
 			</div>
 		</section>
 	);
