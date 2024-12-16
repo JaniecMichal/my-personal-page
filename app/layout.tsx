@@ -21,7 +21,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`bg-gray-200 text-gray-800 ${inter.className}`}>
-				<div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-12">
+				<div className="mx-auto h-screen w-screen px-4 sm:px-6 lg:px-12">
 					<Header />
 
 					<main className="py-8">{children}</main>
