@@ -1,46 +1,48 @@
 import { Img } from "@/components/image";
-import { DownloadIcon, MailIcon } from "lucide-react";
+import { FaDownload, FaMailBulk } from "react-icons/fa";
 
-import { MainHeading, SubHeading } from "@/components/headings";
-import { Description } from "@/components/description";
-import { Highlight } from "@/components/highlight";
-import { Recommendations } from "@/components/recommendations";
+import { MainHeading } from "@/components/headings";
 import { PrimaryButton, SecondaryButton } from "@/components/buttons";
+import { SmallHeading } from "@/components/headings/small";
+import { DynamicLabel } from "@/components/dynamic-text";
+import { Socials } from "@/components/socials";
 
 import profilePic from "@/assets/profile.jpg";
+
+const DYNAMIC_TEXTS = [
+	"determined person",
+	"proactive teammate",
+	"runner",
+	"sports addict",
+	"leader",
+];
 
 export default async function Home() {
 	return (
 		<section className="py-12">
 			<div className="container mx-auto px-4 md:px-6 lg:px-8">
 				<div className="flex flex-col items-center md:flex-row">
-					<Img src={profilePic} alt="my-photo" showBorder />
+					<Img src={profilePic} alt="my--profile-photo" showBorder />
 
 					<div className="md:w-1/2 md:pl-8 lg:w-2/3 lg:pl-16">
+						<SmallHeading text="My name is" />
 						<MainHeading text="Michal Janiec" />
-						<SubHeading text="Transforming ideas into engaging digital experiences." />
+						<DynamicLabel text="I am Frontend Developer &" dynamicTexts={DYNAMIC_TEXTS} />
 
-						<Description>
-							👨‍🎓💻🖥I am an experienced and ambitious <Highlight> frontend developer</Highlight>{" "}
-							with over 3,5 years of experience in the industry. I possess the ability to write
-							clean, efficient code and have experience leading development teams. I am focused on
-							delivering high-quality products and enthusiastically take on new challenges to
-							constantly expand my skill set.
-						</Description>
-
-						<div className="flex flex-row  sm:space-x-4 sm:space-y-0">
+						<div className="mt-12 flex flex-row sm:space-x-4 sm:space-y-0">
 							<PrimaryButton
 								href="mailto:michal.janiec95@gmail.com"
-								icon={<MailIcon className="mr-2 inline-block h-5 w-5" />}
+								icon={<FaMailBulk className="mr-2 inline-block h-5 w-5" />}
 								text="Hire Me"
 							/>
 
 							<SecondaryButton
 								href="/cv.pdf"
-								icon={<DownloadIcon className="mr-2 inline-block h-5 w-5" />}
+								icon={<FaDownload className="mr-2 inline-block h-5 w-5" />}
 								text="Resume"
 							/>
 						</div>
+						<Socials />
 					</div>
 				</div>
 			</div>
