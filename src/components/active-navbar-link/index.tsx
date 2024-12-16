@@ -29,7 +29,7 @@ export const ActiveNavbarLink = ({
 			<Link
 				href={href}
 				className={clsx(
-					"inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 transition-colors duration-200",
+					"inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 transition-colors duration-200",
 					`${activeColor} hover:text-blue-600`,
 				)}
 				aria-label={ariaLabel}
