@@ -1,6 +1,8 @@
+"use client";
 import { ActiveNavbarLink } from "@/components/active-navbar-link";
-import { HomeIcon, PencilRulerIcon } from "lucide-react";
+import { FaHome, FaTools } from "react-icons/fa";
 import { Route } from "next";
+import { IconContext } from "react-icons";
 
 type NavLink = {
 	href: Route;
@@ -13,13 +15,13 @@ const NAV_LINKS: NavLink[] = [
 	{
 		href: "/",
 		title: "Home",
-		icon: <HomeIcon className="text-current" />,
+		icon: <FaHome className="text-current" />,
 		ariaLabel: "home",
 	},
 	{
 		href: "/skills",
 		title: "Skills",
-		icon: <PencilRulerIcon />,
+		icon: <FaTools className="text-current" />,
 		ariaLabel: "skills",
 	},
 	/* {
@@ -38,19 +40,21 @@ const NAV_LINKS: NavLink[] = [
 
 export const Navbar = () => {
 	return (
-		<nav className="mb-4 rounded-lg bg-gray-300/60 px-3 py-2">
-			<ul className="flex space-x-4">
-				{NAV_LINKS.map(({ title, href, icon, ariaLabel }) => (
-					<ActiveNavbarLink
-						key={href}
-						href={href}
-						title={title}
-						icon={icon}
-						ariaLabel={ariaLabel}
-						exact={false}
-					/>
-				))}
-			</ul>
-		</nav>
+		<IconContext.Provider value={{ size: "24px" }}>
+			<nav className="mb-4 rounded-lg bg-gray-300/60 px-3 py-2">
+				<ul className="flex space-x-4">
+					{NAV_LINKS.map(({ title, href, icon, ariaLabel }) => (
+						<ActiveNavbarLink
+							key={href}
+							href={href}
+							title={title}
+							icon={icon}
+							ariaLabel={ariaLabel}
+							exact={false}
+						/>
+					))}
+				</ul>
+			</nav>
+		</IconContext.Provider>
 	);
 };
