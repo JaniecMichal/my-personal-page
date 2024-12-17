@@ -1,6 +1,6 @@
 "use client";
 import { ActiveNavbarLink } from "@/components/active-navbar-link";
-import { FaHome, FaTools } from "react-icons/fa";
+import { FaHome, FaTools, FaUserTie } from "react-icons/fa";
 import { Route } from "next";
 import { IconContext } from "react-icons";
 
@@ -17,6 +17,12 @@ const NAV_LINKS: NavLink[] = [
 		title: "Home",
 		icon: <FaHome className="text-current" />,
 		ariaLabel: "home",
+	},
+	{
+		href: "/about",
+		title: "About",
+		icon: <FaUserTie className="text-current" />,
+		ariaLabel: "skills",
 	},
 	{
 		href: "/skills",
