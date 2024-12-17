@@ -16,6 +16,12 @@ import {
 	SiJavascript,
 	SiTypescript,
 	SiMui,
+	SiGit,
+	SiStorybook,
+	SiGitlab,
+	SiGithub,
+	SiWordpress,
+	SiMockserviceworker,
 } from "react-icons/si";
 
 const skills = [
@@ -34,6 +40,12 @@ const skills = [
 	{ name: "GraphQL", icon: <SiGraphql /> },
 	{ name: "JavaScript", icon: <SiJavascript /> },
 	{ name: "TypeScript", icon: <SiTypescript /> },
+	{ name: "Git", icon: <SiGit /> },
+	{ name: "GitLab", icon: <SiGitlab /> },
+	{ name: "GitLab", icon: <SiGithub /> },
+	{ name: "Storybook", icon: <SiStorybook /> },
+	{ name: "Wordpress", icon: <SiWordpress /> },
+	{ name: "MSW", icon: <SiMockserviceworker /> },
 ];
 
 export const Skills = () => {
@@ -42,7 +54,7 @@ export const Skills = () => {
 			<article className="mt-8 ">
 				<header className="mb-8">
 					<h3 className="mb-4 text-center text-3xl font-bold text-gray-800 md:text-4xl lg:text-3xl">
-						These are technologies I enjoy working with
+						These are technologies and tools I enjoy working with
 					</h3>
 					<div className="mx-auto h-1 w-20 rounded-full bg-blue-500"></div>
 				</header>
