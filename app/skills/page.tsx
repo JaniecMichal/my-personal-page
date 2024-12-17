@@ -14,6 +14,16 @@ export default async function MySkills() {
 					</>
 				}
 			/>
+			<SubHeading
+				text={
+					<>
+						Skills that make me capable{" "}
+						<Highlight className="text-blue-600" hideLine>
+							of great things
+						</Highlight>
+					</>
+				}
+			/>
 			<Description>
 				Here's a list of the skills I've acquired throughout my professional career and through
 				dedicated self-improvement outside of work. I'm committed to continuous learning and
