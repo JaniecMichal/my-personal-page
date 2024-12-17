@@ -20,7 +20,7 @@ const SOCIALS = [
 export const Socials = () => {
 	return (
 		<IconContext.Provider value={{ size: "32px" }}>
-			<section className="mt-16 flex space-x-4">
+			<section className="mt-4 flex space-x-4 lg:mt-10">
 				{SOCIALS.map((social) => (
 					<a className="text-gray-600 hover:text-blue-500" href={social.href}>
 						{social.icon}
