@@ -6,6 +6,13 @@ import { Highlight } from "@/components/highlight";
 export default async function About() {
 	return (
 		<section className="mx-auto px-4 py-12 md:px-6 lg:px-24">
+			<MainHeading
+				text={
+					<>
+						Something about <Highlight>me</Highlight>
+					</>
+				}
+			/>
 			<SubHeading text="Frontend Developer with ReactJS and NextJS, " />
 			<SubHeading
 				text={
