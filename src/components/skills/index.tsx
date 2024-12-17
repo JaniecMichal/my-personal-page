@@ -22,6 +22,10 @@ import {
 	SiGithub,
 	SiWordpress,
 	SiMockserviceworker,
+	SiNpm,
+	SiYarn,
+	SiPnpm,
+	SiChatbot,
 } from "react-icons/si";
 
 const skills = [
@@ -46,6 +50,10 @@ const skills = [
 	{ name: "Storybook", icon: <SiStorybook /> },
 	{ name: "Wordpress", icon: <SiWordpress /> },
 	{ name: "MSW", icon: <SiMockserviceworker /> },
+	{ name: "npm", icon: <SiNpm /> },
+	{ name: "yarn", icon: <SiYarn /> },
+	{ name: "pnpm", icon: <SiPnpm /> },
+	{ name: "AI models", icon: <SiChatbot /> },
 ];
 
 export const Skills = () => {
