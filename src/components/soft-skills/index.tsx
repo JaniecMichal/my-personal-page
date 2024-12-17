@@ -10,11 +10,12 @@ const softSkills = [
 	"Fast Learning",
 	"Team Leadership",
 	"Relationship Building",
+	"Adaptability to changing environments",
 ];
 
 export const SoftSkills = () => {
 	return (
-		<section className="bg-white py-12">
+		<section className="mt-8 bg-gray-200/20 py-12">
 			<div className="container mx-auto px-4 md:px-6 lg:px-8">
 				<header className="mb-8">
 					<h3 className="mb-4 text-center text-3xl font-bold text-gray-800 md:text-4xl lg:text-3xl">
