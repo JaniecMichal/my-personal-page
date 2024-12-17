@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import { IconContext } from "react-icons";
 import {
 	SiHtml5,
@@ -17,7 +17,6 @@ import {
 	SiTypescript,
 	SiMui,
 } from "react-icons/si";
-import { SubHeading } from "../headings";
 
 const skills = [
 	{ name: "HTML", icon: <SiHtml5 /> },
@@ -50,7 +49,13 @@ export const Skills = () => {
 
 				<ul className="flex flex-wrap gap-6">
 					{skills.map((skill, index) => (
-						<li key={index} className="group relative">
+						<motion.li
+							key={index}
+							initial={{ opacity: 0, scale: 0.8 }}
+							animate={{ opacity: 1, scale: 1 }}
+							transition={{ duration: 0.5, delay: index * 0.1 }}
+							className="group relative"
+						>
 							<div className="mx-auto flex h-24 w-24 items-center justify-center rounded-lg bg-gray-200 transition-colors duration-200 hover:bg-blue-500">
 								{skill.icon}
 							</div>
@@ -59,7 +64,7 @@ export const Skills = () => {
 									{skill.name}
 								</div>
 							</div>
-						</li>
+						</motion.li>
 					))}
 				</ul>
 			</article>
