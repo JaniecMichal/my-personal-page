@@ -67,7 +67,7 @@ export const Skills = () => {
 					<div className="mx-auto h-1 w-20 rounded-full bg-blue-500"></div>
 				</header>
 
-				<ul className="flex flex-wrap gap-6">
+				<ul className="flex flex-wrap justify-center gap-6 sm:justify-start">
 					{skills.map((skill, index) => (
 						<motion.li
 							key={index}
