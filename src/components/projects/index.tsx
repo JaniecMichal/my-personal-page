@@ -65,7 +65,7 @@ export const Projects = () => {
 					{projects.map((project, index) => (
 						<motion.li
 							key={index}
-							className="group relative h-[500px] overflow-hidden rounded-lg bg-gray-100 p-6 hover:cursor-pointer"
+							className="group relative h-[500px] overflow-hidden rounded-lg bg-gray-100 p-6 hover:cursor-pointer hover:bg-gray-50"
 							whileHover={{ scale: 1.05 }}
 							transition={{ duration: 0.3 }}
 							onClick={() => handleOpenModal(project)}
