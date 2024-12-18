@@ -1,6 +1,7 @@
 import { Description } from "@/components/description";
 import { MainHeading, SubHeading } from "@/components/headings";
 import { Highlight } from "@/components/highlight";
+import { Projects } from "@/components/projects";
 
 export default async function MyProjects() {
 	return (
@@ -8,21 +9,23 @@ export default async function MyProjects() {
 			<MainHeading
 				text={
 					<>
-						Something about <Highlight>my projects</Highlight>
+						My <Highlight>projects</Highlight>
 					</>
 				}
 			/>
 			<SubHeading
 				text={
 					<>
-						ready for big{" "}
-						<Highlight className="text-blue-600" hideLine>
-							challanges
+						projects that allow me
+						<Highlight className="mx-2 text-blue-600" hideLine>
+							to grow
 						</Highlight>
+						as a developer
 					</>
 				}
 			/>
 			<Description>List of my projects</Description>
+			<Projects />
 		</section>
 	);
 }
