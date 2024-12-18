@@ -52,7 +52,7 @@ export const Projects = () => {
 		setSelectedProject(null);
 	};
 	return (
-		<section className="py-12">
+		<section className="py-8">
 			<div className="container mx-auto px-4 md:px-6 lg:px-8">
 				<header className="mb-8">
 					<h3 className="mb-4 text-center text-3xl font-bold text-gray-800 md:text-4xl lg:text-3xl">
