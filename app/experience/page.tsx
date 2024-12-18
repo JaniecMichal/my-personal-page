@@ -1,4 +1,5 @@
 import { Description } from "@/components/description";
+import { Experience } from "@/components/experience";
 import { MainHeading, SubHeading } from "@/components/headings";
 import { Highlight } from "@/components/highlight";
 
@@ -8,21 +9,21 @@ export default async function MyExp() {
 			<MainHeading
 				text={
 					<>
-						Something about <Highlight>my experience</Highlight>
+						My <Highlight>experience</Highlight>
 					</>
 				}
 			/>
 			<SubHeading
 				text={
 					<>
-						ready for big{" "}
-						<Highlight className="text-blue-600" hideLine>
-							challanges
+						<Highlight className="mx-2 text-blue-600" hideLine>
+							proves
 						</Highlight>
+						my value
 					</>
 				}
 			/>
-			<Description>Something about my exp</Description>
+			<Experience />
 		</section>
 	);
 }
