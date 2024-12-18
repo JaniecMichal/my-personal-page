@@ -4,15 +4,15 @@ import { IconContext } from "react-icons";
 
 const SOCIALS = [
 	{
-		href: "#",
+		href: "https://www.linkedin.com/in/janiecmichal/",
 		icon: <FaLinkedin />,
 	},
 	{
-		href: "#",
+		href: "https://github.com/JaniecMichal",
 		icon: <FaGithub />,
 	},
 	{
-		href: "#",
+		href: "https://www.strava.com/athletes/118375721",
 		icon: <FaStrava />,
 	},
 ];
