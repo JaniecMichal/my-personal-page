@@ -5,7 +5,7 @@ import { Projects } from "@/components/projects";
 
 export default async function MyProjects() {
 	return (
-		<section className="mx-auto px-4 py-12 md:px-6 lg:px-24">
+		<section className="mx-auto px-4 md:px-6 lg:px-24">
 			<MainHeading
 				text={
 					<>

@@ -23,7 +23,7 @@ export default function RootLayout({
 			<body
 				className={`bg-white bg-[radial-gradient(#2564eb_1px,transparent_0.5px)] text-gray-800 [background-size:16px_16px] ${inter.className}`}
 			>
-				<div className="mx-auto h-screen w-screen px-4 sm:px-6 lg:px-12">
+				<div className="mx-auto h-full w-screen px-4 sm:px-6 lg:px-12">
 					<Header />
 
 					<main className="py-8">{children}</main>

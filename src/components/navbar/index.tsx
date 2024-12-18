@@ -47,7 +47,7 @@ const NAV_LINKS: NavLink[] = [
 export const Navbar = () => {
 	return (
 		<IconContext.Provider value={{ size: "24px" }}>
-			<nav className="mb-4 rounded-lg bg-gray-300/60 px-3 py-2">
+			<nav className="mb-4 rounded-lg bg-gray-300/80 px-3 py-2 backdrop-blur-md">
 				<ul className="flex space-x-4">
 					{NAV_LINKS.map(({ title, href, icon, ariaLabel }) => (
 						<ActiveNavbarLink

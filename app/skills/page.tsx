@@ -6,7 +6,7 @@ import { SoftSkills } from "@/components/soft-skills";
 
 export default async function MySkills() {
 	return (
-		<section className="mx-auto px-4 py-12 md:px-6 lg:px-8">
+		<section className="mx-auto px-4 md:px-6 lg:px-8">
 			<MainHeading
 				text={
 					<>
