@@ -19,9 +19,9 @@ const DYNAMIC_TEXTS = [
 
 export default async function Home() {
 	return (
-		<section className="py-12">
+		<section className="py-6">
 			<div className="mx-auto flex max-w-[1420px] flex-col items-center justify-center px-4 md:px-6 lg:flex-row lg:px-8">
-				<Img src={profilePic} alt="my--profile-photo" showBorder />
+				<Img width={600} height={600} src={profilePic} alt="my--profile-photo" showBorder />
 
 				<div className="min-w-full md:w-2/3 md:min-w-min md:pl-8 lg:pl-16">
 					<SmallHeading text="My name is" />
@@ -36,14 +36,17 @@ export default async function Home() {
 						/>
 
 						<SecondaryButton
-							href="/cv.pdf"
+							href="/michal_janiec_cv.pdf"
 							icon={<FaDownload className="mr-1 inline-block h-5 w-5 lg:mr-2" />}
 							text="Resume"
+							download="michal_janiec_cv"
 						/>
 					</div>
 					<Socials />
 				</div>
 			</div>
+			{/* below will be section with recommendations */}
+			{/* 		<Recommendations /> */}
 		</section>
 	);
 }
