@@ -3,4 +3,6 @@ export type ButtonProps = {
 	icon?: JSX.Element;
 	href: string;
 	download?: string;
+	rel?: string;
+	target?: string;
 };
