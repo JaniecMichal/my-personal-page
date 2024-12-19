@@ -20,7 +20,7 @@ const DYNAMIC_TEXTS = [
 export default async function Home() {
 	return (
 		<section>
-			<div className="mx-auto flex max-w-[1420px] flex-col items-center justify-center px-4 md:px-6 lg:flex-row lg:px-8">
+			<div className="mt-0 mx-auto flex max-w-[1420px] flex-col items-center justify-center px-4 md:px-6 md:mt-12 lg:flex-row lg:px-8">
 				<Img width={600} height={600} src={profilePic} alt="my--profile-photo" showBorder />
 
 				<div className="min-w-full md:w-2/3 md:min-w-min md:pl-8 lg:pl-16">
