@@ -4,14 +4,17 @@ import { IconContext } from "react-icons";
 
 const SOCIALS = [
 	{
+		id: "linkedin",
 		href: "https://www.linkedin.com/in/janiecmichal/",
 		icon: <FaLinkedin />,
 	},
 	{
+		id: "github",
 		href: "https://github.com/JaniecMichal",
 		icon: <FaGithub />,
 	},
 	{
+		id: "strava",
 		href: "https://www.strava.com/athletes/118375721",
 		icon: <FaStrava />,
 	},
@@ -22,7 +25,7 @@ export const Socials = () => {
 		<IconContext.Provider value={{ size: "32px" }}>
 			<section className="mt-4 flex space-x-4 lg:mt-10">
 				{SOCIALS.map((social) => (
-					<a className="text-gray-600 hover:text-blue-500" href={social.href}>
+					<a key={social.id} className="text-gray-600 hover:text-blue-500" href={social.href}>
 						{social.icon}
 					</a>
 				))}
