@@ -4,10 +4,10 @@ import { RiCloseCircleFill } from "react-icons/ri";
 import Image from "next/image";
 import projectCoverPhoto from "@/assets/project_placeholder_cover_photo.jpeg";
 
-import { Project } from "./types";
+import type { ProjectListItemFragment } from "@/gql/graphql";
 
 interface ProjectModalProps {
-	project: Project;
+	project: ProjectListItemFragment;
 	isOpen: boolean;
 	onClose: () => void;
 }
@@ -39,16 +39,18 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
 
 					<div className="flex flex-col gap-8 lg:flex-row">
 						<div className="lg:w-1/2">
-							<Image
-								src={project.image || projectCoverPhoto}
-								alt={project.title}
+						{!!project.image && <Image
+								src={project.image[0]?.url || projectCoverPhoto}
+								alt={project.image[0]?.fileName || "project-image"}
 								width={420}
 								height={200}
 								className="rounded-lg"
 							/>
+							}
+							
 						</div>
 						<div className="lg:w-1/2">
-							<h3 className="mb-4 text-2xl font-bold text-gray-800">{project.title}</h3>
+							<h3 className="mb-4 text-2xl font-bold text-gray-800">{project.name}</h3>
 							<p className="mb-4 text-gray-600">{project.description}</p>
 							<h4 className="mb-2 text-lg font-semibold text-gray-800">Technologies:</h4>
 							<ul className="mb-4 list-inside list-disc">
