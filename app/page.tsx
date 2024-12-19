@@ -45,8 +45,6 @@ export default async function Home() {
 					<Socials />
 				</div>
 			</div>
-			{/* below will be section with recommendations */}
-			{/* 		<Recommendations /> */}
 		</section>
 	);
 }
