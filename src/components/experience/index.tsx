@@ -23,8 +23,8 @@ export const Experience = () => {
 	return (
 		<PageSectionLayout sectionTitle="My Work History">
 			<ul className="relative border-l border-gray-300">
-				{experiences.map((experience, index) => (
-					<li key={index} className="mb-8 ml-8">
+				{experiences.map((experience) => (
+					<li key={experience.company} className="mb-8 ml-8">
 						<div className="absolute -left-2 top-4 h-4 w-4 rounded-full bg-blue-500"></div>
 						<h4 className="mb-2 text-xl font-semibold text-gray-800">
 							{experience.role} at {experience.company}
