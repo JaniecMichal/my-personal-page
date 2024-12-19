@@ -1,0 +1,14 @@
+fragment ProjectListItem on Project {
+	 id
+    description
+    name
+    technologies
+    project_status
+    liveUrl
+    codeUrl
+    image {
+      id
+      url
+      fileName
+    }
+}
