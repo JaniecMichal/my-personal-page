@@ -1,29 +1,15 @@
 import { Description } from "@/design-system/description";
 import { Details } from "@/components/details";
-import { MainHeading, SubHeading } from "@/design-system/headings";
-import { Highlight } from "@/design-system/highlight";
+import { PageLayout } from "@/design-system/page-layout";
 
 export default async function About() {
 	return (
-		<section className="mx-auto px-4 md:px-6 lg:px-24">
-			<MainHeading
-				text={
-					<>
-						Something about <Highlight>me</Highlight>
-					</>
-				}
-			/>
-			<SubHeading text="Frontend Developer with ReactJS and NextJS, " />
-			<SubHeading
-				text={
-					<>
-						ready for big{" "}
-						<Highlight className="text-blue-600" hideLine>
-							challanges
-						</Highlight>
-					</>
-				}
-			/>
+		<PageLayout
+			mainHeaderNotHighlitedPart="Something about"
+			mainHeaderHighlitedPart="me"
+			subHeaderNotHighlitedPart="Frontend Developer with ReactJS and NextJS, ready for big"
+			subHeaderHighlitedPart="challanges"
+		>
 			<Description>
 				👨‍🎓💻🖥I'm an experienced and ambitious frontend developer with over 3.5 years of experience
 				in the industry. I thrive on writing clean, efficient code and have a proven track record of
@@ -44,6 +30,6 @@ export default async function About() {
 			</Description>
 
 			<Details />
-		</section>
+		</PageLayout>
 	);
 }
