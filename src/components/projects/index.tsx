@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import projectCoverPhoto from "@/assets/project_placeholder_cover_photo.jpeg";
 
 import { PrimaryButton, SecondaryButton } from "../buttons";
 
@@ -13,7 +14,7 @@ const projects = [
 		title: "Bella Beauty",
 		description:
 			"A high-performance website for a dental and aesthetic medicine clinic with an e-commerce module, focused on capturing the Scandinavian market. Built with WordPress and optimized for maximum performance.",
-		image: "/images/bella-beauty-placeholder.png",
+		image: null,
 		technologies: ["WordPress", "WooCommerce", "Performance Optimization"],
 		liveUrl: "https://bellabeauty.com",
 		codeUrl: null,
@@ -22,7 +23,7 @@ const projects = [
 		title: "Gainflow",
 		description:
 			"A fitness tracking app with a social module, built with React Native, Expo, and Python. Currently in beta testing as a foundation for further development.",
-		image: "/images/gainflow-placeholder.png",
+		image: null,
 		technologies: ["React Native", "Expo", "Python", "Firebase"],
 		liveUrl: null,
 		codeUrl: "https://github.com/gainflow",
@@ -31,7 +32,7 @@ const projects = [
 		title: "Braintrust",
 		description:
 			"Braintrust is a user-controlled talent network, where the community owns and governs the platform. It connects skilled professionals with high-quality job opportunities from leading companies, ensuring fair compensation and transparent processes. Built with Python/Django and React.",
-		image: "/images/braintrust-placeholder.png",
+		image: null,
 		technologies: ["Python", "Django", "React", "PostgreSQL"],
 		liveUrl: "https://usebraintrust.com/",
 		codeUrl: null,
@@ -65,18 +66,20 @@ export const Projects = () => {
 					{projects.map((project, index) => (
 						<motion.li
 							key={index}
-							className="group relative h-[500px] overflow-hidden rounded-lg bg-gray-100 p-6 hover:cursor-pointer hover:bg-gray-50"
+							className="group relative h-[600px] overflow-hidden rounded-lg bg-gray-100 p-6 hover:cursor-pointer hover:bg-gray-50"
 							whileHover={{ scale: 1.05 }}
 							transition={{ duration: 0.3 }}
 							onClick={() => handleOpenModal(project)}
 						>
-							<Image
-								src={project.image}
-								alt={project.title}
-								width={300}
-								height={200}
-								className="mb-4 rounded-lg"
-							/>
+							<div className="mb-4 h-[300px] w-full overflow-hidden">
+								<Image
+									src={project.image || projectCoverPhoto}
+									alt={project.title}
+									width={420}
+									height={200}
+									className="mb-4 rounded-lg"
+								/>
+							</div>
 							<h4 className="mb-2 text-xl font-semibold text-gray-800">{project.title}</h4>
 							<div className="flex flex-col">
 								<p className="line-clamp-3 flex-grow overflow-hidden text-ellipsis text-sm text-gray-800">

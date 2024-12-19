@@ -1,7 +1,8 @@
-"use client"; // Ten komponent używa hooków Reacta 18
+"use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { RiCloseCircleFill } from "react-icons/ri";
 import Image from "next/image";
+import projectCoverPhoto from "@/assets/project_placeholder_cover_photo.jpeg";
 
 import { Project } from "./types";
 
@@ -39,10 +40,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
 					<div className="flex flex-col gap-8 lg:flex-row">
 						<div className="lg:w-1/2">
 							<Image
-								src={project.image}
+								src={project.image || projectCoverPhoto}
 								alt={project.title}
-								width={500}
-								height={300}
+								width={420}
+								height={200}
 								className="rounded-lg"
 							/>
 						</div>
