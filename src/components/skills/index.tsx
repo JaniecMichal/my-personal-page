@@ -1,4 +1,5 @@
 "use client";
+import { PageSectionLayout } from "@/design-system/page-section-layout";
 import { motion } from "framer-motion";
 import { IconContext } from "react-icons";
 import {
@@ -59,14 +60,7 @@ const skills = [
 export const Skills = () => {
 	return (
 		<IconContext.Provider value={{ size: "64px" }}>
-			<article className="mt-8 ">
-				<header className="mb-8">
-					<h3 className="mb-4 text-center text-3xl font-bold text-gray-800 md:text-4xl lg:text-3xl">
-						These are technologies and tools I enjoy working with
-					</h3>
-					<div className="mx-auto h-1 w-20 rounded-full bg-blue-500"></div>
-				</header>
-
+			<PageSectionLayout sectionTitle="These are technologies and tools I enjoy working with">
 				<ul className="flex flex-wrap justify-center gap-6 sm:justify-start">
 					{skills.map((skill, index) => (
 						<motion.li
@@ -87,7 +81,7 @@ export const Skills = () => {
 						</motion.li>
 					))}
 				</ul>
-			</article>
+			</PageSectionLayout>
 		</IconContext.Provider>
 	);
 };
