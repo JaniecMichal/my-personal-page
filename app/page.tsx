@@ -1,10 +1,10 @@
-import { Img } from "@/components/image";
+import { Img } from "@/design-system/image";
 import { FaDownload, FaMailBulk } from "react-icons/fa";
 
-import { MainHeading } from "@/components/headings";
-import { PrimaryButton, SecondaryButton } from "@/components/buttons";
-import { SmallHeading } from "@/components/headings/small";
-import { DynamicLabel } from "@/components/dynamic-text";
+import { MainHeading } from "@/design-system/headings";
+import { PrimaryButton, SecondaryButton } from "@/design-system/buttons";
+import { SmallHeading } from "@/design-system/headings/small";
+import { DynamicLabel } from "@/design-system/dynamic-text";
 import { Socials } from "@/components/socials";
 
 import profilePic from "@/assets/profile.jpg";

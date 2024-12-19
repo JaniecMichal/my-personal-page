@@ -1,6 +1,6 @@
-import { Description } from "@/components/description";
-import { MainHeading, SubHeading } from "@/components/headings";
-import { Highlight } from "@/components/highlight";
+import { Description } from "@/design-system/description";
+import { MainHeading, SubHeading } from "@/design-system/headings";
+import { Highlight } from "@/design-system/highlight";
 import { Projects } from "@/components/projects";
 
 export default async function MyProjects() {

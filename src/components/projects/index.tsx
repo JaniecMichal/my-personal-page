@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import projectCoverPhoto from "@/assets/project_placeholder_cover_photo.jpeg";
 
-import { PrimaryButton, SecondaryButton } from "../buttons";
+import { PrimaryButton, SecondaryButton } from "../../design-system/buttons";
 
 import { ProjectModal } from "./modal";
 import type { Project } from "./types";

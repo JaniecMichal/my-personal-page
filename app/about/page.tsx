@@ -1,7 +1,7 @@
-import { Description } from "@/components/description";
+import { Description } from "@/design-system/description";
 import { Details } from "@/components/details";
-import { MainHeading, SubHeading } from "@/components/headings";
-import { Highlight } from "@/components/highlight";
+import { MainHeading, SubHeading } from "@/design-system/headings";
+import { Highlight } from "@/design-system/highlight";
 
 export default async function About() {
 	return (

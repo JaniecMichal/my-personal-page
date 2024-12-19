@@ -1,5 +1,5 @@
 "use client";
-import { ActiveNavbarLink } from "@/components/active-navbar-link";
+import { ActiveNavbarLink } from "@/design-system/active-navbar-link";
 import { FaHome, FaLaptop, FaSuitcase, FaTools, FaUserTie } from "react-icons/fa";
 import { Route } from "next";
 import { IconContext } from "react-icons";
