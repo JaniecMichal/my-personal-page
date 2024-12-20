@@ -1,7 +1,7 @@
 import { Description } from "@/design-system/description";
 import { Projects } from "@/components/projects";
 import { PageLayout } from "@/design-system/page-layout";
-import { getProjectsList } from "@/api/project";
+import { getProjectsList } from "@/api/projects";
 
 export default async function MyProjects() {
 	const projectsList = await getProjectsList();
