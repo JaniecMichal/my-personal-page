@@ -19,7 +19,6 @@ export default async function MyProjects() {
 				dedicated work on these projects, I've gained valuable knowledge and experience that I
 				leverage in my daily work.
 			</Description>
-
 			<Projects projects={projectsList} />
 		</PageLayout>
 	);

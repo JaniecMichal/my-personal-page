@@ -38,27 +38,29 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
 					</button>
 
 					<div className="flex flex-col gap-8 lg:flex-row">
-						<div className="lg:w-1/2">
-						{!!project.image && <Image
-								src={project.image[0]?.url || projectCoverPhoto}
-								alt={project.image[0]?.fileName || "project-image"}
-								width={420}
-								height={200}
-								className="rounded-lg"
-							/>
-							}
-							
+						<div className="flex items-center lg:w-1/2">
+							{!!project.image && (
+								<Image
+									src={project.image[0]?.url || projectCoverPhoto}
+									alt={project.image[0]?.fileName || "project-image"}
+									width={520}
+									height={300}
+									className="rounded-lg"
+								/>
+							)}
 						</div>
 						<div className="lg:w-1/2">
 							<h3 className="mb-4 text-2xl font-bold text-gray-800">{project.name}</h3>
 							<p className="mb-4 text-gray-600">{project.description}</p>
 							<h4 className="mb-2 text-lg font-semibold text-gray-800">Technologies:</h4>
 							<ul className="mb-4 list-inside list-disc">
-								{project.technologies.map((tech, index) => (
-									<li key={index} className="text-gray-600">
-										{tech}
-									</li>
-								))}
+								{project.technologies
+									.filter((tech) => tech !== "")
+									.map((tech, index) => (
+										<li key={index} className="text-gray-600">
+											{tech}
+										</li>
+									))}
 							</ul>
 							<div className="flex gap-4">
 								{project.liveUrl && (

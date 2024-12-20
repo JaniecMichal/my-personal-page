@@ -51,14 +51,22 @@ export const Projects = ({ projects }: { projects: ProjectListItemFragment[] }) 
 								{project.description}
 							</p>
 							<div className="my-4 flex flex-wrap gap-2">
-								{project.technologies.map((tech, techIndex) => (
-									<span
-										key={techIndex}
-										className="rounded-full bg-gray-300 px-2 py-1 text-xs text-gray-800"
-									>
-										{tech}
+								{project.technologies
+									.filter((tech) => tech !== "")
+									.slice(0, 3)
+									.map((tech, techIndex) => (
+										<span
+											key={techIndex}
+											className="rounded-full bg-gray-300 px-2 py-1 text-xs text-gray-800"
+										>
+											{tech}
+										</span>
+									))}
+								{project.technologies.filter((tech) => tech !== "").length > 3 && (
+									<span className="rounded-full bg-gray-300 px-2 py-1 text-xs text-gray-800">
+										+{project.technologies.length - 3} more
 									</span>
-								))}
+								)}
 							</div>
 							<div className="flex gap-4 justify-self-end">
 								{project.liveUrl && (
