@@ -7,4 +7,5 @@ export type ButtonProps = {
 	download?: string;
 	rel?: string;
 	target?: string;
+	size?: "normal" | "small";
 };

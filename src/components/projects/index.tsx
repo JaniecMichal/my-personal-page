@@ -10,7 +10,7 @@ import { PrimaryButton, SecondaryButton } from "../../design-system/buttons";
 
 import { ProjectModal } from "./modal";
 
-export const Projects = ({ projects }: {projects: ProjectListItemFragment[]}) => {
+export const Projects = ({ projects }: { projects: ProjectListItemFragment[] }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [selectedProject, setSelectedProject] = useState<ProjectListItemFragment | null>(null);
 
@@ -34,14 +34,16 @@ export const Projects = ({ projects }: {projects: ProjectListItemFragment[]}) =>
 						transition={{ duration: 0.3 }}
 						onClick={() => handleOpenModal(project)}
 					>
-						<div className="mb-4 h-[300px] w-full overflow-hidden">
-							{!!project.image && <Image
-								src={project.image[0]?.url || projectCoverPhoto}
-								alt={project.image[0]?.fileName || "project-image"}
-								width={420}
-								height={200}
-								className="mb-4 rounded-lg"
-							/>}
+						<div className="mb-4 flex h-[300px] w-full items-center overflow-hidden">
+							{!!project.image && (
+								<Image
+									src={project.image[0]?.url || projectCoverPhoto}
+									alt={project.image[0]?.fileName || "project-image"}
+									width={420}
+									height={300}
+									className="mb-4 rounded-lg"
+								/>
+							)}
 						</div>
 						<h4 className="mb-2 text-xl font-semibold text-gray-800">{project.name}</h4>
 						<div className="flex flex-col">
@@ -65,6 +67,7 @@ export const Projects = ({ projects }: {projects: ProjectListItemFragment[]}) =>
 										target="_blank"
 										rel="noopener noreferrer"
 										text="See Live"
+										size="small"
 									/>
 								)}
 								{project.codeUrl && (
@@ -73,6 +76,7 @@ export const Projects = ({ projects }: {projects: ProjectListItemFragment[]}) =>
 										target="_blank"
 										rel="noopener noreferrer"
 										text="See Code"
+										size="small"
 									/>
 								)}
 							</div>
