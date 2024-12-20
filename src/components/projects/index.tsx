@@ -9,6 +9,7 @@ import type { ProjectListItemFragment } from "@/gql/graphql";
 import { PrimaryButton, SecondaryButton } from "../../design-system/buttons";
 
 import { ProjectModal } from "./modal";
+import { ProjectListItem } from "./project-list-item";
 
 export const Projects = ({ projects }: { projects: ProjectListItemFragment[] }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,69 +28,7 @@ export const Projects = ({ projects }: { projects: ProjectListItemFragment[] }) 
 		<PageSectionLayout sectionTitle="My Projects">
 			<ul className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 				{projects.map((project) => (
-					<motion.li
-						key={project.id}
-						className="group relative h-[600px] overflow-hidden rounded-lg bg-gray-100 p-6 hover:cursor-pointer hover:bg-gray-50"
-						whileHover={{ scale: 1.05 }}
-						transition={{ duration: 0.3 }}
-						onClick={() => handleOpenModal(project)}
-					>
-						<div className="mb-4 flex h-[300px] w-full items-center overflow-hidden">
-							{!!project.image && (
-								<Image
-									src={project.image[0]?.url || projectCoverPhoto}
-									alt={project.image[0]?.fileName || "project-image"}
-									width={420}
-									height={300}
-									className="mb-4 rounded-lg"
-								/>
-							)}
-						</div>
-						<h4 className="mb-2 text-xl font-semibold text-gray-800">{project.name}</h4>
-						<div className="flex flex-col">
-							<p className="line-clamp-3 flex-grow overflow-hidden text-ellipsis text-sm text-gray-800">
-								{project.description}
-							</p>
-							<div className="my-4 flex flex-wrap gap-2">
-								{project.technologies
-									.filter((tech) => tech !== "")
-									.slice(0, 3)
-									.map((tech, techIndex) => (
-										<span
-											key={techIndex}
-											className="rounded-full bg-gray-300 px-2 py-1 text-xs text-gray-800"
-										>
-											{tech}
-										</span>
-									))}
-								{project.technologies.filter((tech) => tech !== "").length > 3 && (
-									<span className="rounded-full bg-gray-300 px-2 py-1 text-xs text-gray-800">
-										+{project.technologies.length - 3} more
-									</span>
-								)}
-							</div>
-							<div className="flex gap-4 justify-self-end">
-								{project.liveUrl && (
-									<PrimaryButton
-										href={project.liveUrl}
-										target="_blank"
-										rel="noopener noreferrer"
-										text="See Live"
-										size="small"
-									/>
-								)}
-								{project.codeUrl && (
-									<SecondaryButton
-										href={project.codeUrl}
-										target="_blank"
-										rel="noopener noreferrer"
-										text="See Code"
-										size="small"
-									/>
-								)}
-							</div>
-						</div>
-					</motion.li>
+					<ProjectListItem project={project} onProjectClick={() => handleOpenModal(project)} />
 				))}
 			</ul>
 
