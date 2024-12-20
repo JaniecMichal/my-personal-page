@@ -16,7 +16,7 @@ export const ProjectListItem = ({ project, onProjectClick }: ProjectListItemProp
 	return (
 		<motion.li
 			key={project.id}
-			className="group relative h-[400px] overflow-hidden rounded-lg bg-gray-100 p-6 hover:cursor-pointer hover:bg-gray-50 md:h-[600px]"
+			className="group relative h-[450px] overflow-hidden rounded-lg bg-gray-100 p-6 hover:cursor-pointer hover:bg-gray-50 md:h-[600px]"
 			whileHover={{ scale: 1.05 }}
 			transition={{ duration: 0.3 }}
 			onClick={onProjectClick}
