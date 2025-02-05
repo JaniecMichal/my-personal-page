@@ -11,8 +11,8 @@ export default async function About() {
 			subHeaderHighlitedPart="challanges"
 		>
 			<Description>
-				👨‍🎓💻🖥I'm an experienced and ambitious frontend developer with over 3.5 years of experience
-				in the industry. I thrive on writing clean, efficient code and have a proven track record of
+				👨‍🎓💻🖥I'm an experienced and ambitious frontend developer with over 4 years of experience in
+				the industry. I thrive on writing clean, efficient code and have a proven track record of
 				leading development teams to success.
 			</Description>
 			<Description>
