@@ -2,6 +2,33 @@ import { PageSectionLayout } from "@/design-system/page-section-layout";
 
 const experiences = [
 	{
+		company: "jemWszkole.pl",
+		period: "02.2025 - present",
+		role: "React Developer",
+		duties: [
+			"collaborating with the team to prepare web applications for publication, ensuring that they meet all necessary requirements and are ready for launch",
+			"identifying, troubleshooting, and fixing bugs in web applications to ensure optimal performance and user experience",
+			"continuously improving the quality of the codebase by refactoring, optimizing, and reducing technical debt",
+			"implementing new interfaces and functionalities to enhance the user experience and meet evolving business needs",
+		],
+	},
+	{
+		company: "Gainflow",
+		period: "12.2024 - present",
+		role: "co-founder & Software Developer",
+		duties: [
+			"implemented new features and functionalities based on user feedback and market trends",
+			"optimized app performance",
+			"collaborated with backend developers",
+			"conducted market research and analyzed user needs",
+			"brainstormed and conceptualized innovative functionalities to enhance user engagement",
+			"prioritized features based on impact and feasibility",
+			"contributed to the development of brand vision, mission, and values",
+			"identified target audiences and their needs",
+			"researched and analyzed the competitive landscape",
+		],
+	},
+	{
 		company: "HexOcean",
 		period: "2021 - 2024",
 		role: "Frontend Developer",
