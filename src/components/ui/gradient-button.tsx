@@ -10,7 +10,7 @@ interface GradientButtonProps {
 
 export const GradientButton = ({ href, children, icon, className = "" }: GradientButtonProps) => {
   return (
-    <Link
+    <a
       href={href}
       className={`group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 p-0.5 text-sm font-medium text-white hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-blue-300 ${className}`}
     >
@@ -18,7 +18,7 @@ export const GradientButton = ({ href, children, icon, className = "" }: Gradien
         {icon}
         {children}
       </span>
-    </Link>
+    </a>
   )
 }
 

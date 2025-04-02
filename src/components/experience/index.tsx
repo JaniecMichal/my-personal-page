@@ -1,4 +1,4 @@
-import { PageSectionLayout } from "@/src/design-system/page-section-layout"
+import { PageSectionLayout } from "@/design-system/page-section-layout"
 
 const experiences = [
   {

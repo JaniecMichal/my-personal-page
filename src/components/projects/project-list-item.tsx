@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import projectCoverPhoto from "@/assets/project_placeholder_cover_photo.jpeg"
-import { ProjectListItemFragment } from "@/src/gql/graphql"
+import { ProjectListItemFragment } from "@/gql/graphql"
 
 import { PrimaryButton, SecondaryButton } from "../../design-system/buttons"
 

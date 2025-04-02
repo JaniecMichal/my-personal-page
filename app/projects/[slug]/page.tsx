@@ -1,20 +1,18 @@
-import { notFound } from "next/navigation"
+import { notFound } from "next/navigation";
 
-import { getProjectBySlug } from "@/api/projects"
-import ProjectDetailContent from "@/components/project/project-detail-content"
+import { getProjectBySlug } from "@/api/projects";
+import ProjectDetailContent from "@/components/project/project-detail-content";
 
-type PageProps = {
-  params: { slug: string }
-}
+type Params = Promise<{ slug: string }>;
 
-export default async function ProjectDetailPage({ params }: PageProps) {
-  const projectsBySlug = await getProjectBySlug(params.slug)
-  const project = projectsBySlug.find((project) => project?.slug === params.slug)
+export default async function ProjectDetailPage({ params }: { params: Params }) {
+	const { slug } = await params;
+	const projectsBySlug = await getProjectBySlug(slug);
+	const project = projectsBySlug.find((project) => project?.slug === slug);
 
+	if (!project) {
+		notFound();
+	}
 
-  if (!project) {
-    notFound()
-  }
-
-  return <ProjectDetailContent project={project} />
+	return <ProjectDetailContent project={project} />;
 }

@@ -64,14 +64,14 @@ export default function Home() {
                   Get in Touch
                 </GradientButton>
 
-                <Link
+                <a
                   href="/michal_janiec_cv.pdf"
                   download="michal_janiec_cv"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-5 py-3 text-base font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-50 hover:text-blue-600"
                 >
                   <FaDownload className="mr-2" />
                   Download CV
-                </Link>
+                </a>
               </div>
 
               <div className="pt-4">
