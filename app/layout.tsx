@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { Analytics } from "@vercel/analytics/react"
 
 import { Header } from "../src/components/header"
 import { Footer } from "../src/design-system/footer"
@@ -48,6 +49,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <Analytics />
         </div>
       </body>
     </html>
