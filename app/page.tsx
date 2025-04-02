@@ -8,7 +8,7 @@ import { Socials } from "../src/components/socials"
 import { TypewriterEffect } from "../src/components/ui/typewriter-effect"
 import { GradientButton } from "../src/components/ui/gradient-button"
 import { SkillBadge } from "../src/components/ui/skill-badge"
-import { TestimonialPreview } from "../src/components/testimonial-preview"
+//import { TestimonialPreview } from "../src/components/testimonial-preview"
 import { Services } from "../src/components/services"
 import profilePic from "../src/assets/profile.jpg";
 
@@ -142,7 +142,7 @@ export default function Home() {
 
       <Services />
 
-      <TestimonialPreview />
+     {/*  <TestimonialPreview /> */}
 
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="container mx-auto px-4 text-center">
