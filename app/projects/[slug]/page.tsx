@@ -1,6 +1,7 @@
-import { getProjectBySlug } from "@/src/api/projects"
-import ProjectDetailContent from "@/src/components/project/project-detail-content"
 import { notFound } from "next/navigation"
+
+import { getProjectBySlug } from "@/api/projects"
+import ProjectDetailContent from "@/components/project/project-detail-content"
 
 type Props = {
   params: { slug: string }

@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { ProjectType } from "@/src/api/projects"
+import { ProjectType } from "@/api/projects"
 import ProjectCard from "./project-card"
 
 type Props = {

@@ -1,6 +1,6 @@
 "use client"
 
-import { type ProjectType } from "@/src/api/projects"
+import { type ProjectType } from "@/api/projects"
 import ProjectHeader from "./project-header"
 
 

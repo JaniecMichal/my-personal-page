@@ -1,5 +1,5 @@
-import ProjectFilters from "@/src/components/projects/project-filters"
-import { getProjectsList } from "@/src/api/projects"
+import { getProjectsList } from "@/api/projects"
+import ProjectFilters from "@/components/projects/project-filters"
 
 export default async function ProjectListPage() {
   const projects = await getProjectsList()

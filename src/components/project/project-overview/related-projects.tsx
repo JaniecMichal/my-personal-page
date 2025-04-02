@@ -1,6 +1,6 @@
-import { getProjectsList, ProjectType } from "@/src/api/projects"
 import Link from "next/link"
 import Image from "next/image"
+import { getProjectsList, ProjectType } from "@/api/projects"
 
 type Props = {
   currentProject: ProjectType

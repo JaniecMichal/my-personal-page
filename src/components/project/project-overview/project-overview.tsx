@@ -1,5 +1,5 @@
 "use client"
-import { ProjectType } from "@/src/api/projects"
+import { ProjectType } from "@/api/projects"
 import ProjectChallenges from "./project-challanges"
 import ProjectSolutions from "./project-solutions"
 

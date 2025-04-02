@@ -1,10 +1,10 @@
 "use client"
-
-import { ProjectType } from "@/src/api/projects"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { FaArrowLeft, FaExternalLinkAlt, FaGithub, FaCalendarAlt } from "react-icons/fa"
+
+import { ProjectType } from "@/api/projects"
 
 export default function ProjectHeader({ project }: { project: ProjectType }) {
   return (

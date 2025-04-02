@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import { FaSearch, FaTimes, FaFilter } from "react-icons/fa"
-import { ProjectType } from "@/src/api/projects"
+import { ProjectType } from "@/api/projects"
 import { ProjectCardSkeleton } from "./project-skeleton"
 import ProjectCardGrid from "./project-card-grid"
 
