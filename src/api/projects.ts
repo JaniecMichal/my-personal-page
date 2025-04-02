@@ -1,4 +1,7 @@
-import { ProjectGetListDocument, type TypedDocumentString } from "@/gql/graphql";
+import { ProjectGetBySlugDocument, ProjectGetListDocument, ProjectListItemFragment, type TypedDocumentString } from "../gql/graphql";
+
+// Define project type to match what's expected by the components
+export type ProjectType = ProjectListItemFragment
 
 type GraphQLResponse<T> =
 	| { data?: undefined; errors: { message: string }[] }
@@ -42,6 +45,16 @@ export const getProjectsList = async () => {
 		throw Error("Something went wrong");
 	}
 
+
+	return response.projects;
+};
+
+export const getProjectBySlug = async (slug: string) => {
+	const response = await executeGraphql(ProjectGetBySlugDocument, { slug });
+
+	if (!response || !response.projects) {
+		throw Error("Project not found");
+	}
 
 	return response.projects;
 };

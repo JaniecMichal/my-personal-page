@@ -4,7 +4,7 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 loadEnvConfig(process.cwd());
 
 const config: CodegenConfig = {
-	schema: process.env.GRAPHQL_URL,
+	schema: process.env.NEXT_PUBLIC_GRAPHQL_URL,
 	overwrite: true,
 	ignoreNoDocuments: true,
 	documents: "src/graphql/*.graphql",

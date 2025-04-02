@@ -1,0 +1,5 @@
+query ProjectGetBySlug($slug: String!) {
+  projects(where: { slug: $slug }) {
+    ...ProjectListItem
+  }
+}

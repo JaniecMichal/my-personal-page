@@ -1,25 +1,28 @@
-import { Description } from "@/design-system/description";
-import { Projects } from "@/components/projects";
-import { PageLayout } from "@/design-system/page-layout";
-import { getProjectsList } from "@/api/projects";
+import ProjectFilters from "@/src/components/projects/project-filters"
+import { getProjectsList } from "@/src/api/projects"
 
-export default async function MyProjects() {
-	const projectsList = await getProjectsList();
+export default async function ProjectListPage() {
+  const projects = await getProjectsList()
 
-	return (
-		<PageLayout
-			mainHeaderNotHighlitedPart="My"
-			mainHeaderHighlitedPart="projects"
-			subHeaderNotHighlitedPart="projects that allow me to grow as"
-			subHeaderHighlitedPart="a professional developer"
-		>
-			<Description>
-				Below is a list of my projects. These include projects I've built from the ground up, as
-				well as those where I actively participated as a member of a development team. Through
-				dedicated work on these projects, I've gained valuable knowledge and experience that I
-				leverage in my daily work.
-			</Description>
-			<Projects projects={projectsList} />
-		</PageLayout>
-	);
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_60%,rgba(37,99,235,0.08),transparent)]" />
+
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
+              My <span className="text-gradient">Projects</span>
+            </h1>
+            <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore my portfolio of <span className="text-blue-600 font-medium">innovative solutions</span> and creative work
+            </p>
+            <div className="mt-4 h-1 w-20 mx-auto bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+          </div>
+
+          <ProjectFilters allProjects={projects} />
+        </div>
+      </section>
+    </div>
+  )
 }

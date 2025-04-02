@@ -11,4 +11,6 @@ fragment ProjectListItem on Project {
       url
       fileName
     }
+    slug
+    category
 }
