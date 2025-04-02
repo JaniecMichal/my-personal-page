@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/api/projects";
 import ProjectDetailContent from "@/components/project/project-detail-content";
 
+export const revalidate = 3600;
+
 type Params = Promise<{ slug: string }>;
 
 export default async function ProjectDetailPage({ params }: { params: Params }) {
