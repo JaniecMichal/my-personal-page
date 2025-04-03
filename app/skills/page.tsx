@@ -1,18 +1,18 @@
 import { Metadata } from "next";
 import { HeroAndTechSkills } from "@/components/skills-sections/hero-and-tech-skills";
-import { SoftSkills } from "@/components/soft-skills";
+import { SoftSkills } from "@/components/skills-sections/soft-skills";
 
 export const metadata: Metadata = {
-	title: "About Me | Frontend Developer Background & Skills",
+	title: "Technical Skills | Frontend Development Expertise",
 	description:
-		"Learn about Michał Janiec, a senior frontend developer with expertise in React and Next.js. Discover my background, skills, and professional journey.",
+		"Explore my technical skills in frontend development including React, Next.js, TypeScript, and more. Learn about my expertise in modern web technologies.",
 	alternates: {
-		canonical: "https://michaljaniec.com/about",
+		canonical: "https://michaljaniec.com/skills",
 	},
 	openGraph: {
-		title: "About Michał Janiec | Frontend Developer",
+		title: "Frontend Development Skills | Michał Janiec",
 		description:
-			"Learn about my background, skills, and professional journey as a frontend developer.",
+			"Explore my technical expertise in React, Next.js, TypeScript, and modern web technologies.",
 	},
 };
 
