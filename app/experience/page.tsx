@@ -2,16 +2,15 @@ import type { Metadata } from "next";
 import { ExpHistory } from "@/components/experience-sections/exp-history";
 
 export const metadata: Metadata = {
-	title: "Technical Skills | Frontend Development Expertise",
+	title: "Professional Experience | Frontend Development Career",
 	description:
-		"Explore my technical skills in frontend development including React, Next.js, TypeScript, and more. Learn about my expertise in modern web technologies.",
+		"Review my professional experience as a frontend developer. Learn about my work history, projects, and roles at companies like HexOcean and jemWszkole.pl.",
 	alternates: {
-		canonical: "https://michaljaniec.com/skills",
+		canonical: "https://michaljaniec.com/experience",
 	},
 	openGraph: {
-		title: "Frontend Development Skills | Michał Janiec",
-		description:
-			"Explore my technical expertise in React, Next.js, TypeScript, and modern web technologies.",
+		title: "Professional Experience | Michał Janiec",
+		description: "Review my career journey and professional experience as a frontend developer.",
 	},
 };
 
