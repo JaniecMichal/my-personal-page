@@ -1,0 +1,8 @@
+# robots.txt for michaljaniec.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://michaljaniec.com/sitemap.xml
+
