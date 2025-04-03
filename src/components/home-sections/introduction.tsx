@@ -6,7 +6,7 @@ import { FaDownload, FaEnvelope } from "react-icons/fa";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 import { GradientButton } from "../ui/gradient-button";
 import { Socials } from "../socials";
-import profilePic from "../../assets/profile.jpg";
+import profilePic from "../../assets/profile.webp";
 
 const PROFESSIONAL_TITLES = [
 	{ text: "Frontend" },
