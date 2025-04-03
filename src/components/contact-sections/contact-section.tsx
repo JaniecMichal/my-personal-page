@@ -51,7 +51,7 @@ export const ContactSection = () => {
 								href="mailto:michal.janiec95@gmail.com"
 								className="text-blue-600 transition-colors hover:text-blue-800"
 							>
-								michal.janiec95@gmail.com
+								Contact via email
 							</a>
 						</motion.div>
 
