@@ -54,10 +54,6 @@ export const ExpHistory = () => {
 										: "md:ml-0 md:mr-auto md:pl-12"
 								} md:w-1/2`}
 							>
-								<div
-									className={`absolute left-0 md:${index % 2 === 0 ? "left-0" : "right-0"} top-0 h-8 w-8 rounded-full border-4 bg-white border-${exp.color}-500 transform md:translate-x-${index % 2 === 0 ? "-100" : "0"} md:left-${index % 2 === 0 ? "0" : "100%"} z-10 md:-translate-x-1/2`}
-								></div>
-
 								<motion.div
 									whileHover={{ y: -5 }}
 									className="ml-12 overflow-hidden rounded-lg bg-white shadow-md md:ml-0"
