@@ -1,35 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaUsers, FaUserCog, FaLaptopCode, FaMobileAlt } from "react-icons/fa";
 import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
-const services = [
-	{
-		icon: <FaUsers className="h-12 w-12 text-blue-500" />,
-		title: "Cross-Team Collaboration",
-		description:
-			"Working effectively with backend developers, designers, product managers, and business stakeholders to deliver cohesive solutions that meet all requirements.",
-	},
-	{
-		icon: <FaUserCog className="h-12 w-12 text-purple-500" />,
-		title: "Client-Focused Development",
-		description:
-			"Individual work with clients, adapting products to their specific needs and creating solutions that align perfectly with their brand identity and vision.",
-	},
-	{
-		icon: <FaLaptopCode className="h-12 w-12 text-blue-500" />,
-		title: "Web Development",
-		description:
-			"Creating responsive web applications, landing pages, and company websites with modern technologies that provide exceptional user experiences.",
-	},
-	{
-		icon: <FaMobileAlt className="h-12 w-12 text-purple-500" />,
-		title: "Mobile App Development",
-		description:
-			"Building cross-platform mobile applications that deliver native-like experiences while maintaining a single codebase for efficiency.",
-	},
-];
+import { SERVICES } from "./const";
 
 export const Services = () => {
 	return (
@@ -50,7 +25,7 @@ export const Services = () => {
 				</motion.div>
 
 				<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-					{services.map((service, index) => (
+					{SERVICES.map((service, index) => (
 						<motion.div
 							key={index}
 							initial={{ opacity: 0, y: 20 }}
@@ -70,18 +45,10 @@ export const Services = () => {
 				<div className="mt-12 text-center">
 					<Link
 						href="/for-business"
-						className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-base font-medium text-white shadow-lg transition-all hover:bg-blue-700"
+						className="inline-flex items-center font-medium text-blue-600 transition-colors hover:text-blue-800"
 					>
 						Learn more about my business services
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className="ml-2 h-4 w-4"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-						</svg>
+						<FaArrowRight className="ml-2 h-4 w-4" />
 					</Link>
 				</div>
 			</div>
