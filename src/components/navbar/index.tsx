@@ -1,68 +1,80 @@
-"use client"
-import { ActiveNavbarLink } from "../../design-system/active-navbar-link"
-import type React from "react"
+"use client";
+import { ActiveNavbarLink } from "../../design-system/active-navbar-link";
+import type React from "react";
 
-import { FaHome, FaLaptop, FaSuitcase, FaTools, FaUserTie, FaEnvelope } from "react-icons/fa"
-import type { Route } from "next"
-import { IconContext } from "react-icons"
+import { FaHome, FaLaptop, FaSuitcase, FaTools, FaUserTie, FaEnvelope, FaBriefcase } from "react-icons/fa";
+import type { Route } from "next";
+import { IconContext } from "react-icons";
 
 type NavLink = {
-  href: Route
-  title: string
-  icon?: React.ReactNode
-  ariaLabel: string
-}
+	href: Route;
+	title: string;
+	icon?: React.ReactNode;
+	ariaLabel: string;
+};
 
 const NAV_LINKS: NavLink[] = [
-  {
-    href: "/",
-    title: "Home",
-    icon: <FaHome className="text-current" />,
-    ariaLabel: "home",
-  },
-  {
-    href: "/about",
-    title: "About",
-    icon: <FaUserTie className="text-current" />,
-    ariaLabel: "skills",
-  },
-  {
-    href: "/skills",
-    title: "Skills",
-    icon: <FaTools className="text-current" />,
-    ariaLabel: "skills",
-  },
-  {
-    href: "/experience",
-    title: "Experience",
-    icon: <FaSuitcase className="text-current" />,
-    ariaLabel: "expierience",
-  },
-  {
-    href: "/projects",
-    title: "Projects",
-    icon: <FaLaptop className="text-current" />,
-    ariaLabel: "projects",
-  },
-  {
-    href: "/contact",
-    title: "Contact",
-    icon: <FaEnvelope className="text-current" />,
-    ariaLabel: "contact",
-  },
-]
+	{
+		href: "/",
+		title: "Home",
+		icon: <FaHome className="text-current" />,
+		ariaLabel: "home",
+	},
+	{
+		href: "/about",
+		title: "About",
+		icon: <FaUserTie className="text-current" />,
+		ariaLabel: "skills",
+	},
+	{
+		href: "/skills",
+		title: "Skills",
+		icon: <FaTools className="text-current" />,
+		ariaLabel: "skills",
+	},
+	{
+		href: "/for-business",
+		title: "For Business",
+		icon: <FaBriefcase className="text-current" />,
+		ariaLabel: "for-business",
+	},
+	{
+		href: "/experience",
+		title: "Experience",
+		icon: <FaSuitcase className="text-current" />,
+		ariaLabel: "expierience",
+	},
+	{
+		href: "/projects",
+		title: "Projects",
+		icon: <FaLaptop className="text-current" />,
+		ariaLabel: "projects",
+	},
+	{
+		href: "/contact",
+		title: "Contact",
+		icon: <FaEnvelope className="text-current" />,
+		ariaLabel: "contact",
+	},
+];
 
 export const Navbar = () => {
-  return (
-    <IconContext.Provider value={{ size: "24px" }}>
-      <nav className="mb-4 rounded-lg bg-gray-300/80 px-3 py-2 backdrop-blur-md">
-        <ul className="flex space-x-4">
-          {NAV_LINKS.map(({ title, href, icon, ariaLabel }) => (
-            <ActiveNavbarLink key={href} href={href} title={title} icon={icon} ariaLabel={ariaLabel} exact={false} />
-          ))}
-        </ul>
-      </nav>
-    </IconContext.Provider>
-  )
-}
-
+	return (
+		<IconContext.Provider value={{ size: "24px" }}>
+			<nav className="mb-4 rounded-lg bg-gray-300/80 px-3 py-2 backdrop-blur-md">
+				<ul className="flex space-x-4">
+					{NAV_LINKS.map(({ title, href, icon, ariaLabel }) => (
+						<ActiveNavbarLink
+							key={href}
+							href={href}
+							title={title}
+							icon={icon}
+							ariaLabel={ariaLabel}
+							exact={false}
+						/>
+					))}
+				</ul>
+			</nav>
+		</IconContext.Provider>
+	);
+};
