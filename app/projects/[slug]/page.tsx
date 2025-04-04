@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 		title: `${project.name} | Project Case Study`,
 		description: project.description || "Detailed case study of this frontend development project.",
 		alternates: {
-			canonical: `https://michaljaniec.com/projects/${project.slug}`,
+			canonical: `https://mjaniec.it/projects/${project.slug}`,
 		},
 		openGraph: {
 			title: `${project.name} | Frontend Project by Michał Janiec`,

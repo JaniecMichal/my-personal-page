@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 	description:
 		"Professional frontend development services for businesses. Custom web applications, team collaboration, consulting, and mobile app development solutions.",
 	alternates: {
-		canonical: "https://michaljaniec.com/for-business",
+		canonical: "https://mjaniec.it/for-business",
 	},
 	openGraph: {
 		title: "Business Services | Frontend Development Solutions",

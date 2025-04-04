@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 	description:
 		"Experienced frontend developer specializing in React, Next.js, and TypeScript. Building high-performance web applications with modern technologies.",
 	alternates: {
-		canonical: "https://michaljaniec.com",
+		canonical: "https://mjaniec.it",
 	},
 };
 

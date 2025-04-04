@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 	description:
 		"Contact Michał Janiec for frontend development projects, collaborations, or job opportunities. I'm available for React and Next.js development work.",
 	alternates: {
-		canonical: "https://michaljaniec.com/contact",
+		canonical: "https://mjaniec.it/contact",
 	},
 	openGraph: {
 		title: "Contact Michał Janiec | Frontend Developer",

@@ -4,5 +4,5 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://michaljaniec.com/sitemap.xml
+Sitemap: https://mjaniec.it/sitemap.xml
 

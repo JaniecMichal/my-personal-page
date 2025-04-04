@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 	description:
 		"Review my professional experience as a frontend developer. Learn about my work history, projects, and roles at companies like HexOcean and jemWszkole.pl.",
 	alternates: {
-		canonical: "https://michaljaniec.com/experience",
+		canonical: "https://mjaniec.it/experience",
 	},
 	openGraph: {
 		title: "Professional Experience | Michał Janiec",

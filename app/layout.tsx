@@ -20,13 +20,13 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Michał Janiec | Senior Frontend Developer",
 		description: "Experienced frontend developer specializing in React, Next.js, and TypeScript.",
-		url: "https://michaljaniec.com",
+		url: "https://mjaniec.it",
 		siteName: "Michał Janiec Portfolio",
 		locale: "en_US",
 		type: "website",
 		images: [
 			{
-				url: "https://michaljaniec.com/mjaniec-og.png",
+				url: "https://mjaniec.it/mjaniec-og.png",
 				width: 1200,
 				height: 630,
 				alt: "Michał Janiec - OG Image",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Michał Janiec | Senior Frontend Developer",
 		description: "Experienced frontend developer specializing in React, Next.js, and TypeScript.",
-		images: ["https://michaljaniec.com/mjaniec-og.png"],
+		images: ["https://mjaniec.it/mjaniec-og.png"],
 	},
 	robots: {
 		index: true,

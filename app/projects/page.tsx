@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 	description:
 		"Explore my portfolio of frontend development projects. View case studies of web applications built with React, Next.js, and modern technologies.",
 	alternates: {
-		canonical: "https://michaljaniec.com/projects",
+		canonical: "https://mjaniec.it/projects",
 	},
 	openGraph: {
 		title: "Frontend Development Projects | Michał Janiec",
