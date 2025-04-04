@@ -10,7 +10,6 @@ type Props = {
 };
 
 export default function ProjectFilters({ allProjects }: Props) {
-	const [projects, setProjects] = useState(allProjects);
 	const [filteredProjects, setFilteredProjects] = useState(allProjects);
 	const [searchTerm, setSearchTerm] = useState("");
 	const [selectedTech, setSelectedTech] = useState<string | null>(null);
@@ -24,7 +23,7 @@ export default function ProjectFilters({ allProjects }: Props) {
 		setIsLoading(true);
 
 		const timeout = setTimeout(() => {
-			let result = [...projects];
+			let result = [...allProjects];
 
 			if (searchTerm) {
 				const term = searchTerm.toLowerCase();
@@ -43,10 +42,10 @@ export default function ProjectFilters({ allProjects }: Props) {
 
 			setFilteredProjects(result);
 			setIsLoading(false);
-		}, 300); // dodajemy małe opóźnienie dla UX (symulacja ładowania)
+		}, 300);
 
 		return () => clearTimeout(timeout);
-	}, [searchTerm, selectedTech, projects]);
+	}, [searchTerm, selectedTech, allProjects]);
 
 	const clearFilters = () => {
 		setSearchTerm("");
