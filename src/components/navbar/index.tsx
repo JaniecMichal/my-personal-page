@@ -2,7 +2,15 @@
 import { ActiveNavbarLink } from "../../design-system/active-navbar-link";
 import type React from "react";
 
-import { FaHome, FaLaptop, FaSuitcase, FaTools, FaUserTie, FaEnvelope, FaBriefcase } from "react-icons/fa";
+import {
+	FaHome,
+	FaLaptop,
+	FaTools,
+	FaUserTie,
+	FaEnvelope,
+	FaBriefcase,
+	FaUser,
+} from "react-icons/fa";
 import type { Route } from "next";
 import { IconContext } from "react-icons";
 
@@ -23,7 +31,7 @@ const NAV_LINKS: NavLink[] = [
 	{
 		href: "/about",
 		title: "About",
-		icon: <FaUserTie className="text-current" />,
+		icon: <FaUser className="text-current" />,
 		ariaLabel: "skills",
 	},
 	{
@@ -33,15 +41,9 @@ const NAV_LINKS: NavLink[] = [
 		ariaLabel: "skills",
 	},
 	{
-		href: "/for-business",
-		title: "For Business",
-		icon: <FaBriefcase className="text-current" />,
-		ariaLabel: "for-business",
-	},
-	{
 		href: "/experience",
 		title: "Experience",
-		icon: <FaSuitcase className="text-current" />,
+		icon: <FaUserTie className="text-current" />,
 		ariaLabel: "expierience",
 	},
 	{
@@ -49,6 +51,12 @@ const NAV_LINKS: NavLink[] = [
 		title: "Projects",
 		icon: <FaLaptop className="text-current" />,
 		ariaLabel: "projects",
+	},
+	{
+		href: "/for-business",
+		title: "For Business",
+		icon: <FaBriefcase className="text-current" />,
+		ariaLabel: "for-business",
 	},
 	{
 		href: "/contact",
