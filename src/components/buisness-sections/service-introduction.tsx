@@ -14,11 +14,11 @@ export const ServiceIntroduction = () => {
 						className="mb-12 text-center"
 					>
 						<h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
-							Solutions for <span className="text-gradient">Business</span>
+							Solutions for your <span className="text-gradient">Business</span>
 						</h1>
 						<p className="mx-auto mt-4 max-w-3xl text-xl text-gray-600">
-							Professional development services tailored to your{" "}
-							<span className="font-medium text-blue-600">business needs</span>
+							Do you need some digital solutions for your business? I can help you with transforming
+							your ideas in to real <span className="font-medium text-blue-600">value</span>
 						</p>
 						<div className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-blue-500 to-purple-600"></div>
 					</motion.div>
