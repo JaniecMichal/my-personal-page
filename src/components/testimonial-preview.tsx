@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
 import { FaQuoteLeft, FaArrowRight, FaLinkedin } from "react-icons/fa";
 import { TESTIMONIALS } from "./const";
 
