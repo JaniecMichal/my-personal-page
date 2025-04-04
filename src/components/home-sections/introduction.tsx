@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -7,6 +7,7 @@ import { TypewriterEffect } from "../ui/typewriter-effect";
 import { GradientButton } from "../ui/gradient-button";
 import { Socials } from "../socials";
 import profilePic from "../../assets/profile.webp";
+import profileMobilePic from "../../assets/profile-mobile.webp";
 
 const PROFESSIONAL_TITLES = [
 	{ text: "Frontend" },
@@ -79,11 +80,20 @@ export const Introduction = () => {
 							<div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-blue-500/30 blur-2xl" />
 							<div className="absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-purple-500/30 blur-2xl" />
 							<Image
-								src={profilePic || "/placeholder.svg"}
+								src={profileMobilePic}
+								alt="Michał Janiec - Frontend Developer (Mobile)"
+								width={500}
+								height={500}
+								className="block h-full w-full rounded-xl object-cover md:hidden"
+								priority
+							/>
+
+							<Image
+								src={profilePic}
 								alt="Michał Janiec - Frontend Developer"
 								width={500}
 								height={500}
-								className="h-full w-full rounded-xl object-cover"
+								className="hidden h-full w-full rounded-xl object-cover md:block"
 								priority
 							/>
 						</div>

@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import profilePic from "../../../src/assets/profile.webp";
+import profileMobilePic from "../../../src/assets/profile-mobile.webp";
 
 export const PersonalDescription = () => {
 	return (
@@ -63,11 +64,19 @@ export const PersonalDescription = () => {
 						<div className="absolute inset-0 -z-10 rotate-6 transform rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-600/20 blur-xl"></div>
 						<div className="relative overflow-hidden rounded-2xl shadow-xl">
 							<Image
+								src={profileMobilePic || "/placeholder.svg"}
+								alt="Michał Janiec - Frontend Developer (Mobile)"
+								width={500}
+								height={500}
+								className="block h-full w-full rounded-xl object-cover md:hidden"
+								priority
+							/>
+							<Image
 								src={profilePic || "/placeholder.svg"}
 								alt="Michał Janiec - About me"
 								width={800}
 								height={600}
-								className="h-auto w-full object-cover"
+								className="hidden h-full w-full rounded-xl object-cover md:block"
 							/>
 						</div>
 					</motion.div>
