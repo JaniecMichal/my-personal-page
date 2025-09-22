@@ -1,4 +1,4 @@
-# robots.txt for michaljaniec.com
+# robots.txt for mjaniec.it
 
 User-agent: *
 Allow: /
