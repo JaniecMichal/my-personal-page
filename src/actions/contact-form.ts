@@ -61,7 +61,7 @@ export async function sendContactEmail(formData: FormData) {
     if (error instanceof z.ZodError) {
       return {
         success: false,
-        message: error.errors.map((e) => e.message).join(", "),
+        message: error.issues.map((e) => e.message).join(", "),
       }
     }
 

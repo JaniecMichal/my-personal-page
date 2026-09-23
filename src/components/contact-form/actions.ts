@@ -32,7 +32,7 @@ export async function sendContactEmail(formData: ContactFormData) {
       // Return validation errors
       return {
         success: false,
-        message: error.errors.map((e) => e.message).join(", "),
+        message: error.issues.map((e) => e.message).join(", "),
       }
     }
 
