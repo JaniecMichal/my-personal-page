@@ -3,9 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
-import { Header } from "../src/components/header";
-import { Footer } from "../src/design-system/footer";
-
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
@@ -52,16 +49,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className="scroll-smooth">
-			<body className={`bg-white text-gray-800 ${inter.className}`}>
-				<div className="mx-auto min-h-screen w-full">
-					<Header />
-					<main>{children}</main>
-					<Footer />
-					<Analytics />
-				</div>
+			<body className={inter.className}>
+				{children}
+				<Analytics />
 			</body>
 		</html>
 	);
 }
-
-import "./globals.css";

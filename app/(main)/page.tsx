@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Services } from "../src/components/services";
+import { Services } from "@/components/services";
 import { Introduction } from "@/components/home-sections/introduction";
 import { CoreSkills } from "@/components/home-sections/core-skills";
 import { LetsContact } from "@/components/home-sections/lets-contact";
