@@ -1,4 +1,4 @@
-import { RawLine } from "../types";
+import { type RawLine } from "../types";
 import { out, info, lnk, div, blank } from "./helpers";
 
 export const whoami = (): RawLine[] => [
@@ -11,5 +11,5 @@ export const whoami = (): RawLine[] => [
   blank(),
   info("Open to: full-time, B2B, freelance. Remote preferred."),
   blank(),
-  lnk("→ /about", "/about"),
+  lnk("→ /en/cv", "/en/cv"),
 ];

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect, useRef } from "react";
-import { OutputLine, RawLine } from "./types";
+import { type OutputLine, type RawLine } from "./types";
 import { COMMAND_NAMES, resolveCommand, typoLines } from "./commands";
 import { BOOT_LINES } from "./const";
 import { askTerminalAI } from "@/actions/terminal-ai";
@@ -21,7 +21,7 @@ const WELCOME: RawLine[] = [
 export function useTerminal() {
   const [history, setHistory] = useState<OutputLine[]>([]);
   const [input, setInput] = useState("");
-  const [cmdHistory, setCmdHistory] = useState<string[]>([]);
+  const [_cmdHistory, setCmdHistory] = useState<string[]>([]);
   const [historyIdx, setHistoryIdx] = useState(-1);
   const [isThinking, setIsThinking] = useState(false);
   const thinkingId = useRef<string | null>(null);

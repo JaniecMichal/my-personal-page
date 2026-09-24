@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { OutputLine } from "./types";
+import { type OutputLine } from "./types";
 import { TerminalLine } from "./terminal-line";
 
 export const TerminalOutput = ({ lines }: { lines: OutputLine[] }) => {

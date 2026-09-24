@@ -1,4 +1,4 @@
-import { RawLine } from "../types";
+import { type RawLine } from "../types";
 import { help } from "./help";
 import { whoami } from "./whoami";
 import { skills } from "./skills";

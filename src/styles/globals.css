@@ -1,0 +1,217 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Dark theme is driven by next-themes setting data-theme on <html>. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---------- Signal tokens ---------- */
+:root {
+	--ground: #f3f1ec;
+	--surface: #f8f7f3;
+	--surface-2: #e6e3dc;
+	--ink: #111214;
+	--ink-soft: #3b3e44;
+	--muted: #5b5f66;
+	--rule: #d8d5ce;
+	--rule-strong: #bdb9b0;
+	--accent: #2e3bff;
+	--accent-hover: #1a24c7;
+	--on-accent: #ffffff;
+	/* Inverse ("night") sections: dark in the light theme, a lifted surface in the dark one. */
+	--inverse: #0d0e10;
+	--inverse-surface: #1a1c20;
+	--inverse-ink: #f3f1ec;
+	--inverse-muted: #9a9da3;
+	--inverse-rule: #323538;
+	--inverse-accent: #8c94ff;
+	--dot: #cfcbc2;
+	--ab-red: 255 59 48;
+	--ab-cyan: 0 212 255;
+	--success: #1db954;
+	color-scheme: light;
+}
+
+[data-theme="dark"] {
+	--ground: #0d0e10;
+	--surface: #15171a;
+	--surface-2: #1f2226;
+	--ink: #f3f1ec;
+	--ink-soft: #c9cbd0;
+	--muted: #9a9da3;
+	--rule: #2a2d31;
+	--rule-strong: #3d4046;
+	--accent: #8c94ff;
+	--accent-hover: #aab0ff;
+	--on-accent: #0d0e10;
+	--inverse: #17191d;
+	--inverse-surface: #22252a;
+	--inverse-ink: #f3f1ec;
+	--inverse-muted: #a3a6ac;
+	--inverse-rule: #34373d;
+	--inverse-accent: #8c94ff;
+	--dot: #26292e;
+	color-scheme: dark;
+}
+
+@theme inline {
+	--color-ground: var(--ground);
+	--color-surface: var(--surface);
+	--color-surface-2: var(--surface-2);
+	--color-ink: var(--ink);
+	--color-ink-soft: var(--ink-soft);
+	--color-muted: var(--muted);
+	--color-rule: var(--rule);
+	--color-rule-strong: var(--rule-strong);
+	--color-accent: var(--accent);
+	--color-accent-hover: var(--accent-hover);
+	--color-on-accent: var(--on-accent);
+	--color-inverse: var(--inverse);
+	--color-inverse-surface: var(--inverse-surface);
+	--color-inverse-ink: var(--inverse-ink);
+	--color-inverse-muted: var(--inverse-muted);
+	--color-inverse-rule: var(--inverse-rule);
+	--color-inverse-accent: var(--inverse-accent);
+	--color-success: var(--success);
+
+	--font-serif: var(--font-instrument-serif), Georgia, serif;
+	--font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+	--font-dots: var(--font-doto), var(--font-jetbrains-mono), monospace;
+	--font-sans: var(--font-mono);
+}
+
+@theme {
+	--breakpoint-3xl: 1600px;
+	--tracking-display: -0.045em;
+	--tracking-label: 0.14em;
+	--animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+	@keyframes fade-up {
+		from {
+			opacity: 0;
+			transform: translateY(24px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		-webkit-text-size-adjust: 100%;
+	}
+	body {
+		@apply bg-ground font-mono text-ink antialiased;
+		text-rendering: optimizeLegibility;
+	}
+	::selection {
+		background: var(--accent);
+		color: var(--on-accent);
+	}
+	:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 3px;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+}
+
+/* ---------- Signature utilities ---------- */
+
+/* Mono caps label. */
+@utility label {
+	font-size: 12px;
+	letter-spacing: var(--tracking-label);
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+/* Dotted blueprint ground. */
+@utility dotgrid {
+	background-image: radial-gradient(var(--dot) 1px, transparent 1.2px);
+	background-size: 24px 24px;
+}
+
+/*
+ * Chromatic aberration on text. --ab-x / --ab-s are set on <html> by <AberrationField>
+ * from pointer and scroll velocity; the fallbacks give a calm static split.
+ */
+@utility ab {
+	text-shadow:
+		calc(var(--ab-x, 0) * 4px - 2px) calc(var(--ab-y, 0) * 2px) 1px
+			rgb(var(--ab-red) / calc(0.35 + var(--ab-s, 0.2) * 0.45)),
+		calc(var(--ab-x, 0) * -4px + 2px) calc(var(--ab-y, 0) * -2px) 1px
+			rgb(var(--ab-cyan) / calc(0.35 + var(--ab-s, 0.2) * 0.45));
+}
+
+@utility ab-xl {
+	text-shadow:
+		calc(var(--ab-x, 0) * 8px - 5px) calc(var(--ab-y, 0) * 3px) 1px
+			rgb(var(--ab-red) / calc(0.4 + var(--ab-s, 0.2) * 0.4)),
+		calc(var(--ab-x, 0) * -8px + 4px) calc(var(--ab-y, 0) * -3px + 1px) 1px
+			rgb(var(--ab-cyan) / calc(0.4 + var(--ab-s, 0.2) * 0.4));
+}
+
+/* Corner-bracket frame with an RGB split that grows on hover/focus. Needs `relative`. */
+@utility brackets {
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		--b: currentColor;
+		--l: 18px;
+		background:
+			linear-gradient(var(--b), var(--b)) left top / var(--l) 1px no-repeat,
+			linear-gradient(var(--b), var(--b)) left top / 1px var(--l) no-repeat,
+			linear-gradient(var(--b), var(--b)) right top / var(--l) 1px no-repeat,
+			linear-gradient(var(--b), var(--b)) right top / 1px var(--l) no-repeat,
+			linear-gradient(var(--b), var(--b)) left bottom / var(--l) 1px no-repeat,
+			linear-gradient(var(--b), var(--b)) left bottom / 1px var(--l) no-repeat,
+			linear-gradient(var(--b), var(--b)) right bottom / var(--l) 1px no-repeat,
+			linear-gradient(var(--b), var(--b)) right bottom / 1px var(--l) no-repeat;
+		filter: drop-shadow(-2px 0 0 rgb(var(--ab-red) / 0.75)) drop-shadow(2px 0 0 rgb(var(--ab-cyan) / 0.75));
+		transition: filter 0.18s ease;
+	}
+	&:hover::before,
+	&:focus-visible::before {
+		filter: drop-shadow(-5px 0 0 rgb(var(--ab-red) / 0.85)) drop-shadow(4px 0 0 rgb(var(--ab-cyan) / 0.85));
+	}
+}
+
+/* Chamfered bottom-right corner used by buttons. */
+@utility chamfer {
+	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+}
+
+@utility u-accent {
+	text-decoration-line: underline;
+	text-decoration-color: var(--accent);
+	text-decoration-thickness: 10%;
+	text-underline-offset: 10%;
+}
+
+/* Dark sections: remap the text tokens so components inside read correctly. */
+@utility inverse {
+	background-color: var(--inverse);
+	color: var(--inverse-ink);
+	--ink: var(--inverse-ink);
+	--ink-soft: var(--inverse-muted);
+	--muted: var(--inverse-muted);
+	--rule: var(--inverse-rule);
+	--rule-strong: var(--inverse-rule);
+	--surface: var(--inverse-surface);
+	--surface-2: var(--inverse-surface);
+	--dot: var(--inverse-rule);
+}

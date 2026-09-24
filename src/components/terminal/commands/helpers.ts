@@ -1,4 +1,4 @@
-import { RawLine } from "../types";
+import { type RawLine } from "../types";
 
 export const out = (content: string): RawLine => ({ type: "output", content });
 export const info = (content: string): RawLine => ({ type: "info", content });

@@ -1,8 +1,0 @@
-# robots.txt for mjaniec.it
-
-User-agent: *
-Allow: /
-
-# Sitemap location
-Sitemap: https://mjaniec.it/sitemap.xml
-

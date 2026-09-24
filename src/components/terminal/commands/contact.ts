@@ -1,4 +1,4 @@
-import { RawLine } from "../types";
+import { type RawLine } from "../types";
 import { out, lnk, div, blank } from "./helpers";
 
 export const contact = (): RawLine[] => [
@@ -10,5 +10,5 @@ export const contact = (): RawLine[] => [
   lnk("  GitHub     github.com/JaniecMichal", "https://github.com/JaniecMichal"),
   blank(),
   div(),
-  lnk("→ /contact", "/contact"),
+  lnk("→ /en/contact", "/en/contact"),
 ];

@@ -1,6 +1,5 @@
 import Link from "next/link";
-import type { Route } from "next";
-import { OutputLine } from "./types";
+import { type OutputLine } from "./types";
 
 const STYLES: Record<string, string> = {
   input: "text-white",
@@ -34,7 +33,7 @@ export const TerminalLine = ({ line }: { line: OutputLine }) => {
         </a>
       );
     return (
-      <Link href={line.href as Route} className={cls}>
+      <Link href={line.href} className={cls}>
         {line.content}
       </Link>
     );

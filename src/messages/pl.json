@@ -1,0 +1,268 @@
+{
+	"common": {
+		"skipToContent": "Przejdź do treści",
+		"nav": {
+			"label": "Główna nawigacja",
+			"services": "Usługi",
+			"work": "Realizacje",
+			"pricing": "Cennik",
+			"cv": "CV",
+			"contact": "Kontakt"
+		},
+		"cta": {
+			"quote": "Wyceń projekt",
+			"call": "Umów rozmowę",
+			"brief": "Wyślij brief",
+			"read": "Czytaj",
+			"allWork": "Wszystkie realizacje",
+			"allServices": "Wszystkie usługi",
+			"downloadCv": "Pobierz CV (PDF)",
+			"seeService": "Zobacz usługę"
+		},
+		"language": {
+			"label": "Język",
+			"pl": "Polski",
+			"en": "English"
+		},
+		"theme": {
+			"label": "Motyw",
+			"toLight": "Włącz jasny motyw",
+			"toDark": "Włącz ciemny motyw"
+		},
+		"menu": {
+			"open": "Otwórz menu",
+			"close": "Zamknij menu"
+		},
+		"footer": {
+			"services": "Usługi",
+			"site": "Strona",
+			"profile": "Profil",
+			"terminal": "Wolisz terminal?",
+			"privacy": "Polityka prywatności",
+			"rights": "© {year} Michał Janiec"
+		},
+		"breadcrumbHome": "Start"
+	},
+	"home": {
+		"meta": {
+			"title": "Michał Janiec — strony, sklepy i aplikacje | Senior Frontend Developer, Katowice",
+			"description": "Buduję szybkie strony w Next.js, sklepy Shopify, poprawki WordPress i aplikacje React. Senior frontend developer z Katowic, 5+ lat doświadczenia. Wycena w 24 h."
+		},
+		"hero": {
+			"kicker": "Senior Frontend Developer · Katowice · zdalnie",
+			"title": "Strony, sklepy i aplikacje, które <em>sprzedają.</em>",
+			"lead": "Buduję szybkie strony w Next.js, sklepy Shopify, poprawki WordPress i aplikacje React. Ponad 5 lat w zespołach produktowych, teraz pracuję bezpośrednio z Twoją firmą."
+		},
+		"trust": "Pracowałem z",
+		"services": {
+			"index": "01 — Usługi",
+			"title": "Co mogę dla Ciebie zbudować"
+		},
+		"work": {
+			"index": "02 — Case studies",
+			"title": "Wybrane realizacje",
+			"cta": "Masz podobny projekt? Opowiedz mi o nim, odpiszę w ciągu 24 godzin."
+		},
+		"process": {
+			"index": "03 — Proces",
+			"title": "Jak pracujemy"
+		},
+		"testimonials": {
+			"index": "04 — Opinie",
+			"previous": "Poprzednia opinia",
+			"next": "Następna opinia",
+			"source": "Rekomendacja na LinkedIn"
+		},
+		"pricing": {
+			"index": "05 — Cennik",
+			"title": "Przejrzyste ceny",
+			"cta": "Zapytaj o wycenę"
+		},
+		"faq": {
+			"index": "06 — FAQ",
+			"title": "Częste pytania"
+		},
+		"final": {
+			"index": "07 — Kontakt",
+			"title": "Zbudujmy to.",
+			"lead": "Krótki brief zajmie 3 minuty. Odpowiem w ciągu 24 godzin z wstępną wyceną i terminem."
+		}
+	},
+	"services": {
+		"meta": {
+			"title": "Usługi: strony Next.js, sklepy Shopify, WordPress, aplikacje React | Michał Janiec",
+			"description": "Strony firmowe w Next.js, sklepy Shopify, poprawki i przyspieszanie WordPress, aplikacje React i frontend dla zespołów Rails. Katowice i zdalnie."
+		},
+		"title": "Usługi",
+		"lead": "Jedna osoba od kodu, kontaktu i opieki po starcie. Wybierz, czego potrzebujesz, albo opisz projekt w briefie.",
+		"detail": {
+			"glance": "W skrócie",
+			"from": "Cena",
+			"timeline": "Czas",
+			"support": "Wsparcie",
+			"supportValue": "30 dni w cenie",
+			"invoice": "Faktura",
+			"invoiceValue": "VAT / B2B",
+			"included": "Co dostajesz",
+			"includedLabel": "W cenie",
+			"whyLabel": "Dlaczego developer, a nie gotowy szablon",
+			"whyTitle": "Twoja strona to oprogramowanie. Traktuję ją w ten sposób.",
+			"whyBody": "Od ponad 5 lat buduję frontendy produkcyjne dla zespołów produktowych: od marketplace Web3 z 50 inżynierami po platformę dla brytyjskich banków. Te same nawyki trafiają do Twojego projektu: czysty kod, budżet wydajności i zero wtyczkowego chaosu.",
+			"whyBody2": "Masz jedną osobę, która pisze kod, odpisuje na wiadomości i zostaje po starcie.",
+			"plans": "Pakiety",
+			"plansNote": "Ceny netto",
+			"ctaTitle": "Opowiedz mi o projekcie. Odpiszę w ciągu 24 godzin.",
+			"ctaButton": "Zacznij brief",
+			"related": "Zobacz, jak pracuję w realnym projekcie"
+		}
+	},
+	"work": {
+		"meta": {
+			"title": "Realizacje i case studies | Michał Janiec",
+			"description": "Wybrane projekty: strona agencji SEO w Next.js, modernizacja platformy obiadów szkolnych, marketplace Web3 Braintrust."
+		},
+		"title": "Realizacje",
+		"lead": "Kilka projektów, przy których odpowiadałem za frontend. Z kontekstem, podejściem i efektem.",
+		"detail": {
+			"label": "Case study",
+			"client": "Klient",
+			"role": "Moja rola",
+			"stack": "Stack",
+			"period": "Okres",
+			"quote": "Opinia",
+			"next": "Następny case study",
+			"visit": "Zobacz stronę",
+			"services": "Usługi w tym projekcie",
+			"screenshot": "Zrzut ekranu wkrótce"
+		}
+	},
+	"pricing": {
+		"meta": {
+			"title": "Cennik: ile kosztuje strona, sklep Shopify, poprawki WordPress | Michał Janiec",
+			"description": "Przejrzyste ceny stron w Next.js, sklepów Shopify i współpracy godzinowej. Wycena w 24 godziny po krótkim briefie."
+		},
+		"title": "Cennik",
+		"lead": "Ceny orientacyjne netto. Dokładną wycenę dostajesz po krótkim briefie, zwykle w ciągu 24 godzin.",
+		"drivers": "Co wpływa na cenę",
+		"driverList": {
+			"d1": "liczba podstron i szablonów",
+			"d2": "integracje (płatności, CRM, newsletter)",
+			"d3": "gotowość treści i zdjęć",
+			"d4": "termin realizacji"
+		}
+	},
+	"cv": {
+		"meta": {
+			"title": "CV — Michał Janiec, Senior Frontend Developer (React, Next.js, Rails)",
+			"description": "Doświadczenie, stack i dostępność. Senior Frontend Developer z Katowic: React, Next.js, TypeScript, Stimulus i Tailwind. Etat, B2B lub freelance."
+		},
+		"label": "Curriculum vitae",
+		"linkedin": "LinkedIn",
+		"facts": {
+			"location": "Lokalizacja",
+			"workMode": "Tryb pracy",
+			"contract": "Forma współpracy",
+			"languages": "Języki",
+			"available": "Dostępność"
+		},
+		"experience": "Doświadczenie",
+		"years": "5+ LAT",
+		"present": "teraz",
+		"stack": "Stack",
+		"education": "Edukacja",
+		"hiringLabel": "Rekrutujesz? Porozmawiajmy",
+		"hiringTitle": "Otwarty na etat, kontrakt B2B lub freelance. Zdalnie albo hybrydowo na Śląsku.",
+		"hiringCta": "Napisz do mnie",
+		"download": "Pobierz CV (PDF)"
+	},
+	"contact": {
+		"meta": {
+			"title": "Kontakt i wycena projektu | Michał Janiec",
+			"description": "Opisz projekt w 3-minutowym briefie albo umów rozmowę. Odpowiadam w ciągu 24 godzin."
+		},
+		"label": "Kontakt · brief projektu",
+		"title": "Opowiedz mi o projekcie.",
+		"lead": "4 krótkie kroki, około 3 minuty. Odpowiadam w ciągu 24 godzin z wstępną wyceną albo pytaniami.",
+		"alt": "Wolisz inaczej?",
+		"form": {
+			"label": "Brief projektu",
+			"step": "Krok {current} z {total}",
+			"steps": {
+				"s1": "Rodzaj projektu",
+				"s2": "Budżet",
+				"s3": "Termin",
+				"s4": "Kontakt"
+			},
+			"typeQuestion": "Czego potrzebujesz?",
+			"typeHint": "Możesz zaznaczyć kilka.",
+			"budgetQuestion": "Jaki masz budżet?",
+			"timelineQuestion": "Na kiedy?",
+			"contactQuestion": "Jak mogę się odezwać?",
+			"types": {
+				"website": "Strona firmowa",
+				"shopify": "Sklep Shopify",
+				"wordpress": "WordPress: poprawki",
+				"webapp": "Aplikacja React",
+				"team": "Frontend dla zespołu",
+				"audit": "Audyt szybkości / SEO",
+				"job": "Oferta pracy / rekrutacja",
+				"other": "Coś innego"
+			},
+			"budgets": {
+				"lt5": "do 5 000 zł",
+				"5to10": "5–10 tys. zł",
+				"10to25": "10–25 tys. zł",
+				"gt25": "powyżej 25 tys. zł",
+				"unknown": "Jeszcze nie wiem"
+			},
+			"timelines": {
+				"asap": "Jak najszybciej",
+				"month": "W ciągu miesiąca",
+				"quarter": "W ciągu 2–3 miesięcy",
+				"flexible": "Elastycznie"
+			},
+			"name": "Imię",
+			"email": "E-mail",
+			"company": "Firma lub strona (opcjonalnie)",
+			"message": "Kilka słów o projekcie",
+			"consent": "Zgadzam się na przetwarzanie moich danych w celu odpowiedzi na zapytanie.",
+			"privacy": "Polityka prywatności",
+			"back": "Wstecz",
+			"next": "Dalej",
+			"submit": "Wyślij brief",
+			"sending": "Wysyłam…",
+			"successTitle": "Dzięki! Odezwę się w ciągu 24 godzin.",
+			"successBody": "Brief dotarł. Chcesz przyspieszyć? Napisz od razu na e-mail.",
+			"errors": {
+				"type": "Wybierz przynajmniej jedną opcję.",
+				"budget": "Wybierz budżet.",
+				"timeline": "Wybierz termin.",
+				"name": "Podaj imię (min. 2 znaki).",
+				"email": "Podaj poprawny adres e-mail.",
+				"message": "Napisz kilka słów (min. 10 znaków).",
+				"consent": "Potrzebuję zgody, żeby odpowiedzieć.",
+				"generic": "Nie udało się wysłać. Spróbuj ponownie albo napisz na {email}.",
+				"rateLimit": "Za dużo prób. Spróbuj za kilka minut."
+			}
+		}
+	},
+	"privacy": {
+		"meta": {
+			"title": "Polityka prywatności | Michał Janiec",
+			"description": "Jak przetwarzam dane przesłane przez formularz kontaktowy."
+		},
+		"title": "Polityka prywatności",
+		"body": {
+			"p1": "Administratorem danych jest Michał Janiec, [DANE DZIAŁALNOŚCI / ADRES], e-mail: michal.janiec95@gmail.com.",
+			"p2": "Dane z formularza (imię, e-mail, firma, opis projektu) przetwarzam wyłącznie po to, żeby odpowiedzieć na zapytanie i przygotować ofertę (art. 6 ust. 1 lit. a i b RODO).",
+			"p3": "Wiadomości są wysyłane przez Mailgun (Sinch Mailgun, serwery w UE). Nie sprzedaję ani nie udostępniam danych innym podmiotom.",
+			"p4": "Dane przechowuję do zakończenia rozmów o współpracy, a potem maksymalnie 12 miesięcy. Masz prawo dostępu, sprostowania, usunięcia i ograniczenia przetwarzania oraz prawo skargi do Prezesa UODO.",
+			"p5": "Strona korzysta z Vercel Analytics, który nie używa plików cookie i nie zbiera danych osobowych."
+		}
+	},
+	"notFound": {
+		"title": "Tej strony nie ma.",
+		"lead": "Link mógł się zmienić po przebudowie strony.",
+		"home": "Wróć na start"
+	}
+}

@@ -39,7 +39,7 @@ export const TerminalWindow = () => {
         onKeyDown={handleKeyDown}
       />
 
-      <CommandChips onCommand={(cmd) => { executeCommand(cmd); focusInput(); }} />
+      <CommandChips onCommand={(cmd) => { void executeCommand(cmd); focusInput(); }} />
     </div>
   );
 };

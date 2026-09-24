@@ -1,4 +1,4 @@
-import { RawLine } from "../types";
+import { type RawLine } from "../types";
 import { out, info, div, blank } from "./helpers";
 
 export const help = (): RawLine[] => [

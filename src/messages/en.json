@@ -1,0 +1,268 @@
+{
+	"common": {
+		"skipToContent": "Skip to content",
+		"nav": {
+			"label": "Main navigation",
+			"services": "Services",
+			"work": "Work",
+			"pricing": "Pricing",
+			"cv": "CV",
+			"contact": "Contact"
+		},
+		"cta": {
+			"quote": "Get a quote",
+			"call": "Book a call",
+			"brief": "Send a brief",
+			"read": "Read",
+			"allWork": "All work",
+			"allServices": "All services",
+			"downloadCv": "Download CV (PDF)",
+			"seeService": "See the service"
+		},
+		"language": {
+			"label": "Language",
+			"pl": "Polski",
+			"en": "English"
+		},
+		"theme": {
+			"label": "Theme",
+			"toLight": "Switch to light theme",
+			"toDark": "Switch to dark theme"
+		},
+		"menu": {
+			"open": "Open menu",
+			"close": "Close menu"
+		},
+		"footer": {
+			"services": "Services",
+			"site": "Site",
+			"profile": "Profile",
+			"terminal": "Prefer a terminal?",
+			"privacy": "Privacy policy",
+			"rights": "© {year} Michał Janiec"
+		},
+		"breadcrumbHome": "Home"
+	},
+	"home": {
+		"meta": {
+			"title": "Michał Janiec — websites, stores and web apps | Senior Frontend Developer",
+			"description": "I build fast Next.js websites, Shopify stores, WordPress fixes and React apps. Senior frontend developer from Katowice, Poland, 5+ years of experience. Quote within 24 hours."
+		},
+		"hero": {
+			"kicker": "Senior Frontend Developer · Katowice, Poland · remote",
+			"title": "Websites, stores and web apps that <em>sell.</em>",
+			"lead": "I build fast Next.js websites, Shopify stores, WordPress fixes and React apps. 5+ years in product teams, now working directly with your business."
+		},
+		"trust": "Worked with",
+		"services": {
+			"index": "01 — Services",
+			"title": "What I can build for you"
+		},
+		"work": {
+			"index": "02 — Case studies",
+			"title": "Selected work",
+			"cta": "Got a similar project? Tell me about it and I'll reply within 24 hours."
+		},
+		"process": {
+			"index": "03 — Process",
+			"title": "How we work"
+		},
+		"testimonials": {
+			"index": "04 — Testimonials",
+			"previous": "Previous testimonial",
+			"next": "Next testimonial",
+			"source": "LinkedIn recommendation"
+		},
+		"pricing": {
+			"index": "05 — Pricing",
+			"title": "Clear pricing",
+			"cta": "Ask for a quote"
+		},
+		"faq": {
+			"index": "06 — FAQ",
+			"title": "Common questions"
+		},
+		"final": {
+			"index": "07 — Contact",
+			"title": "Let's build it.",
+			"lead": "A short brief takes 3 minutes. I'll reply within 24 hours with a rough quote and timeline."
+		}
+	},
+	"services": {
+		"meta": {
+			"title": "Services: Next.js websites, Shopify stores, WordPress, React apps | Michał Janiec",
+			"description": "Business websites in Next.js, Shopify stores, WordPress fixes and speed-ups, React apps and frontend for Rails teams. Based in Poland, working remotely."
+		},
+		"title": "Services",
+		"lead": "One person for the code, the communication and the care after launch. Pick what you need, or describe your project in the brief.",
+		"detail": {
+			"glance": "At a glance",
+			"from": "Price",
+			"timeline": "Timeline",
+			"support": "Support",
+			"supportValue": "30 days included",
+			"invoice": "Invoice",
+			"invoiceValue": "VAT / B2B",
+			"included": "What you get",
+			"includedLabel": "Included",
+			"whyLabel": "Why a developer, not a template shop",
+			"whyTitle": "Your site is software. Treat it that way.",
+			"whyBody": "I've spent 5+ years building production frontends for product teams, from a 50-engineer Web3 marketplace to an enterprise platform for UK banks. The same habits go into your project: clean code, performance budgets and no plugin pile-ups.",
+			"whyBody2": "You get one person who writes the code, answers your messages and stays around after launch.",
+			"plans": "Packages",
+			"plansNote": "Prices net",
+			"ctaTitle": "Tell me about your project. I'll reply within 24 hours.",
+			"ctaButton": "Start the brief",
+			"related": "See how I work on a real project"
+		}
+	},
+	"work": {
+		"meta": {
+			"title": "Work and case studies | Michał Janiec",
+			"description": "Selected projects: an SEO agency website in Next.js, a school-meal platform modernisation, the Braintrust Web3 marketplace."
+		},
+		"title": "Work",
+		"lead": "A few projects where I owned the frontend, with the context, the approach and the result.",
+		"detail": {
+			"label": "Case study",
+			"client": "Client",
+			"role": "My role",
+			"stack": "Stack",
+			"period": "Period",
+			"quote": "Testimonial",
+			"next": "Next case study",
+			"visit": "Visit the site",
+			"services": "Services in this project",
+			"screenshot": "Screenshot coming soon"
+		}
+	},
+	"pricing": {
+		"meta": {
+			"title": "Pricing: websites, Shopify stores, WordPress fixes | Michał Janiec",
+			"description": "Clear pricing for Next.js websites, Shopify stores and hourly work. A quote within 24 hours after a short brief."
+		},
+		"title": "Pricing",
+		"lead": "Indicative net prices. You get an exact quote after a short brief, usually within 24 hours.",
+		"drivers": "What affects the price",
+		"driverList": {
+			"d1": "number of pages and templates",
+			"d2": "integrations (payments, CRM, newsletter)",
+			"d3": "whether content and photos are ready",
+			"d4": "deadline"
+		}
+	},
+	"cv": {
+		"meta": {
+			"title": "CV — Michał Janiec, Senior Frontend Developer (React, Next.js, Rails)",
+			"description": "Experience, stack and availability. Senior Frontend Developer from Katowice, Poland: React, Next.js, TypeScript, Stimulus and Tailwind. Full-time, B2B or freelance."
+		},
+		"label": "Curriculum vitae",
+		"linkedin": "LinkedIn",
+		"facts": {
+			"location": "Location",
+			"workMode": "Work mode",
+			"contract": "Contract",
+			"languages": "Languages",
+			"available": "Available"
+		},
+		"experience": "Experience",
+		"years": "5+ YRS",
+		"present": "now",
+		"stack": "Stack",
+		"education": "Education",
+		"hiringLabel": "Hiring? Let's talk",
+		"hiringTitle": "Open to full-time, B2B contract or freelance. Remote, or hybrid in Silesia.",
+		"hiringCta": "Contact me",
+		"download": "Download CV (PDF)"
+	},
+	"contact": {
+		"meta": {
+			"title": "Contact and project quote | Michał Janiec",
+			"description": "Describe your project in a 3-minute brief or book a call. I reply within 24 hours."
+		},
+		"label": "Contact · project brief",
+		"title": "Tell me about your project.",
+		"lead": "4 short steps, about 3 minutes. I reply within 24 hours with a rough quote or questions.",
+		"alt": "Prefer another way?",
+		"form": {
+			"label": "Project brief",
+			"step": "Step {current} of {total}",
+			"steps": {
+				"s1": "Project type",
+				"s2": "Budget",
+				"s3": "Timeline",
+				"s4": "Contact"
+			},
+			"typeQuestion": "What do you need?",
+			"typeHint": "Pick one or more.",
+			"budgetQuestion": "What's your budget?",
+			"timelineQuestion": "When do you need it?",
+			"contactQuestion": "How can I reach you?",
+			"types": {
+				"website": "Business website",
+				"shopify": "Shopify store",
+				"wordpress": "WordPress fixes",
+				"webapp": "React web app",
+				"team": "Frontend for a team",
+				"audit": "Speed / SEO audit",
+				"job": "Job offer / hiring",
+				"other": "Something else"
+			},
+			"budgets": {
+				"lt5": "up to 5,000 PLN",
+				"5to10": "5–10k PLN",
+				"10to25": "10–25k PLN",
+				"gt25": "over 25k PLN",
+				"unknown": "Not sure yet"
+			},
+			"timelines": {
+				"asap": "As soon as possible",
+				"month": "Within a month",
+				"quarter": "In 2–3 months",
+				"flexible": "Flexible"
+			},
+			"name": "Name",
+			"email": "Email",
+			"company": "Company or website (optional)",
+			"message": "A few words about the project",
+			"consent": "I agree to the processing of my data to answer this enquiry.",
+			"privacy": "Privacy policy",
+			"back": "Back",
+			"next": "Next",
+			"submit": "Send brief",
+			"sending": "Sending…",
+			"successTitle": "Thanks! I'll get back to you within 24 hours.",
+			"successBody": "Your brief arrived. Want to speed things up? Email me directly.",
+			"errors": {
+				"type": "Pick at least one option.",
+				"budget": "Pick a budget.",
+				"timeline": "Pick a timeline.",
+				"name": "Enter your name (min. 2 characters).",
+				"email": "Enter a valid email address.",
+				"message": "Write a few words (min. 10 characters).",
+				"consent": "I need your consent to reply.",
+				"generic": "Couldn't send it. Try again or email {email}.",
+				"rateLimit": "Too many attempts. Try again in a few minutes."
+			}
+		}
+	},
+	"privacy": {
+		"meta": {
+			"title": "Privacy policy | Michał Janiec",
+			"description": "How I process data sent through the contact form."
+		},
+		"title": "Privacy policy",
+		"body": {
+			"p1": "The data controller is Michał Janiec, [BUSINESS DETAILS / ADDRESS], email: michal.janiec95@gmail.com.",
+			"p2": "Data from the form (name, email, company, project description) is used only to answer your enquiry and prepare an offer (Art. 6(1)(a) and (b) GDPR).",
+			"p3": "Messages are sent through Mailgun (Sinch Mailgun, EU servers). I don't sell or share data with anyone else.",
+			"p4": "I keep the data until our conversation about working together ends, then for up to 12 months. You have the right to access, correct, delete and restrict processing, and to complain to the Polish supervisory authority (UODO).",
+			"p5": "This site uses Vercel Analytics, which uses no cookies and collects no personal data."
+		}
+	},
+	"notFound": {
+		"title": "This page doesn't exist.",
+		"lead": "The link may have changed after the site rebuild.",
+		"home": "Back to home"
+	}
+}
