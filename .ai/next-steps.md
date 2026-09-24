@@ -1,8 +1,20 @@
 # Next steps — mjaniec.it rebuild
 
-Status (2026-09-23): the rebuild runs on the local `rebuild` branch. Build, lint and typecheck pass,
-and 40 pages are statically generated. Rebuild changes are **not committed or pushed** yet.
-Commit `4cbebde` on the branch is a snapshot of the old terminal WIP.
+Status (2026-09-24): the rebuild is pushed to `rebuild` and a PR `rebuild` → `main` is open (Vercel
+preview). Build, lint and typecheck pass, 40 pages are statically generated. All real content is in
+(sections 1–2 done). **Next up: section 3** (Mailgun, Vercel env vars, test brief, Search Console),
+then launch.
+
+Progress log:
+
+- 2026-09-23: rebuild built locally (`4cbebde` = snapshot of the old terminal WIP).
+- 2026-09-24 `ef04e41`: rebuild committed and pushed, PR opened. Removed leftovers (unused
+  `src/assets/`, outdated `.ai/terminal-route.md`).
+- 2026-09-24 `438abac`: prices, availability, CV facts, invoicing, privacy details; contact email
+  obfuscated site-wide; nazielono.pro case study.
+- 2026-09-24 `28ea49d`: jemWszkole.pl case study (screenshots with blurred names, PM quote); full
+  Maciej Rygielski testimonial restored.
+- 2026-09-24 `dd20de5`: Braintrust case study (wallet data blurred, team leader quote).
 
 Related docs: [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
@@ -20,15 +32,27 @@ All placeholders look like `[X]`, `[MIESIĄC]`, `[LEVEL]`. Find them with `grep 
 
 - [x] **Prices**: landing page od 500 zł, website with CMS od 2 900 zł, Shopify od 2 500 / 5 900 zł, audit od 900 zł, one rate 120 zł/h, trial task up to 10 h at 100 zł/h (all net).
 - [x] **Availability**: "Open to new projects", no date.
-- [x] **Case studies** in `src/content/local/work.ts`: nazielono.pro, jemWszkole.pl and Braintrust done (jemWszkole number metrics hidden in a `TODO(metrics)` comment until real data exists): real metrics (Lighthouse, LCP, traffic, leads), the "Result" chapter, screenshots in `public/work/` (set `cover` / `gallery`), and a 2–3 sentence client quote with permission to publish.
+- [x] **Case studies** in `src/content/local/work.ts`: nazielono.pro, jemWszkole.pl and Braintrust, with screenshots in `public/work/` and a quote each.
 - [x] **CV facts**: English B2, no notice period shown.
 - [x] **Invoicing**: sole trader with VAT invoices, also contract for specific work / mandate contract.
 - [x] **Privacy policy**: business name, city and NIP (no street address, on purpose). The email is obfuscated site-wide (`EmailLink`).
 - [ ] Optional: phone number (`settings.ts` → `phone`), a new photo, an updated CV PDF (`public/michal_janiec_cv.pdf`; it still contains the email as plain text).
 
+Follow-ups (not blocking launch):
+
+- [ ] Ask Konrad Bilski for permission to publish his quote (assumed for now).
+- [ ] jemWszkole.pl number metrics (build time CRA → Vite, dev server start, Lighthouse, number of
+  schools): swap them in from the `TODO(metrics)` comment in `work.ts` when available.
+- [ ] nazielono.pro mobile Lighthouse is weak: fix it on the client site, then add mobile metrics.
+- [ ] Profit calculator on nazielono.pro is in progress: update chapter 04 when it ships, and
+  expand the case study into a full article later.
+
 See [content-guide.md](./content-guide.md) for *what* to write.
 
-## 3. Email and search setup before launch (~30 min)
+## 3. Email and search setup before launch (~30 min) ← next
+
+Open questions: is there a Mailgun account already, and where is the mjaniec.it domain registered
+(that decides where the DNS records go)?
 
 - [ ] **Mailgun**: add the sending domain `mg.mjaniec.it` (EU region) and its SPF/DKIM/MX DNS records at your DNS provider.
 - [ ] **Vercel env vars** (Production + Preview): `MAILGUN_API_KEY`, `MAILGUN_DOMAIN`, `MAILGUN_REGION=eu`, `MAILGUN_FROM`, `CONTACT_TO_EMAIL`, `NEXT_PUBLIC_SITE_URL=https://mjaniec.it`. Optional: `OPENAI_API_KEY` for the terminal.
