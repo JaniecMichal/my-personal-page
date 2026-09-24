@@ -14,10 +14,10 @@ export const testimonials: LocalizedDeep<Testimonial>[] = [
 	{
 		id: "maciej-rygielski",
 		author: "Maciej Rygielski",
-		role: { pl: "Buduje świetne produkty i zespoły", en: "Builds great software products and teams" },
+		role: { pl: "Project Manager w projekcie jemWszkole.pl", en: "Project Manager, jemWszkole.pl" },
 		quote:
 			"He proactively suggests ideas for improving the application and introducing new features, which significantly enhances the final product.",
-		text: "I had the pleasure of working with Michał, and I can wholeheartedly recommend him as a Front-end developer. He is extremely meticulous in programming, ensuring the highest code quality, maintaining order, and consistently applying best development practices. He proactively suggests ideas for improving the application and introducing new features, which significantly enhances the final product. Moreover, he is an excellent communicator.",
+		text: "I had the pleasure of working with Michał, and I can wholeheartedly recommend him as a Front-end developer. He is extremely meticulous in programming—ensuring the highest code quality, maintaining order, and consistently applying best development practices. However, Michał is not just a great programmer; he also brings real value to the team. He proactively suggests ideas for improving the application and introducing new features, which significantly enhances the final product. Moreover, he is an excellent communicator—working with him is truly a pleasure. He conveys his thoughts clearly and effectively, making project collaboration smooth and efficient. I highly recommend Michał to any team that values professionalism, well-structured work, and a creative approach to application development.",
 		url: "https://www.linkedin.com/in/maciejrygielski/",
 	},
 	{

@@ -176,39 +176,119 @@ export const caseStudies: LocalCaseStudy[] = [
 		order: 2,
 		client: "jemWszkole.pl",
 		title: {
-			pl: "Modernizacja platformy obiadów szkolnych bez przepisywania od zera",
-			en: "Modernising a school-meal platform without a full rewrite",
+			pl: "Platforma stołówek szkolnych: od MVP do nowoczesnej aplikacji bez przepisywania od zera",
+			en: "A school canteen platform: from MVP to a modern app without a full rewrite",
 		},
 		summary: {
-			pl: "Jedyny frontend developer platformy dla rodziców, uczniów i szkół w całej Polsce.",
-			en: "The only frontend developer on a platform for parents, pupils and schools across Poland.",
+			pl: "Przejąłem rolę głównego frontend developera platformy, która pomaga szkołom w całej Polsce organizować stołówkę, i dowiozłem kluczowe funkcje na start nowej wersji.",
+			en: "I took over as lead frontend developer of a platform that helps schools across Poland run their canteens, and shipped the key features needed to launch its new version.",
 		},
-		period: { pl: "02.2025 → teraz", en: "Feb 2025 → now" },
-		role: { pl: "Frontend (part-time)", en: "Frontend (part-time)" },
-		stack: ["React", "TypeScript", "Chakra UI"],
+		period: { pl: "02.2025 → wsparcie frontendowe", en: "Feb 2025 → frontend support" },
+		role: { pl: "Główny frontend developer", en: "Lead frontend developer" },
+		stack: ["React", "TypeScript", "Vite", "Chakra UI"],
 		services: ["web-apps"],
-		metrics: [{ value: "[WYNIK]", label: { pl: "[metryka]", en: "[metric]" } }],
+		metrics: [
+			{ value: "Vite", label: { pl: "migracja z create-react-app", en: "migrated from create-react-app" } },
+			{ value: "2", label: { pl: "interfejsy: administrator szkoły i rodzic", en: "interfaces: school admin and parent" } },
+			{ value: "PL", label: { pl: "posiłki w szkołach w całej Polsce, codziennie", en: "school meals served daily across Poland" } },
+		],
+		// TODO(metrics): hidden until real numbers are available. When you have them, swap in e.g.:
+		// { value: "[X s → Y s]", label: { pl: "czas builda (CRA → Vite)", en: "build time (CRA → Vite)" } },
+		// { value: "[X s → Y s]", label: { pl: "start serwera deweloperskiego", en: "dev server start-up" } },
+		// { value: "[XX]", label: { pl: "Lighthouse performance", en: "Lighthouse performance" } },
+		// { value: "[XXX]", label: { pl: "szkoły na platformie", en: "schools on the platform" } },
 		chapters: [
 			{
 				title: { pl: "Problem", en: "Problem" },
 				body: {
-					pl: ["Aplikacja zbudowana na przestarzałym create-react-app, trudna w rozwoju i utrzymaniu."],
-					en: ["An app built on legacy create-react-app, hard to extend and maintain."],
+					pl: [
+						"JemWszkole to platforma, która pomaga szkołom organizować stołówkę: jadłospisy, zamawianie posiłków, zgłaszanie nieobecności i rozliczenia. Codziennie obsługuje posiłki w szkołach w całej Polsce.",
+						"Dołączyłem do projektu w końcowej fazie budowy MVP. Do startu nowej wersji platformy brakowało jeszcze kluczowych funkcji, a frontend potrzebował osoby, która weźmie za niego pełną odpowiedzialność. Aplikacja stała przy tym na przestarzałym create-react-app.",
+					],
+					en: [
+						"JemWszkole is a platform that helps schools run their canteens: menus, meal orders, absence reports and payments. It serves school meals every day across Poland.",
+						"I joined in the final phase of the MVP. The new version still lacked key features before launch, and the frontend needed someone to take full ownership of it. On top of that, the app was built on the outdated create-react-app.",
+					],
 				},
 			},
 			{
 				title: { pl: "Podejście", en: "Approach" },
 				body: {
-					pl: ["Stopniowe usprawnienia architektury zamiast ryzykownego przepisywania całości."],
-					en: ["Step-by-step architectural improvements instead of a risky full rewrite."],
+					pl: [
+						"Przejąłem rolę głównego frontend developera i dowiozłem ostatnie kluczowe funkcje, niezbędne do wystartowania z nową wersją platformy.",
+						"Oprócz dowożenia brakujących elementów z własnej inicjatywy proponowałem i wprowadzałem kolejne usprawnienia. Najważniejszym była migracja z create-react-app na nowoczesne Vite, bez przepisywania aplikacji od zera.",
+						"Dużo uwagi poświęciłem interfejsowi. Z aplikacji korzystają zarówno administratorzy w szkołach, jak i rodzice, dlatego musi być intuicyjna i niezawodna, również na telefonie.",
+					],
+					en: [
+						"I took over as lead frontend developer and shipped the last key features required to launch the new version of the platform.",
+						"Beyond the missing pieces, I proactively proposed and delivered a series of improvements. The biggest one was migrating from create-react-app to modern Vite, without rewriting the app from scratch.",
+						"I put a lot of care into the interface. The app is used by school administrators and by parents alike, so it has to be intuitive and reliable, on phones too.",
+					],
 				},
 			},
 			{
 				title: { pl: "Efekt", en: "Result" },
-				body: { pl: ["[Uzupełnij: co się poprawiło.]"], en: ["[Fill in: what improved.]"] },
+				body: {
+					pl: [
+						"Nowa wersja platformy działa i codziennie obsługuje posiłki w szkołach w całej Polsce, na nowoczesnym i szybszym w rozwoju stacku.",
+						"Dziś wspieram projekt technicznie po stronie frontendu: na bieżąco przygotowuję poprawki i hotfixy, wprowadzam ulepszenia, stopniowo porządkuję kod i poprawiam wydajność.",
+					],
+					en: [
+						"The new version of the platform is live and serves school meals every day across Poland, on a modern stack that is faster to develop.",
+						"Today I provide ongoing frontend support: ad-hoc fixes and hotfixes, improvements, gradual code clean-up and performance work.",
+					],
+				},
 			},
 		],
-		gallery: [],
+		cover: {
+			src: "/work/jemwszkole/admin-menu-desktop.png",
+			alt: { pl: "Panel administratora szkoły w jemWszkole.pl", en: "School admin panel in jemWszkole.pl" },
+			width: 1894,
+			height: 951,
+		},
+		gallery: [
+			{
+				src: "/work/jemwszkole/admin-menu-desktop.png",
+				alt: { pl: "Panel administratora szkoły: edycja jadłospisu", en: "School admin panel: editing the menu" },
+				width: 1894,
+				height: 951,
+			},
+			{
+				src: "/work/jemwszkole/order-calendar-desktop.png",
+				alt: { pl: "Zamawianie posiłków w kalendarzu z koszykiem", en: "Ordering meals in a calendar with a basket" },
+				width: 1894,
+				height: 951,
+			},
+			{
+				src: "/work/jemwszkole/parent-dashboard-desktop.png",
+				alt: { pl: "Panel rodzica: kalendarz, ogłoszenia i zamówione posiłki", en: "Parent dashboard: calendar, announcements and ordered meals" },
+				width: 645,
+				height: 568,
+			},
+			{
+				src: "/work/jemwszkole/parent-dashboard-mobile.png",
+				alt: { pl: "Panel rodzica na telefonie: zgłoszenie nieobecności i zamówienie posiłku", en: "Parent dashboard on a phone: report an absence and order a meal" },
+				width: 331,
+				height: 555,
+			},
+			{
+				src: "/work/jemwszkole/order-meal-mobile.png",
+				alt: { pl: "Wybór posiłku na telefonie", en: "Choosing a meal on a phone" },
+				width: 339,
+				height: 702,
+			},
+			{
+				src: "/work/jemwszkole/order-calendar-mobile.png",
+				alt: { pl: "Wybór dni w kalendarzu na telefonie", en: "Picking days in the calendar on a phone" },
+				width: 339,
+				height: 702,
+			},
+		],
+		quote: {
+			text: "He proactively suggests ideas for improving the application and introducing new features, which significantly enhances the final product. Moreover, he is an excellent communicator—working with him is truly a pleasure.",
+			author: "Maciej Rygielski",
+			role: { pl: "Project Manager w projekcie jemWszkole.pl", en: "Project Manager, jemWszkole.pl" },
+		},
 		liveUrl: "https://jemwszkole.pl",
 		seo: {},
 	},
