@@ -8,10 +8,9 @@ export const siteSettings: LocalizedDeep<SiteSettings> = {
 	email: "michal.janiec95@gmail.com",
 	// TODO: add a phone number if you want local clients to call.
 	phone: undefined,
-	// TODO: set the real date, or null to hide the status line.
 	availability: {
-		pl: "Dostępny na nowe projekty od [MIESIĄC] 2026",
-		en: "Available for new projects from [MONTH] 2026",
+		pl: "Otwarty na nowe projekty",
+		en: "Open to new projects",
 	},
 	socials: [
 		{ label: "LinkedIn", href: "https://www.linkedin.com/in/janiecmichal" },
@@ -36,9 +35,8 @@ export const cvFacts: LocalizedDeep<CvFacts> = {
 		pl: "Senior Frontend Developer. React, Next.js i TypeScript, a na co dzień także frontend w Rails: Stimulus, ERB i Tailwind.",
 		en: "Senior Frontend Developer. React, Next.js and TypeScript, now also shipping Rails frontends with Stimulus, ERB and Tailwind.",
 	},
-	// TODO: confirm your English level.
-	languages: { pl: "polski (ojczysty) · angielski ([POZIOM])", en: "Polish (native) · English ([LEVEL])" },
+	languages: { pl: "polski (ojczysty) · angielski (B2)", en: "Polish (native) · English (B2)" },
 	workMode: { pl: "Zdalnie · hybrydowo na Śląsku", en: "Remote · hybrid in Silesia" },
 	contract: { pl: "Etat · B2B · freelance", en: "Full-time · B2B · freelance" },
-	availableFrom: { pl: "[OKRES WYPOWIEDZENIA / DATA]", en: "[NOTICE PERIOD / DATE]" },
+	availableFrom: { pl: "Otwarty na nowe projekty", en: "Open to new projects" },
 };

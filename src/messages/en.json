@@ -142,7 +142,7 @@
 			"description": "Clear pricing for Next.js websites, Shopify stores and hourly work. A quote within 24 hours after a short brief."
 		},
 		"title": "Pricing",
-		"lead": "Indicative net prices. You get an exact quote after a short brief, usually within 24 hours.",
+		"lead": "Indicative net prices. You get an exact quote after a short brief, usually within 48 hours.",
 		"drivers": "What affects the price",
 		"driverList": {
 			"d1": "number of pages and templates",
@@ -163,7 +163,7 @@
 			"workMode": "Work mode",
 			"contract": "Contract",
 			"languages": "Languages",
-			"available": "Available"
+			"available": "Availability"
 		},
 		"experience": "Experience",
 		"years": "5+ YRS",
@@ -253,7 +253,7 @@
 		},
 		"title": "Privacy policy",
 		"body": {
-			"p1": "The data controller is Michał Janiec, [BUSINESS DETAILS / ADDRESS], email: michal.janiec95@gmail.com.",
+			"p1": "The data controller is Michał Janiec, running a sole-trader business as Michał Janiec - FrontDev, Katowice, Poland, tax ID (NIP) 9542827947, email: <email></email>.",
 			"p2": "Data from the form (name, email, company, project description) is used only to answer your enquiry and prepare an offer (Art. 6(1)(a) and (b) GDPR).",
 			"p3": "Messages are sent through Mailgun (Sinch Mailgun, EU servers). I don't sell or share data with anyone else.",
 			"p4": "I keep the data until our conversation about working together ends, then for up to 12 months. You have the right to access, correct, delete and restrict processing, and to complain to the Polish supervisory authority (UODO).",

@@ -4,9 +4,11 @@ import { useLocale, useTranslations } from "next-intl";
 import { type FormEvent, startTransition, useActionState, useEffect, useRef, useState } from "react";
 import { submitBrief } from "@/actions/brief";
 import { buttonClass } from "@/components/ui/button-link";
+import { EmailLink } from "@/components/ui/email-link";
 import { Link } from "@/i18n/navigation";
 import { BUDGETS, type BriefErrorKey, type BriefField, type BriefState, PROJECT_TYPES, TIMELINES } from "@/lib/brief-options";
 import { cn } from "@/lib/cn";
+import { decodeEmail } from "@/lib/email";
 
 const TOTAL = 4;
 const chip =
@@ -17,7 +19,7 @@ const input =
 /** Fields each step owns, used to show the right errors and jump back to them. */
 const STEP_FIELDS: BriefField[][] = [["types"], ["budget"], ["timeline"], ["name", "email", "company", "message", "consent"]];
 
-export function BriefForm({ email }: { email: string }) {
+export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 	const t = useTranslations("contact.form");
 	const locale = useLocale();
 	const [state, action, pending] = useActionState<BriefState, FormData>(submitBrief, { status: "idle" });
@@ -72,9 +74,7 @@ export function BriefForm({ email }: { email: string }) {
 				</p>
 				<h2 className="font-serif text-4xl leading-none md:text-[56px]">{t("successTitle")}</h2>
 				<p className="text-[15px] leading-relaxed text-ink-soft">{t("successBody")}</p>
-				<a href={`mailto:${email}`} className={cn(buttonClass("line"), "self-start")}>
-					{email}
-				</a>
+				<EmailLink encoded={encodedEmail} className={cn(buttonClass("line"), "self-start")} />
 			</div>
 		);
 	}
@@ -196,7 +196,7 @@ export function BriefForm({ email }: { email: string }) {
 
 			{state.status === "error" && (
 				<p className="text-sm text-[#d4351c] dark:text-[#ff7a66]" role="alert">
-					{state.reason === "rateLimit" ? t("errors.rateLimit") : t("errors.generic", { email })}
+					{state.reason === "rateLimit" ? t("errors.rateLimit") : t("errors.generic", { email: decodeEmail(encodedEmail) })}
 				</p>
 			)}
 

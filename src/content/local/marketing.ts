@@ -40,13 +40,23 @@ export const testimonials: LocalizedDeep<Testimonial>[] = [
 	},
 ];
 
-// TODO: set real prices.
 export const pricingPlans: LocalizedDeep<PricingPlan>[] = [
+	{
+		id: "landing",
+		kicker: { pl: "Na dobry start", en: "Quick start" },
+		name: "Landing page",
+		price: { pl: "od 500 zł", en: "from 500 PLN" },
+		features: {
+			pl: ["1 strona, do 6 sekcji", "z Twojego projektu graficznego", "responsywność i podstawowe SEO", "wdrożenie + 1 runda poprawek"],
+			en: ["1 page, up to 6 sections", "from your ready design", "responsive, basic SEO", "launch + 1 round of fixes"],
+		},
+		highlighted: false,
+	},
 	{
 		id: "website",
 		kicker: { pl: "Dla małych firm", en: "For small businesses" },
-		name: { pl: "Strona wizytówka", en: "Business website" },
-		price: { pl: "od [X] zł", en: "from [X] PLN" },
+		name: { pl: "Strona firmowa z CMS", en: "Business website with CMS" },
+		price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
 		features: {
 			pl: ["do 5 podstron", "CMS do edycji", "SEO i dane strukturalne", "wdrożenie + 30 dni wsparcia"],
 			en: ["up to 5 pages", "editable CMS", "SEO and structured data", "launch + 30 days support"],
@@ -57,7 +67,7 @@ export const pricingPlans: LocalizedDeep<PricingPlan>[] = [
 		id: "shopify",
 		kicker: { pl: "Najczęściej wybierany", en: "Most popular" },
 		name: { pl: "Sklep Shopify", en: "Shopify store" },
-		price: { pl: "od [X] zł", en: "from [X] PLN" },
+		price: { pl: "od 2 500 zł", en: "from 2,500 PLN" },
 		features: {
 			pl: ["motyw dopasowany do marki", "płatności i dostawy", "import produktów", "szkolenie z panelu"],
 			en: ["theme tailored to your brand", "payments and shipping", "product import", "admin training"],
@@ -66,12 +76,12 @@ export const pricingPlans: LocalizedDeep<PricingPlan>[] = [
 	},
 	{
 		id: "hourly",
-		kicker: { pl: "Dla zespołów i agencji", en: "For teams and agencies" },
+		kicker: { pl: "Wsparcie, zespoły, agencje", en: "Support, teams, agencies" },
 		name: { pl: "Współpraca godzinowa", en: "Hourly engagement" },
-		price: { pl: "[X] zł/h", en: "[X] PLN/h" },
+		price: { pl: "120 zł/h", en: "120 PLN/h" },
 		features: {
-			pl: ["React, Next.js, frontend Rails", "WordPress i Shopify", "faktura VAT / B2B", "raport godzin co tydzień"],
-			en: ["React, Next.js, Rails frontend", "WordPress and Shopify", "VAT invoice / B2B", "weekly time report"],
+			pl: ["zmiany w WordPress, Next.js, Shopify", "React, Next.js, frontend Rails", "zadanie próbne: do 10 h po 100 zł/h", "rozliczenie co 15 min, raport godzin"],
+			en: ["changes in WordPress, Next.js, Shopify", "React, Next.js, Rails frontend", "trial task: up to 10 h at 100 PLN/h", "billed per 15 min, time report"],
 		},
 		highlighted: false,
 	},
@@ -82,16 +92,24 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		id: "cost",
 		question: { pl: "Ile kosztuje strona internetowa?", en: "How much does a website cost?" },
 		answer: {
-			pl: "Strona firmowa w Next.js zaczyna się od [X] zł netto. Dokładną wycenę dostajesz po krótkim briefie. Cena zależy od liczby podstron, integracji i tego, czy treści są gotowe.",
-			en: "A business website in Next.js starts from [X] PLN net. You get an exact quote after a short brief. The price depends on the number of pages, integrations and whether the content is ready.",
+			pl: "Prosty landing page z gotowego projektu graficznego kosztuje od 500 zł netto, a strona firmowa z CMS od 2 900 zł netto. Dokładną wycenę dostajesz po krótkim briefie. Cena zależy od liczby podstron, integracji i tego, czy treści są gotowe.",
+			en: "A simple landing page built from your ready design starts from 500 PLN net, and a business website with a CMS from 2,900 PLN net. You get an exact quote after a short brief. The price depends on the number of pages, integrations and whether the content is ready.",
 		},
 	},
 	{
 		id: "time",
 		question: { pl: "Ile trwa realizacja?", en: "How long does it take?" },
 		answer: {
-			pl: "Strona wizytówka zwykle [2–3] tygodnie, sklep Shopify [3–5] tygodni. Co tydzień dostajesz podgląd na żywo.",
-			en: "A business website usually takes [2–3] weeks, a Shopify store [3–5] weeks. You get a live preview every week.",
+			pl: "Landing page zwykle kilka dni, strona firmowa z CMS 2–3 tygodnie, sklep Shopify 3–5 tygodni. Przy dłuższych projektach co tydzień dostajesz podgląd na żywo.",
+			en: "A landing page usually takes a few days, a business website with a CMS 2–3 weeks, a Shopify store 3–5 weeks. On longer projects you get a live preview every week.",
+		},
+	},
+	{
+		id: "trial",
+		question: { pl: "Jak zacząć współpracę przy większym projekcie?", en: "How do we start on a bigger project?" },
+		answer: {
+			pl: "Od zadania próbnego: do 10 godzin pracy po 100 zł/h netto, bez zobowiązań. Jeśli współpraca się sprawdzi, dalej rozliczamy się po 120 zł/h netto albo w stałej cenie projektu.",
+			en: "With a trial task: up to 10 hours of work at 100 PLN/h net, with no commitment. If it works well, we continue at 120 PLN/h net or at a fixed project price.",
 		},
 	},
 	{
@@ -122,9 +140,8 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		id: "invoice",
 		question: { pl: "Czy wystawiasz fakturę VAT?", en: "Do you issue VAT invoices?" },
 		answer: {
-			// TODO: confirm how you invoice.
-			pl: "[Tak, wystawiam fakturę VAT jako jednoosobowa działalność / B2B.]",
-			en: "[Yes, I issue VAT invoices as a sole trader / B2B.]",
+			pl: "Tak. Prowadzę jednoosobową działalność gospodarczą i wystawiam faktury VAT. Mogę też pracować na umowę o dzieło lub umowę zlecenie, jeśli tak Ci wygodniej.",
+			en: "Yes. I run a sole-trader business in Poland and issue VAT invoices, so B2B works out of the box. For Polish clients I can also work on a contract for specific work or a mandate contract."
 		},
 	},
 ];
@@ -142,8 +159,8 @@ export const processSteps: LocalizedDeep<ProcessStep>[] = [
 		id: "quote",
 		title: { pl: "Wycena i plan", en: "Quote and plan" },
 		description: {
-			pl: "W ciągu [48 h] dostajesz zakres, cenę i harmonogram. Bez ukrytych kosztów.",
-			en: "Within [48 h] you get the scope, price and timeline. No hidden costs.",
+			pl: "W ciągu 48 h dostajesz zakres, cenę i harmonogram. Bez ukrytych kosztów.",
+			en: "Within 48 h you get the scope, price and timeline. No hidden costs.",
 		},
 	},
 	{

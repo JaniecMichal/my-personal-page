@@ -1,8 +1,10 @@
 import NextLink from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/container";
+import { EmailLink } from "@/components/ui/email-link";
 import { content } from "@/content";
 import { Link } from "@/i18n/navigation";
+import { encodeEmail } from "@/lib/email";
 
 const linkClass = "text-inverse-ink/80 no-underline hover:text-inverse-ink";
 
@@ -42,7 +44,7 @@ export async function Footer() {
 				</div>
 				<div className="flex flex-col gap-3 text-muted">
 					<span className="label">{settings.name}</span>
-					<a href={`mailto:${settings.email}`} className={linkClass}>{settings.email}</a>
+					<EmailLink encoded={encodeEmail(settings.email)} className={linkClass} />
 					<span>{settings.location}</span>
 					<span>
 						{t("footer.rights", { year: new Date().getFullYear() })} ·{" "}

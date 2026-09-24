@@ -11,20 +11,20 @@ Related docs: [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./sear
 
 ## 1. Save the work (5 min)
 
-- [ ] Commit the rebuild on `rebuild` with the personal identity (JaniecMichal), then push.
-- [ ] Open a PR `rebuild` → `main`. Vercel builds a **preview URL**: check it on your phone and share it for feedback before anything goes live.
+- [x] Commit the rebuild on `rebuild` with the personal identity (JaniecMichal), then push.
+- [x] Open a PR `rebuild` → `main`. Vercel builds a **preview URL**: check it on your phone and share it for feedback before anything goes live.
 
 ## 2. Fill in real content (you, ~1–2 h)
 
 All placeholders look like `[X]`, `[MIESIĄC]`, `[LEVEL]`. Find them with `grep -rn "\[" src/content src/messages`.
 
-- [ ] **Prices** in `src/content/local/services.ts` and `marketing.ts` (every `[X] zł` / `[X] PLN`). Starting point from the earlier WordPress/Shopify quote: 140–160 zł/h.
-- [ ] **Availability** in `src/content/local/settings.ts` (`availability`), or set it to `null` to hide the status line.
-- [ ] **Case studies** in `src/content/local/work.ts`: real metrics (Lighthouse, LCP, traffic, leads), the "Result" chapter, screenshots in `public/work/` (set `cover` / `gallery`), and a 2–3 sentence client quote with permission to publish.
-- [ ] **CV facts** in `settings.ts` (`cvFacts`): English level, notice period / availability date.
-- [ ] **Invoicing** answer in the FAQ (`marketing.ts`, id `invoice`).
-- [ ] **Privacy policy**: business name and address in `src/messages/{pl,en}.json` → `privacy.body.p1`.
-- [ ] Optional: phone number (`settings.ts` → `phone`), a new photo, an updated CV PDF (`public/michal_janiec_cv.pdf`).
+- [x] **Prices**: landing page od 500 zł, website with CMS od 2 900 zł, Shopify od 2 500 / 5 900 zł, audit od 900 zł, one rate 120 zł/h, trial task up to 10 h at 100 zł/h (all net).
+- [x] **Availability**: "Open to new projects", no date.
+- [ ] **Case studies** in `src/content/local/work.ts` (nazielono.pro done; jemWszkole.pl and Braintrust still need metrics and screenshots): real metrics (Lighthouse, LCP, traffic, leads), the "Result" chapter, screenshots in `public/work/` (set `cover` / `gallery`), and a 2–3 sentence client quote with permission to publish.
+- [x] **CV facts**: English B2, no notice period shown.
+- [x] **Invoicing**: sole trader with VAT invoices, also contract for specific work / mandate contract.
+- [x] **Privacy policy**: business name, city and NIP (no street address, on purpose). The email is obfuscated site-wide (`EmailLink`).
+- [ ] Optional: phone number (`settings.ts` → `phone`), a new photo, an updated CV PDF (`public/michal_janiec_cv.pdf`; it still contains the email as plain text).
 
 See [content-guide.md](./content-guide.md) for *what* to write.
 

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BriefForm } from "@/components/contact/brief-form";
 import { Container } from "@/components/ui/container";
+import { EmailLink } from "@/components/ui/email-link";
 import { content } from "@/content";
 import type { Locale } from "@/i18n/routing";
+import { encodeEmail } from "@/lib/email";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -28,7 +30,7 @@ export default async function ContactPage({ params }: Props) {
 					<p className="max-w-[440px] text-base leading-relaxed text-ink-soft md:text-[17px]">{t("lead")}</p>
 					<div className="flex flex-col gap-3.5 border-t border-ink pt-6 text-[15px]">
 						<span className="label">{t("alt")}</span>
-						<a href={`mailto:${settings.email}`} className="text-accent">{settings.email}</a>
+						<EmailLink encoded={encodeEmail(settings.email)} className="text-accent" />
 						{settings.phone && <a href={`tel:${settings.phone.replace(/\s/g, "")}`}>{settings.phone}</a>}
 						{settings.socials.map((s) => (
 							<a key={s.href} href={s.href} target="_blank" rel="me noopener" className="text-accent">
@@ -39,7 +41,7 @@ export default async function ContactPage({ params }: Props) {
 					</div>
 				</div>
 				<div className="lg:col-span-6 lg:col-start-7">
-					<BriefForm email={settings.email} />
+					<BriefForm encodedEmail={encodeEmail(settings.email)} />
 				</div>
 			</Container>
 		</section>

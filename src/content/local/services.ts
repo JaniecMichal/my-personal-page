@@ -1,6 +1,5 @@
 import type { LocalService } from "./resolve";
 
-// TODO: replace every [X] with real prices and timelines before launch.
 export const services: LocalService[] = [
 	{
 		id: "nextjs-websites",
@@ -16,8 +15,8 @@ export const services: LocalService[] = [
 			en: "A business website that loads in a blink, looks great on phones and is ready for SEO. Built in Next.js with a friendly CMS for your content.",
 		},
 		tags: ["Next.js", "SEO", "CMS"],
-		priceFrom: { pl: "od [X] zł", en: "from [X] PLN" },
-		timeline: { pl: "[2–3] tygodnie", en: "[2–3] weeks" },
+		priceFrom: { pl: "od 500 zł", en: "from 500 PLN" },
+		timeline: { pl: "od kilku dni do 3 tygodni", en: "a few days to 3 weeks" },
 		included: [
 			{
 				title: { pl: "Projekt i wdrożenie", en: "Design to launch" },
@@ -48,7 +47,41 @@ export const services: LocalService[] = [
 				},
 			},
 		],
-		plans: [],
+		plans: [
+			{
+				id: "nextjs-landing",
+				kicker: { pl: "Na dobry start", en: "Quick start" },
+				name: "Landing page",
+				price: { pl: "od 500 zł", en: "from 500 PLN" },
+				features: {
+					pl: ["1 strona, do 6 sekcji", "z Twojego projektu graficznego", "bez CMS", "wdrożenie + 1 runda poprawek"],
+					en: ["1 page, up to 6 sections", "from your ready design", "no CMS", "launch + 1 round of fixes"],
+				},
+				highlighted: false,
+			},
+			{
+				id: "nextjs-website",
+				kicker: { pl: "Dla małych firm", en: "For small businesses" },
+				name: { pl: "Strona firmowa z CMS", en: "Website with CMS" },
+				price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
+				features: {
+					pl: ["do 5 podstron", "CMS do edycji", "SEO i dane strukturalne", "wdrożenie + 30 dni wsparcia"],
+					en: ["up to 5 pages", "editable CMS", "SEO and structured data", "launch + 30 days support"],
+				},
+				highlighted: true,
+			},
+			{
+				id: "nextjs-care",
+				kicker: { pl: "Dla działających stron", en: "For live sites" },
+				name: { pl: "Zmiany i opieka", en: "Changes and care" },
+				price: { pl: "120 zł/h", en: "120 PLN/h" },
+				features: {
+					pl: ["nowe sekcje i poprawki", "aktualizacje zależności", "rozliczenie co 15 min", "minimum 1 h"],
+					en: ["new sections and fixes", "dependency updates", "billed per 15 min", "1 h minimum"],
+				},
+				highlighted: false,
+			},
+		],
 		faq: [],
 		seo: {},
 	},
@@ -66,8 +99,8 @@ export const services: LocalService[] = [
 			en: "Setup, a theme tailored to your brand, fixes and integrations. Built by a senior frontend developer, so the store is fast on mobile and easy for you to run.",
 		},
 		tags: ["Shopify", "Liquid"],
-		priceFrom: { pl: "od [X] zł", en: "from [X] PLN" },
-		timeline: { pl: "[3–5] tygodni", en: "[3–5] weeks" },
+		priceFrom: { pl: "od 2 500 zł", en: "from 2,500 PLN" },
+		timeline: { pl: "3–5 tygodni", en: "3–5 weeks" },
 		included: [
 			{
 				title: { pl: "Konfiguracja sklepu", en: "Store setup" },
@@ -117,10 +150,10 @@ export const services: LocalService[] = [
 				id: "shopify-starter",
 				kicker: { pl: "Na start", en: "To get started" },
 				name: "Starter",
-				price: { pl: "od [X] zł", en: "from [X] PLN" },
+				price: { pl: "od 2 500 zł", en: "from 2,500 PLN" },
 				features: {
-					pl: ["dopasowanie motywu", "do [50] produktów", "płatności i dostawy", "checklista startowa"],
-					en: ["theme customisation", "up to [50] products", "payments and shipping", "launch checklist"],
+					pl: ["dopasowanie motywu", "do 50 produktów", "płatności i dostawy", "checklista startowa"],
+					en: ["theme customisation", "up to 50 products", "payments and shipping", "launch checklist"],
 				},
 				highlighted: false,
 			},
@@ -128,7 +161,7 @@ export const services: LocalService[] = [
 				id: "shopify-brand",
 				kicker: { pl: "Najczęściej wybierany", en: "Most popular" },
 				name: { pl: "Sklep marki", en: "Brand store" },
-				price: { pl: "od [X] zł", en: "from [X] PLN" },
+				price: { pl: "od 5 900 zł", en: "from 5,900 PLN" },
 				features: {
 					pl: ["własne sekcje", "migracja i import", "przegląd szybkości i SEO", "szkolenie + 30 dni opieki"],
 					en: ["custom sections", "migration and import", "speed and SEO pass", "training + 30 days care"],
@@ -139,7 +172,7 @@ export const services: LocalService[] = [
 				id: "shopify-care",
 				kicker: { pl: "Dla działających sklepów", en: "For live stores" },
 				name: { pl: "Poprawki i opieka", en: "Fixes and care" },
-				price: { pl: "[X] zł/h", en: "[X] PLN/h" },
+				price: { pl: "120 zł/h", en: "120 PLN/h" },
 				features: {
 					pl: ["błędy i nowe sekcje", "porządki w aplikacjach", "miesięczny raport", "szybka reakcja"],
 					en: ["bug fixes, new sections", "app clean-up", "monthly report", "priority response"],
@@ -164,8 +197,8 @@ export const services: LocalService[] = [
 			en: "Got a WordPress site that is slow or needs changes? I fix bugs, add sections, tidy up plugins and make it load faster.",
 		},
 		tags: ["WordPress", "PHP"],
-		priceFrom: { pl: "od [X] zł", en: "from [X] PLN" },
-		timeline: { pl: "od [kilku dni]", en: "from [a few days]" },
+		priceFrom: { pl: "120 zł/h", en: "120 PLN/h" },
+		timeline: { pl: "od 1 dnia", en: "from 1 day" },
 		included: [
 			{
 				title: { pl: "Audyt na start", en: "Audit first" },
@@ -207,7 +240,7 @@ export const services: LocalService[] = [
 			en: "I build app interfaces in React and Next.js: client portals, SaaS, startup MVPs. With TypeScript, tests and an architecture that still holds up six months later.",
 		},
 		tags: ["React", "TypeScript", "Next.js"],
-		priceFrom: { pl: "wycena", en: "quote" },
+		priceFrom: { pl: "120 zł/h", en: "120 PLN/h" },
 		timeline: { pl: "zależnie od zakresu", en: "depends on scope" },
 		included: [],
 		plans: [],
@@ -228,8 +261,8 @@ export const services: LocalService[] = [
 			en: "Your Rails team needs someone for the UI? I write ERB views, Stimulus controllers and Tailwind, read Rails code and work well with backend developers.",
 		},
 		tags: ["Rails", "Stimulus", "Tailwind"],
-		priceFrom: { pl: "[X] zł/h", en: "[X] PLN/h" },
-		timeline: { pl: "od zaraz lub od [DATA]", en: "now or from [DATE]" },
+		priceFrom: { pl: "120 zł/h", en: "120 PLN/h" },
+		timeline: { pl: "start do ustalenia", en: "start date by agreement" },
 		included: [],
 		plans: [],
 		faq: [],
@@ -249,8 +282,8 @@ export const services: LocalService[] = [
 			en: "I measure Core Web Vitals, check technical SEO and accessibility, then hand you a list of fixes, most important first. I can implement them too.",
 		},
 		tags: ["Lighthouse", "CWV", "SEO"],
-		priceFrom: { pl: "od [X] zł", en: "from [X] PLN" },
-		timeline: { pl: "[3–5] dni", en: "[3–5] days" },
+		priceFrom: { pl: "od 900 zł", en: "from 900 PLN" },
+		timeline: { pl: "3–5 dni", en: "3–5 days" },
 		included: [],
 		plans: [],
 		faq: [],

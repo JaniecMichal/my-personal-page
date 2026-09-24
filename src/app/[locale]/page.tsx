@@ -14,6 +14,7 @@ import { JsonLd } from "@/components/ui/json-ld";
 import { SectionHeader } from "@/components/ui/section-header";
 import { content } from "@/content";
 import type { Locale } from "@/i18n/routing";
+import { encodeEmail } from "@/lib/email";
 import { businessJsonLd, faqJsonLd } from "@/lib/json-ld";
 import { pageMetadata } from "@/lib/seo";
 
@@ -73,7 +74,7 @@ export default async function HomePage({ params }: Props) {
 					</div>
 				</Container>
 			</section>
-			<FinalCta email={settings.email} />
+			<FinalCta encodedEmail={encodeEmail(settings.email)} />
 			<JsonLd data={[businessJsonLd(settings, locale, services), faqJsonLd(faq)]} />
 		</>
 	);

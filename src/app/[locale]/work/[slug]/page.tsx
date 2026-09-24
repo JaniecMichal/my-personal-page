@@ -12,6 +12,7 @@ import { content } from "@/content";
 import { Link } from "@/i18n/navigation";
 import { type Locale, routing } from "@/i18n/routing";
 import { breadcrumbJsonLd } from "@/lib/json-ld";
+import { cn } from "@/lib/cn";
 import { localizedUrl, pageMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 
@@ -114,13 +115,22 @@ export default async function CaseStudyPage({ params }: Props) {
 				))}
 			</Container>
 
-			<Container className="grid gap-5 lg:grid-cols-12">
+			<Container className="grid items-start gap-5 sm:grid-cols-12 lg:gap-6">
 				{study.gallery.length > 0 ? (
 					study.gallery.map((img) => (
-						<Image key={img.src} src={img.src} alt={img.alt} width={img.width} height={img.height} className="w-full lg:col-span-6" />
+						<Image
+							key={img.src}
+							src={img.src}
+							alt={img.alt}
+							width={img.width}
+							height={img.height}
+							sizes={img.height > img.width ? "(min-width: 1024px) 33vw, 100vw" : "(min-width: 1024px) 50vw, 100vw"}
+							// Phone screenshots sit three in a row, desktop ones two in a row.
+							className={cn("w-full", img.height > img.width ? "mx-auto max-w-[390px] sm:col-span-4" : "sm:col-span-12 lg:col-span-6")}
+						/>
 					))
 				) : (
-					<ImagePlaceholder label={t("screenshot")} className="aspect-[16/9] lg:col-span-12" />
+					<ImagePlaceholder label={t("screenshot")} className="aspect-[16/9] sm:col-span-12" />
 				)}
 			</Container>
 

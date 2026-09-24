@@ -1,9 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import { Sphere } from "@/components/effects/sphere";
-import { ButtonAnchor, ButtonLink } from "@/components/ui/button-link";
+import { ButtonLink, buttonClass } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { EmailLink } from "@/components/ui/email-link";
 
-export async function FinalCta({ email }: { email: string }) {
+export async function FinalCta({ encodedEmail }: { encodedEmail: string }) {
 	const t = await getTranslations();
 
 	return (
@@ -19,9 +20,7 @@ export async function FinalCta({ email }: { email: string }) {
 				<p className="max-w-[560px] text-base leading-relaxed text-ink-soft md:text-lg">{t("home.final.lead")}</p>
 				<div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
 					<ButtonLink href="/contact">{t("common.cta.brief")} ↗</ButtonLink>
-					<ButtonAnchor href={`mailto:${email}`} variant="light">
-						{email}
-					</ButtonAnchor>
+					<EmailLink encoded={encodedEmail} className={buttonClass("light")} />
 				</div>
 			</Container>
 		</section>

@@ -142,7 +142,7 @@
 			"description": "Przejrzyste ceny stron w Next.js, sklepów Shopify i współpracy godzinowej. Wycena w 24 godziny po krótkim briefie."
 		},
 		"title": "Cennik",
-		"lead": "Ceny orientacyjne netto. Dokładną wycenę dostajesz po krótkim briefie, zwykle w ciągu 24 godzin.",
+		"lead": "Ceny orientacyjne netto. Dokładną wycenę dostajesz po krótkim briefie, zwykle w ciągu 48 godzin.",
 		"drivers": "Co wpływa na cenę",
 		"driverList": {
 			"d1": "liczba podstron i szablonów",
@@ -253,7 +253,7 @@
 		},
 		"title": "Polityka prywatności",
 		"body": {
-			"p1": "Administratorem danych jest Michał Janiec, [DANE DZIAŁALNOŚCI / ADRES], e-mail: michal.janiec95@gmail.com.",
+			"p1": "Administratorem danych jest Michał Janiec, prowadzący działalność gospodarczą pod firmą Michał Janiec - FrontDev, Katowice, NIP 9542827947, e-mail: <email></email>.",
 			"p2": "Dane z formularza (imię, e-mail, firma, opis projektu) przetwarzam wyłącznie po to, żeby odpowiedzieć na zapytanie i przygotować ofertę (art. 6 ust. 1 lit. a i b RODO).",
 			"p3": "Wiadomości są wysyłane przez Mailgun (Sinch Mailgun, serwery w UE). Nie sprzedaję ani nie udostępniam danych innym podmiotom.",
 			"p4": "Dane przechowuję do zakończenia rozmów o współpracy, a potem maksymalnie 12 miesięcy. Masz prawo dostępu, sprostowania, usunięcia i ograniczenia przetwarzania oraz prawo skargi do Prezesa UODO.",

@@ -19,7 +19,7 @@ export async function GET() {
 		"",
 		`> ${settings.seo.description}`,
 		"",
-		`Location: ${settings.location}. Contact: ${settings.email}. Languages: Polish, English.`,
+		`Location: ${settings.location}. Contact: brief form at ${localizedUrl("/contact", locale)}. Languages: Polish, English.`,
 		settings.availability ? `Availability: ${settings.availability}.` : "",
 		"",
 		"## Services",
