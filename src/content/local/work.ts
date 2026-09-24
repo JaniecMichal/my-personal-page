@@ -1,6 +1,5 @@
 import type { LocalCaseStudy } from "./resolve";
 
-// TODO: add real metrics, screenshots (public/work/*) and client quotes.
 export const caseStudies: LocalCaseStudy[] = [
 	{
 		id: "nazielono-pro",
@@ -302,36 +301,120 @@ export const caseStudies: LocalCaseStudy[] = [
 			en: "A Web3 talent marketplace with a 50-engineer team",
 		},
 		summary: {
-			pl: "3,5 roku przy amerykańskim marketplace z infrastrukturą tokenów i NFT.",
-			en: "3.5 years on a US marketplace with token and NFT infrastructure.",
+			pl: "3,5 roku przy amerykańskim marketplace freelancerów opartym na Web3: od komponentów i testów po prowadzenie zespołu i architekturę nowych modułów.",
+			en: "3.5 years on a US freelance marketplace built on Web3: from components and tests to leading a team and designing new modules.",
 		},
 		period: { pl: "06.2021 → 12.2024", en: "Jun 2021 → Dec 2024" },
-		role: { pl: "Frontend Developer", en: "Frontend Developer" },
-		stack: ["React", "TypeScript", "Redux", "GraphQL", "RTK Query"],
+		role: { pl: "Frontend Developer, lider zespołu", en: "Frontend Developer, team lead" },
+		stack: ["React", "TypeScript", "Redux", "RTK Query", "Jest", "React Testing Library", "SASS", "Material UI"],
 		services: ["web-apps"],
-		metrics: [{ value: { pl: "3,5 ROKU", en: "3.5 YEARS" }, label: { pl: "w projekcie", en: "on the project" } }],
+		metrics: [
+			{ value: { pl: "3,5 ROKU", en: "3.5 YEARS" }, label: { pl: "w projekcie", en: "on the project" } },
+			{ value: "50", label: { pl: "inżynierów w zespole", en: "engineers on the team" } },
+			{ value: "Senior", label: { pl: "od juniora do seniora w projekcie", en: "from junior to senior on the project" } },
+		],
 		chapters: [
 			{
 				title: { pl: "Kontekst", en: "Context" },
 				body: {
-					pl: ["Braintrust to amerykański marketplace freelancerów oparty o Web3. Pracowałem w 50-osobowym zespole inżynierów przez HexOcean."],
-					en: ["Braintrust is a US freelance talent marketplace built on Web3. I worked in a 50-person engineering team through HexOcean."],
+					pl: [
+						"Braintrust to amerykański marketplace freelancerów oparty na Web3, z własnym tokenem BTRST. Przez HexOcean pracowałem przy nim 3,5 roku, w 50-osobowym zespole inżynierów.",
+						"Brałem udział w całym procesie rozwoju aplikacji, łącznie z bezpośrednią współpracą z klientem: zbieraniem wymagań i feedbacku. Dzięki temu lepiej rozumiałem potrzeby biznesowe i techniczne.",
+					],
+					en: [
+						"Braintrust is a US freelance talent marketplace built on Web3, with its own BTRST token. Through HexOcean I worked on it for 3.5 years, in a 50-person engineering team.",
+						"I took part in the whole development process, including working directly with the client to gather requirements and feedback, which helped me understand both the business and the technical needs.",
+					],
 				},
 			},
 			{
-				title: { pl: "Moja rola", en: "My role" },
+				title: { pl: "Zakres pracy", en: "What I did" },
 				body: {
-					pl: ["Od juniora do dewelopera, który samodzielnie dowozi funkcje end-to-end, w tym przepisanie całego systemu na nowoczesny stack."],
-					en: ["From junior to a developer who owns features end-to-end, including rewriting an entire system onto a modern stack."],
+					pl: [
+						"Budowałem wydajne komponenty React wielokrotnego użytku, ze stylami i testami jednostkowymi, dbając o spójny i łatwy w utrzymaniu interfejs. Tworzyłem złożone, wieloetapowe formularze oraz pisałem testy jednostkowe i integracyjne, które pilnowały jakości i niezawodności kodu.",
+						"Wdrażałem nowe funkcje i logikę biznesową, projektowałem i kodowałem szablony e-maili HTML oraz regularnie robiłem code review. Refaktoryzowałem kod, od drobnych usprawnień po zmiany architektury, co poprawiło wydajność i strukturę aplikacji. Szybko rozwiązywałem błędy zgłaszane przez zespół QA, żeby produkt pozostał stabilny.",
+					],
+					en: [
+						"I built efficient, reusable React components with styles and unit tests, keeping the interface consistent and easy to maintain. I created complex multi-step forms and wrote unit and integration tests that kept the code reliable.",
+						"I shipped new features and business logic, designed and coded HTML email templates, and did regular code reviews. I refactored code, from small improvements to architectural changes, which improved the app's performance and structure, and I fixed issues reported by QA quickly to keep the product stable.",
+					],
+				},
+			},
+			{
+				title: { pl: "Prowadzenie zespołu i architektura", en: "Leading and architecture" },
+				body: {
+					pl: [
+						"W bezpośrednim kontakcie z klientem doprecyzowywałem wymagania nowych funkcji i doradzałem technicznie, tak żeby rozwiązania były spójne z celami biznesowymi projektu.",
+						"Zarządzałem zespołem deweloperskim i dowoziłem nowe funkcje w ramach przydzielonego zakresu, na czas. Projektowałem architekturę nowych części aplikacji, tak aby były skalowalne i łatwe w utrzymaniu.",
+					],
+					en: [
+						"Working directly with the client, I clarified requirements for new features and gave technical advice, so that solutions stayed aligned with the project's business goals.",
+						"I managed a development team and delivered new features on time within the assigned scope. I designed the architecture for new parts of the app to keep them scalable and maintainable.",
+					],
+				},
+			},
+			{
+				title: { pl: "Efekt", en: "Result" },
+				body: {
+					pl: [
+						"W trakcie projektu przeszedłem drogę od juniora do seniora. Nauczyłem się precyzyjnie szacować czas potrzebny na dostarczenie wartości biznesowej i rozwinąłem umiejętności pracy z klientem, zarządzania projektem i projektowania architektury.",
+					],
+					en: [
+						"Over the project I grew from junior to senior developer. I learned to estimate accurately how long it takes to deliver business value, and sharpened my skills in client work, project management and software architecture.",
+					],
 				},
 			},
 		],
 		quote: {
 			text: "Michał consistently demonstrated his ability to handle complex projects independently, including successfully rewriting an entire system to adopt a modern tech stack.",
 			author: "Daniel Kowalczyk",
-			role: "Co-founder, HexOcean",
+			role: { pl: "Team Leader w projekcie Braintrust, co-founder HexOcean", en: "Team Leader on Braintrust, co-founder of HexOcean" },
 		},
-		gallery: [],
+		cover: {
+			src: "/work/braintrust/home-desktop.png",
+			alt: { pl: "Panel freelancera w Braintrust", en: "Braintrust talent dashboard" },
+			width: 1910,
+			height: 957,
+		},
+		gallery: [
+			{
+				src: "/work/braintrust/home-desktop.png",
+				alt: { pl: "Panel freelancera w Braintrust: zadania do wykonania i dopasowane oferty", en: "Braintrust talent dashboard: action items and job matches" },
+				width: 1910,
+				height: 957,
+			},
+			{
+				src: "/work/braintrust/jobs-desktop.png",
+				alt: { pl: "Lista ofert pracy z filtrami", en: "Job listings with filters" },
+				width: 1910,
+				height: 957,
+			},
+			{
+				src: "/work/braintrust/job-details-desktop.png",
+				alt: { pl: "Szczegóły oferty: stawka, wymagania, polecenia w tokenach BTRST", en: "Job details: rate, requirements and BTRST referral rewards" },
+				width: 1910,
+				height: 957,
+			},
+			{
+				src: "/work/braintrust/wallet-desktop.png",
+				alt: { pl: "Portfel tokenów BTRST z historią aktywności", en: "BTRST token wallet with activity history" },
+				width: 1910,
+				height: 957,
+			},
+			{
+				src: "/work/braintrust/home-mobile.png",
+				alt: { pl: "Panel freelancera na telefonie", en: "Talent dashboard on a phone" },
+				width: 405,
+				height: 717,
+			},
+			{
+				src: "/work/braintrust/jobs-mobile.png",
+				alt: { pl: "Oferty pracy na telefonie", en: "Job listings on a phone" },
+				width: 405,
+				height: 717,
+			},
+		],
+		liveUrl: "https://www.usebraintrust.com",
 		seo: {},
 	},
 ];

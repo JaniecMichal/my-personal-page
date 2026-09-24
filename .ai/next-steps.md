@@ -20,7 +20,7 @@ All placeholders look like `[X]`, `[MIESIĄC]`, `[LEVEL]`. Find them with `grep 
 
 - [x] **Prices**: landing page od 500 zł, website with CMS od 2 900 zł, Shopify od 2 500 / 5 900 zł, audit od 900 zł, one rate 120 zł/h, trial task up to 10 h at 100 zł/h (all net).
 - [x] **Availability**: "Open to new projects", no date.
-- [ ] **Case studies** in `src/content/local/work.ts` (nazielono.pro and jemWszkole.pl done, jemWszkole number metrics hidden in a `TODO(metrics)` comment; Braintrust still to do): real metrics (Lighthouse, LCP, traffic, leads), the "Result" chapter, screenshots in `public/work/` (set `cover` / `gallery`), and a 2–3 sentence client quote with permission to publish.
+- [x] **Case studies** in `src/content/local/work.ts`: nazielono.pro, jemWszkole.pl and Braintrust done (jemWszkole number metrics hidden in a `TODO(metrics)` comment until real data exists): real metrics (Lighthouse, LCP, traffic, leads), the "Result" chapter, screenshots in `public/work/` (set `cover` / `gallery`), and a 2–3 sentence client quote with permission to publish.
 - [x] **CV facts**: English B2, no notice period shown.
 - [x] **Invoicing**: sole trader with VAT invoices, also contract for specific work / mandate contract.
 - [x] **Privacy policy**: business name, city and NIP (no street address, on purpose). The email is obfuscated site-wide (`EmailLink`).
