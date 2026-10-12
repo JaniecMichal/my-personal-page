@@ -39,7 +39,8 @@
 			"profile": "Profile",
 			"terminal": "Prefer a terminal?",
 			"privacy": "Privacy policy",
-			"rights": "© {year} Michał Janiec"
+			"rights": "© {year} Michał Janiec",
+			"local": "Local"
 		},
 		"breadcrumbHome": "Home",
 		"translatedQuote": "Translated from Polish"
@@ -195,6 +196,7 @@
 				"webapp": "React web app",
 				"team": "Frontend for a team",
 				"audit": "Speed / SEO audit",
+				"marketing": "SEO / Google Ads",
 				"job": "Job offer / hiring",
 				"other": "Something else"
 			},

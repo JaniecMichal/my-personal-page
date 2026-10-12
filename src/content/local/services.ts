@@ -500,4 +500,87 @@ export const services: LocalService[] = [
 		faq: [],
 		seo: {},
 	},
+	{
+		id: "seo-sem",
+		slug: { pl: "seo-i-google-ads", en: "seo-and-google-ads" },
+		order: 8,
+		title: { pl: "SEO i Google Ads", en: "SEO and Google Ads" },
+		summary: {
+			pl: "Pozycjonowanie i kampanie reklamowe z agencją Na Zielono. Ja dbam o stronę, oni o ruch i wyniki.",
+			en: "Search rankings and ad campaigns with the Na Zielono agency. I take care of the site, they bring the traffic and results.",
+		},
+		intro: {
+			pl: "Dobra strona to połowa sukcesu, druga połowa to ruch. Pozycjonowanie i kampanie w Google prowadzi agencja Na Zielono, z którą współpracuję na co dzień (zbudowałem i utrzymuję ich stronę). Ty masz jeden kontakt, a strona i marketing grają do jednej bramki.",
+			en: "A good website is half the job, the other half is traffic. SEO and Google campaigns are run by Na Zielono, a marketing agency I work with every day (I built and maintain their website). You get one point of contact, and the site and marketing pull in the same direction.",
+		},
+		tags: ["SEO", "Google Ads", "GA4"],
+		priceFrom: { pl: "bezpłatna wycena", en: "free quote" },
+		timeline: { pl: "stała współpraca", en: "ongoing" },
+		included: [
+			{
+				title: { pl: "Pozycjonowanie (SEO)", en: "Search engine optimisation" },
+				description: {
+					pl: "Analiza potrzeb i konkurencji, audyt strony, optymalizacja treści pod frazy i wyszukiwarki AI, plan treści i linki.",
+					en: "Needs and competitor research, a site audit, content optimised for search phrases and AI answers, a content plan and link building.",
+				},
+			},
+			{
+				title: { pl: "Kampanie Google Ads", en: "Google Ads campaigns" },
+				description: {
+					pl: "Kampanie w wyszukiwarce i sieci reklamowej, elastyczne zarządzanie budżetem, rozwój konta i regularne rekomendacje.",
+					en: "Search and display campaigns, flexible budget management, account growth and regular recommendations.",
+				},
+			},
+			{
+				title: { pl: "Analityka", en: "Analytics" },
+				description: {
+					pl: "Wdrożenie GA4 i śledzenia konwersji, żeby było widać, które zapytania i sprzedaż dają kampanie i SEO.",
+					en: "GA4 and conversion tracking, so you can see which enquiries and sales come from campaigns and SEO.",
+				},
+			},
+			{
+				title: { pl: "Strona gotowa na ruch", en: "A site ready for traffic" },
+				description: {
+					pl: "Po mojej stronie: szybkość, SEO techniczne, strony docelowe pod kampanie i poprawki, o które poprosi agencja.",
+					en: "My side: speed, technical SEO, landing pages for campaigns and the changes the agency asks for.",
+				},
+			},
+		],
+		plans: [],
+		faq: [
+			{
+				id: "seo-sem-faq-1",
+				question: { pl: "Kto prowadzi SEO i kampanie?", en: "Who runs the SEO and campaigns?" },
+				answer: {
+					pl: "Agencja Na Zielono (nazielono.pro), specjaliści od SEO i reklam w Google. Ja odpowiadam za stronę i technikę, oni za strategię, treści i kampanie. Zanim zaczniemy, poznajesz ich bezpośrednio.",
+					en: "Na Zielono (nazielono.pro), specialists in SEO and Google advertising. I'm responsible for the website and the technical side, they handle strategy, content and campaigns. You meet them directly before we start.",
+				},
+			},
+			{
+				question: { pl: "Ile to kosztuje?", en: "How much does it cost?" },
+				id: "seo-sem-faq-2",
+				answer: {
+					pl: "Wycenę przygotowuje agencja po krótkiej rozmowie o celach i budżecie reklamowym. Prace przy stronie rozliczam osobno, według mojego cennika.",
+					en: "The agency prepares a quote after a short conversation about your goals and ad budget. Work on the website is billed separately, at my usual rates.",
+				},
+			},
+			{
+				id: "seo-sem-faq-3",
+				question: {
+					pl: "Czy muszę mieć stronę zrobioną przez Ciebie?",
+					en: "Does my site have to be built by you?",
+				},
+				answer: {
+					pl: "Nie. Jeśli masz stronę, zaczynamy od audytu i poprawek technicznych, a agencja przejmuje SEO i kampanie.",
+					en: "No. If you already have a site, we start with an audit and technical fixes, and the agency takes over SEO and campaigns.",
+				},
+			},
+		],
+		seo: {
+			title: {
+				pl: "SEO i Google Ads z Na Zielono | Michał Janiec",
+				en: "SEO and Google Ads with Na Zielono | Michał Janiec",
+			},
+		},
+	},
 ];

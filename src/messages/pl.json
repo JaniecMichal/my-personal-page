@@ -39,7 +39,8 @@
 			"profile": "Profil",
 			"terminal": "Wolisz terminal?",
 			"privacy": "Polityka prywatności",
-			"rights": "© {year} Michał Janiec"
+			"rights": "© {year} Michał Janiec",
+			"local": "Lokalnie"
 		},
 		"breadcrumbHome": "Start",
 		"translatedQuote": "Tłumaczenie z języka angielskiego"
@@ -195,6 +196,7 @@
 				"webapp": "Aplikacja React",
 				"team": "Frontend dla zespołu",
 				"audit": "Audyt szybkości / SEO",
+				"marketing": "SEO / Google Ads",
 				"job": "Oferta pracy / rekrutacja",
 				"other": "Coś innego"
 			},

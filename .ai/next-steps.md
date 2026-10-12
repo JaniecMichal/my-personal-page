@@ -158,6 +158,14 @@ Done on the branch:
 - [x] Local page **Katowice**: new content type `LocalPage`, route `/pl/strony-internetowe/[slug]`
   ↔ `/en/web-design/[slug]`, districts and nearby towns named on one page, local FAQ, Service JSON-LD
   with `areaServed`, linked from the footer and in the sitemap.
+- [x] Hero line field also on **Realizacje** (black section, light lines behind the title).
+- [x] Footer: local pages as their own "Lokalnie" group under Usługi.
+- [x] New service **SEO i Google Ads** (`seo-sem`, `/pl/uslugi/seo-i-google-ads`): SEO and campaigns
+  run by the Na Zielono agency, Michał handles the site. Own wording (no copied text: duplicate
+  content would hurt both sites), no unsourced numbers. Brief form got a "SEO / Google Ads" type.
+  The "30 dni wsparcia" row on service pages now shows only for services with packages.
+- [x] Standalone docs: [lead-generation-brief.md](./lead-generation-brief.md) (PL, paste into a
+  strategy session) and [logo-brief.md](./logo-brief.md) with 3 SVG concepts in `.ai/brand/`.
 - [x] Visuality-inspired (not copied): scroll reveal (`ScrollReveal`, `data-reveal`) and the
   `link-draw` underline.
 
@@ -176,6 +184,9 @@ To check / decide (Michał):
   not right.
 - [ ] Business-website FAQ: "domain, hosting and code are in your name" and the stock-photo answer.
 - [ ] Privacy text now says Mailgun US servers + SCCs (since 2026-10-12).
+- [ ] Agree the referral terms with Na Zielono (commission, who invoices, how leads are handed
+  over) and confirm Konrad is fine with being named on the SEO page.
+- [ ] Pick a logo concept (`.ai/logo-brief.md`), then replace favicon / header mark.
 - [ ] Replace the account-level Mailgun key in `.env.local` / Vercel with a domain sending key.
 
 Follow-ups:

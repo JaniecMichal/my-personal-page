@@ -33,6 +33,16 @@ export async function Footer() {
 							{s.title}
 						</Link>
 					))}
+					{localPages.length > 0 && <span className="mt-6 mb-2 label">{t("footer.local")}</span>}
+					{localPages.map((page) => (
+						<Link
+							key={page.slug}
+							href={{ pathname: "/local/[slug]", params: { slug: page.slug } }}
+							className={linkClass}
+						>
+							{page.title}
+						</Link>
+					))}
 				</div>
 				<div className="flex flex-col">
 					<span className="mb-2 label">{t("footer.site")}</span>
@@ -48,15 +58,6 @@ export async function Footer() {
 					<Link href="/contact" className={linkClass}>
 						{t("nav.contact")}
 					</Link>
-					{localPages.map((page) => (
-						<Link
-							key={page.slug}
-							href={{ pathname: "/local/[slug]", params: { slug: page.slug } }}
-							className={linkClass}
-						>
-							{page.title}
-						</Link>
-					))}
 				</div>
 				<div className="flex flex-col">
 					<span className="mb-2 label">{t("footer.profile")}</span>
