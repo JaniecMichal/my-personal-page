@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 const VARIANTS = {
 	primary: "bg-accent text-on-accent hover:bg-accent-hover",
 	ink: "bg-ink text-ground hover:bg-accent hover:text-on-accent",
-	line: "text-ink shadow-[inset_0_0_0_1px_var(--ink)] hover:bg-ink hover:text-ground",
+	line: "chamfer-edge text-ink shadow-[inset_0_0_0_1px_var(--ink)] hover:bg-ink hover:text-ground",
 	light: "bg-inverse-ink text-inverse hover:bg-accent hover:text-on-accent",
 } as const;
 

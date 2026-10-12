@@ -197,6 +197,23 @@
 	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
 }
 
+/*
+ * For outlined chamfer buttons: the clip-path also cuts the inset border, so this draws the
+ * 1px diagonal edge across the 12px corner in the current border colour.
+ */
+@utility chamfer-edge {
+	background-image: linear-gradient(
+		to bottom right,
+		transparent calc(50% - 0.75px),
+		var(--ink) calc(50% - 0.75px),
+		var(--ink) calc(50% + 0.75px),
+		transparent calc(50% + 0.75px)
+	);
+	background-position: 100% 100%;
+	background-size: 12px 12px;
+	background-repeat: no-repeat;
+}
+
 @utility u-accent {
 	text-decoration-line: underline;
 	text-decoration-color: var(--accent);
