@@ -2,7 +2,7 @@
 
 Status (2026-09-24): the rebuild is pushed to `rebuild` and a PR `rebuild` → `main` is open (Vercel
 preview). Build, lint and typecheck pass, 40 pages are statically generated. All real content is in
-(sections 1–2 done). **Next up: 3d** (Search Console), then launch (section 4).
+(sections 1–2 done). **Next up: launch (section 4).**
 
 Progress log:
 
@@ -31,7 +31,8 @@ Progress log:
   **active**, test send OK. Env is now `MAILGUN_REGION=us`; privacy policy updated (US servers, SCCs).
   nazielono.pro (Netlify) sends through this domain too: `MAILGUN_API_BASE=https://api.mailgun.net`
   and a new sending key. OVH: old `1|www` TXT removed, `_dmarc` `p=none` added.
-- 2026-10-12: primary domain is `www.mjaniec.it`; all canonical URLs switched to www.
+- 2026-10-12: primary domain is `www.mjaniec.it`; all canonical URLs switched to www. Apex A record
+  changed in OVH from `76.76.21.21` to Vercel's current `216.198.79.1`. Search Console verified.
 
 Related docs: [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
@@ -82,7 +83,7 @@ Order: 3a Mailgun → 3b Vercel env vars → 3c test brief → 3d Search Console
   Paste the key only in Vercel, never in chat. After saving, **redeploy** the latest `rebuild` preview
   (Deployments → ⋯ → Redeploy), because env vars apply only to new builds.
 - [x] **3c** (2026-10-12, landed in inbox) Send a test brief from the **preview** URL and check that it lands in your inbox (not spam).
-- [ ] **3d Google Search Console**: verify the Domain property with a DNS TXT record ([search-console.md](./search-console.md)).
+- [x] **3d Google Search Console** (2026-10-12, Domain property, TXT on `@`): verify the Domain property with a DNS TXT record ([search-console.md](./search-console.md)).
 - [x] **3e Primary domain**: decided 2026-10-12 to keep **`www.mjaniec.it` as primary** (Vercel already
   redirects the apex to it with 308). Canonical, hreflang, sitemap and `SITE_URL` now use
   `https://www.mjaniec.it`; Vercel env `NEXT_PUBLIC_SITE_URL` must match.
