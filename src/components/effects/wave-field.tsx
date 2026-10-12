@@ -191,7 +191,8 @@ function compile(gl: WebGL2RenderingContext, type: number, source: string) {
 	return shader;
 }
 
-export function WaveField({ className }: { className?: string }) {
+/** `strength` scales the line opacity, e.g. for very large fields that render at a lower resolution. */
+export function WaveField({ className, strength = 1 }: { className?: string; strength?: number }) {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 
 	useEffect(() => {
@@ -254,7 +255,7 @@ export function WaveField({ className }: { className?: string }) {
 			canvas.height = Math.round(size * dpr);
 			gl.viewport(0, 0, canvas.width, canvas.height);
 			// Thinner backing store means fewer pixels per line: keep the ink weight constant.
-			gl.uniform1f(uOpacity, 0.4 * Math.min(1, dpr));
+			gl.uniform1f(uOpacity, 0.4 * strength * Math.min(1, dpr));
 		};
 
 		const draw = () => {
@@ -358,7 +359,7 @@ export function WaveField({ className }: { className?: string }) {
 			gl.deleteShader(vs);
 			gl.deleteShader(fs);
 		};
-	}, []);
+	}, [strength]);
 
 	return (
 		<canvas

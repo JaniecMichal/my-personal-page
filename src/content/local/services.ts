@@ -506,12 +506,12 @@ export const services: LocalService[] = [
 		order: 8,
 		title: { pl: "SEO i Google Ads", en: "SEO and Google Ads" },
 		summary: {
-			pl: "Pozycjonowanie i kampanie reklamowe z agencją Na Zielono. Ja dbam o stronę, oni o ruch i wyniki.",
-			en: "Search rankings and ad campaigns with the Na Zielono agency. I take care of the site, they bring the traffic and results.",
+			pl: "Więcej klientów z Google: pozycjonowanie, kampanie reklamowe i analityka, które pracują razem ze stroną.",
+			en: "More customers from Google: SEO, ad campaigns and analytics that work together with your website.",
 		},
 		intro: {
-			pl: "Dobra strona to połowa sukcesu, druga połowa to ruch. Pozycjonowanie i kampanie w Google prowadzi agencja Na Zielono, z którą współpracuję na co dzień (zbudowałem i utrzymuję ich stronę). Ty masz jeden kontakt, a strona i marketing grają do jednej bramki.",
-			en: "A good website is half the job, the other half is traffic. SEO and Google campaigns are run by Na Zielono, a marketing agency I work with every day (I built and maintain their website). You get one point of contact, and the site and marketing pull in the same direction.",
+			pl: "Dobra strona to połowa sukcesu, druga połowa to ruch. Pozycjonowanie i kampanie Google Ads prowadzę razem ze sprawdzonym zespołem specjalistów od marketingu. Ty masz jeden kontakt, a strona, SEO i reklamy grają do jednej bramki: więcej zapytań i sprzedaży.",
+			en: "A good website is half the job, the other half is traffic. I run SEO and Google Ads together with a trusted team of marketing specialists. You have one point of contact, and the site, SEO and ads all pull in one direction: more enquiries and sales.",
 		},
 		tags: ["SEO", "Google Ads", "GA4"],
 		priceFrom: { pl: "bezpłatna wycena", en: "free quote" },
@@ -520,29 +520,43 @@ export const services: LocalService[] = [
 			{
 				title: { pl: "Pozycjonowanie (SEO)", en: "Search engine optimisation" },
 				description: {
-					pl: "Analiza potrzeb i konkurencji, audyt strony, optymalizacja treści pod frazy i wyszukiwarki AI, plan treści i linki.",
-					en: "Needs and competitor research, a site audit, content optimised for search phrases and AI answers, a content plan and link building.",
+					pl: "Analiza fraz i konkurencji, audyt strony, optymalizacja treści, plan publikacji i link building. Cel: stały ruch z Google bez płacenia za każde kliknięcie.",
+					en: "Keyword and competitor research, a site audit, content optimisation, a publishing plan and link building. The goal: steady traffic from Google without paying for every click.",
+				},
+			},
+			{
+				title: { pl: "Widoczność w odpowiedziach AI", en: "Visibility in AI answers" },
+				description: {
+					pl: "Treści i dane strukturalne przygotowane tak, żeby Twoja firma pojawiała się też w odpowiedziach ChatGPT, Gemini i Google AI Overviews.",
+					en: "Content and structured data prepared so your business also shows up in ChatGPT, Gemini and Google AI Overviews answers.",
 				},
 			},
 			{
 				title: { pl: "Kampanie Google Ads", en: "Google Ads campaigns" },
 				description: {
-					pl: "Kampanie w wyszukiwarce i sieci reklamowej, elastyczne zarządzanie budżetem, rozwój konta i regularne rekomendacje.",
-					en: "Search and display campaigns, flexible budget management, account growth and regular recommendations.",
+					pl: "Kampanie w wyszukiwarce i sieci reklamowej: struktura, słowa kluczowe, teksty reklam i budżet przesuwany tam, gdzie daje najwięcej zapytań.",
+					en: "Search and display campaigns: structure, keywords, ad copy and a budget moved to wherever it brings the most enquiries.",
 				},
 			},
 			{
-				title: { pl: "Analityka", en: "Analytics" },
+				title: { pl: "Kampanie dla sklepów", en: "Campaigns for online stores" },
 				description: {
-					pl: "Wdrożenie GA4 i śledzenia konwersji, żeby było widać, które zapytania i sprzedaż dają kampanie i SEO.",
-					en: "GA4 and conversion tracking, so you can see which enquiries and sales come from campaigns and SEO.",
+					pl: "Google Shopping, remarketing dynamiczny i przypomnienia o porzuconym koszyku. Dobrze łączą się ze sklepem na Shopify.",
+					en: "Google Shopping, dynamic remarketing and abandoned-cart reminders. A natural fit for a Shopify store.",
+				},
+			},
+			{
+				title: { pl: "Analityka i mierzenie wyników", en: "Analytics and measurement" },
+				description: {
+					pl: "Wdrożenie GA4 i śledzenia konwersji, czytelny raport co miesiąc. Widzisz, ile kosztuje zapytanie i które działania na siebie zarabiają.",
+					en: "GA4 and conversion tracking, a clear monthly report. You see what an enquiry costs and which activities pay for themselves.",
 				},
 			},
 			{
 				title: { pl: "Strona gotowa na ruch", en: "A site ready for traffic" },
 				description: {
-					pl: "Po mojej stronie: szybkość, SEO techniczne, strony docelowe pod kampanie i poprawki, o które poprosi agencja.",
-					en: "My side: speed, technical SEO, landing pages for campaigns and the changes the agency asks for.",
+					pl: "Szybkość, SEO techniczne i strony docelowe pod kampanie robię sam, więc poprawki na stronie nie czekają w kolejce u innej firmy.",
+					en: "I handle speed, technical SEO and campaign landing pages myself, so changes to the site don't wait in another company's queue.",
 				},
 			},
 		],
@@ -550,36 +564,105 @@ export const services: LocalService[] = [
 		faq: [
 			{
 				id: "seo-sem-faq-1",
-				question: { pl: "Kto prowadzi SEO i kampanie?", en: "Who runs the SEO and campaigns?" },
+				question: {
+					pl: "Kiedy SEO zacznie przynosić efekty?",
+					en: "When will SEO start to pay off?",
+				},
 				answer: {
-					pl: "Agencja Na Zielono (nazielono.pro), specjaliści od SEO i reklam w Google. Ja odpowiadam za stronę i technikę, oni za strategię, treści i kampanie. Zanim zaczniemy, poznajesz ich bezpośrednio.",
-					en: "Na Zielono (nazielono.pro), specialists in SEO and Google advertising. I'm responsible for the website and the technical side, they handle strategy, content and campaigns. You meet them directly before we start.",
+					pl: "SEO to gra długoterminowa. Pierwsze wzrosty widać zwykle po kilku miesiącach, a stabilną pozycję buduje się przez rok i dłużej, zależnie od konkurencji w branży. Jeśli klienci są potrzebni od razu, na start łączymy SEO z kampanią Google Ads.",
+					en: "SEO is a long game. The first gains usually show after a few months, and a stable position takes a year or more, depending on the competition in your industry. If you need customers right away, we start with a Google Ads campaign alongside SEO.",
 				},
 			},
 			{
-				question: { pl: "Ile to kosztuje?", en: "How much does it cost?" },
 				id: "seo-sem-faq-2",
+				question: { pl: "SEO czy Google Ads: co wybrać?", en: "SEO or Google Ads: which one?" },
 				answer: {
-					pl: "Wycenę przygotowuje agencja po krótkiej rozmowie o celach i budżecie reklamowym. Prace przy stronie rozliczam osobno, według mojego cennika.",
-					en: "The agency prepares a quote after a short conversation about your goals and ad budget. Work on the website is billed separately, at my usual rates.",
+					pl: "Reklamy dają ruch od pierwszego dnia, ale płacisz za każde kliknięcie. SEO buduje ruch, który zostaje, ale wymaga czasu. Najlepiej działają razem: reklamy przynoszą klientów teraz i pokazują, które frazy sprzedają, a SEO z czasem obniża koszt pozyskania klienta.",
+					en: "Ads bring traffic from day one, but you pay for every click. SEO builds traffic that stays, but it takes time. They work best together: ads bring customers now and show which phrases sell, while SEO lowers the cost per customer over time.",
 				},
 			},
 			{
 				id: "seo-sem-faq-3",
+				question: { pl: "Ile to kosztuje?", en: "How much does it cost?" },
+				answer: {
+					pl: "Składają się na to dwie rzeczy: budżet reklamowy, który płacisz bezpośrednio Google, oraz wynagrodzenie za prowadzenie działań. Wycenę przygotowuję po krótkiej rozmowie o celach, branży i budżecie. Prace przy stronie rozliczam osobno, według cennika.",
+					en: "There are two parts: the ad budget, which you pay directly to Google, and the fee for running the work. I prepare a quote after a short conversation about your goals, industry and budget. Work on the website is billed separately, as in the price list.",
+				},
+			},
+			{
+				id: "seo-sem-faq-4",
+				question: {
+					pl: "Czy gwarantujesz pierwsze miejsce w Google?",
+					en: "Do you guarantee the top spot on Google?",
+				},
+				answer: {
+					pl: "Nie, i warto uważać na każdego, kto to obiecuje. O pozycjach decydują algorytmy Google i konkurencja. Obiecuję za to przejrzystą pracę, mierzalne cele i co miesiąc jasną informację, co działa, a co zmieniamy.",
+					en: "No, and be careful with anyone who promises that. Rankings depend on Google's algorithms and your competitors. What I do promise is transparent work, measurable goals and a clear monthly update on what works and what we're changing.",
+				},
+			},
+			{
+				id: "seo-sem-faq-5",
+				question: {
+					pl: "Czy będę mieć dostęp do kont reklamowych i raportów?",
+					en: "Will I have access to the ad accounts and reports?",
+				},
+				answer: {
+					pl: "Tak. Konta Google Ads, Google Analytics i Search Console są zakładane na Ciebie, a Ty masz do nich pełny dostęp. Co miesiąc dostajesz raport z wynikami i rekomendacjami.",
+					en: "Yes. The Google Ads, Google Analytics and Search Console accounts are set up in your name, with full access for you. Every month you get a report with results and recommendations.",
+				},
+			},
+			{
+				id: "seo-sem-faq-6",
+				question: { pl: "Jakie wskaźniki będziemy śledzić?", en: "Which numbers will we track?" },
+				answer: {
+					pl: "Te, które przekładają się na pieniądze: liczbę i jakość zapytań, koszt pozyskania zapytania (CPL) lub klienta (CPA), a w sklepach zwrot z wydatków na reklamę (ROAS). Ruch i pozycje są ważne, ale to tylko środek do celu.",
+					en: "The ones that turn into money: the number and quality of enquiries, cost per lead (CPL) or per customer (CPA), and for online stores the return on ad spend (ROAS). Traffic and rankings matter, but only as a means to an end.",
+				},
+			},
+			{
+				id: "seo-sem-faq-7",
+				question: { pl: "Jak wygląda start współpracy?", en: "How does it start?" },
+				answer: {
+					pl: "Najpierw rozmowa o celach i budżecie, potem audyt strony i kont. Następnie wdrażamy analitykę i śledzenie konwersji, uruchamiamy kampanie na małym budżecie, a po pierwszych danych skalujemy to, co działa. Całość zajmuje zwykle kilka tygodni.",
+					en: "First a conversation about goals and budget, then an audit of the site and accounts. Next we set up analytics and conversion tracking, launch campaigns on a small budget, and once the first data comes in, scale what works. It usually takes a few weeks.",
+				},
+			},
+			{
+				id: "seo-sem-faq-8",
+				question: { pl: "Co przygotować przed startem?", en: "What should I prepare?" },
+				answer: {
+					pl: "Krótki opis firmy i klientów, listę głównych konkurentów oraz dostępy do strony, Google Analytics, Search Console i kont reklamowych, jeśli już je masz. Resztę ustalimy w trakcie rozmowy.",
+					en: "A short description of your business and customers, a list of your main competitors, and access to your website, Google Analytics, Search Console and ad accounts if you already have them. We'll sort out the rest in our conversation.",
+				},
+			},
+			{
+				id: "seo-sem-faq-9",
 				question: {
 					pl: "Czy muszę mieć stronę zrobioną przez Ciebie?",
 					en: "Does my site have to be built by you?",
 				},
 				answer: {
-					pl: "Nie. Jeśli masz stronę, zaczynamy od audytu i poprawek technicznych, a agencja przejmuje SEO i kampanie.",
-					en: "No. If you already have a site, we start with an audit and technical fixes, and the agency takes over SEO and campaigns.",
+					pl: "Nie. Jeśli masz stronę, zaczynamy od audytu i poprawek technicznych, które blokują wyniki, a potem zajmujemy się SEO i kampaniami.",
+					en: "No. If you already have a site, we start with an audit and the technical fixes holding back results, then move on to SEO and campaigns.",
+				},
+			},
+			{
+				id: "seo-sem-faq-10",
+				question: { pl: "Czy mogę zakończyć współpracę?", en: "Can I end the cooperation?" },
+				answer: {
+					pl: "Tak, z okresem wypowiedzenia ustalonym w umowie. Konta i dane zostają u Ciebie, a historię kampanii i wnioski przekazuję w uporządkowanej formie, także nowemu partnerowi.",
+					en: "Yes, with the notice period agreed in the contract. The accounts and data stay with you, and I hand over the campaign history and findings in an orderly form, also to a new partner.",
 				},
 			},
 		],
 		seo: {
 			title: {
-				pl: "SEO i Google Ads z Na Zielono | Michał Janiec",
-				en: "SEO and Google Ads with Na Zielono | Michał Janiec",
+				pl: "SEO i Google Ads dla firm | Michał Janiec",
+				en: "SEO and Google Ads for businesses | Michał Janiec",
+			},
+			description: {
+				pl: "Pozycjonowanie, kampanie Google Ads i analityka GA4 dla małych i średnich firm. Jeden kontakt od strony po reklamy. Bezpłatna wycena.",
+				en: "SEO, Google Ads campaigns and GA4 analytics for small and medium businesses. One contact from the website to the ads. Free quote.",
 			},
 		},
 	},

@@ -158,11 +158,15 @@ Done on the branch:
 - [x] Local page **Katowice**: new content type `LocalPage`, route `/pl/strony-internetowe/[slug]`
   ↔ `/en/web-design/[slug]`, districts and nearby towns named on one page, local FAQ, Service JSON-LD
   with `areaServed`, linked from the footer and in the sitemap.
-- [x] Hero line field also on **Realizacje** (black section, light lines behind the title).
+- [x] Hero line field also on **Realizacje**: a square as tall as the whole black section, centred
+  behind all projects (`strength={1.6}` because the large canvas renders at a lower resolution).
 - [x] Footer: local pages as their own "Lokalnie" group under Usługi.
-- [x] New service **SEO i Google Ads** (`seo-sem`, `/pl/uslugi/seo-i-google-ads`): SEO and campaigns
-  run by the Na Zielono agency, Michał handles the site. Own wording (no copied text: duplicate
-  content would hurt both sites), no unsourced numbers. Brief form got a "SEO / Google Ads" type.
+- [x] New service **SEO i Google Ads** (`seo-sem`, `/pl/uslugi/seo-i-google-ads`). Internally SEO and
+  campaigns are run with Na Zielono, but the page does not name the partner ("razem ze sprawdzonym
+  zespołem specjalistów", Michał is the single contact). 6 "included" items and 10 FAQ entries
+  based on the generic SEO/marketing questions from nazielono.pro, rewritten (no copied text, no
+  unsourced numbers). Not linked to the nazielono case study. Brief form got a "SEO / Google Ads"
+  type.
   The "30 dni wsparcia" row on service pages now shows only for services with packages.
 - [x] Standalone docs: [lead-generation-brief.md](./lead-generation-brief.md) (PL, paste into a
   strategy session) and [logo-brief.md](./logo-brief.md) with 3 SVG concepts in `.ai/brand/`.
@@ -185,7 +189,7 @@ To check / decide (Michał):
 - [ ] Business-website FAQ: "domain, hosting and code are in your name" and the stock-photo answer.
 - [ ] Privacy text now says Mailgun US servers + SCCs (since 2026-10-12).
 - [ ] Agree the referral terms with Na Zielono (commission, who invoices, how leads are handed
-  over) and confirm Konrad is fine with being named on the SEO page.
+  over). The page doesn't name the agency, so no public consent needed.
 - [ ] Pick a logo concept (`.ai/logo-brief.md`), then replace favicon / header mark.
 - [ ] Replace the account-level Mailgun key in `.env.local` / Vercel with a domain sending key.
 
