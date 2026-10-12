@@ -1,35 +1,30 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { Sphere } from "./sphere";
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/cn";
 
 /**
- * Dot sphere in raw WebGL2: latitude rings of dots whose surface "breathes" with 3D noise, plus
- * ripples that spread from wherever the pointer touches it, like a finger drawn through water.
- * The equator and a tilted orbit use the accent colour; everything else uses `currentColor`.
- * Falls back to the 2D canvas <Sphere> without WebGL2, renders one still frame with reduced
- * motion, pauses off-screen and caps the pixel ratio.
+ * Hero background: a sphere of latitude lines seen almost edge-on, so it reads as a field of
+ * wavy horizontal lines. The surface "breathes" with layered 3D noise and ripples spread from
+ * wherever the pointer crosses it, like a finger drawn through water. Lines facing the viewer
+ * are strongest and the silhouette fades out. Raw WebGL2, `currentColor` for the ink, a still
+ * frame with reduced motion, paused off-screen. Without WebGL2 it simply renders nothing.
  */
 
-const RINGS = 62;
-const DOTS_ON_EQUATOR = 200;
-const ORBIT_DOTS = 150;
+const RINGS = 110;
+const SEGMENTS = 280;
 const MAX_RIPPLES = 8;
-const CAMERA_Z = 3.4;
+const CAMERA_Z = 2.85;
 const FOV = (45 * Math.PI) / 180;
-const TILT = 0.42;
+const TILT = 0.12;
 
 const VERTEX = /* glsl */ `#version 300 es
 in vec3 aPos;
-in float aKind; // 0 surface, 1 accent equator, 2 orbit
 uniform mat4 uProj;
-uniform mat3 uRot;
+uniform float uTilt;
 uniform float uPhase;
-uniform float uPointSize;
 uniform vec4 uRipples[${MAX_RIPPLES}]; // xyz: hit direction, w: age in seconds (< 0 = unused)
 out float vAlpha;
-out float vKind;
 
 // 3D simplex noise, Ashima Arts / Stefan Gustavson (MIT).
 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -79,103 +74,102 @@ float snoise(vec3 v) {
 float fbm(vec3 p) {
 	float sum = 0.0;
 	float amp = 0.5;
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 4; i++) {
 		sum += amp * snoise(p);
-		p *= 2.1;
+		p *= 2.15;
 		amp *= 0.5;
 	}
 	return sum;
 }
 
 void main() {
-	vec3 p = uRot * aPos;
-	float n = 0.0;
-	float wake = 0.0;
+	// Small tilt so the rings read as slightly curved horizontal lines.
+	float c = cos(uTilt);
+	float s = sin(uTilt);
+	vec3 dir = vec3(aPos.x, aPos.y * c - aPos.z * s, aPos.y * s + aPos.z * c);
 
-	if (aKind < 1.5) {
-		n = fbm(aPos * 1.15 + vec3(0.0, 0.0, uPhase));
-		for (int i = 0; i < ${MAX_RIPPLES}; i++) {
-			vec4 r = uRipples[i];
-			if (r.w < 0.0) continue;
-			float d = acos(clamp(dot(normalize(p), r.xyz), -1.0, 1.0));
-			float front = d - r.w * 0.6;
-			float env = exp(-r.w / 1.1) * exp(-(front * front) / 0.07);
-			wake += env * sin(front * 13.0);
-		}
+	float n = fbm(dir * 1.1 + vec3(0.0, 0.0, uPhase));
+	float h = mix(n, 1.0 - 2.0 * abs(n), 0.5); // half smooth, half ridged
+
+	float wake = 0.0;
+	for (int i = 0; i < ${MAX_RIPPLES}; i++) {
+		vec4 r = uRipples[i];
+		if (r.w < 0.0) continue;
+		float d = acos(clamp(dot(dir, r.xyz), -1.0, 1.0));
+		float front = d - r.w * 0.55;
+		float env = exp(-r.w / 0.9) * exp(-(front * front) / (0.28 * 0.28));
+		wake += env * sin(front * 14.0);
 	}
 
-	vec3 displaced = p * (1.0 + n * 0.09 + wake * 0.05);
-	gl_Position = uProj * vec4(displaced.xy, displaced.z - ${CAMERA_Z.toFixed(2)}, 1.0);
+	vec3 pos = dir * (1.0 + h * 0.11 + wake * 0.06);
+	gl_Position = uProj * vec4(pos.xy, pos.z - ${CAMERA_Z.toFixed(2)}, 1.0);
 
-	float facing = normalize(p).z;
-	float front = smoothstep(-0.35, 1.0, facing);
-	vAlpha = (0.08 + 0.92 * front * front) * (0.7 + 0.3 * (1.0 - abs(n) * 2.0)) + abs(wake) * 0.35;
-	gl_PointSize = uPointSize * (0.45 + 0.75 * front) * (aKind > 0.5 ? 1.35 : 1.0);
-	vKind = aKind;
+	vec3 toCamera = normalize(vec3(0.0, 0.0, ${CAMERA_Z.toFixed(2)}) - pos);
+	float facing = pow(abs(dot(dir, toCamera)), 1.6);
+	float crease = 1.0 - clamp(abs(n), 0.0, 1.0);
+	vAlpha = facing * (0.45 + 0.55 * crease);
 }
 `;
 
 const FRAGMENT = /* glsl */ `#version 300 es
 precision mediump float;
 in float vAlpha;
-in float vKind;
 uniform vec3 uInk;
-uniform vec3 uAccent;
+uniform float uOpacity;
 out vec4 outColor;
 
 void main() {
-	vec2 c = gl_PointCoord - 0.5;
-	float r2 = dot(c, c);
-	if (r2 > 0.25) discard;
-	float edge = 1.0 - smoothstep(0.16, 0.25, r2);
-	vec3 color = vKind > 0.5 ? uAccent : uInk;
-	float a = clamp(vAlpha, 0.0, 1.0) * edge;
-	outColor = vec4(color * a, a);
+	float a = clamp(vAlpha * uOpacity, 0.0, 1.0);
+	outColor = vec4(uInk * a, a);
 }
 `;
 
+/** Latitude rings as line pairs (gl.LINES): RINGS × SEGMENTS segments. */
 function buildGeometry() {
-	const data: number[] = [];
+	const data = new Float32Array(RINGS * SEGMENTS * 2 * 3);
+	let k = 0;
+	const point = (phi: number, theta: number) => {
+		data[k++] = Math.sin(phi) * Math.cos(theta);
+		data[k++] = Math.cos(phi);
+		data[k++] = Math.sin(phi) * Math.sin(theta);
+	};
 	for (let i = 0; i < RINGS; i++) {
-		const phi = Math.PI * (0.03 + (0.94 * i) / (RINGS - 1));
-		const y = Math.cos(phi);
-		const r = Math.sin(phi);
-		const kind = Math.abs(i - (RINGS - 1) / 2) < 0.6 ? 1 : 0;
-		const dots = Math.max(10, Math.round(DOTS_ON_EQUATOR * r));
-		const offset = (i % 2) * 0.5;
-		for (let j = 0; j < dots; j++) {
-			const theta = ((j + offset) / dots) * Math.PI * 2;
-			data.push(Math.cos(theta) * r, y, Math.sin(theta) * r, kind);
+		const phi = Math.PI * (0.02 + (0.96 * i) / (RINGS - 1));
+		for (let j = 0; j < SEGMENTS; j++) {
+			point(phi, (j / SEGMENTS) * Math.PI * 2);
+			point(phi, ((j + 1) / SEGMENTS) * Math.PI * 2);
 		}
 	}
-	// Tilted orbit around the sphere, sparse like a dashed line.
-	const tilt = -0.42;
-	for (let j = 0; j < ORBIT_DOTS; j++) {
-		const theta = (j / ORBIT_DOTS) * Math.PI * 2;
-		const x = Math.cos(theta) * 1.28;
-		const z = Math.sin(theta) * 1.28;
-		data.push(x * Math.cos(tilt), x * Math.sin(tilt) + z * 0.05, z, 2);
-	}
-	return new Float32Array(data);
+	return data;
 }
 
-function perspective(fov: number, aspect: number, near: number, far: number) {
+function perspective(fov: number, near: number, far: number) {
 	const f = 1 / Math.tan(fov / 2);
 	const nf = 1 / (near - far);
-	return new Float32Array([f / aspect, 0, 0, 0, 0, f, 0, 0, 0, 0, (far + near) * nf, -1, 0, 0, 2 * far * near * nf, 0]);
+	return new Float32Array([
+		f,
+		0,
+		0,
+		0,
+		0,
+		f,
+		0,
+		0,
+		0,
+		0,
+		(far + near) * nf,
+		-1,
+		0,
+		0,
+		2 * far * near * nf,
+		0,
+	]);
 }
 
-/** Rotation around Y by `angle`, then a fixed tilt around X. Column-major for WebGL. */
-function rotation(angle: number, tilt: number) {
-	const ca = Math.cos(angle);
-	const sa = Math.sin(angle);
-	const ct = Math.cos(tilt);
-	const st = Math.sin(tilt);
-	return new Float32Array([ca, sa * st, -sa * ct, 0, ct, st, sa, -ca * st, ca * ct]);
-}
-
-const parser = typeof document !== "undefined" ? document.createElement("canvas").getContext("2d") : null;
-function toRgb(color: string, fallback: [number, number, number]): [number, number, number] {
+const parser =
+	typeof document !== "undefined" ? document.createElement("canvas").getContext("2d") : null;
+function toRgb(color: string): [number, number, number] {
+	const fallback: [number, number, number] = [0.06, 0.06, 0.07];
 	if (!parser) return fallback;
 	parser.fillStyle = "#000";
 	parser.fillStyle = color;
@@ -190,122 +184,115 @@ function compile(gl: WebGL2RenderingContext, type: number, source: string) {
 	gl.shaderSource(shader, source);
 	gl.compileShader(shader);
 	if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-		console.warn("[wave-sphere]", gl.getShaderInfoLog(shader));
+		console.warn("[wave-field]", gl.getShaderInfoLog(shader));
 		gl.deleteShader(shader);
 		return null;
 	}
 	return shader;
 }
 
-export function WaveSphere({ className }: { className?: string }) {
+export function WaveField({ className }: { className?: string }) {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
-	const [fallback, setFallback] = useState(false);
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		if (!canvas) return;
-		const gl = canvas.getContext("webgl2", { alpha: true, antialias: true, premultipliedAlpha: true });
-		const vs = gl && compile(gl, gl.VERTEX_SHADER, VERTEX);
-		const fs = gl && compile(gl, gl.FRAGMENT_SHADER, FRAGMENT);
-		const program = gl && vs && fs ? gl.createProgram() : null;
-		if (!gl || !vs || !fs || !program) {
-			setFallback(true);
-			return;
-		}
+		const gl = canvas.getContext("webgl2", {
+			alpha: true,
+			antialias: true,
+			premultipliedAlpha: true,
+		});
+		if (!gl) return;
+		const vs = compile(gl, gl.VERTEX_SHADER, VERTEX);
+		const fs = compile(gl, gl.FRAGMENT_SHADER, FRAGMENT);
+		const program = vs && fs ? gl.createProgram() : null;
+		if (!vs || !fs || !program) return;
 		gl.attachShader(program, vs);
 		gl.attachShader(program, fs);
 		gl.linkProgram(program);
-		if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-			setFallback(true);
-			return;
-		}
+		if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return;
 		gl.useProgram(program);
 
 		const geometry = buildGeometry();
-		const count = geometry.length / 4;
 		const buffer = gl.createBuffer();
 		gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
 		gl.bufferData(gl.ARRAY_BUFFER, geometry, gl.STATIC_DRAW);
 		const aPos = gl.getAttribLocation(program, "aPos");
-		const aKind = gl.getAttribLocation(program, "aKind");
 		gl.enableVertexAttribArray(aPos);
-		gl.vertexAttribPointer(aPos, 3, gl.FLOAT, false, 16, 0);
-		gl.enableVertexAttribArray(aKind);
-		gl.vertexAttribPointer(aKind, 1, gl.FLOAT, false, 16, 12);
+		gl.vertexAttribPointer(aPos, 3, gl.FLOAT, false, 0, 0);
 
 		const u = (name: string) => gl.getUniformLocation(program, name);
-		const uProj = u("uProj");
-		const uRot = u("uRot");
 		const uPhase = u("uPhase");
-		const uPointSize = u("uPointSize");
 		const uRipples = u("uRipples");
 		const uInk = u("uInk");
-		const uAccent = u("uAccent");
-
+		const uOpacity = u("uOpacity");
+		gl.uniformMatrix4fv(u("uProj"), false, perspective(FOV, 0.1, 10));
+		gl.uniform1f(u("uTilt"), TILT);
 		gl.enable(gl.BLEND);
 		gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-		gl.uniformMatrix4fv(uProj, false, perspective(FOV, 1, 0.1, 10));
 
 		const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 		const ripples = new Float32Array(MAX_RIPPLES * 4).map((_, i) => (i % 4 === 3 ? -1 : 0));
+		const vertexCount = geometry.length / 3;
 		let nextRipple = 0;
 		let lastHit: [number, number, number] | null = null;
 		let phase = 0;
-		let angle = 0.6;
-		let size = 0;
 		let visible = true;
 		let raf = 0;
 		let last = performance.now();
 
-		const readColors = () => {
-			const style = getComputedStyle(canvas);
-			gl.uniform3fv(uInk, toRgb(style.color, [0.07, 0.07, 0.08]));
-			gl.uniform3fv(uAccent, toRgb(style.getPropertyValue("--accent").trim(), [0.18, 0.23, 1]));
-		};
+		const readColor = () => gl.uniform3fv(uInk, toRgb(getComputedStyle(canvas).color));
 
 		const resize = () => {
-			size = canvas.clientWidth;
-			// Cap the backing store: DPR 1.5 at most and never more than ~1.2 MP for this canvas.
-			const dpr = Math.min(window.devicePixelRatio || 1, 1.5, 1100 / Math.max(size, 1));
+			const size = canvas.clientWidth;
+			// DPR 1.5 at most, and no more than ~2 MP for this (very large) canvas.
+			const dpr = Math.max(
+				0.5,
+				Math.min(window.devicePixelRatio || 1, 1.5, 1400 / Math.max(size, 1)),
+			);
 			canvas.width = Math.round(size * dpr);
 			canvas.height = Math.round(size * dpr);
 			gl.viewport(0, 0, canvas.width, canvas.height);
-			gl.uniform1f(uPointSize, Math.max(1.5, (canvas.width / 560) * 3.2));
+			// Thinner backing store means fewer pixels per line: keep the ink weight constant.
+			gl.uniform1f(uOpacity, 0.4 * Math.min(1, dpr));
 		};
 
 		const draw = () => {
-			gl.uniformMatrix3fv(uRot, false, rotation(angle, TILT));
 			gl.uniform1f(uPhase, phase);
 			gl.uniform4fv(uRipples, ripples);
 			gl.clearColor(0, 0, 0, 0);
 			gl.clear(gl.COLOR_BUFFER_BIT);
-			gl.drawArrays(gl.POINTS, 0, count);
+			gl.drawArrays(gl.LINES, 0, vertexCount);
 		};
 
 		const loop = (now: number) => {
 			const dt = Math.min((now - last) / 1000, 0.1);
 			last = now;
-			phase += dt * 0.07;
-			angle += dt * 0.06;
-			for (let i = 0; i < MAX_RIPPLES; i++) {
-				const age = i * 4 + 3;
-				const current = ripples[age] ?? -1;
-				if (current >= 0) ripples[age] = current > 5 ? -1 : current + dt;
+			phase += dt * 0.08;
+			for (let i = 3; i < ripples.length; i += 4) {
+				const age = ripples[i] ?? -1;
+				if (age >= 0) ripples[i] = age > 5 ? -1 : age + dt;
 			}
 			draw();
 			if (visible) raf = requestAnimationFrame(loop);
 		};
 
-		// Ray from the camera through the pointer, intersected with the unit sphere (view space).
+		// Ray from the camera through the pointer onto the unit sphere; a miss uses the closest point.
 		const onPointer = (e: PointerEvent) => {
 			const rect = canvas.getBoundingClientRect();
-			if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) return;
+			if (
+				e.clientX < rect.left ||
+				e.clientX > rect.right ||
+				e.clientY < rect.top ||
+				e.clientY > rect.bottom
+			)
+				return;
 			const t = Math.tan(FOV / 2);
 			const dx = (((e.clientX - rect.left) / rect.width) * 2 - 1) * t;
 			const dy = (1 - ((e.clientY - rect.top) / rect.height) * 2) * t;
 			const len = Math.hypot(dx, dy, 1);
 			const d = [dx / len, dy / len, -1 / len] as const;
-			const b = d[2] * CAMERA_Z; // dot(d, -centre) with centre (0, 0, -CAMERA_Z)
+			const b = d[2] * CAMERA_Z;
 			const disc = b * b - (CAMERA_Z * CAMERA_Z - 1);
 			const s = disc >= 0 ? -b - Math.sqrt(disc) : -b;
 			const hx = d[0] * s;
@@ -313,14 +300,17 @@ export function WaveSphere({ className }: { className?: string }) {
 			const hz = d[2] * s + CAMERA_Z;
 			const hl = Math.hypot(hx, hy, hz) || 1;
 			const hit: [number, number, number] = [hx / hl, hy / hl, hz / hl];
-			if (lastHit && Math.acos(Math.min(1, hit[0] * lastHit[0] + hit[1] * lastHit[1] + hit[2] * lastHit[2])) < 0.14) return;
+			const moved = lastHit
+				? Math.hypot(hit[0] - lastHit[0], hit[1] - lastHit[1], hit[2] - lastHit[2])
+				: 1;
+			if (moved < 0.12) return;
 			lastHit = hit;
 			ripples.set([...hit, 0], nextRipple * 4);
 			nextRipple = (nextRipple + 1) % MAX_RIPPLES;
 		};
 
 		resize();
-		readColors();
+		readColor();
 		draw();
 
 		const resizeObserver = new ResizeObserver(() => {
@@ -328,13 +318,14 @@ export function WaveSphere({ className }: { className?: string }) {
 			draw();
 		});
 		resizeObserver.observe(canvas);
-
 		const themeObserver = new MutationObserver(() => {
-			readColors();
+			readColor();
 			draw();
 		});
-		themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-
+		themeObserver.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ["data-theme"],
+		});
 		const onVisibility = () => {
 			last = performance.now();
 		};
@@ -369,16 +360,11 @@ export function WaveSphere({ className }: { className?: string }) {
 		};
 	}, []);
 
-	if (fallback) return <Sphere className={className} />;
-
 	return (
 		<canvas
 			ref={canvasRef}
 			aria-hidden="true"
-			className={cn(
-				"pointer-events-none aspect-square w-full [filter:drop-shadow(-1.5px_0_0_rgb(var(--ab-red)/0.45))_drop-shadow(1.5px_0_0_rgb(var(--ab-cyan)/0.45))]",
-				className,
-			)}
+			className={cn("pointer-events-none aspect-square", className)}
 		/>
 	);
 }

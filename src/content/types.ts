@@ -55,6 +55,8 @@ export type Service = {
 	/** Slug per locale, for hreflang alternates and the language switch. */
 	slugs: Localized<string>;
 	order: number;
+	/** false hides the service from the home page grid; it stays on /services and in the sitemap. */
+	showOnHome?: boolean;
 	title: string;
 	/** One-line pitch for cards. */
 	summary: string;

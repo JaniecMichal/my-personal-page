@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Sphere } from "@/components/effects/sphere";
 import { SetAlternateSlugs } from "@/components/i18n/alternate-slugs";
 import { FaqList } from "@/components/sections/faq-list";
 import { ServicesGrid } from "@/components/sections/services-grid";
@@ -57,28 +58,33 @@ export default async function LocalLandingPage({ params }: Props) {
 	return (
 		<>
 			<SetAlternateSlugs slugs={page.slugs} />
-			<section className="border-b border-rule dotgrid">
-				<Container className="flex flex-col gap-7 py-12 lg:py-20">
-					<nav aria-label="Breadcrumb" className="label">
-						<Link href="/" className="text-muted">
-							{tc("breadcrumbHome")}
-						</Link>{" "}
-						/ <span className="text-muted">{t("breadcrumb")}</span> /{" "}
-						<span className="text-ink" aria-current="page">
-							{page.city}
-						</span>
-					</nav>
-					<h1 className="max-w-[1000px] font-serif text-[52px] leading-[0.93] tracking-[-0.04em] ab md:text-8xl lg:text-[112px]">
-						{page.title}
-					</h1>
-					<p className="max-w-[680px] text-base leading-relaxed text-ink-soft md:text-lg">
-						{page.intro}
-					</p>
-					<div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-						<ButtonLink href="/contact">{tc("cta.quote")} ↗</ButtonLink>
-						<ButtonLink href="/pricing" variant="line">
-							{tc("nav.pricing")}
-						</ButtonLink>
+			<section className="overflow-hidden border-b border-rule dotgrid">
+				<Container className="grid items-center gap-10 py-12 lg:grid-cols-12 lg:py-20">
+					<div className="flex flex-col gap-7 lg:col-span-7">
+						<nav aria-label="Breadcrumb" className="label">
+							<Link href="/" className="text-muted">
+								{tc("breadcrumbHome")}
+							</Link>{" "}
+							/ <span className="text-muted">{t("breadcrumb")}</span> /{" "}
+							<span className="text-ink" aria-current="page">
+								{page.city}
+							</span>
+						</nav>
+						<h1 className="font-serif text-[52px] leading-[0.93] tracking-[-0.04em] ab md:text-8xl lg:text-[96px]">
+							{page.title}
+						</h1>
+						<p className="max-w-[680px] text-base leading-relaxed text-ink-soft md:text-lg">
+							{page.intro}
+						</p>
+						<div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+							<ButtonLink href="/contact">{tc("cta.quote")} ↗</ButtonLink>
+							<ButtonLink href="/pricing" variant="line">
+								{tc("nav.pricing")}
+							</ButtonLink>
+						</div>
+					</div>
+					<div className="mx-auto w-full max-w-[320px] lg:col-span-5 lg:max-w-none">
+						<Sphere className="text-ink" />
 					</div>
 				</Container>
 			</section>

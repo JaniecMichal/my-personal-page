@@ -11,14 +11,10 @@ export const services: LocalService[] = [
 			en: "A website that brings in customers: you show up on Google, it works well on phones and you can edit it yourself.",
 		},
 		intro: {
-			pl: "Nie musisz znać się na technologii. Mówisz mi, co ma się wydarzyć: więcej telefonów, zapytań albo rezerwacji. Ja dobieram rozwiązanie, buduję stronę i dbam o to, żeby klienci ją znaleźli.",
-			en: "You don't need to know anything about technology. Tell me what should happen: more calls, enquiries or bookings. I pick the right tools, build the site and make sure customers can find it.",
+			pl: "Nie musisz znać się na technologii. Mówisz mi, co ma się wydarzyć: więcej telefonów, zapytań albo rezerwacji. Ja dobieram rozwiązanie, buduję stronę i dbam o to, żeby klienci ją znaleźli. Moją główną technologią jest Next.js: strony są szybkie, bezpieczne i dobrze widoczne w Google.",
+			en: "You don't need to know anything about technology. Tell me what should happen: more calls, enquiries or bookings. I pick the right tools, build the site and make sure customers can find it. My main technology is Next.js: sites that are fast, secure and easy for Google to read.",
 		},
-		tags: [
-			{ pl: "Więcej zapytań", en: "More enquiries" },
-			{ pl: "Widoczność w Google", en: "Found on Google" },
-			{ pl: "Sam edytujesz", en: "Edit it yourself" },
-		],
+		tags: ["Next.js", "SEO", "CMS"],
 		priceFrom: { pl: "od 500 zł", en: "from 500 PLN" },
 		timeline: { pl: "od kilku dni do 3 tygodni", en: "a few days to 3 weeks" },
 		included: [
@@ -166,6 +162,8 @@ export const services: LocalService[] = [
 	},
 	{
 		id: "nextjs-websites",
+		// Indexed since launch; reachable from the services page and footer, not shown on the home page.
+		showOnHome: false,
 		slug: { pl: "strony-nextjs", en: "nextjs-websites" },
 		order: 2,
 		title: { pl: "Strony firmowe w Next.js", en: "Business websites in Next.js" },
@@ -443,7 +441,7 @@ export const services: LocalService[] = [
 		id: "web-apps",
 		slug: { pl: "aplikacje-react", en: "react-web-apps" },
 		order: 5,
-		title: { pl: "Aplikacje webowe React", en: "React web apps" },
+		title: { pl: "Aplikacje webowe", en: "Web applications" },
 		summary: {
 			pl: "Panele, SaaS i MVP. Od makiety w Figmie do działającego produktu z testami.",
 			en: "Dashboards, SaaS and MVPs. From a Figma mock-up to a working, tested product.",

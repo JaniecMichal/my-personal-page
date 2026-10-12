@@ -51,7 +51,11 @@ export default async function HomePage({ params }: Props) {
 		<>
 			<Hero />
 			<TrustStrip label={t("trust")} names={settings.trustedBy} />
-			<ServicesGrid title={t("services.title")} index={t("services.index")} services={services} />
+			<ServicesGrid
+				title={t("services.title")}
+				index={t("services.index")}
+				services={services.filter((s) => s.showOnHome !== false)}
+			/>
 			<WorkGrid studies={studies} />
 			<Process title={t("process.title")} index={t("process.index")} steps={steps} />
 			<Testimonials

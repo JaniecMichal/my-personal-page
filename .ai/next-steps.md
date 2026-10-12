@@ -131,9 +131,11 @@ Done on the branch:
 - [x] Hero: removed "Otwarty na nowe projekty" and the "Senior Frontend · Katowice · zdalnie" kicker;
   height capped to the viewport so headline, lead and both CTAs fit on 1366×768 and 1440×900.
   `StatusLine` component removed (unused).
-- [x] Hero sphere: `src/components/effects/wave-sphere.tsx`, raw WebGL2 (no three.js). Latitude
-  rings of dots, simplex-noise "breathing", pointer ripples, slow rotation, accent equator + orbit,
-  theme-aware, DPR cap 1.5, pauses off-screen, still frame with reduced motion.
+- [x] Hero background: `src/components/effects/wave-field.tsx`, raw WebGL2 (no three.js), same
+  technique as the Visuality staging hero (requested by Michał): 110 latitude rings × 280 segments
+  as lines, fBm noise "breathing", pointer ripples, facing fade, oversized behind the copy (z-0,
+  copy z-10). Theme-aware, DPR cap 1.5, pauses off-screen, still frame with reduced motion.
+  The 2D dot `Sphere` now sits in the local (Katowice) page hero.
 - [x] Testimonials: PL translations, original language stored (`lang`), "Tłumaczenie z języka
   angielskiego" note, quotes and captions stacked in one grid cell → constant height. Same for
   case-study quotes (nazielono translated to EN).
@@ -147,8 +149,12 @@ Done on the branch:
   pages (`headingLevel`), terminal h1/contrast/log region/OG, OG image 1200×630 JPG (110 KB),
   Doto not preloaded, `scroll-padding-top`, focusable `<main>`, sitemap x-default and no fake
   lastmod, JSON-LD image/priceRange/consistent url, FAQ JSON-LD on service pages.
-- [x] New service **Strona internetowa dla firmy** (`business-website`): problem-first, no tech
-  talk, existing prices only. Now first in the services list.
+- [x] New service **Strona internetowa dla firmy** (`business-website`): problem-first, Next.js named
+  as the main technology (chip + intro), existing prices only. First on the home page.
+- [x] **Strony firmowe w Next.js** kept (already submitted for indexing) but `showOnHome: false`:
+  still on /uslugi, in the footer and the sitemap.
+- [x] "Aplikacje webowe React" renamed **Aplikacje webowe** / Web applications; React stays a chip.
+  Slug unchanged (`aplikacje-react`), so no redirect needed.
 - [x] Local page **Katowice**: new content type `LocalPage`, route `/pl/strony-internetowe/[slug]`
   ↔ `/en/web-design/[slug]`, districts and nearby towns named on one page, local FAQ, Service JSON-LD
   with `areaServed`, linked from the footer and in the sitemap.
