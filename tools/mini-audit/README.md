@@ -23,7 +23,15 @@ cp targets.example.csv targets.csv      # name,url,notes — lista firm (plik ni
 node audit.mjs targets.csv              # ~15–20 s na stronę
 node audit.mjs --url https://firma.pl --name "Firma"   # jedna strona
 node audit.mjs targets.csv --no-lighthouse             # szybko, bez wyników punktowych
+node audit.mjs --url https://klient.pl --name "Klient" --report   # raport dla obecnego klienta
 ```
+
+### Dwa tryby
+
+- **Mini-audyt** (domyślnie): kartka dla potencjalnego klienta, w stopce zachęta do kontaktu.
+- **Raport** (`--report`): dla obecnych klientów, np. przed i po pracach albo co miesiąc w ramach
+  opieki. Nagłówek „Raport strony”, neutralna stopka bez sprzedaży. Dwa raporty (przed/po) to
+  gotowy materiał do case study.
 
 Wynik w `out/` (nie trafia do gita):
 

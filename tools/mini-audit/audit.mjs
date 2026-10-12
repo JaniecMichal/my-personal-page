@@ -5,6 +5,7 @@
  *   node audit.mjs targets.csv                 # CSV with columns: name,url[,notes]
  *   node audit.mjs --url https://… --name "…"  # a single site
  *   options: --no-lighthouse (faster, skips scores)
+ *            --report (for existing clients: "Raport strony" heading, neutral footer, no sales pitch)
  *
  * For each site: a phone screenshot (Playwright + local Chrome), Lighthouse mobile scores
  * (same engine as PageSpeed Insights, no API key needed), a set of plain checks, the top 3
@@ -321,7 +322,7 @@ footer .contact b { color: #8c94ff; font-weight: 400; }
 </style></head><body>
 <div class="wrap">
 	<header>
-		<p class="label">Mini-audyt strony · ${escapeHtml(TODAY)}</p>
+		<p class="label">${reportMode ? "Raport strony" : "Mini-audyt strony"} · ${escapeHtml(TODAY)}</p>
 		<h1>${escapeHtml(target.name)}</h1>
 		<p class="url">${escapeHtml(target.url)}</p>
 	</header>
@@ -338,8 +339,11 @@ footer .contact b { color: #8c94ff; font-weight: 400; }
 </div>
 <footer>
 	<div>
-		<h3>Chętnie powiem, co poprawić najpierw.</h3>
-		<p>${escapeHtml(config.tagline)}. Bez zobowiązań, krótka rozmowa albo wiadomość.</p>
+		${
+			reportMode
+				? `<h3>Raport przygotował ${escapeHtml(config.name)}.</h3><p>Pytania lub kolejne kroki: odpisz na maila albo zadzwoń.</p>`
+				: `<h3>Chętnie powiem, co poprawić najpierw.</h3><p>${escapeHtml(config.tagline)}. Bez zobowiązań, krótka rozmowa albo wiadomość.</p>`
+		}
 		<p class="contact">${escapeHtml(config.name)} · <b>${escapeHtml(config.website.replace(/^https?:\/\//, "").replace(/\/pl$/, ""))}</b>${config.email ? ` · ${escapeHtml(config.email)}` : ""}${config.phone ? ` · ${escapeHtml(config.phone)}` : ""}</p>
 	</div>
 	<div class="qr">${qr}</div>
@@ -368,6 +372,7 @@ function appendSummary(row) {
 const argv = process.argv.slice(2);
 const targets = readTargets(argv).filter((t) => t.name || t.url);
 const skipLighthouse = argv.includes("--no-lighthouse");
+const reportMode = argv.includes("--report");
 mkdirSync(OUT, { recursive: true });
 
 const browser = await chromium.launch({ channel: "chrome" });

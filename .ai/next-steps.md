@@ -228,6 +228,44 @@ limit (100 a day), but it waits until tomorrow too.
   (`/pl/uslugi/sklepy-shopify`, `/pl/uslugi/wordpress`, `/pl/uslugi/aplikacje-react`,
   `/pl/uslugi/frontend-dla-zespolow-rails`, `/pl/uslugi/audyt-szybkosci-seo`).
 
+### Fixes found by the mini-audit (own site, 2026-10-12)
+
+- [ ] **Phone number on the site**: the only issue the audit finds on mjaniec.it is "no visible phone
+  number". Add `phone` in `src/content/local/settings.ts` (it already renders as a `tel:` link on the
+  contact page); also show a tap-to-call link in the header or the mobile menu, and in JSON-LD
+  (`telephone`, already wired). Local clients prefer calling, and the leaflet says so.
+- [ ] **Mobile performance 88 → 90+**: Lighthouse mobile LCP 2.8 s on `/pl` (the hero `h1`).
+  Ideas: start the WebGL hero field after first paint / on idle, check font loading for the serif
+  italic, keep the field off the critical path. Re-run `tools/mini-audit` before/after.
+
+### Tracking and one place for lead data
+
+Nothing measures conversions yet, and leads would sit in three places (Gmail, mini-audit CSV, notes).
+
+- [ ] **Analytics**: Vercel Web Analytics (free on Hobby, no cookies, so no banner needed) or
+  Plausible. Custom event **"brief_sent"** (with project type) from the brief form, and UTM
+  reporting for `utm_source=mini-audyt` (QR on printed audits).
+- [ ] **Search Console + Bing**: weekly 5-minute look at clicks, impressions and queries; note them in
+  the KPI tab.
+- [ ] **Lead sheet** (Google Sheets, one file, private):
+  - tab **Leady**: firma, źródło (ciepła sieć / partner / wizyta / platforma / strona / AI), etap
+    (znaleziony → kontakt → odpowiedź → rozmowa → wycena → wygrany / przegrany), data kontaktu,
+    następny krok + data, wartość, notatki;
+  - tab **Audyty**: paste `tools/mini-audit/out/summary.csv`;
+  - tab **KPI**: per month: kontakty, rozmowy, wyceny, wygrane, briefy ze strony, wejścia z QR,
+    kliknięcia z Google;
+  - tab **AI**: monthly check of 10 prompts in ChatGPT / Perplexity / Gemini / Claude (list in
+    growth-plan.md).
+- [ ] Later: **brief form → lead sheet automatically** (Google Sheets API or Notion), so website
+  leads land in the same place as outreach leads (the "Lead storage" item in section 5).
+
+### Mini-audit as a client tool (`tools/mini-audit`)
+
+- [x] `--report` mode for existing clients: neutral footer, "Raport strony" heading.
+- [ ] Before/after reports for every client project (material for case studies).
+- [ ] Monthly report for care clients (nazielono.pro: mobile 68/100, LCP 9.1 s, phone below the fold;
+  matches the open follow-up in section 2).
+
 ### Next (from growth-plan.md)
 
 - [ ] Google Business Profile (service area, link to the Katowice page), then Bing Places and Apple
