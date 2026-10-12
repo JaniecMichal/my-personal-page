@@ -23,15 +23,21 @@ type Props = { params: Promise<{ locale: Locale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: "home.meta" });
-	return pageMetadata({ locale, title: t("title"), description: t("description"), hrefFor: () => "/" });
+	return pageMetadata({
+		locale,
+		title: t("title"),
+		description: t("description"),
+		hrefFor: () => "/",
+	});
 }
 
 export default async function HomePage({ params }: Props) {
 	const { locale } = await params;
 	setRequestLocale(locale);
 
-	const [t, settings, services, studies, steps, testimonials, plans, faq] = await Promise.all([
+	const [t, tc, settings, services, studies, steps, testimonials, plans, faq] = await Promise.all([
 		getTranslations("home"),
+		getTranslations("common"),
 		content.getSiteSettings(locale),
 		content.getServices(locale),
 		content.getCaseStudies(locale),
@@ -43,7 +49,7 @@ export default async function HomePage({ params }: Props) {
 
 	return (
 		<>
-			<Hero availability={settings.availability} />
+			<Hero />
 			<TrustStrip label={t("trust")} names={settings.trustedBy} />
 			<ServicesGrid title={t("services.title")} index={t("services.index")} services={services} />
 			<WorkGrid studies={studies} />
@@ -55,7 +61,9 @@ export default async function HomePage({ params }: Props) {
 					previous: t("testimonials.previous"),
 					next: t("testimonials.next"),
 					source: t("testimonials.source"),
+					translated: tc("translatedQuote"),
 				}}
+				locale={locale}
 			/>
 			<section id="pricing" className="pb-20 lg:pb-32">
 				<Container className="flex flex-col gap-10 lg:gap-14">
@@ -67,7 +75,9 @@ export default async function HomePage({ params }: Props) {
 				<Container className="grid gap-8 lg:grid-cols-12">
 					<div className="flex flex-col gap-5 lg:col-span-4">
 						<span className="label">{t("faq.index")}</span>
-						<h2 className="font-serif text-5xl leading-none tracking-[-0.03em] md:text-6xl">{t("faq.title")}</h2>
+						<h2 className="font-serif text-5xl leading-none tracking-[-0.03em] md:text-6xl">
+							{t("faq.title")}
+						</h2>
 					</div>
 					<div className="lg:col-span-8">
 						<FaqList items={faq} />

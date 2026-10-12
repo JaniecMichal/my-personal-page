@@ -9,10 +9,8 @@ export async function askTerminalAI(query: string): Promise<RawLine[]> {
 	const apiKey = process.env.OPENAI_API_KEY;
 
 	if (!apiKey) {
-		return [
-			err("AI assistant unavailable — OPENAI_API_KEY not configured."),
-			info("Use built-in commands instead: help, whoami, skills, experience, contact"),
-		];
+		// No AI configured: behave like a plain shell instead of exposing the missing key.
+		return [err(`command not found: ${query.slice(0, 40)}`), info("Type `help` to see available commands.")];
 	}
 
 	try {

@@ -41,7 +41,8 @@
 			"privacy": "Privacy policy",
 			"rights": "© {year} Michał Janiec"
 		},
-		"breadcrumbHome": "Home"
+		"breadcrumbHome": "Home",
+		"translatedQuote": "Translated from Polish"
 	},
 	"home": {
 		"meta": {
@@ -49,7 +50,6 @@
 			"description": "I build fast Next.js websites, Shopify stores, WordPress fixes and React apps. Senior frontend developer from Katowice, Poland, 5+ years of experience. Quote within 24 hours."
 		},
 		"hero": {
-			"kicker": "Senior Frontend Developer · Katowice, Poland · remote",
 			"title": "Websites, stores and web apps that <em>sell.</em>",
 			"lead": "I build fast Next.js websites, Shopify stores, WordPress fixes and React apps. 5+ years in product teams, now working directly with your business."
 		},

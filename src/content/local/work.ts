@@ -16,12 +16,30 @@ export const caseStudies: LocalCaseStudy[] = [
 		},
 		period: { pl: "02.2025 → wsparcie techniczne", en: "Feb 2025 → maintenance" },
 		role: { pl: "Architektura, frontend, wdrożenie", en: "Architecture, frontend, deployment" },
-		stack: ["Next.js", "Sanity CMS", "React", "TypeScript", "Tailwind CSS", "Radix UI", "Mailgun", "Netlify"],
+		stack: [
+			"Next.js",
+			"Sanity CMS",
+			"React",
+			"TypeScript",
+			"Tailwind CSS",
+			"Radix UI",
+			"Mailgun",
+			"Netlify",
+		],
 		services: ["nextjs-websites", "speed-seo-audit"],
 		metrics: [
-			{ value: { pl: "0,6 s", en: "0.6 s" }, label: { pl: "LCP · desktop (Lighthouse)", en: "LCP · desktop (Lighthouse)" } },
-			{ value: { pl: "0,001", en: "0.001" }, label: { pl: "CLS · desktop (Lighthouse)", en: "CLS · desktop (Lighthouse)" } },
-			{ value: "30 ms", label: { pl: "Total Blocking Time · desktop", en: "Total Blocking Time · desktop" } },
+			{
+				value: { pl: "0,6 s", en: "0.6 s" },
+				label: { pl: "LCP · desktop (Lighthouse)", en: "LCP · desktop (Lighthouse)" },
+			},
+			{
+				value: { pl: "0,001", en: "0.001" },
+				label: { pl: "CLS · desktop (Lighthouse)", en: "CLS · desktop (Lighthouse)" },
+			},
+			{
+				value: "30 ms",
+				label: { pl: "Total Blocking Time · desktop", en: "Total Blocking Time · desktop" },
+			},
 		],
 		chapters: [
 			{
@@ -83,26 +101,38 @@ export const caseStudies: LocalCaseStudy[] = [
 		],
 		cover: {
 			src: "/work/nazielono/home-desktop.png",
-			alt: { pl: "Strona główna nazielono.pro na desktopie", en: "nazielono.pro home page on desktop" },
+			alt: {
+				pl: "Strona główna nazielono.pro na desktopie",
+				en: "nazielono.pro home page on desktop",
+			},
 			width: 1916,
 			height: 925,
 		},
 		gallery: [
 			{
 				src: "/work/nazielono/home-desktop.png",
-				alt: { pl: "Strona główna nazielono.pro: hero z hasłem agencji", en: "nazielono.pro home page: hero with the agency tagline" },
+				alt: {
+					pl: "Strona główna nazielono.pro: hero z hasłem agencji",
+					en: "nazielono.pro home page: hero with the agency tagline",
+				},
 				width: 1916,
 				height: 925,
 			},
 			{
 				src: "/work/nazielono/features-desktop.png",
-				alt: { pl: "Sekcja „Przewaga w działaniu” z kartami zalet agencji", en: "The agency's advantages section with feature cards" },
+				alt: {
+					pl: "Sekcja „Przewaga w działaniu” z kartami zalet agencji",
+					en: "The agency's advantages section with feature cards",
+				},
 				width: 1916,
 				height: 925,
 			},
 			{
 				src: "/work/nazielono/blog-desktop.png",
-				alt: { pl: "Blog „The Organic” z wyróżnionym wpisem", en: "The Organic blog with a featured post" },
+				alt: {
+					pl: "Blog „The Organic” z wyróżnionym wpisem",
+					en: "The Organic blog with a featured post",
+				},
 				width: 1534,
 				height: 923,
 			},
@@ -114,7 +144,10 @@ export const caseStudies: LocalCaseStudy[] = [
 			},
 			{
 				src: "/work/nazielono/home-mobile.png",
-				alt: { pl: "Strona główna nazielono.pro na telefonie", en: "nazielono.pro home page on a phone" },
+				alt: {
+					pl: "Strona główna nazielono.pro na telefonie",
+					en: "nazielono.pro home page on a phone",
+				},
 				width: 338,
 				height: 654,
 			},
@@ -126,43 +159,65 @@ export const caseStudies: LocalCaseStudy[] = [
 			},
 			{
 				src: "/work/nazielono/article-mobile.png",
-				alt: { pl: "Wpis na blogu ze spisem treści na telefonie", en: "A blog post with a table of contents on a phone" },
+				alt: {
+					pl: "Wpis na blogu ze spisem treści na telefonie",
+					en: "A blog post with a table of contents on a phone",
+				},
 				width: 338,
 				height: 857,
 			},
 			{
 				src: "/work/nazielono/calculator-chart-desktop.png",
-				alt: { pl: "Kalkulator zysków: parametry kampanii i prognoza przychodu na 12 miesięcy", en: "Profit calculator: campaign parameters and a 12-month revenue forecast" },
+				alt: {
+					pl: "Kalkulator zysków: parametry kampanii i prognoza przychodu na 12 miesięcy",
+					en: "Profit calculator: campaign parameters and a 12-month revenue forecast",
+				},
 				width: 1466,
 				height: 913,
 			},
 			{
 				src: "/work/nazielono/calculator-table-desktop.png",
-				alt: { pl: "Kalkulator zysków: ROAS, przychód całkowity i prognoza miesięczna", en: "Profit calculator: ROAS, total revenue and the monthly forecast" },
+				alt: {
+					pl: "Kalkulator zysków: ROAS, przychód całkowity i prognoza miesięczna",
+					en: "Profit calculator: ROAS, total revenue and the monthly forecast",
+				},
 				width: 1466,
 				height: 913,
 			},
 			{
 				src: "/work/nazielono/calculator-form-mobile.png",
-				alt: { pl: "Parametry kampanii w kalkulatorze na telefonie", en: "Calculator campaign parameters on a phone" },
+				alt: {
+					pl: "Parametry kampanii w kalkulatorze na telefonie",
+					en: "Calculator campaign parameters on a phone",
+				},
 				width: 335,
 				height: 705,
 			},
 			{
 				src: "/work/nazielono/calculator-chart-mobile.png",
-				alt: { pl: "Wykres prognozy i ROAS na telefonie", en: "Forecast chart and ROAS on a phone" },
+				alt: {
+					pl: "Wykres prognozy i ROAS na telefonie",
+					en: "Forecast chart and ROAS on a phone",
+				},
 				width: 335,
 				height: 705,
 			},
 			{
 				src: "/work/nazielono/calculator-table-mobile.png",
-				alt: { pl: "Tabela prognozy miesięcznej na telefonie", en: "Monthly forecast table on a phone" },
+				alt: {
+					pl: "Tabela prognozy miesięcznej na telefonie",
+					en: "Monthly forecast table on a phone",
+				},
 				width: 335,
 				height: 705,
 			},
 		],
 		quote: {
-			text: "Za namową Michała Janca, zamiast WordPress wybrałem Next.js. Długo nie musiał mnie przekonywać, bo na własnej skórze chciałem sprawdzić, jak JavaScript radzi sobie z SEO, nauczyć się pracy z nową technologią i mieć pełną dowolność w rozwoju.",
+			text: {
+				pl: "Za namową Michała Janca, zamiast WordPress wybrałem Next.js. Długo nie musiał mnie przekonywać, bo na własnej skórze chciałem sprawdzić, jak JavaScript radzi sobie z SEO, nauczyć się pracy z nową technologią i mieć pełną dowolność w rozwoju.",
+				en: "On Michał Janiec's advice I chose Next.js instead of WordPress. He didn't have to convince me for long: I wanted to see first-hand how JavaScript handles SEO, learn a new technology and have full freedom to grow the site.",
+			},
+			lang: "pl",
 			author: "Konrad Bilski",
 			role: { pl: "założyciel Na Zielono", en: "Founder, Na Zielono" },
 		},
@@ -187,9 +242,24 @@ export const caseStudies: LocalCaseStudy[] = [
 		stack: ["React", "TypeScript", "Vite", "Chakra UI"],
 		services: ["web-apps"],
 		metrics: [
-			{ value: "Vite", label: { pl: "migracja z create-react-app", en: "migrated from create-react-app" } },
-			{ value: "2", label: { pl: "interfejsy: administrator szkoły i rodzic", en: "interfaces: school admin and parent" } },
-			{ value: "PL", label: { pl: "posiłki w szkołach w całej Polsce, codziennie", en: "school meals served daily across Poland" } },
+			{
+				value: "Vite",
+				label: { pl: "migracja z create-react-app", en: "migrated from create-react-app" },
+			},
+			{
+				value: "2",
+				label: {
+					pl: "interfejsy: administrator szkoły i rodzic",
+					en: "interfaces: school admin and parent",
+				},
+			},
+			{
+				value: "PL",
+				label: {
+					pl: "posiłki w szkołach w całej Polsce, codziennie",
+					en: "school meals served daily across Poland",
+				},
+			},
 		],
 		// TODO(metrics): hidden until real numbers are available. When you have them, swap in e.g.:
 		// { value: "[X s → Y s]", label: { pl: "czas builda (CRA → Vite)", en: "build time (CRA → Vite)" } },
@@ -241,32 +311,47 @@ export const caseStudies: LocalCaseStudy[] = [
 		],
 		cover: {
 			src: "/work/jemwszkole/admin-menu-desktop.png",
-			alt: { pl: "Panel administratora szkoły w jemWszkole.pl", en: "School admin panel in jemWszkole.pl" },
+			alt: {
+				pl: "Panel administratora szkoły w jemWszkole.pl",
+				en: "School admin panel in jemWszkole.pl",
+			},
 			width: 1894,
 			height: 951,
 		},
 		gallery: [
 			{
 				src: "/work/jemwszkole/admin-menu-desktop.png",
-				alt: { pl: "Panel administratora szkoły: edycja jadłospisu", en: "School admin panel: editing the menu" },
+				alt: {
+					pl: "Panel administratora szkoły: edycja jadłospisu",
+					en: "School admin panel: editing the menu",
+				},
 				width: 1894,
 				height: 951,
 			},
 			{
 				src: "/work/jemwszkole/order-calendar-desktop.png",
-				alt: { pl: "Zamawianie posiłków w kalendarzu z koszykiem", en: "Ordering meals in a calendar with a basket" },
+				alt: {
+					pl: "Zamawianie posiłków w kalendarzu z koszykiem",
+					en: "Ordering meals in a calendar with a basket",
+				},
 				width: 1894,
 				height: 951,
 			},
 			{
 				src: "/work/jemwszkole/parent-dashboard-desktop.png",
-				alt: { pl: "Panel rodzica: kalendarz, ogłoszenia i zamówione posiłki", en: "Parent dashboard: calendar, announcements and ordered meals" },
+				alt: {
+					pl: "Panel rodzica: kalendarz, ogłoszenia i zamówione posiłki",
+					en: "Parent dashboard: calendar, announcements and ordered meals",
+				},
 				width: 645,
 				height: 568,
 			},
 			{
 				src: "/work/jemwszkole/parent-dashboard-mobile.png",
-				alt: { pl: "Panel rodzica na telefonie: zgłoszenie nieobecności i zamówienie posiłku", en: "Parent dashboard on a phone: report an absence and order a meal" },
+				alt: {
+					pl: "Panel rodzica na telefonie: zgłoszenie nieobecności i zamówienie posiłku",
+					en: "Parent dashboard on a phone: report an absence and order a meal",
+				},
 				width: 331,
 				height: 555,
 			},
@@ -278,15 +363,25 @@ export const caseStudies: LocalCaseStudy[] = [
 			},
 			{
 				src: "/work/jemwszkole/order-calendar-mobile.png",
-				alt: { pl: "Wybór dni w kalendarzu na telefonie", en: "Picking days in the calendar on a phone" },
+				alt: {
+					pl: "Wybór dni w kalendarzu na telefonie",
+					en: "Picking days in the calendar on a phone",
+				},
 				width: 339,
 				height: 702,
 			},
 		],
 		quote: {
-			text: "He proactively suggests ideas for improving the application and introducing new features, which significantly enhances the final product. Moreover, he is an excellent communicator—working with him is truly a pleasure.",
+			text: {
+				pl: "Z własnej inicjatywy proponuje usprawnienia aplikacji i nowe funkcje, co wyraźnie podnosi jakość końcowego produktu. Do tego świetnie się komunikuje i praca z nim to prawdziwa przyjemność.",
+				en: "He proactively suggests ideas for improving the application and introducing new features, which significantly enhances the final product. Moreover, he is an excellent communicator—working with him is truly a pleasure.",
+			},
+			lang: "en",
 			author: "Maciej Rygielski",
-			role: { pl: "Project Manager w projekcie jemWszkole.pl", en: "Project Manager, jemWszkole.pl" },
+			role: {
+				pl: "Project Manager w projekcie jemWszkole.pl",
+				en: "Project Manager, jemWszkole.pl",
+			},
 		},
 		liveUrl: "https://jemwszkole.pl",
 		seo: {},
@@ -306,12 +401,30 @@ export const caseStudies: LocalCaseStudy[] = [
 		},
 		period: { pl: "06.2021 → 12.2024", en: "Jun 2021 → Dec 2024" },
 		role: { pl: "Frontend Developer, lider zespołu", en: "Frontend Developer, team lead" },
-		stack: ["React", "TypeScript", "Redux", "RTK Query", "Jest", "React Testing Library", "SASS", "Material UI"],
+		stack: [
+			"React",
+			"TypeScript",
+			"Redux",
+			"RTK Query",
+			"Jest",
+			"React Testing Library",
+			"SASS",
+			"Material UI",
+		],
 		services: ["web-apps"],
 		metrics: [
-			{ value: { pl: "3,5 ROKU", en: "3.5 YEARS" }, label: { pl: "w projekcie", en: "on the project" } },
+			{
+				value: { pl: "3,5 ROKU", en: "3.5 YEARS" },
+				label: { pl: "w projekcie", en: "on the project" },
+			},
 			{ value: "50", label: { pl: "inżynierów w zespole", en: "engineers on the team" } },
-			{ value: "Senior", label: { pl: "od juniora do seniora w projekcie", en: "from junior to senior on the project" } },
+			{
+				value: "Senior",
+				label: {
+					pl: "od juniora do seniora w projekcie",
+					en: "from junior to senior on the project",
+				},
+			},
 		],
 		chapters: [
 			{
@@ -366,9 +479,16 @@ export const caseStudies: LocalCaseStudy[] = [
 			},
 		],
 		quote: {
-			text: "Michał consistently demonstrated his ability to handle complex projects independently, including successfully rewriting an entire system to adopt a modern tech stack.",
+			text: {
+				pl: "Michał wielokrotnie pokazał, że samodzielnie radzi sobie ze złożonymi projektami, w tym z udanym przepisaniem całego systemu na nowoczesny stack technologiczny.",
+				en: "Michał consistently demonstrated his ability to handle complex projects independently, including successfully rewriting an entire system to adopt a modern tech stack.",
+			},
+			lang: "en",
 			author: "Daniel Kowalczyk",
-			role: { pl: "Team Leader w projekcie Braintrust, co-founder HexOcean", en: "Team Leader on Braintrust, co-founder of HexOcean" },
+			role: {
+				pl: "Team Leader w projekcie Braintrust, co-founder HexOcean",
+				en: "Team Leader on Braintrust, co-founder of HexOcean",
+			},
 		},
 		cover: {
 			src: "/work/braintrust/home-desktop.png",
@@ -379,7 +499,10 @@ export const caseStudies: LocalCaseStudy[] = [
 		gallery: [
 			{
 				src: "/work/braintrust/home-desktop.png",
-				alt: { pl: "Panel freelancera w Braintrust: zadania do wykonania i dopasowane oferty", en: "Braintrust talent dashboard: action items and job matches" },
+				alt: {
+					pl: "Panel freelancera w Braintrust: zadania do wykonania i dopasowane oferty",
+					en: "Braintrust talent dashboard: action items and job matches",
+				},
 				width: 1910,
 				height: 957,
 			},
@@ -391,13 +514,19 @@ export const caseStudies: LocalCaseStudy[] = [
 			},
 			{
 				src: "/work/braintrust/job-details-desktop.png",
-				alt: { pl: "Szczegóły oferty: stawka, wymagania, polecenia w tokenach BTRST", en: "Job details: rate, requirements and BTRST referral rewards" },
+				alt: {
+					pl: "Szczegóły oferty: stawka, wymagania, polecenia w tokenach BTRST",
+					en: "Job details: rate, requirements and BTRST referral rewards",
+				},
 				width: 1910,
 				height: 957,
 			},
 			{
 				src: "/work/braintrust/wallet-desktop.png",
-				alt: { pl: "Portfel tokenów BTRST z historią aktywności", en: "BTRST token wallet with activity history" },
+				alt: {
+					pl: "Portfel tokenów BTRST z historią aktywności",
+					en: "BTRST token wallet with activity history",
+				},
 				width: 1910,
 				height: 957,
 			},

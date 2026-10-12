@@ -96,8 +96,9 @@ Order: 3a Mailgun → 3b Vercel env vars → 3c test brief → 3d Search Console
 
 - [x] Merge the PR into `main` (Vercel deploys production). (2026-10-12)
 - [x] (2026-10-12, 27/27 on production) Smoke test: `scripts/smoke.sh` (production) or `scripts/smoke.sh <preview-url>`. Covers: `/` redirects to the right language, `/pl` and `/en` load, the brief form sends, old URLs (`/about`, `/projects`) redirect.
-- [ ] Search Console: submit `sitemap.xml`, request indexing for `/pl`, `/en`, `/pl/uslugi`, `/en/services` and the service pages.
-- [ ] Bing Webmaster Tools: import from Search Console, submit the same sitemap.
+- [x] (2026-10-12; status may show "couldn't fetch" for the first hours) Search Console: submit `sitemap.xml`, request indexing for `/pl`, `/en`, `/pl/uslugi`, `/en/services` and the service pages.
+- [x] Bing Webmaster Tools (2026-10-12): import showed no sites (Domain property), so added manually,
+  verified with a CNAME in OVH, sitemap submitted.
 - [ ] Google Business Profile as a service-area business in Katowice / Silesia, linking to `https://www.mjaniec.it/pl`.
 - [ ] Update the website link on LinkedIn, GitHub and other profiles (same name, email and URL everywhere).
 

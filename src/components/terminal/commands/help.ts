@@ -12,7 +12,5 @@ export const help = (): RawLine[] => [
   out("  clear         clear the terminal"),
   div(),
   blank(),
-  info("Anything else? Just ask — e.g. 'where did you study?' or 'do you know React Native?'"),
-  blank(),
   info("↑ / ↓  navigate command history   |   Tab  autocomplete"),
 ];

@@ -90,7 +90,8 @@ export type CaseStudy = {
 	chapters: { title: string; body: RichText }[];
 	cover?: ImageAsset;
 	gallery: ImageAsset[];
-	quote?: { text: string; author: string; role: string };
+	/** `lang` is the language the quote was originally written in; other locales show it translated. */
+	quote?: { text: string; author: string; role: string; lang: Locale };
 	liveUrl?: string;
 	seo: Seo;
 };
@@ -129,6 +130,8 @@ export type Testimonial = {
 	/** Full recommendation text. */
 	text: string;
 	url: string;
+	/** Language the recommendation was originally written in; other locales show a translation. */
+	lang: Locale;
 };
 
 export type PricingPlan = {

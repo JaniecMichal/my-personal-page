@@ -40,7 +40,7 @@ export const CASE_STUDIES_QUERY = /* groq */ `
 	"services": services[]->{ "slug": slug.current, title },
 	metrics[]{ value, label },
 	chapters[]{ title, body },
-	cover, gallery, quote, liveUrl, seo
+	cover, gallery, quote { "text": coalesce(text[$locale], text), author, "role": coalesce(role[$locale], role), lang }, liveUrl, seo
 }`;
 
 export const CASE_STUDY_QUERY = /* groq */ `
@@ -49,7 +49,7 @@ export const CASE_STUDY_QUERY = /* groq */ `
 	"services": services[]->{ "slug": slug.current, title },
 	metrics[]{ value, label },
 	chapters[]{ title, body },
-	cover, gallery, quote, liveUrl, seo
+	cover, gallery, quote { "text": coalesce(text[$locale], text), author, "role": coalesce(role[$locale], role), lang }, liveUrl, seo
 }`;
 
 export const SITE_SETTINGS_QUERY = /* groq */ `
@@ -66,7 +66,7 @@ export const EXPERIENCE_QUERY = /* groq */ `
 
 export const TESTIMONIALS_QUERY = /* groq */ `
 *[_type == "testimonial"] | order(order asc) {
-	"id": _id, author, ${t("role")}, quote, text, url
+	"id": _id, author, ${t("role")}, ${t("quote")}, ${t("text")}, url, lang
 }`;
 
 export const FAQ_QUERY = /* groq */ `

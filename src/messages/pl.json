@@ -41,7 +41,8 @@
 			"privacy": "Polityka prywatności",
 			"rights": "© {year} Michał Janiec"
 		},
-		"breadcrumbHome": "Start"
+		"breadcrumbHome": "Start",
+		"translatedQuote": "Tłumaczenie z języka angielskiego"
 	},
 	"home": {
 		"meta": {
@@ -49,7 +50,6 @@
 			"description": "Buduję szybkie strony w Next.js, sklepy Shopify, poprawki WordPress i aplikacje React. Senior frontend developer z Katowic, 5+ lat doświadczenia. Wycena w 24 h."
 		},
 		"hero": {
-			"kicker": "Senior Frontend Developer · Katowice · zdalnie",
 			"title": "Strony, sklepy i aplikacje, które <em>sprzedają.</em>",
 			"lead": "Buduję szybkie strony w Next.js, sklepy Shopify, poprawki WordPress i aplikacje React. Ponad 5 lat w zespołach produktowych, teraz pracuję bezpośrednio z Twoją firmą."
 		},
