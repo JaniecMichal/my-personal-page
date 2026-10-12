@@ -19,6 +19,8 @@ export const dots = Doto({
 	subsets: ["latin", "latin-ext"],
 	variable: "--font-doto",
 	display: "swap",
+	// Doto only sets numbers and button labels, so it is not worth preloading over the hero fonts.
+	preload: false,
 });
 
 export const fontVariables = `${serif.variable} ${mono.variable} ${dots.variable}`;

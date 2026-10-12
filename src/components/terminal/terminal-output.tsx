@@ -12,7 +12,7 @@ export const TerminalOutput = ({ lines }: { lines: OutputLine[] }) => {
   }, [lines]);
 
   return (
-    <div className="flex-1 overflow-y-auto p-4 space-y-0.5 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
+    <div role="log" aria-live="polite" aria-label="Terminal output" className="flex-1 overflow-y-auto p-4 space-y-0.5 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
       {lines.map((line) => (
         <TerminalLine key={line.id} line={line} />
       ))}

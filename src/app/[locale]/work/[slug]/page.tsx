@@ -31,11 +31,14 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { locale, slug } = await params;
-	const study = await content.getCaseStudy(locale, slug);
+	const [study, t] = await Promise.all([
+		content.getCaseStudy(locale, slug),
+		getTranslations({ locale, namespace: "work.detail" }),
+	]);
 	if (!study) return {};
 	return pageMetadata({
 		locale,
-		title: study.seo.title ?? `${study.client}: ${study.title} | Michał Janiec`,
+		title: study.seo.title ?? t("metaTitle", { client: study.client }),
 		description: study.seo.description ?? study.summary,
 		hrefFor: (l) => ({ pathname: "/work/[slug]", params: { slug: study.slugs[l] } }),
 		noIndex: study.seo.noIndex,

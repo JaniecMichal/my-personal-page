@@ -11,7 +11,12 @@ type Props = { params: Promise<{ locale: Locale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: "work.meta" });
-	return pageMetadata({ locale, title: t("title"), description: t("description"), hrefFor: () => "/work" });
+	return pageMetadata({
+		locale,
+		title: t("title"),
+		description: t("description"),
+		hrefFor: () => "/work",
+	});
 }
 
 export default async function WorkPage({ params }: Props) {
@@ -24,14 +29,19 @@ export default async function WorkPage({ params }: Props) {
 	]);
 
 	return (
-		<section className="inverse grow">
+		<section className="grow inverse">
 			<Container className="flex flex-col gap-6 py-16 lg:py-24">
-				<h1 className="ab-xl font-serif text-6xl leading-[0.92] tracking-[-0.04em] md:text-8xl lg:text-[128px]">{t("title")}</h1>
-				<p className="max-w-[640px] text-base leading-relaxed text-ink-soft md:text-lg">{t("lead")}</p>
+				<h1 className="font-serif text-6xl leading-[0.92] tracking-[-0.04em] ab-xl md:text-8xl lg:text-[128px]">
+					{t("title")}
+				</h1>
+				<p className="max-w-[640px] text-base leading-relaxed text-ink-soft md:text-lg">
+					{t("lead")}
+				</p>
 			</Container>
 			<Container className="grid gap-8 pb-24 lg:grid-cols-2">
 				{studies.map((study, i) => (
 					<CaseStudyCard
+						headingLevel={2}
 						key={study.slug}
 						study={study}
 						readLabel={tc("cta.read")}

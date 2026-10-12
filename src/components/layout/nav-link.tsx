@@ -5,7 +5,11 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
 
 /** Marks the current section with aria-current and an accent underline. */
-export function NavLink({ href, className, ...props }: ComponentProps<typeof Link> & { href: string }) {
+export function NavLink({
+	href,
+	className,
+	...props
+}: ComponentProps<typeof Link> & { href: string }) {
 	const pathname = usePathname();
 	const active = pathname === href || pathname.startsWith(`${href}/`);
 

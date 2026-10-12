@@ -9,7 +9,7 @@ const NAV_LINKS = [
 import Link from "next/link";
 
 export const TerminalNav = () => (
-	<nav className="flex shrink-0 items-center justify-between border-b border-gray-800 bg-gray-900 px-6 py-3">
+	<nav aria-label="Terminal" className="flex shrink-0 items-center justify-between border-b border-gray-800 bg-gray-900 px-6 py-3">
 		<Link href="/en" className="font-mono text-sm text-green-500 hover:text-green-400 transition-colors">
 			michał@portfolio:~
 		</Link>
@@ -25,7 +25,7 @@ export const TerminalNav = () => (
 			))}
 			<Link
 				href="/en"
-				className="font-mono text-xs text-gray-500 transition-colors hover:text-green-400"
+				className="font-mono text-xs text-gray-400 transition-colors hover:text-green-400"
 			>
 				← back
 			</Link>

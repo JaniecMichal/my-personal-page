@@ -19,11 +19,18 @@ export async function Header() {
 				gutter,
 			)}
 		>
-			<Link href="/" className="font-serif text-3xl leading-none text-ink no-underline lg:text-4xl" aria-label="Michał Janiec — start">
+			<Link
+				href="/"
+				className="flex min-h-11 items-center font-serif text-3xl leading-none text-ink no-underline lg:text-4xl"
+			>
 				mj<span className="text-accent">.</span>
+				<span className="sr-only"> Michał Janiec, start</span>
 			</Link>
 
-			<nav aria-label={t("nav.label")} className="hidden gap-9 text-[13px] uppercase tracking-[0.14em] lg:flex">
+			<nav
+				aria-label={t("nav.label")}
+				className="hidden gap-9 text-[13px] tracking-[0.14em] uppercase lg:flex"
+			>
 				{NAV_ITEMS.map((item) => (
 					<NavLink key={item.href} href={item.href} className="pb-1.5">
 						{t(`nav.${item.key}`)}

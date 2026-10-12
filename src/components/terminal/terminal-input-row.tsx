@@ -22,7 +22,7 @@ export const TerminalInputRow = ({ input, onChange, onKeyDown }: Props) => (
       autoCorrect="off"
       autoCapitalize="off"
       spellCheck={false}
-      aria-label="terminal input"
+      aria-label="Type a command"
     />
   </div>
 );

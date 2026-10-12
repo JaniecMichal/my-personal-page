@@ -14,7 +14,12 @@ type Props = { params: Promise<{ locale: Locale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: "pricing.meta" });
-	return pageMetadata({ locale, title: t("title"), description: t("description"), hrefFor: () => "/pricing" });
+	return pageMetadata({
+		locale,
+		title: t("title"),
+		description: t("description"),
+		hrefFor: () => "/pricing",
+	});
 }
 
 export default async function PricingPage({ params }: Props) {
@@ -29,15 +34,19 @@ export default async function PricingPage({ params }: Props) {
 
 	return (
 		<>
-			<section className="dotgrid border-b border-rule">
+			<section className="border-b border-rule dotgrid">
 				<Container className="flex flex-col gap-6 py-16 lg:py-24">
-					<h1 className="ab font-serif text-6xl leading-[0.92] tracking-[-0.04em] md:text-8xl lg:text-[128px]">{t("title")}</h1>
-					<p className="max-w-[640px] text-base leading-relaxed text-ink-soft md:text-lg">{t("lead")}</p>
+					<h1 className="font-serif text-6xl leading-[0.92] tracking-[-0.04em] ab md:text-8xl lg:text-[128px]">
+						{t("title")}
+					</h1>
+					<p className="max-w-[640px] text-base leading-relaxed text-ink-soft md:text-lg">
+						{t("lead")}
+					</p>
 				</Container>
 			</section>
 			<section className="py-16 lg:py-24">
 				<Container className="flex flex-col gap-14">
-					<PricingPlans plans={plans} ctaLabel={th("pricing.cta")} />
+					<PricingPlans plans={plans} ctaLabel={th("pricing.cta")} headingLevel={2} />
 					<div className="grid gap-6 border-t border-ink pt-7 lg:grid-cols-12">
 						<h2 className="font-serif text-4xl lg:col-span-4">{t("drivers")}</h2>
 						<ul className="grid gap-3 text-[15px] leading-relaxed text-ink-soft sm:grid-cols-2 lg:col-span-8">

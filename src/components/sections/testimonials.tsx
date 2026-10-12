@@ -46,7 +46,12 @@ export function Testimonials({
 					<figcaption className="flex flex-col gap-4 border-t border-rule pt-5 text-sm sm:flex-row sm:items-center sm:justify-between">
 						<span>
 							<strong className="font-bold">{item.author}</strong> · {item.role} ·{" "}
-							<a href={item.url} target="_blank" rel="noopener" className="text-accent">
+							<a
+								href={item.url}
+								target="_blank"
+								rel="noopener"
+								className="text-accent underline underline-offset-2"
+							>
 								{labels.source} ↗
 							</a>
 							{item.lang !== locale && (

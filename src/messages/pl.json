@@ -46,7 +46,7 @@
 	},
 	"home": {
 		"meta": {
-			"title": "Michał Janiec — strony, sklepy i aplikacje | Senior Frontend Developer, Katowice",
+			"title": "Strony, sklepy i aplikacje — Michał Janiec, Katowice",
 			"description": "Buduję szybkie strony w Next.js, sklepy Shopify, poprawki WordPress i aplikacje React. Senior frontend developer z Katowic, 5+ lat doświadczenia. Wycena w 24 h."
 		},
 		"hero": {
@@ -90,7 +90,7 @@
 	},
 	"services": {
 		"meta": {
-			"title": "Usługi: strony Next.js, sklepy Shopify, WordPress, aplikacje React | Michał Janiec",
+			"title": "Usługi: strony Next.js, Shopify, WordPress | Michał Janiec",
 			"description": "Strony firmowe w Next.js, sklepy Shopify, poprawki i przyspieszanie WordPress, aplikacje React i frontend dla zespołów Rails. Katowice i zdalnie."
 		},
 		"title": "Usługi",
@@ -133,12 +133,13 @@
 			"next": "Następny case study",
 			"visit": "Zobacz stronę",
 			"services": "Usługi w tym projekcie",
-			"screenshot": "Zrzut ekranu wkrótce"
+			"screenshot": "Zrzut ekranu wkrótce",
+			"metaTitle": "{client} — realizacja | Michał Janiec"
 		}
 	},
 	"pricing": {
 		"meta": {
-			"title": "Cennik: ile kosztuje strona, sklep Shopify, poprawki WordPress | Michał Janiec",
+			"title": "Cennik stron i sklepów Shopify | Michał Janiec",
 			"description": "Przejrzyste ceny stron w Next.js, sklepów Shopify i współpracy godzinowej. Wycena w 24 godziny po krótkim briefie."
 		},
 		"title": "Cennik",
@@ -153,7 +154,7 @@
 	},
 	"cv": {
 		"meta": {
-			"title": "CV — Michał Janiec, Senior Frontend Developer (React, Next.js, Rails)",
+			"title": "CV — Michał Janiec, Senior Frontend Developer",
 			"description": "Doświadczenie, stack i dostępność. Senior Frontend Developer z Katowic: React, Next.js, TypeScript, Stimulus i Tailwind. Etat, B2B lub freelance."
 		},
 		"label": "Curriculum vitae",
@@ -233,7 +234,8 @@
 			"detailsHint": "Rodzaj projektu, budżet, termin. Pomogą mi przygotować trafniejszą wycenę.",
 			"typeLabel": "Czego potrzebujesz? Możesz zaznaczyć kilka.",
 			"budgetLabel": "Budżet",
-			"timelineLabel": "Termin"
+			"timelineLabel": "Termin",
+			"requiredNote": "pola wymagane"
 		}
 	},
 	"privacy": {

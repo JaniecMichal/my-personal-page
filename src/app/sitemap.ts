@@ -18,10 +18,12 @@ const STATIC: { pathname: Exclude<AppPathname, `${string}[slug]`>; priority: num
 
 /** One entry per URL, each listing all its language versions (hreflang in the sitemap). */
 function entries(hrefFor: (l: Locale) => Href, priority: number): MetadataRoute.Sitemap {
-	const languages = Object.fromEntries(routing.locales.map((l) => [l, localizedUrl(hrefFor(l), l)]));
+	const languages = {
+		...Object.fromEntries(routing.locales.map((l) => [l, localizedUrl(hrefFor(l), l)])),
+		"x-default": localizedUrl(hrefFor(routing.defaultLocale), routing.defaultLocale),
+	};
 	return routing.locales.map((locale) => ({
 		url: localizedUrl(hrefFor(locale), locale),
-		lastModified: new Date(),
 		changeFrequency: "monthly",
 		priority,
 		alternates: { languages },

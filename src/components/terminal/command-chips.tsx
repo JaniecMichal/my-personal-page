@@ -6,7 +6,7 @@ export const CommandChips = ({ onCommand }: { onCommand: (cmd: string) => void }
       <button
         key={cmd}
         onClick={() => onCommand(cmd)}
-        className="rounded border border-green-900 bg-gray-900 px-3 py-1 font-mono text-xs text-green-400 transition-colors hover:bg-gray-800 active:bg-gray-700"
+        className="inline-flex min-h-11 items-center rounded border border-green-900 bg-gray-900 px-3 font-mono text-xs text-green-400 transition-colors hover:bg-gray-800 active:bg-gray-700"
       >
         {cmd}
       </button>
