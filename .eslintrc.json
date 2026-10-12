@@ -11,7 +11,7 @@
 		"plugin:import/typescript",
 		"prettier",
 		"next/core-web-vitals",
-		"react-hooks/recommended"
+		"plugin:react-hooks/recommended"
 	],
 	"rules": {
 		// sort imports
@@ -22,16 +22,6 @@
 
 		"import/no-cycle": "error",
 		"import/no-default-export": "error",
-
-		// allow {} even though it's unsafe but comes handy
-		"@typescript-eslint/ban-types": [
-			"error",
-			{
-				"types": {
-					"{}": false
-				}
-			}
-		],
 
 		"@typescript-eslint/consistent-type-imports": [
 			"error",
@@ -84,7 +74,7 @@
 	},
 	"overrides": [
 		{
-			"files": ["src/app/**/*.ts?(x)", "middleware.ts"],
+			"files": ["src/app/**/*.ts?(x)", "src/middleware.ts", "src/i18n/request.ts", "*.config.ts"],
 			"rules": {
 				"import/no-default-export": "off"
 			}
