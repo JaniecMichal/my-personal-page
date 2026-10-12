@@ -178,26 +178,15 @@
 	"contact": {
 		"meta": {
 			"title": "Kontakt i wycena projektu | Michał Janiec",
-			"description": "Opisz projekt w 3-minutowym briefie albo umów rozmowę. Odpowiadam w ciągu 24 godzin."
+			"description": "Opisz projekt w krótkim formularzu albo napisz e-mail. Odpowiadam w ciągu 24 godzin."
 		},
 		"label": "Kontakt · brief projektu",
 		"title": "Opowiedz mi o projekcie.",
-		"lead": "4 krótkie kroki, około 3 minuty. Odpowiadam w ciągu 24 godzin z wstępną wyceną albo pytaniami.",
+		"lead": "Wystarczy imię, e-mail i kilka słów o projekcie. Szczegóły są opcjonalne. Odpowiadam w ciągu 24 godzin z wstępną wyceną albo pytaniami.",
 		"alt": "Wolisz inaczej?",
 		"form": {
 			"label": "Brief projektu",
-			"step": "Krok {current} z {total}",
-			"steps": {
-				"s1": "Rodzaj projektu",
-				"s2": "Budżet",
-				"s3": "Termin",
-				"s4": "Kontakt"
-			},
-			"typeQuestion": "Czego potrzebujesz?",
-			"typeHint": "Możesz zaznaczyć kilka.",
-			"budgetQuestion": "Jaki masz budżet?",
-			"timelineQuestion": "Na kiedy?",
-			"contactQuestion": "Jak mogę się odezwać?",
+			"heading": "Opowiedz o projekcie",
 			"types": {
 				"website": "Strona firmowa",
 				"shopify": "Sklep Shopify",
@@ -223,27 +212,28 @@
 			},
 			"name": "Imię",
 			"email": "E-mail",
-			"company": "Firma lub strona (opcjonalnie)",
+			"company": "Firma lub strona",
 			"message": "Kilka słów o projekcie",
 			"consent": "Zgadzam się na przetwarzanie moich danych w celu odpowiedzi na zapytanie.",
 			"privacy": "Polityka prywatności",
-			"back": "Wstecz",
-			"next": "Dalej",
 			"submit": "Wyślij brief",
 			"sending": "Wysyłam…",
 			"successTitle": "Dzięki! Odezwę się w ciągu 24 godzin.",
 			"successBody": "Brief dotarł. Chcesz przyspieszyć? Napisz od razu na e-mail.",
 			"errors": {
-				"type": "Wybierz przynajmniej jedną opcję.",
-				"budget": "Wybierz budżet.",
-				"timeline": "Wybierz termin.",
 				"name": "Podaj imię (min. 2 znaki).",
 				"email": "Podaj poprawny adres e-mail.",
 				"message": "Napisz kilka słów (min. 10 znaków).",
 				"consent": "Potrzebuję zgody, żeby odpowiedzieć.",
 				"generic": "Nie udało się wysłać. Spróbuj ponownie albo napisz na {email}.",
 				"rateLimit": "Za dużo prób. Spróbuj za kilka minut."
-			}
+			},
+			"messagePlaceholder": "Co chcesz zbudować lub poprawić? Link do obecnej strony też się przyda.",
+			"detailsTitle": "Szczegóły projektu (opcjonalnie)",
+			"detailsHint": "Pomogą mi przygotować trafniejszą wycenę. Możesz je pominąć.",
+			"typeLabel": "Czego potrzebujesz? Możesz zaznaczyć kilka.",
+			"budgetLabel": "Budżet",
+			"timelineLabel": "Termin"
 		}
 	},
 	"privacy": {

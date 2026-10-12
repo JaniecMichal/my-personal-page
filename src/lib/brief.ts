@@ -5,9 +5,9 @@ export { BUDGETS, PROJECT_TYPES, TIMELINES };
 
 /** Error values are message keys under `contact.form.errors`. */
 export const briefSchema = z.object({
-	types: z.array(z.enum(PROJECT_TYPES), { error: "type" }).min(1, { error: "type" }),
-	budget: z.enum(BUDGETS, { error: "budget" }),
-	timeline: z.enum(TIMELINES, { error: "timeline" }),
+	types: z.array(z.enum(PROJECT_TYPES)).default([]),
+	budget: z.enum(BUDGETS).optional(),
+	timeline: z.enum(TIMELINES).optional(),
 	name: z.string().trim().min(2, { error: "name" }).max(120, { error: "name" }),
 	email: z.email({ error: "email" }).max(200, { error: "email" }),
 	company: z.string().trim().max(200).optional().default(""),

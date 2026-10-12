@@ -23,9 +23,9 @@ function formatBrief(data: BriefInput) {
 		["Name", data.name],
 		["Email", data.email],
 		["Company / site", data.company || "—"],
-		["Project", data.types.join(", ")],
-		["Budget", data.budget],
-		["Timeline", data.timeline],
+		["Project", data.types.join(", ") || "—"],
+		["Budget", data.budget ?? "—"],
+		["Timeline", data.timeline ?? "—"],
 		["Language", data.locale],
 	];
 	const text = `${rows.map(([k, v]) => `${k}: ${v}`).join("\n")}\n\n${data.message}`;
@@ -84,7 +84,7 @@ export async function submitBrief(_prev: BriefState, formData: FormData): Promis
 		await mailer.send({
 			to,
 			replyTo: data.email,
-			subject: `Brief: ${data.types.join(", ")} — ${data.name}`,
+			subject: data.types.length ? `Brief: ${data.types.join(", ")} — ${data.name}` : `Brief — ${data.name}`,
 			text,
 			html,
 			tags: ["brief", ...data.types],

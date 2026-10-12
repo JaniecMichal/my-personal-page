@@ -2,7 +2,7 @@
 
 Status (2026-09-24): the rebuild is pushed to `rebuild` and a PR `rebuild` → `main` is open (Vercel
 preview). Build, lint and typecheck pass, 40 pages are statically generated. All real content is in
-(sections 1–2 done). **Next up: section 3b** (Vercel env vars), then 3c–3d, then launch.
+(sections 1–2 done). **Next up: 3d–3f** (Search Console, primary domain, DNS cleanup), then launch.
 
 Progress log:
 
@@ -21,6 +21,10 @@ Progress log:
   build passes. Found that Vercel serves **`www.mjaniec.it` as primary** (apex 308 → www), while the
   site's canonical/hreflang/sitemap use `https://mjaniec.it` (step 3e). Added `scripts/smoke.sh`
   (27 checks, all pass on a local production build). DNS unchanged: still no DMARC.
+- 2026-10-12: 3b + 3c done (env vars in Vercel, test brief arrived). Brief form simplified to one
+  step: only name, email, message and consent are required; project type, budget, timeline and
+  company are optional. Field errors now clear as soon as the field is fixed. `.env.local` has the
+  Mailgun vars, so the local form sends real emails.
 
 Related docs: [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
@@ -66,11 +70,11 @@ redirect artifact, check before launch), no MX, no DMARC yet.
 Order: 3a Mailgun → 3b Vercel env vars → 3c test brief → 3d Search Console. Update this file after each.
 
 - [x] **3a Mailgun**: reuse domain `mjaniec.it` (EU, DKIM verified, shared with nazielono), own sending key. Still to do (optional): TXT `_dmarc` `v=DMARC1; p=none;` in OVH.
-- [ ] **3b Vercel env vars** (Production + Preview): `MAILGUN_API_KEY` (sending key, Sensitive), `MAILGUN_DOMAIN=mjaniec.it`, `MAILGUN_REGION=eu`, `MAILGUN_FROM=mjaniec.it <no-reply@mjaniec.it>`, `CONTACT_TO_EMAIL`, `NEXT_PUBLIC_SITE_URL=https://mjaniec.it`. Optional: `OPENAI_API_KEY` for the terminal.
+- [x] **3b Vercel env vars** (Production + Preview): `MAILGUN_API_KEY` (sending key, Sensitive), `MAILGUN_DOMAIN=mjaniec.it`, `MAILGUN_REGION=eu`, `MAILGUN_FROM=mjaniec.it <no-reply@mjaniec.it>`, `CONTACT_TO_EMAIL`, `NEXT_PUBLIC_SITE_URL=https://mjaniec.it`. Optional: `OPENAI_API_KEY` for the terminal.
   `CONTACT_TO_EMAIL` must be a real mailbox (e.g. Gmail): `mjaniec.it` has no MX, so it can't receive.
   Paste the key only in Vercel, never in chat. After saving, **redeploy** the latest `rebuild` preview
-  (Deployments → ⋯ → Redeploy), because env vars apply only to new builds. ← **resume here**
-- [ ] **3c** Send a test brief from the **preview** URL and check that it lands in your inbox (not spam).
+  (Deployments → ⋯ → Redeploy), because env vars apply only to new builds.
+- [x] **3c** (2026-10-12, landed in inbox) Send a test brief from the **preview** URL and check that it lands in your inbox (not spam).
 - [ ] **3d Google Search Console**: verify the Domain property with a DNS TXT record ([search-console.md](./search-console.md)).
 - [ ] **3e Primary domain**: Vercel → Settings → Domains: make `mjaniec.it` the primary domain and set
   `www.mjaniec.it` to redirect (308) to it. Today it is the other way round, so every canonical URL

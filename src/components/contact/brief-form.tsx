@@ -1,75 +1,85 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { type FormEvent, startTransition, useActionState, useEffect, useRef, useState } from "react";
+import { type ChangeEvent, type FormEvent, startTransition, useActionState, useEffect, useRef, useState } from "react";
 import { submitBrief } from "@/actions/brief";
 import { buttonClass } from "@/components/ui/button-link";
 import { EmailLink } from "@/components/ui/email-link";
 import { Link } from "@/i18n/navigation";
-import { BUDGETS, type BriefErrorKey, type BriefField, type BriefState, PROJECT_TYPES, TIMELINES } from "@/lib/brief-options";
+import {
+	BUDGETS,
+	type BriefErrorKey,
+	type BriefState,
+	PROJECT_TYPES,
+	TIMELINES,
+	checkBriefField,
+} from "@/lib/brief-options";
 import { cn } from "@/lib/cn";
 import { decodeEmail } from "@/lib/email";
 
-const TOTAL = 4;
+const REQUIRED: BriefErrorKey[] = ["name", "email", "message", "consent"];
 const chip =
 	"flex min-h-12 cursor-pointer items-center gap-3 border border-ink px-4 text-sm transition-colors has-[:checked]:bg-ink has-[:checked]:text-ground has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-accent";
 const input =
-	"border-0 border-b border-ink bg-transparent py-3.5 font-mono text-base text-ink outline-none focus:border-accent focus:shadow-[0_1px_0_var(--accent)]";
+	"border-0 border-b border-ink bg-transparent py-3.5 font-mono text-base text-ink outline-none focus:border-accent focus:shadow-[0_1px_0_var(--accent)] aria-[invalid=true]:border-[#d4351c] dark:aria-[invalid=true]:border-[#ff7a66]";
+const groupLegend = "label mb-3";
 
-/** Fields each step owns, used to show the right errors and jump back to them. */
-const STEP_FIELDS: BriefField[][] = [["types"], ["budget"], ["timeline"], ["name", "email", "company", "message", "consent"]];
+type Errors = Partial<Record<BriefErrorKey, true>>;
+
+function fieldValue(form: HTMLFormElement, field: BriefErrorKey) {
+	const el = form.elements.namedItem(field) as HTMLInputElement | HTMLTextAreaElement | null;
+	if (!el) return "";
+	return el instanceof HTMLInputElement && el.type === "checkbox" ? (el.checked ? "on" : "") : el.value;
+}
 
 export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 	const t = useTranslations("contact.form");
 	const locale = useLocale();
 	const [state, action, pending] = useActionState<BriefState, FormData>(submitBrief, { status: "idle" });
-	const [step, setStep] = useState(1);
-	const [localErrors, setLocalErrors] = useState<Partial<Record<BriefField, BriefErrorKey>>>({});
+	const [errors, setErrors] = useState<Errors>({});
 	const formRef = useRef<HTMLFormElement>(null);
-	const headingRef = useRef<HTMLParagraphElement>(null);
+	const successRef = useRef<HTMLParagraphElement>(null);
 
-	const errors = { ...(state.status === "invalid" ? state.errors : {}), ...localErrors };
-
-	// Server-side validation failed: go to the first step with an error.
+	// Server-side validation is the source of truth: show whatever it rejected.
 	useEffect(() => {
 		if (state.status !== "invalid") return;
-		const first = STEP_FIELDS.findIndex((fields) => fields.some((f) => state.errors[f]));
-		if (first >= 0) setStep(first + 1);
+		const next: Errors = {};
+		for (const key of Object.values(state.errors)) if (key && REQUIRED.includes(key)) next[key] = true;
+		setErrors(next);
 	}, [state]);
 
-	// Move focus to the step heading when the step changes (not on first render).
-	const mounted = useRef(false);
 	useEffect(() => {
-		if (mounted.current) headingRef.current?.focus();
-		mounted.current = true;
-	}, [step, state.status]);
+		if (state.status === "success") successRef.current?.focus();
+	}, [state.status]);
 
-	const validateStep = () => {
-		const data = new FormData(formRef.current ?? undefined);
-		const next: Partial<Record<BriefField, BriefErrorKey>> = {};
-		if (step === 1 && data.getAll("types").length === 0) next.types = "type";
-		if (step === 2 && !data.get("budget")) next.budget = "budget";
-		if (step === 3 && !data.get("timeline")) next.timeline = "timeline";
-		setLocalErrors(next);
-		return Object.keys(next).length === 0;
+	// Once a field has an error, re-check it as the user types so the message disappears when fixed.
+	const onChange = (e: ChangeEvent<HTMLFormElement>) => {
+		const field = e.target.name as BriefErrorKey;
+		if (!errors[field] || !formRef.current) return;
+		if (checkBriefField(field, fieldValue(formRef.current, field))) {
+			setErrors(({ [field]: _, ...rest }) => rest);
+		}
 	};
 
 	// Submitting manually keeps typed values after a validation error (form actions reset the form).
 	const onSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		if (step < TOTAL) {
-			if (validateStep()) setStep((s) => s + 1);
+		const form = e.currentTarget;
+		const invalid = REQUIRED.filter((field) => !checkBriefField(field, fieldValue(form, field)));
+		setErrors(Object.fromEntries(invalid.map((field) => [field, true])));
+		const [first] = invalid;
+		if (first) {
+			(form.elements.namedItem(first) as HTMLElement | null)?.focus();
 			return;
 		}
-		setLocalErrors({});
-		const data = new FormData(e.currentTarget);
+		const data = new FormData(form);
 		startTransition(() => action(data));
 	};
 
 	if (state.status === "success") {
 		return (
 			<div className="brackets relative flex min-h-[520px] flex-col justify-center gap-6 bg-surface p-8 md:p-12" role="status">
-				<p ref={headingRef} tabIndex={-1} className="font-dots text-6xl font-black text-accent outline-none">
+				<p ref={successRef} tabIndex={-1} className="font-dots text-6xl font-black text-accent outline-none">
 					OK ✓
 				</p>
 				<h2 className="font-serif text-4xl leading-none md:text-[56px]">{t("successTitle")}</h2>
@@ -79,10 +89,14 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 		);
 	}
 
-	const error = (field: BriefField) =>
+	const invalidProps = (field: BriefErrorKey) => ({
+		"aria-invalid": !!errors[field],
+		"aria-describedby": errors[field] ? `${field}-error` : undefined,
+	});
+	const error = (field: BriefErrorKey) =>
 		errors[field] ? (
-			<p id={`${field}-error`} className="text-sm text-[#d4351c] dark:text-[#ff7a66]" role="alert">
-				{t(`errors.${errors[field]}`)}
+			<p id={`${field}-error`} className="text-sm text-[#d4351c] dark:text-[#ff7a66]">
+				{t(`errors.${field}`)}
 			</p>
 		) : null;
 
@@ -90,9 +104,10 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 		<form
 			ref={formRef}
 			onSubmit={onSubmit}
+			onChange={onChange}
 			aria-label={t("label")}
 			noValidate
-			className="brackets relative flex min-h-[640px] flex-col gap-8 bg-surface p-6 md:p-12"
+			className="brackets relative flex flex-col gap-8 bg-surface p-6 md:p-12"
 		>
 			<input type="hidden" name="locale" value={locale} />
 			{/* Honeypot, hidden from people and assistive tech. */}
@@ -102,88 +117,91 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 				</label>
 			</div>
 
-			<div className="flex gap-1.5" aria-hidden="true">
-				{Array.from({ length: TOTAL }, (_, i) => (
-					<span key={i} className={cn("h-1 grow", i < step ? "bg-accent" : "bg-rule")} />
-				))}
+			<h2 className="font-serif text-4xl leading-[1.05] md:text-[44px]">{t("heading")}</h2>
+
+			<div className="grid gap-6 sm:grid-cols-2">
+				<label className="flex flex-col gap-2">
+					<span className="label">{t("name")}</span>
+					<input name="name" type="text" autoComplete="name" required maxLength={120} className={input} {...invalidProps("name")} />
+					{error("name")}
+				</label>
+				<label className="flex flex-col gap-2">
+					<span className="label">{t("email")}</span>
+					<input name="email" type="email" autoComplete="email" required maxLength={200} className={input} {...invalidProps("email")} />
+					{error("email")}
+				</label>
 			</div>
-			<p
-				ref={headingRef}
-				tabIndex={-1}
-				className="flex items-baseline justify-between outline-none"
-				aria-live="polite"
-			>
-				<span className="font-dots text-[22px] font-black text-accent">
-					{t("step", { current: step, total: TOTAL })}
-				</span>
-				<span className="label">{t(`steps.s${step as 1 | 2 | 3 | 4}`)}</span>
-			</p>
+			<label className="flex flex-col gap-2">
+				<span className="label">{t("message")}</span>
+				<textarea
+					name="message"
+					rows={4}
+					required
+					maxLength={5000}
+					placeholder={t("messagePlaceholder")}
+					className={cn(input, "resize-y placeholder:text-muted")}
+					{...invalidProps("message")}
+				/>
+				{error("message")}
+			</label>
 
-			<fieldset hidden={step !== 1} className="flex flex-col gap-6" aria-describedby={errors.types ? "types-error" : undefined}>
-				<legend className="mb-2 font-serif text-4xl leading-[1.05] md:text-[44px]">{t("typeQuestion")}</legend>
-				<p className="label">{t("typeHint")}</p>
-				<div className="grid gap-3 sm:grid-cols-2">
-					{PROJECT_TYPES.map((type) => (
-						<label key={type} className={chip}>
-							<input type="checkbox" name="types" value={type} className="size-4 accent-accent" />
-							{t(`types.${type}`)}
-						</label>
-					))}
+			<div className="flex flex-col gap-6 border-t border-dashed border-rule-strong pt-8">
+				<div>
+					<p className="font-serif text-2xl leading-tight md:text-3xl">{t("detailsTitle")}</p>
+					<p className="mt-1 text-sm text-ink-soft">{t("detailsHint")}</p>
 				</div>
-				{error("types")}
-			</fieldset>
 
-			<fieldset hidden={step !== 2} className="flex flex-col gap-6" aria-describedby={errors.budget ? "budget-error" : undefined}>
-				<legend className="mb-2 font-serif text-4xl leading-[1.05] md:text-[44px]">{t("budgetQuestion")}</legend>
-				<div className="flex flex-col gap-3">
-					{BUDGETS.map((budget) => (
-						<label key={budget} className={chip}>
-							<input type="radio" name="budget" value={budget} className="size-4 accent-accent" />
-							{t(`budgets.${budget}`)}
-						</label>
-					))}
-				</div>
-				{error("budget")}
-			</fieldset>
+				<fieldset>
+					<legend className={groupLegend}>{t("typeLabel")}</legend>
+					<div className="flex flex-wrap gap-3">
+						{PROJECT_TYPES.map((type) => (
+							<label key={type} className={chip}>
+								<input type="checkbox" name="types" value={type} className="size-4 accent-accent" />
+								{t(`types.${type}`)}
+							</label>
+						))}
+					</div>
+				</fieldset>
 
-			<fieldset hidden={step !== 3} className="flex flex-col gap-6" aria-describedby={errors.timeline ? "timeline-error" : undefined}>
-				<legend className="mb-2 font-serif text-4xl leading-[1.05] md:text-[44px]">{t("timelineQuestion")}</legend>
-				<div className="flex flex-col gap-3">
-					{TIMELINES.map((timeline) => (
-						<label key={timeline} className={chip}>
-							<input type="radio" name="timeline" value={timeline} className="size-4 accent-accent" />
-							{t(`timelines.${timeline}`)}
-						</label>
-					))}
-				</div>
-				{error("timeline")}
-			</fieldset>
+				<fieldset>
+					<legend className={groupLegend}>{t("budgetLabel")}</legend>
+					<div className="flex flex-wrap gap-3">
+						{BUDGETS.map((budget) => (
+							<label key={budget} className={chip}>
+								<input type="radio" name="budget" value={budget} className="size-4 accent-accent" />
+								{t(`budgets.${budget}`)}
+							</label>
+						))}
+					</div>
+				</fieldset>
 
-			<fieldset hidden={step !== 4} className="flex flex-col gap-6">
-				<legend className="mb-2 font-serif text-4xl leading-[1.05] md:text-[44px]">{t("contactQuestion")}</legend>
-				<div className="grid gap-6 sm:grid-cols-2">
-					<label className="flex flex-col gap-2">
-						<span className="label">{t("name")}</span>
-						<input name="name" type="text" autoComplete="name" required aria-invalid={!!errors.name} aria-describedby={errors.name ? "name-error" : undefined} className={input} />
-						{error("name")}
-					</label>
-					<label className="flex flex-col gap-2">
-						<span className="label">{t("email")}</span>
-						<input name="email" type="email" autoComplete="email" required aria-invalid={!!errors.email} aria-describedby={errors.email ? "email-error" : undefined} className={input} />
-						{error("email")}
-					</label>
-				</div>
+				<fieldset>
+					<legend className={groupLegend}>{t("timelineLabel")}</legend>
+					<div className="flex flex-wrap gap-3">
+						{TIMELINES.map((timeline) => (
+							<label key={timeline} className={chip}>
+								<input type="radio" name="timeline" value={timeline} className="size-4 accent-accent" />
+								{t(`timelines.${timeline}`)}
+							</label>
+						))}
+					</div>
+				</fieldset>
+
 				<label className="flex flex-col gap-2">
 					<span className="label">{t("company")}</span>
-					<input name="company" type="text" autoComplete="organization" className={input} />
+					<input name="company" type="text" autoComplete="organization" maxLength={200} className={input} />
 				</label>
-				<label className="flex flex-col gap-2">
-					<span className="label">{t("message")}</span>
-					<textarea name="message" rows={4} required aria-invalid={!!errors.message} aria-describedby={errors.message ? "message-error" : undefined} className={cn(input, "resize-y")} />
-					{error("message")}
-				</label>
+			</div>
+
+			<div className="flex flex-col gap-2">
 				<label className="flex items-start gap-3 text-xs leading-relaxed text-ink-soft">
-					<input type="checkbox" name="consent" required className="mt-0.5 size-5 shrink-0 accent-accent" aria-invalid={!!errors.consent} />
+					<input
+						type="checkbox"
+						name="consent"
+						required
+						className="mt-0.5 size-5 shrink-0 accent-accent"
+						{...invalidProps("consent")}
+					/>
 					<span>
 						{t("consent")}{" "}
 						<Link href="/privacy" className="text-accent">
@@ -192,36 +210,20 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 					</span>
 				</label>
 				{error("consent")}
-			</fieldset>
+			</div>
 
-			{state.status === "error" && (
-				<p className="text-sm text-[#d4351c] dark:text-[#ff7a66]" role="alert">
-					{state.reason === "rateLimit" ? t("errors.rateLimit") : t("errors.generic", { email: decodeEmail(encodedEmail) })}
-				</p>
-			)}
-
-			<div className="mt-auto flex items-center justify-between border-t border-dashed border-rule-strong pt-6">
-				<button
-					type="button"
-					onClick={() => setStep((s) => Math.max(1, s - 1))}
-					disabled={step === 1}
-					className="min-h-11 text-sm uppercase tracking-[0.1em] text-muted disabled:invisible"
-				>
-					← {t("back")}
-				</button>
-				{step < TOTAL ? (
-					<button
-						type="button"
-						onClick={() => validateStep() && setStep((s) => s + 1)}
-						className={buttonClass("primary")}
-					>
-						{t("next")} →
-					</button>
-				) : (
-					<button type="submit" disabled={pending} className={cn(buttonClass("primary"), "disabled:opacity-60")}>
-						{pending ? t("sending") : `${t("submit")} ↗`}
-					</button>
+			<div aria-live="polite">
+				{state.status === "error" && (
+					<p className="text-sm text-[#d4351c] dark:text-[#ff7a66]">
+						{state.reason === "rateLimit" ? t("errors.rateLimit") : t("errors.generic", { email: decodeEmail(encodedEmail) })}
+					</p>
 				)}
+			</div>
+
+			<div className="flex justify-end border-t border-dashed border-rule-strong pt-6">
+				<button type="submit" disabled={pending} className={cn(buttonClass("primary"), "disabled:opacity-60")}>
+					{pending ? t("sending") : `${t("submit")} ↗`}
+				</button>
 			</div>
 		</form>
 	);

@@ -178,26 +178,15 @@
 	"contact": {
 		"meta": {
 			"title": "Contact and project quote | Michał Janiec",
-			"description": "Describe your project in a 3-minute brief or book a call. I reply within 24 hours."
+			"description": "Describe your project in a short form or send an email. I reply within 24 hours."
 		},
 		"label": "Contact · project brief",
 		"title": "Tell me about your project.",
-		"lead": "4 short steps, about 3 minutes. I reply within 24 hours with a rough quote or questions.",
+		"lead": "Just your name, email and a few words about the project. The details are optional. I reply within 24 hours with a rough quote or questions.",
 		"alt": "Prefer another way?",
 		"form": {
 			"label": "Project brief",
-			"step": "Step {current} of {total}",
-			"steps": {
-				"s1": "Project type",
-				"s2": "Budget",
-				"s3": "Timeline",
-				"s4": "Contact"
-			},
-			"typeQuestion": "What do you need?",
-			"typeHint": "Pick one or more.",
-			"budgetQuestion": "What's your budget?",
-			"timelineQuestion": "When do you need it?",
-			"contactQuestion": "How can I reach you?",
+			"heading": "Tell me about it",
 			"types": {
 				"website": "Business website",
 				"shopify": "Shopify store",
@@ -223,27 +212,28 @@
 			},
 			"name": "Name",
 			"email": "Email",
-			"company": "Company or website (optional)",
+			"company": "Company or website",
 			"message": "A few words about the project",
 			"consent": "I agree to the processing of my data to answer this enquiry.",
 			"privacy": "Privacy policy",
-			"back": "Back",
-			"next": "Next",
 			"submit": "Send brief",
 			"sending": "Sending…",
 			"successTitle": "Thanks! I'll get back to you within 24 hours.",
 			"successBody": "Your brief arrived. Want to speed things up? Email me directly.",
 			"errors": {
-				"type": "Pick at least one option.",
-				"budget": "Pick a budget.",
-				"timeline": "Pick a timeline.",
 				"name": "Enter your name (min. 2 characters).",
 				"email": "Enter a valid email address.",
 				"message": "Write a few words (min. 10 characters).",
 				"consent": "I need your consent to reply.",
 				"generic": "Couldn't send it. Try again or email {email}.",
 				"rateLimit": "Too many attempts. Try again in a few minutes."
-			}
+			},
+			"messagePlaceholder": "What do you want to build or fix? A link to your current site helps too.",
+			"detailsTitle": "Project details (optional)",
+			"detailsHint": "They help me give a more accurate quote. Feel free to skip them.",
+			"typeLabel": "What do you need? Pick one or more.",
+			"budgetLabel": "Budget",
+			"timelineLabel": "Timeline"
 		}
 	},
 	"privacy": {
