@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { TerminalWindow } from "@/components/terminal/terminal-window";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terminal | Michał Janiec",
   description:
     "Interactive CLI-style portfolio explorer. Type commands to navigate experience, skills, and projects.",
-  alternates: { canonical: "https://mjaniec.it/terminal" },
+  alternates: { canonical: `${SITE_URL}/terminal` },
 };
 
 export default function TerminalPage() {

@@ -2,7 +2,7 @@
 
 Personal sales + CV site of Michał Janiec (Senior Frontend Developer, Katowice). Goal: win freelance
 clients (Next.js sites, Shopify, WordPress, React apps, frontend for Rails teams) and job offers.
-Bilingual **PL (default) / EN**. Deployed on Vercel at https://mjaniec.it.
+Bilingual **PL (default) / EN**. Deployed on Vercel at https://www.mjaniec.it.
 
 Start of a session: read `.ai/next-steps.md` for current status and open items.
 

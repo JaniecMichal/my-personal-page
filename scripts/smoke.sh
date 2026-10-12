@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Launch smoke test. Usage: scripts/smoke.sh [base-url]   (default: https://mjaniec.it)
+# Launch smoke test. Usage: scripts/smoke.sh [base-url]   (default: https://www.mjaniec.it)
 # Checks language redirects, old-URL redirects, key pages, canonical + hreflang, SEO endpoints.
-BASE="${1:-https://mjaniec.it}"
+BASE="${1:-https://www.mjaniec.it}"
 BASE="${BASE%/}"
 fail=0
 
@@ -31,7 +31,7 @@ echo "SEO"
 for p in /sitemap.xml /robots.txt /llms.txt; do check "$p 200" "200" "$(status $p)"; done
 html="$(curl -s "$BASE/pl")"
 canonical="$(grep -o '<link rel="canonical" href="[^"]*"' <<<"$html" | head -1 | sed 's/.*href="//;s/"$//')"
-check "/pl canonical points to https://mjaniec.it/pl" "https://mjaniec.it/pl" "$canonical"
+check "/pl canonical points to https://www.mjaniec.it/pl" "https://www.mjaniec.it/pl" "$canonical"
 check "/pl has hreflang en" "*hrefLang=\"en\"*" "$(grep -o 'hrefLang="en"' <<<"$html" | head -1 | sed 's/^/*/;s/$/*/')"
 grep -q "noindex" <<<"$html" && { echo "  WARN /pl contains noindex (expected on previews only)"; }
 

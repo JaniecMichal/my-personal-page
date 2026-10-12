@@ -2,12 +2,12 @@
 
 What the code already does:
 
-- `https://mjaniec.it/sitemap.xml`: every PL/EN URL with `xhtml:link` hreflang alternates.
-- `https://mjaniec.it/robots.txt`: allows everything (including AI crawlers) except `/api/` and `/studio`, and points to the sitemap.
+- `https://www.mjaniec.it/sitemap.xml`: every PL/EN URL with `xhtml:link` hreflang alternates.
+- `https://www.mjaniec.it/robots.txt`: allows everything (including AI crawlers) except `/api/` and `/studio`, and points to the sitemap.
 - Every page: self-referencing canonical, `hreflang` pl / en / x-default, Open Graph, JSON-LD
   (Person, ProfessionalService, Service, FAQPage, BreadcrumbList, CreativeWork).
 - Old URLs (`/about`, `/experience`, `/skills`, `/projects/*`, `/for-business`) redirect with 308 to the new ones.
-- `https://mjaniec.it/llms.txt`: plain-text summary for AI assistants.
+- `https://www.mjaniec.it/llms.txt`: plain-text summary for AI assistants.
 - Optional verification meta tags from env: `GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION`.
 
 ## 1. Verify the domain (recommended: Domain property via DNS)
@@ -17,7 +17,7 @@ What the code already does:
    (root `@`, type TXT). Wait a few minutes, then **Verify**.
    A Domain property covers http/https, www and every subdomain, so it survives the rebuild.
 
-Alternative (URL-prefix property `https://mjaniec.it/`): choose **HTML tag**, copy only the
+Alternative (URL-prefix property `https://www.mjaniec.it/`): choose **HTML tag**, copy only the
 `content` value, set `GOOGLE_SITE_VERIFICATION=<value>` in Vercel → Project → Settings →
 Environment Variables (Production), redeploy, then **Verify**.
 
@@ -37,7 +37,7 @@ and verify with `BING_SITE_VERIFICATION` (the `msvalidate.01` value). Submit the
 ## 4. Other quick wins
 
 - Google Business Profile for "Michał Janiec — strony internetowe, Katowice" (service-area business,
-  no public address needed). Link to `https://mjaniec.it/pl`.
+  no public address needed). Link to `https://www.mjaniec.it/pl`.
 - Same name, email and URL on LinkedIn, GitHub, Clutch, Useme, Oferia.
 - Real prices, metrics and screenshots replace the `[X]` placeholders before launch:
   placeholder text in titles or FAQ answers hurts click-through.
