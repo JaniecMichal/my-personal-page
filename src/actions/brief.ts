@@ -68,7 +68,12 @@ export async function submitBrief(_prev: BriefState, formData: FormData): Promis
 	const to =
 		process.env.CONTACT_TO_EMAIL ?? (process.env.NODE_ENV === "production" ? undefined : "dev@localhost");
 	if (!mailer || !to) {
-		console.error("[brief] Mailgun or CONTACT_TO_EMAIL is not configured.");
+		const missing = ["MAILGUN_API_KEY", "MAILGUN_DOMAIN", "CONTACT_TO_EMAIL"].filter(
+			(name) => !process.env[name],
+		);
+		console.error(
+			`[brief] Mail is not configured. Missing env vars: ${missing.join(", ")} (VERCEL_ENV=${process.env.VERCEL_ENV}, branch=${process.env.VERCEL_GIT_COMMIT_REF}).`,
+		);
 		return { status: "error", reason: "generic" };
 	}
 

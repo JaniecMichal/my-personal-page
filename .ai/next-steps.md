@@ -2,8 +2,7 @@
 
 Status (2026-09-24): the rebuild is pushed to `rebuild` and a PR `rebuild` → `main` is open (Vercel
 preview). Build, lint and typecheck pass, 40 pages are statically generated. All real content is in
-(sections 1–2 done). **Next up: section 3** (Mailgun, Vercel env vars, test brief, Search Console),
-then launch.
+(sections 1–2 done). **Next up: section 3b** (Vercel env vars), then 3c–3d, then launch.
 
 Progress log:
 
@@ -15,6 +14,13 @@ Progress log:
 - 2026-09-24 `28ea49d`: jemWszkole.pl case study (screenshots with blurred names, PM quote); full
   Maciej Rygielski testimonial restored.
 - 2026-09-24 `dd20de5`: Braintrust case study (wallet data blurred, team leader quote).
+- 2026-09-29: started section 3. DNS confirmed at OVH, Mailgun account exists (nazielono).
+- 2026-09-29: 3a done. Reusing the existing Mailgun domain `mjaniec.it` (EU, DKIM verified), shared
+  with nazielono; separate domain sending key created for this site. No `mg.` subdomain needed.
+- 2026-10-12: re-checked before launch. `rebuild` is up to date with `origin`, `main` has nothing new,
+  build passes. Found that Vercel serves **`www.mjaniec.it` as primary** (apex 308 → www), while the
+  site's canonical/hreflang/sitemap use `https://mjaniec.it` (step 3e). Added `scripts/smoke.sh`
+  (27 checks, all pass on a local production build). DNS unchanged: still no DMARC.
 
 Related docs: [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
@@ -51,18 +57,31 @@ See [content-guide.md](./content-guide.md) for *what* to write.
 
 ## 3. Email and search setup before launch (~30 min) ← next
 
-Open questions: is there a Mailgun account already, and where is the mjaniec.it domain registered
-(that decides where the DNS records go)?
+Setup facts (2026-09-29): the Mailgun domain `mjaniec.it` already exists (EU, set up for the
+nazielono contact form) and is reused here. DNS is at **OVH** (`ns20.ovh.net` / `dns20.ovh.net`), so all records go into the OVH DNS zone.
+Current zone: A `@` → `76.76.21.21` (Vercel), TXT `@` `v=spf1 include:mailgun.org ~all` (the Mailgun
+domain), TXT `@` `1|www.mjaniec.it` (OVH
+redirect artifact, check before launch), no MX, no DMARC yet.
 
-- [ ] **Mailgun**: add the sending domain `mg.mjaniec.it` (EU region) and its SPF/DKIM/MX DNS records at your DNS provider.
-- [ ] **Vercel env vars** (Production + Preview): `MAILGUN_API_KEY`, `MAILGUN_DOMAIN`, `MAILGUN_REGION=eu`, `MAILGUN_FROM`, `CONTACT_TO_EMAIL`, `NEXT_PUBLIC_SITE_URL=https://mjaniec.it`. Optional: `OPENAI_API_KEY` for the terminal.
-- [ ] Send a test brief from the **preview** URL and check that it lands in your inbox (not spam).
-- [ ] **Google Search Console**: verify the Domain property with a DNS TXT record ([search-console.md](./search-console.md)).
+Order: 3a Mailgun → 3b Vercel env vars → 3c test brief → 3d Search Console. Update this file after each.
+
+- [x] **3a Mailgun**: reuse domain `mjaniec.it` (EU, DKIM verified, shared with nazielono), own sending key. Still to do (optional): TXT `_dmarc` `v=DMARC1; p=none;` in OVH.
+- [ ] **3b Vercel env vars** (Production + Preview): `MAILGUN_API_KEY` (sending key, Sensitive), `MAILGUN_DOMAIN=mjaniec.it`, `MAILGUN_REGION=eu`, `MAILGUN_FROM=mjaniec.it <no-reply@mjaniec.it>`, `CONTACT_TO_EMAIL`, `NEXT_PUBLIC_SITE_URL=https://mjaniec.it`. Optional: `OPENAI_API_KEY` for the terminal.
+  `CONTACT_TO_EMAIL` must be a real mailbox (e.g. Gmail): `mjaniec.it` has no MX, so it can't receive.
+  Paste the key only in Vercel, never in chat. After saving, **redeploy** the latest `rebuild` preview
+  (Deployments → ⋯ → Redeploy), because env vars apply only to new builds. ← **resume here**
+- [ ] **3c** Send a test brief from the **preview** URL and check that it lands in your inbox (not spam).
+- [ ] **3d Google Search Console**: verify the Domain property with a DNS TXT record ([search-console.md](./search-console.md)).
+- [ ] **3e Primary domain**: Vercel → Settings → Domains: make `mjaniec.it` the primary domain and set
+  `www.mjaniec.it` to redirect (308) to it. Today it is the other way round, so every canonical URL
+  would point at a redirect. Can be done any time, takes effect immediately on production.
+- [ ] **3f DNS cleanup (OVH)**: remove TXT `@` `1|www.mjaniec.it` (old OVH redirect, not needed with
+  Vercel) and add TXT `_dmarc` `v=DMARC1; p=none;` (helps the brief emails avoid spam).
 
 ## 4. Launch
 
 - [ ] Merge the PR into `main` (Vercel deploys production).
-- [ ] Smoke test: `/` redirects to the right language, `/pl` and `/en` load, the brief form sends, old URLs (`/about`, `/projects`) redirect.
+- [ ] Smoke test: `scripts/smoke.sh` (production) or `scripts/smoke.sh <preview-url>`. Covers: `/` redirects to the right language, `/pl` and `/en` load, the brief form sends, old URLs (`/about`, `/projects`) redirect.
 - [ ] Search Console: submit `sitemap.xml`, request indexing for `/pl`, `/en`, `/pl/uslugi`, `/en/services` and the service pages.
 - [ ] Bing Webmaster Tools: import from Search Console, submit the same sitemap.
 - [ ] Google Business Profile as a service-area business in Katowice / Silesia, linking to `https://mjaniec.it/pl`.
