@@ -1,10 +1,10 @@
 # Next steps — mjaniec.it
 
-Status (2026-10-12): **live at https://www.mjaniec.it** since 2026-10-12 (rebuild merged, 27/27 smoke
-checks on production). Branch **`ui-corrections`** holds the first post-launch round (section 6):
-not merged yet. 44 static pages, build + lint + typecheck pass, axe clean on key pages in both themes.
-**Next up:** review `ui-corrections` locally → push → check the Vercel preview → merge. Then the open
-items in sections 4–6.
+Status (2026-10-12): **live at https://www.mjaniec.it**. Post-launch round 1 (`ui-corrections`,
+section 6) merged and deployed: 46 static pages, 38 URLs in the sitemap, smoke 27/27 on production.
+Current branch: **`growth`** (section 7).
+**Next up:** section 7, "Tomorrow (2026-10-13)": indexing requests for the new pages. Then the
+growth plan ([growth-plan.md](./growth-plan.md)): Google Business Profile, mini-audit script.
 
 Progress log:
 
@@ -43,6 +43,10 @@ Progress log:
   terminal hides the AI prompt while `OPENAI_API_KEY` is unset; SEO/a11y audit fixes; new service
   "Strona internetowa dla firmy"; local page Katowice; scroll reveal + link underline;
   `.ai/ai-services-ideas.md`.
+- 2026-10-12: PR #3 (`ui-corrections`) merged. Production deploy failed with "Git information
+  retrieval failed" (Vercel could not fetch the commit, build never started); fixed with
+  `vercel redeploy … --target production`. Smoke 27/27. Google "Request indexing" quota used up
+  for the day (10 URLs), so the new pages wait until tomorrow.
 
 Related docs: [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
@@ -200,3 +204,36 @@ Follow-ups:
   design, only resized.
 - [ ] `http://mjaniec.it` takes two redirect hops; wrong-locale slugs redirect with 307 (next-intl).
 - [ ] Google Business Profile (section 4) — the Katowice page is the natural link target.
+
+## 7. Growth (branch `growth`, from 2026-10-12)
+
+Plan and methodology: [growth-plan.md](./growth-plan.md).
+
+### Tomorrow (2026-10-13): index the new pages
+
+Google allows about 10 "Request indexing" a day per property; today's 10 are used. Bing has its own
+limit (100 a day), but it waits until tomorrow too.
+
+- [ ] **Google Search Console → URL inspection → Request indexing** (6 URLs):
+  - `https://www.mjaniec.it/pl/strony-internetowe/katowice`
+  - `https://www.mjaniec.it/pl/uslugi/strona-internetowa-dla-firmy`
+  - `https://www.mjaniec.it/pl/uslugi/seo-i-google-ads`
+  - `https://www.mjaniec.it/en/web-design/katowice`
+  - `https://www.mjaniec.it/en/services/business-website`
+  - `https://www.mjaniec.it/en/services/seo-and-google-ads`
+- [ ] **Google Search Console → Sitemaps**: resubmit `sitemap.xml` (no daily limit). Check that the
+  status changed from "Nie udało się odczytać" to "Udane".
+- [ ] **Bing Webmaster Tools → URL Submission**: the same 6 URLs.
+- [ ] Optional, with requests left: the case studies and the remaining service pages
+  (`/pl/uslugi/sklepy-shopify`, `/pl/uslugi/wordpress`, `/pl/uslugi/aplikacje-react`,
+  `/pl/uslugi/frontend-dla-zespolow-rails`, `/pl/uslugi/audyt-szybkosci-seo`).
+
+### Next (from growth-plan.md)
+
+- [ ] Google Business Profile (service area, link to the Katowice page), then Bing Places and Apple
+  Business Connect.
+- [ ] Code: mini-audit script (URLs → PageSpeed mobile + phone screenshot → PDF) for local outreach.
+- [ ] Code: IndexNow (Bing pinged on every deploy, no more manual Bing submissions).
+- [ ] Code: `llms.txt` in Polish + Katowice page + new services; Vercel Analytics with a
+  "brief sent" event.
+- [ ] Warm network: list of 30 people, referral message (template in growth-plan.md).
