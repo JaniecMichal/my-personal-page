@@ -73,3 +73,15 @@ export const FAQ_QUERY = /* groq */ `
 *[_type == "faq" && showOnHome == true] | order(order asc) {
 	"id": _id, ${t("question")}, ${t("answer")}
 }`;
+
+export const LOCAL_PAGES_QUERY = /* groq */ `
+*[_type == "localPage" && language == $locale] | order(city asc) {
+	"slug": slug.current, city, title, intro, points[]{ title, description },
+	districts, nearby, faq[]{ "id": _key, question, answer }, seo
+}`;
+
+export const LOCAL_PAGE_QUERY = /* groq */ `
+*[_type == "localPage" && language == $locale && slug.current == $slug][0] {
+	"slug": slug.current, city, title, intro, points[]{ title, description },
+	districts, nearby, faq[]{ "id": _key, question, answer }, seo
+}`;

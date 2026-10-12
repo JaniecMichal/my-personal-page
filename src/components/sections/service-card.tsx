@@ -16,6 +16,8 @@ export function ServiceCard({
 	return (
 		<Link
 			href={{ pathname: "/services/[slug]", params: { slug: service.slug } }}
+			data-reveal
+			style={{ transitionDelay: `${(index % 3) * 90}ms` }}
 			className="brackets relative flex min-h-[300px] flex-col gap-4 bg-surface p-6 text-ink no-underline md:p-9"
 		>
 			<span className="font-dots text-3xl font-black text-accent md:text-4xl">

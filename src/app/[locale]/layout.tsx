@@ -6,6 +6,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
 import { AberrationField } from "@/components/effects/aberration-field";
+import { ScrollReveal } from "@/components/effects/scroll-reveal";
 import { AlternateSlugsProvider } from "@/components/i18n/alternate-slugs";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -80,6 +81,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 					</ThemeProvider>
 				</NextIntlClientProvider>
 				<AberrationField />
+				<ScrollReveal />
 				<JsonLd data={personJsonLd(settings)} />
 				<Analytics />
 			</body>

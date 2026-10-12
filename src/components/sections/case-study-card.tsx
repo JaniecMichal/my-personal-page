@@ -26,8 +26,9 @@ export function CaseStudyCard({
 	return (
 		<Link
 			href={{ pathname: "/work/[slug]", params: { slug: study.slug } }}
+			data-reveal
 			className={cn(
-				"brackets relative flex flex-col gap-5 p-5 text-ink no-underline md:p-7",
+				"group brackets relative flex flex-col gap-5 p-5 text-ink no-underline md:p-7",
 				className,
 			)}
 		>
@@ -56,7 +57,9 @@ export function CaseStudyCard({
 				{metric && (
 					<span className="font-dots text-2xl font-black text-inverse-accent">{metric.value}</span>
 				)}
-				<span className="text-[13px] tracking-[0.1em] uppercase">{readLabel} →</span>
+				<span className="link-draw text-[13px] tracking-[0.1em] uppercase group-hover:[background-size:100%_1px]">
+					{readLabel} →
+				</span>
 			</div>
 		</Link>
 	);

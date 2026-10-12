@@ -75,7 +75,13 @@ export const skillGroups: LocalizedDeep<SkillGroup>[] = [
 	{
 		id: "proficient",
 		level: { pl: "Biegle", en: "Proficient" },
-		items: ["Redux · RTK Query", "GraphQL · REST", "React Native · Expo", "Jest · Testing Library", "Storybook · Figma"],
+		items: [
+			"Redux · RTK Query",
+			"GraphQL · REST",
+			"React Native · Expo",
+			"Jest · Testing Library",
+			"Storybook · Figma",
+		],
 	},
 	{
 		id: "working",
@@ -88,7 +94,10 @@ export const education: LocalizedDeep<Education>[] = [
 	{
 		id: "polsl",
 		title: { pl: "Energetyka", en: "Power Engineering" },
-		place: { pl: "Politechnika Śląska, Katowice", en: "Silesian University of Technology, Katowice" },
+		place: {
+			pl: "Politechnika Śląska, Katowice",
+			en: "Silesian University of Technology, Katowice",
+		},
 		period: "2014–2018",
 	},
 	{

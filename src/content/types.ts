@@ -69,6 +69,24 @@ export type Service = {
 	seo: Seo;
 };
 
+/**
+ * Landing page for one city (e.g. Katowice). Written per city with real local detail, never as a
+ * copy with the name swapped: thin duplicates count as doorway pages for Google.
+ */
+export type LocalPage = {
+	slug: string;
+	slugs: Localized<string>;
+	city: string;
+	title: string;
+	intro: string;
+	points: { title: string; description: string }[];
+	/** Districts named on the page, so searches like "strony internetowe Ligota" can find it. */
+	districts: string[];
+	nearby: string[];
+	faq: FaqItem[];
+	seo: Seo;
+};
+
 export type CaseStudyMetric = {
 	value: string;
 	label: string;

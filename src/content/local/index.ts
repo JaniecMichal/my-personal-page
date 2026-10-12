@@ -5,6 +5,7 @@ import type {
 	Education,
 	Experience,
 	FaqItem,
+	LocalPage,
 	Localized,
 	PricingPlan,
 	ProcessStep,
@@ -16,7 +17,13 @@ import type {
 import { caseStudies } from "./work";
 import { education, experience, skillGroups } from "./cv";
 import { faq, pricingPlans, processSteps, testimonials } from "./marketing";
-import { type LocalCaseStudy, type LocalService, resolveLocale } from "./resolve";
+import { localPages } from "./local-pages";
+import {
+	type LocalCaseStudy,
+	type LocalLocalPage,
+	type LocalService,
+	resolveLocale,
+} from "./resolve";
 import { services } from "./services";
 import { cvFacts, siteSettings } from "./settings";
 import type { Locale } from "@/i18n/routing";
@@ -28,6 +35,11 @@ const slugsOf = (slug: string | Localized<string>): Localized<string> =>
 
 const toService = (raw: LocalService, locale: Locale): Service => ({
 	...resolveLocale<Omit<Service, "slugs">>(raw, locale),
+	slugs: slugsOf(raw.slug),
+});
+
+const toLocalPage = (raw: LocalLocalPage, locale: Locale): LocalPage => ({
+	...resolveLocale<Omit<LocalPage, "slugs">>(raw, locale),
 	slugs: slugsOf(raw.slug),
 });
 
@@ -66,4 +78,9 @@ export const localSource: ContentSource = {
 	getPricingPlans: async (locale) => resolveLocale<PricingPlan[]>(pricingPlans, locale),
 	getFaq: async (locale) => resolveLocale<FaqItem[]>(faq, locale),
 	getProcess: async (locale) => resolveLocale<ProcessStep[]>(processSteps, locale),
+	getLocalPages: async (locale) => localPages.map((p) => toLocalPage(p, locale)),
+	getLocalPage: async (locale, slug) => {
+		const raw = localPages.find((p) => slugsOf(p.slug)[locale] === slug);
+		return raw ? toLocalPage(raw, locale) : null;
+	},
 };

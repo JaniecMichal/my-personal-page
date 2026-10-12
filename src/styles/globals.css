@@ -217,3 +217,29 @@
 	--surface-2: var(--inverse-surface);
 	--dot: var(--inverse-rule);
 }
+
+/* Scroll reveal: see <ScrollReveal>. Soft ease-out, as all motion on the site. */
+.reveal-ready [data-reveal]:not(.is-revealed) {
+	opacity: 0;
+	translate: 0 28px;
+}
+[data-reveal] {
+	transition:
+		opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+		translate 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Text link whose underline draws in from the left on hover and focus. */
+@utility link-draw {
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 1px;
+	transition: background-size 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+	&:hover,
+	&:focus-visible {
+		background-size: 100% 1px;
+	}
+}

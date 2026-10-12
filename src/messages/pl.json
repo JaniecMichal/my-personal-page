@@ -256,5 +256,17 @@
 		"title": "Tej strony nie ma.",
 		"lead": "Link mógł się zmienić po przebudowie strony.",
 		"home": "Wróć na start"
+	},
+	"local": {
+		"breadcrumb": "Strony internetowe",
+		"pointsLabel": "Dlaczego lokalnie",
+		"pointsTitle": "Developer z Katowic, nie anonimowa agencja",
+		"districtsLabel": "Dzielnice",
+		"districtsTitle": "Pracuję z firmami z każdej dzielnicy Katowic",
+		"nearbyLabel": "Okolice",
+		"nearbyTitle": "I z całego Śląska",
+		"servicesTitle": "W czym mogę pomóc",
+		"servicesIndex": "Usługi",
+		"faqLabel": "Pytania"
 	}
 }

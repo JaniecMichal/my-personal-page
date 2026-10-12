@@ -256,5 +256,17 @@
 		"title": "This page doesn't exist.",
 		"lead": "The link may have changed after the site rebuild.",
 		"home": "Back to home"
+	},
+	"local": {
+		"breadcrumb": "Web design",
+		"pointsLabel": "Why local",
+		"pointsTitle": "A developer from Katowice, not an anonymous agency",
+		"districtsLabel": "Districts",
+		"districtsTitle": "I work with companies from every part of Katowice",
+		"nearbyLabel": "Nearby",
+		"nearbyTitle": "And across Silesia",
+		"servicesTitle": "How I can help",
+		"servicesIndex": "Services",
+		"faqLabel": "Questions"
 	}
 }

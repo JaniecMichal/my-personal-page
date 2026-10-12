@@ -10,6 +10,7 @@ type SectionHeaderProps = {
 export function SectionHeader({ title, index, as: Heading = "h2", className }: SectionHeaderProps) {
 	return (
 		<div
+			data-reveal
 			className={cn(
 				"flex flex-col gap-3 border-b border-muted pb-5 md:flex-row md:items-end md:justify-between",
 				className,

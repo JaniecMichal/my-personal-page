@@ -13,9 +13,10 @@ const linkClass =
 export async function Footer() {
 	const locale = await getLocale();
 	const t = await getTranslations("common");
-	const [settings, services] = await Promise.all([
+	const [settings, services, localPages] = await Promise.all([
 		content.getSiteSettings(locale),
 		content.getServices(locale),
+		content.getLocalPages(locale),
 	]);
 
 	return (
@@ -47,6 +48,15 @@ export async function Footer() {
 					<Link href="/contact" className={linkClass}>
 						{t("nav.contact")}
 					</Link>
+					{localPages.map((page) => (
+						<Link
+							key={page.slug}
+							href={{ pathname: "/local/[slug]", params: { slug: page.slug } }}
+							className={linkClass}
+						>
+							{page.title}
+						</Link>
+					))}
 				</div>
 				<div className="flex flex-col">
 					<span className="mb-2 label">{t("footer.profile")}</span>

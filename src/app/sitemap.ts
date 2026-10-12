@@ -31,16 +31,21 @@ function entries(hrefFor: (l: Locale) => Href, priority: number): MetadataRoute.
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	const [services, studies] = await Promise.all([
+	const [services, studies, localPages] = await Promise.all([
 		content.getServices(routing.defaultLocale),
 		content.getCaseStudies(routing.defaultLocale),
+		content.getLocalPages(routing.defaultLocale),
 	]);
-	const detail = (pathname: "/services/[slug]" | "/work/[slug]", slugs: Localized<string>, priority: number) =>
-		entries((l) => ({ pathname, params: { slug: slugs[l] } }), priority);
+	const detail = (
+		pathname: "/services/[slug]" | "/work/[slug]" | "/local/[slug]",
+		slugs: Localized<string>,
+		priority: number,
+	) => entries((l) => ({ pathname, params: { slug: slugs[l] } }), priority);
 
 	return [
 		...STATIC.flatMap(({ pathname, priority }) => entries(() => pathname, priority)),
 		...services.flatMap((s) => detail("/services/[slug]", s.slugs, 0.9)),
 		...studies.flatMap((s) => detail("/work/[slug]", s.slugs, 0.7)),
+		...localPages.flatMap((p) => detail("/local/[slug]", p.slugs, 0.8)),
 	];
 }

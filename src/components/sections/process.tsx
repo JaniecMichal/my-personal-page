@@ -17,7 +17,11 @@ export function Process({
 				<SectionHeader title={title} index={index} />
 				<ol className="grid border-t border-ink sm:grid-cols-2 lg:grid-cols-5">
 					{steps.map((step, i) => (
-						<li key={step.id} className="relative flex flex-col gap-4 pt-7 pb-8 sm:pr-6">
+						<li
+							key={step.id}
+							data-reveal
+							className="relative flex flex-col gap-4 pt-7 pb-8 sm:pr-6"
+						>
 							<span aria-hidden="true" className="absolute -top-1.5 left-0 size-[11px] bg-accent" />
 							<span className="font-dots text-[22px] font-black text-accent">
 								{String(i + 1).padStart(2, "0")}

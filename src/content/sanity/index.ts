@@ -24,4 +24,6 @@ export const sanitySource: ContentSource = {
 	getPricingPlans: notReady,
 	getFaq: notReady,
 	getProcess: notReady,
+	getLocalPages: notReady,
+	getLocalPage: notReady,
 };

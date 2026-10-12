@@ -22,6 +22,7 @@ export function PricingPlans({
 		>
 			{plans.map((plan) => (
 				<article
+					data-reveal
 					key={plan.id}
 					className={cn(
 						"brackets relative flex flex-col gap-5 p-7 md:p-9",

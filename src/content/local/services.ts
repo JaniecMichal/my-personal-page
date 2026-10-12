@@ -2,9 +2,172 @@ import type { LocalService } from "./resolve";
 
 export const services: LocalService[] = [
 	{
+		id: "business-website",
+		slug: { pl: "strona-internetowa-dla-firmy", en: "business-website" },
+		order: 1,
+		title: { pl: "Strona internetowa dla firmy", en: "A website for your business" },
+		summary: {
+			pl: "Strona, która przyprowadza klientów: widać Cię w Google, dobrze działa na telefonie i sam ją edytujesz.",
+			en: "A website that brings in customers: you show up on Google, it works well on phones and you can edit it yourself.",
+		},
+		intro: {
+			pl: "Nie musisz znać się na technologii. Mówisz mi, co ma się wydarzyć: więcej telefonów, zapytań albo rezerwacji. Ja dobieram rozwiązanie, buduję stronę i dbam o to, żeby klienci ją znaleźli.",
+			en: "You don't need to know anything about technology. Tell me what should happen: more calls, enquiries or bookings. I pick the right tools, build the site and make sure customers can find it.",
+		},
+		tags: [
+			{ pl: "Więcej zapytań", en: "More enquiries" },
+			{ pl: "Widoczność w Google", en: "Found on Google" },
+			{ pl: "Sam edytujesz", en: "Edit it yourself" },
+		],
+		priceFrom: { pl: "od 500 zł", en: "from 500 PLN" },
+		timeline: { pl: "od kilku dni do 3 tygodni", en: "a few days to 3 weeks" },
+		included: [
+			{
+				title: { pl: "„Nie ma mnie w Google”", en: "“I'm not on Google”" },
+				description: {
+					pl: "Konfiguruję SEO techniczne, wizytówkę i Search Console, żeby strona pojawiała się, gdy ktoś szuka Twoich usług w okolicy.",
+					en: "I set up technical SEO, your business profile and Search Console, so the site shows up when people nearby search for what you offer.",
+				},
+			},
+			{
+				title: { pl: "„Strona wygląda staro na telefonie”", en: "“It looks dated on phones”" },
+				description: {
+					pl: "Większość klientów wchodzi z telefonu. Strona jest projektowana najpierw pod mały ekran i ładuje się w ułamku sekundy.",
+					en: "Most customers visit on a phone. The site is designed for small screens first and loads in a blink.",
+				},
+			},
+			{
+				title: { pl: "„Nie mogę sam nic zmienić”", en: "“I can't change anything myself”" },
+				description: {
+					pl: "Dostajesz prosty panel: zmieniasz ceny, godziny otwarcia, zdjęcia i aktualności bez dzwonienia do programisty.",
+					en: "You get a simple panel: update prices, opening hours, photos and news without calling a developer.",
+				},
+			},
+			{
+				title: {
+					pl: "„Ludzie wchodzą, ale nie piszą”",
+					en: "“People visit but don't get in touch”",
+				},
+				description: {
+					pl: "Jasna oferta, widoczny telefon, krótki formularz i przyciski kontaktu tam, gdzie klient ich szuka.",
+					en: "A clear offer, a visible phone number, a short form and contact buttons where customers look for them.",
+				},
+			},
+		],
+		plans: [
+			{
+				id: "business-landing",
+				kicker: { pl: "Na dobry start", en: "Quick start" },
+				name: { pl: "Strona-wizytówka", en: "One-page site" },
+				price: { pl: "od 500 zł", en: "from 500 PLN" },
+				features: {
+					pl: [
+						"1 strona, do 6 sekcji",
+						"z Twojego projektu graficznego",
+						"formularz kontaktowy",
+						"wdrożenie + 1 runda poprawek",
+					],
+					en: [
+						"1 page, up to 6 sections",
+						"from your ready design",
+						"contact form",
+						"launch + 1 round of fixes",
+					],
+				},
+				highlighted: false,
+			},
+			{
+				id: "business-website",
+				kicker: { pl: "Dla małych firm", en: "For small businesses" },
+				name: { pl: "Strona firmowa z panelem", en: "Website with an editor" },
+				price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
+				features: {
+					pl: [
+						"do 5 podstron",
+						"panel do edycji treści",
+						"SEO i dane strukturalne",
+						"wdrożenie + 30 dni wsparcia",
+					],
+					en: [
+						"up to 5 pages",
+						"content editor",
+						"SEO and structured data",
+						"launch + 30 days support",
+					],
+				},
+				highlighted: true,
+			},
+			{
+				id: "business-care",
+				kicker: { pl: "Dla działających stron", en: "For live sites" },
+				name: { pl: "Zmiany i opieka", en: "Changes and care" },
+				price: { pl: "120 zł/h", en: "120 PLN/h" },
+				features: {
+					pl: [
+						"nowe sekcje i poprawki",
+						"aktualizacje i kopie zapasowe",
+						"rozliczenie co 15 min",
+						"minimum 1 h",
+					],
+					en: ["new sections and fixes", "updates and backups", "billed per 15 min", "1 h minimum"],
+				},
+				highlighted: false,
+			},
+		],
+		faq: [
+			{
+				id: "business-faq-1",
+				question: {
+					pl: "W jakiej technologii zrobisz stronę?",
+					en: "Which technology will you use?",
+				},
+				answer: {
+					pl: "Takiej, która pasuje do celu i budżetu. Najczęściej to Next.js z prostym panelem do edycji, czasem WordPress, a dla sklepu Shopify. Przed startem tłumaczę, dlaczego wybieram dane rozwiązanie.",
+					en: "Whatever fits the goal and budget. Most often Next.js with a simple editor, sometimes WordPress, and Shopify for online stores. I explain the choice before we start.",
+				},
+			},
+			{
+				id: "business-faq-2",
+				question: {
+					pl: "Nie mam tekstów ani zdjęć. Co wtedy?",
+					en: "I don't have copy or photos. What then?",
+				},
+				answer: {
+					pl: "Pomagam ułożyć strukturę i treści na podstawie krótkiej rozmowy o Twojej firmie. Zdjęcia możemy na start dobrać ze stocków i podmienić później.",
+					en: "I help you shape the structure and copy from a short conversation about your business. We can start with stock photos and swap them later.",
+				},
+			},
+			{
+				id: "business-faq-3",
+				question: {
+					pl: "Czy strona będzie widoczna w Google?",
+					en: "Will the site show up on Google?",
+				},
+				answer: {
+					pl: "Strona dostaje SEO techniczne, mapę strony, dane strukturalne i zgłoszenie do Google Search Console. Pozycja zależy też od konkurencji i treści, więc mówię uczciwie, czego się spodziewać.",
+					en: "The site gets technical SEO, a sitemap, structured data and a Google Search Console submission. Rankings also depend on competition and content, so I'm honest about what to expect.",
+				},
+			},
+			{
+				id: "business-faq-4",
+				question: { pl: "Kto będzie właścicielem strony?", en: "Who owns the website?" },
+				answer: {
+					pl: "Ty. Domena, hosting i kod są na Ciebie, a ja przekazuję wszystkie dostępy po wdrożeniu.",
+					en: "You do. The domain, hosting and code are in your name, and I hand over all access after launch.",
+				},
+			},
+		],
+		seo: {
+			title: {
+				pl: "Strona internetowa dla firmy | Michał Janiec",
+				en: "Website for your business | Michał Janiec",
+			},
+		},
+	},
+	{
 		id: "nextjs-websites",
 		slug: { pl: "strony-nextjs", en: "nextjs-websites" },
-		order: 1,
+		order: 2,
 		title: { pl: "Strony firmowe w Next.js", en: "Business websites in Next.js" },
 		summary: {
 			pl: "Szybkie, dobrze pozycjonowane strony, które edytujesz sam. Core Web Vitals na zielono od pierwszego dnia.",
@@ -54,8 +217,18 @@ export const services: LocalService[] = [
 				name: "Landing page",
 				price: { pl: "od 500 zł", en: "from 500 PLN" },
 				features: {
-					pl: ["1 strona, do 6 sekcji", "z Twojego projektu graficznego", "bez CMS", "wdrożenie + 1 runda poprawek"],
-					en: ["1 page, up to 6 sections", "from your ready design", "no CMS", "launch + 1 round of fixes"],
+					pl: [
+						"1 strona, do 6 sekcji",
+						"z Twojego projektu graficznego",
+						"bez CMS",
+						"wdrożenie + 1 runda poprawek",
+					],
+					en: [
+						"1 page, up to 6 sections",
+						"from your ready design",
+						"no CMS",
+						"launch + 1 round of fixes",
+					],
 				},
 				highlighted: false,
 			},
@@ -65,8 +238,18 @@ export const services: LocalService[] = [
 				name: { pl: "Strona firmowa z CMS", en: "Website with CMS" },
 				price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
 				features: {
-					pl: ["do 5 podstron", "CMS do edycji", "SEO i dane strukturalne", "wdrożenie + 30 dni wsparcia"],
-					en: ["up to 5 pages", "editable CMS", "SEO and structured data", "launch + 30 days support"],
+					pl: [
+						"do 5 podstron",
+						"CMS do edycji",
+						"SEO i dane strukturalne",
+						"wdrożenie + 30 dni wsparcia",
+					],
+					en: [
+						"up to 5 pages",
+						"editable CMS",
+						"SEO and structured data",
+						"launch + 30 days support",
+					],
 				},
 				highlighted: true,
 			},
@@ -76,7 +259,12 @@ export const services: LocalService[] = [
 				name: { pl: "Zmiany i opieka", en: "Changes and care" },
 				price: { pl: "120 zł/h", en: "120 PLN/h" },
 				features: {
-					pl: ["nowe sekcje i poprawki", "aktualizacje zależności", "rozliczenie co 15 min", "minimum 1 h"],
+					pl: [
+						"nowe sekcje i poprawki",
+						"aktualizacje zależności",
+						"rozliczenie co 15 min",
+						"minimum 1 h",
+					],
 					en: ["new sections and fixes", "dependency updates", "billed per 15 min", "1 h minimum"],
 				},
 				highlighted: false,
@@ -88,7 +276,7 @@ export const services: LocalService[] = [
 	{
 		id: "shopify",
 		slug: { pl: "sklepy-shopify", en: "shopify-stores" },
-		order: 2,
+		order: 3,
 		title: { pl: "Sklepy Shopify", en: "Shopify stores" },
 		summary: {
 			pl: "Wdrożenie, motyw dopasowany do marki, poprawki i integracje. Sklep gotowy do sprzedaży.",
@@ -152,8 +340,18 @@ export const services: LocalService[] = [
 				name: "Starter",
 				price: { pl: "od 2 500 zł", en: "from 2,500 PLN" },
 				features: {
-					pl: ["dopasowanie motywu", "do 50 produktów", "płatności i dostawy", "checklista startowa"],
-					en: ["theme customisation", "up to 50 products", "payments and shipping", "launch checklist"],
+					pl: [
+						"dopasowanie motywu",
+						"do 50 produktów",
+						"płatności i dostawy",
+						"checklista startowa",
+					],
+					en: [
+						"theme customisation",
+						"up to 50 products",
+						"payments and shipping",
+						"launch checklist",
+					],
 				},
 				highlighted: false,
 			},
@@ -163,8 +361,18 @@ export const services: LocalService[] = [
 				name: { pl: "Sklep marki", en: "Brand store" },
 				price: { pl: "od 5 900 zł", en: "from 5,900 PLN" },
 				features: {
-					pl: ["własne sekcje", "migracja i import", "przegląd szybkości i SEO", "szkolenie + 30 dni opieki"],
-					en: ["custom sections", "migration and import", "speed and SEO pass", "training + 30 days care"],
+					pl: [
+						"własne sekcje",
+						"migracja i import",
+						"przegląd szybkości i SEO",
+						"szkolenie + 30 dni opieki",
+					],
+					en: [
+						"custom sections",
+						"migration and import",
+						"speed and SEO pass",
+						"training + 30 days care",
+					],
 				},
 				highlighted: true,
 			},
@@ -174,7 +382,12 @@ export const services: LocalService[] = [
 				name: { pl: "Poprawki i opieka", en: "Fixes and care" },
 				price: { pl: "120 zł/h", en: "120 PLN/h" },
 				features: {
-					pl: ["błędy i nowe sekcje", "porządki w aplikacjach", "miesięczny raport", "szybka reakcja"],
+					pl: [
+						"błędy i nowe sekcje",
+						"porządki w aplikacjach",
+						"miesięczny raport",
+						"szybka reakcja",
+					],
 					en: ["bug fixes, new sections", "app clean-up", "monthly report", "priority response"],
 				},
 				highlighted: false,
@@ -186,7 +399,7 @@ export const services: LocalService[] = [
 	{
 		id: "wordpress",
 		slug: { pl: "wordpress", en: "wordpress" },
-		order: 3,
+		order: 4,
 		title: { pl: "WordPress: poprawki i przyspieszenie", en: "WordPress fixes and speed-ups" },
 		summary: {
 			pl: "Nowe sekcje, naprawa błędów, migracje i optymalizacja, bez przepisywania wszystkiego od zera.",
@@ -229,7 +442,7 @@ export const services: LocalService[] = [
 	{
 		id: "web-apps",
 		slug: { pl: "aplikacje-react", en: "react-web-apps" },
-		order: 4,
+		order: 5,
 		title: { pl: "Aplikacje webowe React", en: "React web apps" },
 		summary: {
 			pl: "Panele, SaaS i MVP. Od makiety w Figmie do działającego produktu z testami.",
@@ -250,7 +463,7 @@ export const services: LocalService[] = [
 	{
 		id: "frontend-for-rails-teams",
 		slug: { pl: "frontend-dla-zespolow-rails", en: "frontend-for-rails-teams" },
-		order: 5,
+		order: 6,
 		title: { pl: "Frontend dla zespołów Rails", en: "Frontend for Rails teams" },
 		summary: {
 			pl: "Stimulus, Hotwire, ERB i Tailwind. Dołączam do zespołu i dowożę interfejs, na co dzień robię to w Visuality.",
@@ -271,7 +484,7 @@ export const services: LocalService[] = [
 	{
 		id: "speed-seo-audit",
 		slug: { pl: "audyt-szybkosci-seo", en: "speed-seo-audit" },
-		order: 6,
+		order: 7,
 		title: { pl: "Audyt szybkości i SEO", en: "Speed and SEO audit" },
 		summary: {
 			pl: "Sprawdzam, co spowalnia stronę i dlaczego Google jej nie lubi. Raport z priorytetami plus poprawki.",

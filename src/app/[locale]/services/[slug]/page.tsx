@@ -11,7 +11,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { content } from "@/content";
 import { Link } from "@/i18n/navigation";
 import { type Locale, routing } from "@/i18n/routing";
-import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/json-ld";
+import { breadcrumbJsonLd, faqJsonLd, serviceJsonLd } from "@/lib/json-ld";
 import { localizedUrl, pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
@@ -141,7 +141,7 @@ export default async function ServicePage({ params }: Props) {
 						{related && (
 							<Link
 								href={{ pathname: "/work/[slug]", params: { slug: related.slug } }}
-								className="text-[13px] tracking-[0.1em] text-inverse-accent uppercase"
+								className="link-draw self-start text-[13px] tracking-[0.1em] text-inverse-accent uppercase"
 							>
 								{t("detail.related")}: {related.client} →
 							</Link>
@@ -188,6 +188,7 @@ export default async function ServicePage({ params }: Props) {
 						{ name: tc("nav.services"), url: localizedUrl("/services", locale) },
 						{ name: service.title, url },
 					]),
+					...(service.faq.length > 0 ? [faqJsonLd(service.faq)] : []),
 				]}
 			/>
 		</>

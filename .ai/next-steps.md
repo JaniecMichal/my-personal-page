@@ -1,8 +1,10 @@
-# Next steps — mjaniec.it rebuild
+# Next steps — mjaniec.it
 
-Status (2026-09-24): the rebuild is pushed to `rebuild` and a PR `rebuild` → `main` is open (Vercel
-preview). Build, lint and typecheck pass, 40 pages are statically generated. All real content is in
-(sections 1–2 done). **LIVE since 2026-10-12** at https://www.mjaniec.it. Next up: post-launch items in section 4, then UI corrections.
+Status (2026-10-12): **live at https://www.mjaniec.it** since 2026-10-12 (rebuild merged, 27/27 smoke
+checks on production). Branch **`ui-corrections`** holds the first post-launch round (section 6):
+not merged yet. 44 static pages, build + lint + typecheck pass, axe clean on key pages in both themes.
+**Next up:** review `ui-corrections` locally → push → check the Vercel preview → merge. Then the open
+items in sections 4–6.
 
 Progress log:
 
@@ -35,8 +37,14 @@ Progress log:
   changed in OVH from `76.76.21.21` to Vercel's current `216.198.79.1`. Search Console verified.
 - 2026-10-12: **launched**: PR merged, production smoke test 27/27. The smoke test now checks English
   via the `NEXT_LOCALE` cookie (from Poland the geo rule always picks /pl, by design).
+- 2026-10-12 (`ui-corrections`): hero without captions and fitted to laptop height; new WebGL
+  `WaveSphere` (inspired by Visuality's hero, own dot design, 2D `Sphere` as fallback); Polish
+  translations + fixed height for testimonials and case-study quotes (with "translated" note);
+  terminal hides the AI prompt while `OPENAI_API_KEY` is unset; SEO/a11y audit fixes; new service
+  "Strona internetowa dla firmy"; local page Katowice; scroll reveal + link underline;
+  `.ai/ai-services-ideas.md`.
 
-Related docs: [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
+Related docs: [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
 
 ---
@@ -69,7 +77,7 @@ Follow-ups (not blocking launch):
 
 See [content-guide.md](./content-guide.md) for *what* to write.
 
-## 3. Email and search setup before launch (~30 min) ← next
+## 3. Email and search setup before launch (~30 min) ✓
 
 Setup facts (updated 2026-10-12): the Mailgun domain `mjaniec.it` is in the **US region** (re-created
 2026-10-12, DKIM `krs._domainkey`), shared with the nazielono contact form. DNS is at **OVH** (`ns20.ovh.net` / `dns20.ovh.net`), so all records go into the OVH DNS zone.
@@ -115,3 +123,59 @@ Order: 3a Mailgun → 3b Vercel env vars → 3c test brief → 3d Search Console
 | Blog / notes | ongoing | 2 posts a month (topics in content-guide.md), route `/pl/blog` ↔ `/en/notes`. |
 | New case studies | ongoing | After the first Shopify and WordPress gigs. |
 | Next.js 16 | ½ day | Upgrade once the site is stable; migrate `next lint` to the ESLint CLI. |
+
+## 6. Post-launch round 1: branch `ui-corrections` (2026-10-12)
+
+Done on the branch:
+
+- [x] Hero: removed "Otwarty na nowe projekty" and the "Senior Frontend · Katowice · zdalnie" kicker;
+  height capped to the viewport so headline, lead and both CTAs fit on 1366×768 and 1440×900.
+  `StatusLine` component removed (unused).
+- [x] Hero sphere: `src/components/effects/wave-sphere.tsx`, raw WebGL2 (no three.js). Latitude
+  rings of dots, simplex-noise "breathing", pointer ripples, slow rotation, accent equator + orbit,
+  theme-aware, DPR cap 1.5, pauses off-screen, still frame with reduced motion.
+- [x] Testimonials: PL translations, original language stored (`lang`), "Tłumaczenie z języka
+  angielskiego" note, quotes and captions stacked in one grid cell → constant height. Same for
+  case-study quotes (nazielono translated to EN).
+- [x] Terminal checked on production: built-in commands work. No `OPENAI_API_KEY`, so free text now
+  answers "command not found" and the "Just ask" hint is removed. Restore the hint in
+  `commands/help.ts` if a key is added.
+- [x] SEO/a11y (audit 2026-10-12, Lighthouse /pl mobile 97/96/100/100): link underlines in text,
+  accessible names match visible text (logo, PL/EN), mobile menu focus + `inert`, 44px targets
+  (footer, logo, terminal chips), consent link outside the label, required markers, titles ≤60
+  chars, case-study title pattern, EN description, 404 metadata + noindex, heading order on listing
+  pages (`headingLevel`), terminal h1/contrast/log region/OG, OG image 1200×630 JPG (110 KB),
+  Doto not preloaded, `scroll-padding-top`, focusable `<main>`, sitemap x-default and no fake
+  lastmod, JSON-LD image/priceRange/consistent url, FAQ JSON-LD on service pages.
+- [x] New service **Strona internetowa dla firmy** (`business-website`): problem-first, no tech
+  talk, existing prices only. Now first in the services list.
+- [x] Local page **Katowice**: new content type `LocalPage`, route `/pl/strony-internetowe/[slug]`
+  ↔ `/en/web-design/[slug]`, districts and nearby towns named on one page, local FAQ, Service JSON-LD
+  with `areaServed`, linked from the footer and in the sitemap.
+- [x] Visuality-inspired (not copied): scroll reveal (`ScrollReveal`, `data-reveal`) and the
+  `link-draw` underline.
+
+Decisions:
+
+- **No page per district** (Giszowiec, Ligota, …) and no Gliwice/Kraków pages yet: near-duplicate
+  location pages are doorway pages for Google. Districts are named on the Katowice page instead.
+  Add another city only with content that is really about it.
+- Skipped from Visuality on purpose: blur-to-sharp case cards, glitch buttons, logo marquee (too
+  recognisably theirs).
+
+To check / decide (Michał):
+
+- [ ] Katowice page claims to confirm: "kawa przy Rynku", meeting at the client's office, travel to
+  Kraków for meetings, "znam wymogi RODO/cookies". Edit `src/content/local/local-pages.ts` if any is
+  not right.
+- [ ] Business-website FAQ: "domain, hosting and code are in your name" and the stock-photo answer.
+- [ ] Privacy text now says Mailgun US servers + SCCs (since 2026-10-12).
+- [ ] Replace the account-level Mailgun key in `.env.local` / Vercel with a domain sending key.
+
+Follow-ups:
+
+- [ ] AI offer pages: see [ai-services-ideas.md](./ai-services-ideas.md) (hub + 4 offers).
+- [ ] Per-page OG images in the Signal style (`opengraph-image.tsx`); the current one is the old
+  design, only resized.
+- [ ] `http://mjaniec.it` takes two redirect hops; wrong-locale slugs redirect with 307 (next-intl).
+- [ ] Google Business Profile (section 4) — the Katowice page is the natural link target.

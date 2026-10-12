@@ -44,19 +44,29 @@ export function Testimonials({
 						))}
 					</div>
 					<figcaption className="flex flex-col gap-4 border-t border-rule pt-5 text-sm sm:flex-row sm:items-center sm:justify-between">
-						<span>
-							<strong className="font-bold">{item.author}</strong> · {item.role} ·{" "}
-							<a
-								href={item.url}
-								target="_blank"
-								rel="noopener"
-								className="text-accent underline underline-offset-2"
-							>
-								{labels.source} ↗
-							</a>
-							{item.lang !== locale && (
-								<span className="mt-1 block text-xs text-muted">{labels.translated}</span>
-							)}
+						{/* Captions are stacked like the quotes, so a longer role line can't change the height. */}
+						<span className="grid">
+							{items.map((t, i) => (
+								<span
+									key={t.id}
+									aria-hidden={i !== active}
+									className={cn("col-start-1 row-start-1", i === active ? "" : "invisible")}
+								>
+									<strong className="font-bold">{t.author}</strong> · {t.role} ·{" "}
+									<a
+										href={t.url}
+										target="_blank"
+										rel="noopener"
+										tabIndex={i === active ? undefined : -1}
+										className="text-accent underline underline-offset-2"
+									>
+										{labels.source} ↗
+									</a>
+									{t.lang !== locale && (
+										<span className="mt-1 block text-xs text-muted">{labels.translated}</span>
+									)}
+								</span>
+							))}
 						</span>
 						<span className="flex items-center gap-2">
 							<span className="mr-2 font-dots text-lg font-black">
