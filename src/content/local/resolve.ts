@@ -1,4 +1,4 @@
-import type { CaseStudy, Localized, Service } from "../types";
+import type { CaseStudy, LocalPage, Localized, Service } from "../types";
 import type { Locale } from "@/i18n/routing";
 
 /** A content type where any string (or list) may be stored per locale. */
@@ -42,3 +42,5 @@ export type LocalCaseStudy = LocalizedDeep<Omit<CaseStudy, "slugs" | "services">
 	/** Ids of the services this case study proves. */
 	services: string[];
 };
+
+export type LocalLocalPage = LocalizedDeep<Omit<LocalPage, "slugs">> & { id: string };

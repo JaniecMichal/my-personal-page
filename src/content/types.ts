@@ -55,6 +55,8 @@ export type Service = {
 	/** Slug per locale, for hreflang alternates and the language switch. */
 	slugs: Localized<string>;
 	order: number;
+	/** false hides the service from the home page grid; it stays on /services and in the sitemap. */
+	showOnHome?: boolean;
 	title: string;
 	/** One-line pitch for cards. */
 	summary: string;
@@ -65,6 +67,24 @@ export type Service = {
 	timeline: string;
 	included: { title: string; description: string }[];
 	plans: PricingPlan[];
+	faq: FaqItem[];
+	seo: Seo;
+};
+
+/**
+ * Landing page for one city (e.g. Katowice). Written per city with real local detail, never as a
+ * copy with the name swapped: thin duplicates count as doorway pages for Google.
+ */
+export type LocalPage = {
+	slug: string;
+	slugs: Localized<string>;
+	city: string;
+	title: string;
+	intro: string;
+	points: { title: string; description: string }[];
+	/** Districts named on the page, so searches like "strony internetowe Ligota" can find it. */
+	districts: string[];
+	nearby: string[];
 	faq: FaqItem[];
 	seo: Seo;
 };
@@ -90,7 +110,8 @@ export type CaseStudy = {
 	chapters: { title: string; body: RichText }[];
 	cover?: ImageAsset;
 	gallery: ImageAsset[];
-	quote?: { text: string; author: string; role: string };
+	/** `lang` is the language the quote was originally written in; other locales show it translated. */
+	quote?: { text: string; author: string; role: string; lang: Locale };
 	liveUrl?: string;
 	seo: Seo;
 };
@@ -129,6 +150,8 @@ export type Testimonial = {
 	/** Full recommendation text. */
 	text: string;
 	url: string;
+	/** Language the recommendation was originally written in; other locales show a translation. */
+	lang: Locale;
 };
 
 export type PricingPlan = {

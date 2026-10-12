@@ -100,6 +100,8 @@
 @layer base {
 	html {
 		scroll-behavior: smooth;
+		/* Keep focused elements and anchor targets clear of the sticky header. */
+		scroll-padding-top: 6rem;
 		-webkit-text-size-adjust: 100%;
 	}
 	body {
@@ -195,6 +197,23 @@
 	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
 }
 
+/*
+ * For outlined chamfer buttons: the clip-path also cuts the inset border, so this draws the
+ * 1px diagonal edge across the 12px corner in the current border colour.
+ */
+@utility chamfer-edge {
+	background-image: linear-gradient(
+		to bottom right,
+		transparent calc(50% - 0.75px),
+		var(--ink) calc(50% - 0.75px),
+		var(--ink) calc(50% + 0.75px),
+		transparent calc(50% + 0.75px)
+	);
+	background-position: 100% 100%;
+	background-size: 12px 12px;
+	background-repeat: no-repeat;
+}
+
 @utility u-accent {
 	text-decoration-line: underline;
 	text-decoration-color: var(--accent);
@@ -214,4 +233,30 @@
 	--surface: var(--inverse-surface);
 	--surface-2: var(--inverse-surface);
 	--dot: var(--inverse-rule);
+}
+
+/* Scroll reveal: see <ScrollReveal>. Soft ease-out, as all motion on the site. */
+.reveal-ready [data-reveal]:not(.is-revealed) {
+	opacity: 0;
+	translate: 0 28px;
+}
+[data-reveal] {
+	transition:
+		opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+		translate 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Text link whose underline draws in from the left on hover and focus. */
+@utility link-draw {
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 1px;
+	transition: background-size 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+	&:hover,
+	&:focus-visible {
+		background-size: 100% 1px;
+	}
 }

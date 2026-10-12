@@ -27,7 +27,10 @@ export function ThemeToggle({ className }: { className?: string }) {
 			{/* Half-filled circle; the fill side flips with the theme. */}
 			<svg viewBox="0 0 20 20" className="size-5" aria-hidden="true">
 				<circle cx="10" cy="10" r="7.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
-				<path d={dark ? "M10 2.5a7.5 7.5 0 0 0 0 15z" : "M10 2.5a7.5 7.5 0 0 1 0 15z"} fill="currentColor" />
+				<path
+					d={dark ? "M10 2.5a7.5 7.5 0 0 0 0 15z" : "M10 2.5a7.5 7.5 0 0 1 0 15z"}
+					fill="currentColor"
+				/>
 			</svg>
 		</button>
 	);

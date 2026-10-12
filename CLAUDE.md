@@ -49,7 +49,7 @@ npx next lint --dir src     # lint (add --fix for import order / type imports)
 | `src/components/sections/` | Page sections (hero, services grid, work grid, process, testimonials, pricing, FAQ, final CTA). |
 | `src/components/layout/` | Header, footer, mobile menu, locale switch, theme toggle. |
 | `src/components/effects/` | `Sphere` (2D canvas dot sphere) and `AberrationField` (pointer/scroll → CSS vars). |
-| `src/components/ui/` | `ButtonLink`/`ButtonAnchor`, `Container` (+ `gutter`), `SectionHeader`, `Tag`, `StatusLine`, `JsonLd`, `ImagePlaceholder`. |
+| `src/components/ui/` | `ButtonLink`/`ButtonAnchor`, `Container` (+ `gutter`), `SectionHeader`, `Tag`, `JsonLd`, `ImagePlaceholder`. |
 | `src/actions/brief.ts` | Brief form server action: Zod (`src/lib/brief.ts`), honeypot, in-memory rate limit, HTML escaping, Mailgun. |
 | `src/lib/brief-options.ts` | Client-safe options/types for the form (keeps zod out of the client bundle). |
 | `src/lib/mail/` | `MailProvider` interface + Mailgun HTTP client (no SDK). |

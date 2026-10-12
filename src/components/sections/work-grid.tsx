@@ -23,12 +23,18 @@ export async function WorkGrid({ studies }: { studies: CaseStudy[] }) {
 						/>
 					))}
 					<div className="flex flex-col justify-end gap-6 p-2 lg:p-7">
-						<p className="font-serif text-3xl leading-[1.15] lg:text-[40px]">{t("home.work.cta")}</p>
+						<p className="font-serif text-3xl leading-[1.15] lg:text-[40px]">
+							{t("home.work.cta")}
+						</p>
 						<div className="flex flex-wrap gap-3">
 							<ButtonLink href="/contact" variant="light">
 								{t("common.cta.brief")} ↗
 							</ButtonLink>
-							<ButtonLink href="/work" variant="line" className="text-inverse-ink shadow-[inset_0_0_0_1px_var(--inverse-ink)]">
+							<ButtonLink
+								href="/work"
+								variant="line"
+								className="text-inverse-ink shadow-[inset_0_0_0_1px_var(--inverse-ink)]"
+							>
 								{t("common.cta.allWork")}
 							</ButtonLink>
 						</div>

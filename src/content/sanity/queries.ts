@@ -18,7 +18,7 @@ const slugs = `"slugs": {
 
 export const SERVICES_QUERY = /* groq */ `
 *[_type == "service" && language == $locale] | order(order asc) {
-	"slug": slug.current, ${slugs}, order, title, summary, intro, tags, priceFrom, timeline,
+	"slug": slug.current, ${slugs}, order, showOnHome, title, summary, intro, tags, priceFrom, timeline,
 	included[]{ title, description },
 	plans[]->{ "id": _id, kicker, name, price, features, highlighted },
 	faq[]->{ "id": _id, ${t("question")}, ${t("answer")} },
@@ -27,7 +27,7 @@ export const SERVICES_QUERY = /* groq */ `
 
 export const SERVICE_QUERY = /* groq */ `
 *[_type == "service" && language == $locale && slug.current == $slug][0] {
-	"slug": slug.current, ${slugs}, order, title, summary, intro, tags, priceFrom, timeline,
+	"slug": slug.current, ${slugs}, order, showOnHome, title, summary, intro, tags, priceFrom, timeline,
 	included[]{ title, description },
 	plans[]->{ "id": _id, kicker, name, price, features, highlighted },
 	faq[]->{ "id": _id, ${t("question")}, ${t("answer")} },
@@ -40,7 +40,7 @@ export const CASE_STUDIES_QUERY = /* groq */ `
 	"services": services[]->{ "slug": slug.current, title },
 	metrics[]{ value, label },
 	chapters[]{ title, body },
-	cover, gallery, quote, liveUrl, seo
+	cover, gallery, quote { "text": coalesce(text[$locale], text), author, "role": coalesce(role[$locale], role), lang }, liveUrl, seo
 }`;
 
 export const CASE_STUDY_QUERY = /* groq */ `
@@ -49,7 +49,7 @@ export const CASE_STUDY_QUERY = /* groq */ `
 	"services": services[]->{ "slug": slug.current, title },
 	metrics[]{ value, label },
 	chapters[]{ title, body },
-	cover, gallery, quote, liveUrl, seo
+	cover, gallery, quote { "text": coalesce(text[$locale], text), author, "role": coalesce(role[$locale], role), lang }, liveUrl, seo
 }`;
 
 export const SITE_SETTINGS_QUERY = /* groq */ `
@@ -66,10 +66,22 @@ export const EXPERIENCE_QUERY = /* groq */ `
 
 export const TESTIMONIALS_QUERY = /* groq */ `
 *[_type == "testimonial"] | order(order asc) {
-	"id": _id, author, ${t("role")}, quote, text, url
+	"id": _id, author, ${t("role")}, ${t("quote")}, ${t("text")}, url, lang
 }`;
 
 export const FAQ_QUERY = /* groq */ `
 *[_type == "faq" && showOnHome == true] | order(order asc) {
 	"id": _id, ${t("question")}, ${t("answer")}
+}`;
+
+export const LOCAL_PAGES_QUERY = /* groq */ `
+*[_type == "localPage" && language == $locale] | order(city asc) {
+	"slug": slug.current, city, title, intro, points[]{ title, description },
+	districts, nearby, faq[]{ "id": _key, question, answer }, seo
+}`;
+
+export const LOCAL_PAGE_QUERY = /* groq */ `
+*[_type == "localPage" && language == $locale && slug.current == $slug][0] {
+	"slug": slug.current, city, title, intro, points[]{ title, description },
+	districts, nearby, faq[]{ "id": _key, question, answer }, seo
 }`;

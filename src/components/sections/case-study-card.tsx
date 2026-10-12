@@ -4,15 +4,33 @@ import type { CaseStudy } from "@/content";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
 
-type Props = { study: CaseStudy; readLabel: string; placeholderLabel: string; className?: string };
+type Props = {
+	study: CaseStudy;
+	readLabel: string;
+	placeholderLabel: string;
+	className?: string;
+	/** 2 on listing pages directly under the h1, 3 inside a titled section. */
+	headingLevel?: 2 | 3;
+};
 
-export function CaseStudyCard({ study, readLabel, placeholderLabel, className }: Props) {
+export function CaseStudyCard({
+	study,
+	readLabel,
+	placeholderLabel,
+	className,
+	headingLevel = 3,
+}: Props) {
+	const Heading = `h${headingLevel}` as const;
 	const metric = study.metrics[0];
 
 	return (
 		<Link
 			href={{ pathname: "/work/[slug]", params: { slug: study.slug } }}
-			className={cn("brackets relative flex flex-col gap-5 p-5 text-ink no-underline md:p-7", className)}
+			data-reveal
+			className={cn(
+				"group brackets relative flex flex-col gap-5 p-5 text-ink no-underline md:p-7",
+				className,
+			)}
 		>
 			{study.cover ? (
 				<Image
@@ -24,15 +42,24 @@ export function CaseStudyCard({ study, readLabel, placeholderLabel, className }:
 					sizes="(min-width: 1024px) 50vw, 100vw"
 				/>
 			) : (
-				<ImagePlaceholder label={`${placeholderLabel}: ${study.client}`} className="aspect-[16/10]" />
+				<ImagePlaceholder
+					label={`${placeholderLabel}: ${study.client}`}
+					className="aspect-[16/10]"
+				/>
 			)}
 			<span className="label">
 				{study.client} · {study.period}
 			</span>
-			<h3 className="font-serif text-3xl leading-[1.08] tracking-[-0.02em] md:text-[40px]">{study.title}</h3>
+			<Heading className="font-serif text-3xl leading-[1.08] tracking-[-0.02em] md:text-[40px]">
+				{study.title}
+			</Heading>
 			<div className="flex items-center justify-between border-t border-dashed border-muted pt-4">
-				{metric && <span className="font-dots text-2xl font-black text-inverse-accent">{metric.value}</span>}
-				<span className="text-[13px] uppercase tracking-[0.1em]">{readLabel} →</span>
+				{metric && (
+					<span className="font-dots text-2xl font-black text-inverse-accent">{metric.value}</span>
+				)}
+				<span className="link-draw text-[13px] tracking-[0.1em] uppercase group-hover:[background-size:100%_1px]">
+					{readLabel} →
+				</span>
 			</div>
 		</Link>
 	);

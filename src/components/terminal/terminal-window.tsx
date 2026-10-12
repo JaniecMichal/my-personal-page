@@ -28,7 +28,7 @@ export const TerminalWindow = () => {
           <div className="h-3 w-3 rounded-full bg-yellow-500 opacity-80" />
           <div className="h-3 w-3 rounded-full bg-green-500 opacity-80" />
         </div>
-        <span className="mx-auto font-mono text-xs text-gray-500">{WINDOW_TITLE}</span>
+        <span className="mx-auto font-mono text-xs text-gray-400">{WINDOW_TITLE}</span>
       </div>
 
       <TerminalOutput lines={history} />

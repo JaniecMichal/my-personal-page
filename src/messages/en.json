@@ -39,17 +39,18 @@
 			"profile": "Profile",
 			"terminal": "Prefer a terminal?",
 			"privacy": "Privacy policy",
-			"rights": "© {year} Michał Janiec"
+			"rights": "© {year} Michał Janiec",
+			"local": "Local"
 		},
-		"breadcrumbHome": "Home"
+		"breadcrumbHome": "Home",
+		"translatedQuote": "Translated from Polish"
 	},
 	"home": {
 		"meta": {
-			"title": "Michał Janiec — websites, stores and web apps | Senior Frontend Developer",
-			"description": "I build fast Next.js websites, Shopify stores, WordPress fixes and React apps. Senior frontend developer from Katowice, Poland, 5+ years of experience. Quote within 24 hours."
+			"title": "Websites, stores and web apps — Michał Janiec",
+			"description": "Fast Next.js websites, Shopify stores, WordPress fixes and React apps. Senior frontend developer from Katowice, Poland. Quote within 24 hours."
 		},
 		"hero": {
-			"kicker": "Senior Frontend Developer · Katowice, Poland · remote",
 			"title": "Websites, stores and web apps that <em>sell.</em>",
 			"lead": "I build fast Next.js websites, Shopify stores, WordPress fixes and React apps. 5+ years in product teams, now working directly with your business."
 		},
@@ -90,7 +91,7 @@
 	},
 	"services": {
 		"meta": {
-			"title": "Services: Next.js websites, Shopify stores, WordPress, React apps | Michał Janiec",
+			"title": "Services: Next.js, Shopify, WordPress | Michał Janiec",
 			"description": "Business websites in Next.js, Shopify stores, WordPress fixes and speed-ups, React apps and frontend for Rails teams. Based in Poland, working remotely."
 		},
 		"title": "Services",
@@ -133,12 +134,13 @@
 			"next": "Next case study",
 			"visit": "Visit the site",
 			"services": "Services in this project",
-			"screenshot": "Screenshot coming soon"
+			"screenshot": "Screenshot coming soon",
+			"metaTitle": "{client} — case study | Michał Janiec"
 		}
 	},
 	"pricing": {
 		"meta": {
-			"title": "Pricing: websites, Shopify stores, WordPress fixes | Michał Janiec",
+			"title": "Pricing: websites and Shopify stores | Michał Janiec",
 			"description": "Clear pricing for Next.js websites, Shopify stores and hourly work. A quote within 24 hours after a short brief."
 		},
 		"title": "Pricing",
@@ -153,7 +155,7 @@
 	},
 	"cv": {
 		"meta": {
-			"title": "CV — Michał Janiec, Senior Frontend Developer (React, Next.js, Rails)",
+			"title": "CV — Michał Janiec, Senior Frontend Developer",
 			"description": "Experience, stack and availability. Senior Frontend Developer from Katowice, Poland: React, Next.js, TypeScript, Stimulus and Tailwind. Full-time, B2B or freelance."
 		},
 		"label": "Curriculum vitae",
@@ -194,6 +196,7 @@
 				"webapp": "React web app",
 				"team": "Frontend for a team",
 				"audit": "Speed / SEO audit",
+				"marketing": "SEO / Google Ads",
 				"job": "Job offer / hiring",
 				"other": "Something else"
 			},
@@ -233,7 +236,8 @@
 			"detailsHint": "Project type, budget, timeline. They help me give a more accurate quote.",
 			"typeLabel": "What do you need? Pick one or more.",
 			"budgetLabel": "Budget",
-			"timelineLabel": "Timeline"
+			"timelineLabel": "Timeline",
+			"requiredNote": "required fields"
 		}
 	},
 	"privacy": {
@@ -254,5 +258,17 @@
 		"title": "This page doesn't exist.",
 		"lead": "The link may have changed after the site rebuild.",
 		"home": "Back to home"
+	},
+	"local": {
+		"breadcrumb": "Web design",
+		"pointsLabel": "Why local",
+		"pointsTitle": "A developer from Katowice, not an anonymous agency",
+		"districtsLabel": "Districts",
+		"districtsTitle": "I work with companies from every part of Katowice",
+		"nearbyLabel": "Nearby",
+		"nearbyTitle": "And across Silesia",
+		"servicesTitle": "How I can help",
+		"servicesIndex": "Services",
+		"faqLabel": "Questions"
 	}
 }

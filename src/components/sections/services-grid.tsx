@@ -3,7 +3,15 @@ import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import type { Service } from "@/content";
 
-export function ServicesGrid({ title, index, services }: { title: string; index?: string; services: Service[] }) {
+export function ServicesGrid({
+	title,
+	index,
+	services,
+}: {
+	title: string;
+	index?: string;
+	services: Service[];
+}) {
 	return (
 		<section id="services" className="py-20 lg:py-32">
 			<Container className="flex flex-col gap-10 lg:gap-14">

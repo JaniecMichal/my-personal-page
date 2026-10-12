@@ -2,9 +2,170 @@ import type { LocalService } from "./resolve";
 
 export const services: LocalService[] = [
 	{
-		id: "nextjs-websites",
-		slug: { pl: "strony-nextjs", en: "nextjs-websites" },
+		id: "business-website",
+		slug: { pl: "strona-internetowa-dla-firmy", en: "business-website" },
 		order: 1,
+		title: { pl: "Strona internetowa dla firmy", en: "A website for your business" },
+		summary: {
+			pl: "Strona, która przyprowadza klientów: widać Cię w Google, dobrze działa na telefonie i sam ją edytujesz.",
+			en: "A website that brings in customers: you show up on Google, it works well on phones and you can edit it yourself.",
+		},
+		intro: {
+			pl: "Nie musisz znać się na technologii. Mówisz mi, co ma się wydarzyć: więcej telefonów, zapytań albo rezerwacji. Ja dobieram rozwiązanie, buduję stronę i dbam o to, żeby klienci ją znaleźli. Moją główną technologią jest Next.js: strony są szybkie, bezpieczne i dobrze widoczne w Google.",
+			en: "You don't need to know anything about technology. Tell me what should happen: more calls, enquiries or bookings. I pick the right tools, build the site and make sure customers can find it. My main technology is Next.js: sites that are fast, secure and easy for Google to read.",
+		},
+		tags: ["Next.js", "SEO", "CMS"],
+		priceFrom: { pl: "od 500 zł", en: "from 500 PLN" },
+		timeline: { pl: "od kilku dni do 3 tygodni", en: "a few days to 3 weeks" },
+		included: [
+			{
+				title: { pl: "„Nie ma mnie w Google”", en: "“I'm not on Google”" },
+				description: {
+					pl: "Konfiguruję SEO techniczne, wizytówkę i Search Console, żeby strona pojawiała się, gdy ktoś szuka Twoich usług w okolicy.",
+					en: "I set up technical SEO, your business profile and Search Console, so the site shows up when people nearby search for what you offer.",
+				},
+			},
+			{
+				title: { pl: "„Strona wygląda staro na telefonie”", en: "“It looks dated on phones”" },
+				description: {
+					pl: "Większość klientów wchodzi z telefonu. Strona jest projektowana najpierw pod mały ekran i ładuje się w ułamku sekundy.",
+					en: "Most customers visit on a phone. The site is designed for small screens first and loads in a blink.",
+				},
+			},
+			{
+				title: { pl: "„Nie mogę sam nic zmienić”", en: "“I can't change anything myself”" },
+				description: {
+					pl: "Dostajesz prosty panel: zmieniasz ceny, godziny otwarcia, zdjęcia i aktualności bez dzwonienia do programisty.",
+					en: "You get a simple panel: update prices, opening hours, photos and news without calling a developer.",
+				},
+			},
+			{
+				title: {
+					pl: "„Ludzie wchodzą, ale nie piszą”",
+					en: "“People visit but don't get in touch”",
+				},
+				description: {
+					pl: "Jasna oferta, widoczny telefon, krótki formularz i przyciski kontaktu tam, gdzie klient ich szuka.",
+					en: "A clear offer, a visible phone number, a short form and contact buttons where customers look for them.",
+				},
+			},
+		],
+		plans: [
+			{
+				id: "business-landing",
+				kicker: { pl: "Na dobry start", en: "Quick start" },
+				name: { pl: "Strona-wizytówka", en: "One-page site" },
+				price: { pl: "od 500 zł", en: "from 500 PLN" },
+				features: {
+					pl: [
+						"1 strona, do 6 sekcji",
+						"z Twojego projektu graficznego",
+						"formularz kontaktowy",
+						"wdrożenie + 1 runda poprawek",
+					],
+					en: [
+						"1 page, up to 6 sections",
+						"from your ready design",
+						"contact form",
+						"launch + 1 round of fixes",
+					],
+				},
+				highlighted: false,
+			},
+			{
+				id: "business-website",
+				kicker: { pl: "Dla małych firm", en: "For small businesses" },
+				name: { pl: "Strona firmowa z panelem", en: "Website with an editor" },
+				price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
+				features: {
+					pl: [
+						"do 5 podstron",
+						"panel do edycji treści",
+						"SEO i dane strukturalne",
+						"wdrożenie + 30 dni wsparcia",
+					],
+					en: [
+						"up to 5 pages",
+						"content editor",
+						"SEO and structured data",
+						"launch + 30 days support",
+					],
+				},
+				highlighted: true,
+			},
+			{
+				id: "business-care",
+				kicker: { pl: "Dla działających stron", en: "For live sites" },
+				name: { pl: "Zmiany i opieka", en: "Changes and care" },
+				price: { pl: "120 zł/h", en: "120 PLN/h" },
+				features: {
+					pl: [
+						"nowe sekcje i poprawki",
+						"aktualizacje i kopie zapasowe",
+						"rozliczenie co 15 min",
+						"minimum 1 h",
+					],
+					en: ["new sections and fixes", "updates and backups", "billed per 15 min", "1 h minimum"],
+				},
+				highlighted: false,
+			},
+		],
+		faq: [
+			{
+				id: "business-faq-1",
+				question: {
+					pl: "W jakiej technologii zrobisz stronę?",
+					en: "Which technology will you use?",
+				},
+				answer: {
+					pl: "Takiej, która pasuje do celu i budżetu. Najczęściej to Next.js z prostym panelem do edycji, czasem WordPress, a dla sklepu Shopify. Przed startem tłumaczę, dlaczego wybieram dane rozwiązanie.",
+					en: "Whatever fits the goal and budget. Most often Next.js with a simple editor, sometimes WordPress, and Shopify for online stores. I explain the choice before we start.",
+				},
+			},
+			{
+				id: "business-faq-2",
+				question: {
+					pl: "Nie mam tekstów ani zdjęć. Co wtedy?",
+					en: "I don't have copy or photos. What then?",
+				},
+				answer: {
+					pl: "Pomagam ułożyć strukturę i treści na podstawie krótkiej rozmowy o Twojej firmie. Zdjęcia możemy na start dobrać ze stocków i podmienić później.",
+					en: "I help you shape the structure and copy from a short conversation about your business. We can start with stock photos and swap them later.",
+				},
+			},
+			{
+				id: "business-faq-3",
+				question: {
+					pl: "Czy strona będzie widoczna w Google?",
+					en: "Will the site show up on Google?",
+				},
+				answer: {
+					pl: "Strona dostaje SEO techniczne, mapę strony, dane strukturalne i zgłoszenie do Google Search Console. Pozycja zależy też od konkurencji i treści, więc mówię uczciwie, czego się spodziewać.",
+					en: "The site gets technical SEO, a sitemap, structured data and a Google Search Console submission. Rankings also depend on competition and content, so I'm honest about what to expect.",
+				},
+			},
+			{
+				id: "business-faq-4",
+				question: { pl: "Kto będzie właścicielem strony?", en: "Who owns the website?" },
+				answer: {
+					pl: "Ty. Domena, hosting i kod są na Ciebie, a ja przekazuję wszystkie dostępy po wdrożeniu.",
+					en: "You do. The domain, hosting and code are in your name, and I hand over all access after launch.",
+				},
+			},
+		],
+		seo: {
+			title: {
+				pl: "Strona internetowa dla firmy | Michał Janiec",
+				en: "Website for your business | Michał Janiec",
+			},
+		},
+	},
+	{
+		id: "nextjs-websites",
+		// Indexed since launch; reachable from the services page and footer, not shown on the home page.
+		showOnHome: false,
+		slug: { pl: "strony-nextjs", en: "nextjs-websites" },
+		order: 2,
 		title: { pl: "Strony firmowe w Next.js", en: "Business websites in Next.js" },
 		summary: {
 			pl: "Szybkie, dobrze pozycjonowane strony, które edytujesz sam. Core Web Vitals na zielono od pierwszego dnia.",
@@ -54,8 +215,18 @@ export const services: LocalService[] = [
 				name: "Landing page",
 				price: { pl: "od 500 zł", en: "from 500 PLN" },
 				features: {
-					pl: ["1 strona, do 6 sekcji", "z Twojego projektu graficznego", "bez CMS", "wdrożenie + 1 runda poprawek"],
-					en: ["1 page, up to 6 sections", "from your ready design", "no CMS", "launch + 1 round of fixes"],
+					pl: [
+						"1 strona, do 6 sekcji",
+						"z Twojego projektu graficznego",
+						"bez CMS",
+						"wdrożenie + 1 runda poprawek",
+					],
+					en: [
+						"1 page, up to 6 sections",
+						"from your ready design",
+						"no CMS",
+						"launch + 1 round of fixes",
+					],
 				},
 				highlighted: false,
 			},
@@ -65,8 +236,18 @@ export const services: LocalService[] = [
 				name: { pl: "Strona firmowa z CMS", en: "Website with CMS" },
 				price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
 				features: {
-					pl: ["do 5 podstron", "CMS do edycji", "SEO i dane strukturalne", "wdrożenie + 30 dni wsparcia"],
-					en: ["up to 5 pages", "editable CMS", "SEO and structured data", "launch + 30 days support"],
+					pl: [
+						"do 5 podstron",
+						"CMS do edycji",
+						"SEO i dane strukturalne",
+						"wdrożenie + 30 dni wsparcia",
+					],
+					en: [
+						"up to 5 pages",
+						"editable CMS",
+						"SEO and structured data",
+						"launch + 30 days support",
+					],
 				},
 				highlighted: true,
 			},
@@ -76,7 +257,12 @@ export const services: LocalService[] = [
 				name: { pl: "Zmiany i opieka", en: "Changes and care" },
 				price: { pl: "120 zł/h", en: "120 PLN/h" },
 				features: {
-					pl: ["nowe sekcje i poprawki", "aktualizacje zależności", "rozliczenie co 15 min", "minimum 1 h"],
+					pl: [
+						"nowe sekcje i poprawki",
+						"aktualizacje zależności",
+						"rozliczenie co 15 min",
+						"minimum 1 h",
+					],
 					en: ["new sections and fixes", "dependency updates", "billed per 15 min", "1 h minimum"],
 				},
 				highlighted: false,
@@ -88,7 +274,7 @@ export const services: LocalService[] = [
 	{
 		id: "shopify",
 		slug: { pl: "sklepy-shopify", en: "shopify-stores" },
-		order: 2,
+		order: 3,
 		title: { pl: "Sklepy Shopify", en: "Shopify stores" },
 		summary: {
 			pl: "Wdrożenie, motyw dopasowany do marki, poprawki i integracje. Sklep gotowy do sprzedaży.",
@@ -152,8 +338,18 @@ export const services: LocalService[] = [
 				name: "Starter",
 				price: { pl: "od 2 500 zł", en: "from 2,500 PLN" },
 				features: {
-					pl: ["dopasowanie motywu", "do 50 produktów", "płatności i dostawy", "checklista startowa"],
-					en: ["theme customisation", "up to 50 products", "payments and shipping", "launch checklist"],
+					pl: [
+						"dopasowanie motywu",
+						"do 50 produktów",
+						"płatności i dostawy",
+						"checklista startowa",
+					],
+					en: [
+						"theme customisation",
+						"up to 50 products",
+						"payments and shipping",
+						"launch checklist",
+					],
 				},
 				highlighted: false,
 			},
@@ -163,8 +359,18 @@ export const services: LocalService[] = [
 				name: { pl: "Sklep marki", en: "Brand store" },
 				price: { pl: "od 5 900 zł", en: "from 5,900 PLN" },
 				features: {
-					pl: ["własne sekcje", "migracja i import", "przegląd szybkości i SEO", "szkolenie + 30 dni opieki"],
-					en: ["custom sections", "migration and import", "speed and SEO pass", "training + 30 days care"],
+					pl: [
+						"własne sekcje",
+						"migracja i import",
+						"przegląd szybkości i SEO",
+						"szkolenie + 30 dni opieki",
+					],
+					en: [
+						"custom sections",
+						"migration and import",
+						"speed and SEO pass",
+						"training + 30 days care",
+					],
 				},
 				highlighted: true,
 			},
@@ -174,7 +380,12 @@ export const services: LocalService[] = [
 				name: { pl: "Poprawki i opieka", en: "Fixes and care" },
 				price: { pl: "120 zł/h", en: "120 PLN/h" },
 				features: {
-					pl: ["błędy i nowe sekcje", "porządki w aplikacjach", "miesięczny raport", "szybka reakcja"],
+					pl: [
+						"błędy i nowe sekcje",
+						"porządki w aplikacjach",
+						"miesięczny raport",
+						"szybka reakcja",
+					],
 					en: ["bug fixes, new sections", "app clean-up", "monthly report", "priority response"],
 				},
 				highlighted: false,
@@ -186,7 +397,7 @@ export const services: LocalService[] = [
 	{
 		id: "wordpress",
 		slug: { pl: "wordpress", en: "wordpress" },
-		order: 3,
+		order: 4,
 		title: { pl: "WordPress: poprawki i przyspieszenie", en: "WordPress fixes and speed-ups" },
 		summary: {
 			pl: "Nowe sekcje, naprawa błędów, migracje i optymalizacja, bez przepisywania wszystkiego od zera.",
@@ -229,8 +440,8 @@ export const services: LocalService[] = [
 	{
 		id: "web-apps",
 		slug: { pl: "aplikacje-react", en: "react-web-apps" },
-		order: 4,
-		title: { pl: "Aplikacje webowe React", en: "React web apps" },
+		order: 5,
+		title: { pl: "Aplikacje webowe", en: "Web applications" },
 		summary: {
 			pl: "Panele, SaaS i MVP. Od makiety w Figmie do działającego produktu z testami.",
 			en: "Dashboards, SaaS and MVPs. From a Figma mock-up to a working, tested product.",
@@ -250,7 +461,7 @@ export const services: LocalService[] = [
 	{
 		id: "frontend-for-rails-teams",
 		slug: { pl: "frontend-dla-zespolow-rails", en: "frontend-for-rails-teams" },
-		order: 5,
+		order: 6,
 		title: { pl: "Frontend dla zespołów Rails", en: "Frontend for Rails teams" },
 		summary: {
 			pl: "Stimulus, Hotwire, ERB i Tailwind. Dołączam do zespołu i dowożę interfejs, na co dzień robię to w Visuality.",
@@ -271,7 +482,7 @@ export const services: LocalService[] = [
 	{
 		id: "speed-seo-audit",
 		slug: { pl: "audyt-szybkosci-seo", en: "speed-seo-audit" },
-		order: 6,
+		order: 7,
 		title: { pl: "Audyt szybkości i SEO", en: "Speed and SEO audit" },
 		summary: {
 			pl: "Sprawdzam, co spowalnia stronę i dlaczego Google jej nie lubi. Raport z priorytetami plus poprawki.",
@@ -288,5 +499,171 @@ export const services: LocalService[] = [
 		plans: [],
 		faq: [],
 		seo: {},
+	},
+	{
+		id: "seo-sem",
+		slug: { pl: "seo-i-google-ads", en: "seo-and-google-ads" },
+		order: 8,
+		title: { pl: "SEO i Google Ads", en: "SEO and Google Ads" },
+		summary: {
+			pl: "Więcej klientów z Google: pozycjonowanie, kampanie reklamowe i analityka, które pracują razem ze stroną.",
+			en: "More customers from Google: SEO, ad campaigns and analytics that work together with your website.",
+		},
+		intro: {
+			pl: "Dobra strona to połowa sukcesu, druga połowa to ruch. Pozycjonowanie i kampanie Google Ads prowadzę razem ze sprawdzonym zespołem specjalistów od marketingu. Ty masz jeden kontakt, a strona, SEO i reklamy grają do jednej bramki: więcej zapytań i sprzedaży.",
+			en: "A good website is half the job, the other half is traffic. I run SEO and Google Ads together with a trusted team of marketing specialists. You have one point of contact, and the site, SEO and ads all pull in one direction: more enquiries and sales.",
+		},
+		tags: ["SEO", "Google Ads", "GA4"],
+		priceFrom: { pl: "bezpłatna wycena", en: "free quote" },
+		timeline: { pl: "stała współpraca", en: "ongoing" },
+		included: [
+			{
+				title: { pl: "Pozycjonowanie (SEO)", en: "Search engine optimisation" },
+				description: {
+					pl: "Analiza fraz i konkurencji, audyt strony, optymalizacja treści, plan publikacji i link building. Cel: stały ruch z Google bez płacenia za każde kliknięcie.",
+					en: "Keyword and competitor research, a site audit, content optimisation, a publishing plan and link building. The goal: steady traffic from Google without paying for every click.",
+				},
+			},
+			{
+				title: { pl: "Widoczność w odpowiedziach AI", en: "Visibility in AI answers" },
+				description: {
+					pl: "Treści i dane strukturalne przygotowane tak, żeby Twoja firma pojawiała się też w odpowiedziach ChatGPT, Gemini i Google AI Overviews.",
+					en: "Content and structured data prepared so your business also shows up in ChatGPT, Gemini and Google AI Overviews answers.",
+				},
+			},
+			{
+				title: { pl: "Kampanie Google Ads", en: "Google Ads campaigns" },
+				description: {
+					pl: "Kampanie w wyszukiwarce i sieci reklamowej: struktura, słowa kluczowe, teksty reklam i budżet przesuwany tam, gdzie daje najwięcej zapytań.",
+					en: "Search and display campaigns: structure, keywords, ad copy and a budget moved to wherever it brings the most enquiries.",
+				},
+			},
+			{
+				title: { pl: "Kampanie dla sklepów", en: "Campaigns for online stores" },
+				description: {
+					pl: "Google Shopping, remarketing dynamiczny i przypomnienia o porzuconym koszyku. Dobrze łączą się ze sklepem na Shopify.",
+					en: "Google Shopping, dynamic remarketing and abandoned-cart reminders. A natural fit for a Shopify store.",
+				},
+			},
+			{
+				title: { pl: "Analityka i mierzenie wyników", en: "Analytics and measurement" },
+				description: {
+					pl: "Wdrożenie GA4 i śledzenia konwersji, czytelny raport co miesiąc. Widzisz, ile kosztuje zapytanie i które działania na siebie zarabiają.",
+					en: "GA4 and conversion tracking, a clear monthly report. You see what an enquiry costs and which activities pay for themselves.",
+				},
+			},
+			{
+				title: { pl: "Strona gotowa na ruch", en: "A site ready for traffic" },
+				description: {
+					pl: "Szybkość, SEO techniczne i strony docelowe pod kampanie robię sam, więc poprawki na stronie nie czekają w kolejce u innej firmy.",
+					en: "I handle speed, technical SEO and campaign landing pages myself, so changes to the site don't wait in another company's queue.",
+				},
+			},
+		],
+		plans: [],
+		faq: [
+			{
+				id: "seo-sem-faq-1",
+				question: {
+					pl: "Kiedy SEO zacznie przynosić efekty?",
+					en: "When will SEO start to pay off?",
+				},
+				answer: {
+					pl: "SEO to gra długoterminowa. Pierwsze wzrosty widać zwykle po kilku miesiącach, a stabilną pozycję buduje się przez rok i dłużej, zależnie od konkurencji w branży. Jeśli klienci są potrzebni od razu, na start łączymy SEO z kampanią Google Ads.",
+					en: "SEO is a long game. The first gains usually show after a few months, and a stable position takes a year or more, depending on the competition in your industry. If you need customers right away, we start with a Google Ads campaign alongside SEO.",
+				},
+			},
+			{
+				id: "seo-sem-faq-2",
+				question: { pl: "SEO czy Google Ads: co wybrać?", en: "SEO or Google Ads: which one?" },
+				answer: {
+					pl: "Reklamy dają ruch od pierwszego dnia, ale płacisz za każde kliknięcie. SEO buduje ruch, który zostaje, ale wymaga czasu. Najlepiej działają razem: reklamy przynoszą klientów teraz i pokazują, które frazy sprzedają, a SEO z czasem obniża koszt pozyskania klienta.",
+					en: "Ads bring traffic from day one, but you pay for every click. SEO builds traffic that stays, but it takes time. They work best together: ads bring customers now and show which phrases sell, while SEO lowers the cost per customer over time.",
+				},
+			},
+			{
+				id: "seo-sem-faq-3",
+				question: { pl: "Ile to kosztuje?", en: "How much does it cost?" },
+				answer: {
+					pl: "Składają się na to dwie rzeczy: budżet reklamowy, który płacisz bezpośrednio Google, oraz wynagrodzenie za prowadzenie działań. Wycenę przygotowuję po krótkiej rozmowie o celach, branży i budżecie. Prace przy stronie rozliczam osobno, według cennika.",
+					en: "There are two parts: the ad budget, which you pay directly to Google, and the fee for running the work. I prepare a quote after a short conversation about your goals, industry and budget. Work on the website is billed separately, as in the price list.",
+				},
+			},
+			{
+				id: "seo-sem-faq-4",
+				question: {
+					pl: "Czy gwarantujesz pierwsze miejsce w Google?",
+					en: "Do you guarantee the top spot on Google?",
+				},
+				answer: {
+					pl: "Nie, i warto uważać na każdego, kto to obiecuje. O pozycjach decydują algorytmy Google i konkurencja. Obiecuję za to przejrzystą pracę, mierzalne cele i co miesiąc jasną informację, co działa, a co zmieniamy.",
+					en: "No, and be careful with anyone who promises that. Rankings depend on Google's algorithms and your competitors. What I do promise is transparent work, measurable goals and a clear monthly update on what works and what we're changing.",
+				},
+			},
+			{
+				id: "seo-sem-faq-5",
+				question: {
+					pl: "Czy będę mieć dostęp do kont reklamowych i raportów?",
+					en: "Will I have access to the ad accounts and reports?",
+				},
+				answer: {
+					pl: "Tak. Konta Google Ads, Google Analytics i Search Console są zakładane na Ciebie, a Ty masz do nich pełny dostęp. Co miesiąc dostajesz raport z wynikami i rekomendacjami.",
+					en: "Yes. The Google Ads, Google Analytics and Search Console accounts are set up in your name, with full access for you. Every month you get a report with results and recommendations.",
+				},
+			},
+			{
+				id: "seo-sem-faq-6",
+				question: { pl: "Jakie wskaźniki będziemy śledzić?", en: "Which numbers will we track?" },
+				answer: {
+					pl: "Te, które przekładają się na pieniądze: liczbę i jakość zapytań, koszt pozyskania zapytania (CPL) lub klienta (CPA), a w sklepach zwrot z wydatków na reklamę (ROAS). Ruch i pozycje są ważne, ale to tylko środek do celu.",
+					en: "The ones that turn into money: the number and quality of enquiries, cost per lead (CPL) or per customer (CPA), and for online stores the return on ad spend (ROAS). Traffic and rankings matter, but only as a means to an end.",
+				},
+			},
+			{
+				id: "seo-sem-faq-7",
+				question: { pl: "Jak wygląda start współpracy?", en: "How does it start?" },
+				answer: {
+					pl: "Najpierw rozmowa o celach i budżecie, potem audyt strony i kont. Następnie wdrażamy analitykę i śledzenie konwersji, uruchamiamy kampanie na małym budżecie, a po pierwszych danych skalujemy to, co działa. Całość zajmuje zwykle kilka tygodni.",
+					en: "First a conversation about goals and budget, then an audit of the site and accounts. Next we set up analytics and conversion tracking, launch campaigns on a small budget, and once the first data comes in, scale what works. It usually takes a few weeks.",
+				},
+			},
+			{
+				id: "seo-sem-faq-8",
+				question: { pl: "Co przygotować przed startem?", en: "What should I prepare?" },
+				answer: {
+					pl: "Krótki opis firmy i klientów, listę głównych konkurentów oraz dostępy do strony, Google Analytics, Search Console i kont reklamowych, jeśli już je masz. Resztę ustalimy w trakcie rozmowy.",
+					en: "A short description of your business and customers, a list of your main competitors, and access to your website, Google Analytics, Search Console and ad accounts if you already have them. We'll sort out the rest in our conversation.",
+				},
+			},
+			{
+				id: "seo-sem-faq-9",
+				question: {
+					pl: "Czy muszę mieć stronę zrobioną przez Ciebie?",
+					en: "Does my site have to be built by you?",
+				},
+				answer: {
+					pl: "Nie. Jeśli masz stronę, zaczynamy od audytu i poprawek technicznych, które blokują wyniki, a potem zajmujemy się SEO i kampaniami.",
+					en: "No. If you already have a site, we start with an audit and the technical fixes holding back results, then move on to SEO and campaigns.",
+				},
+			},
+			{
+				id: "seo-sem-faq-10",
+				question: { pl: "Czy mogę zakończyć współpracę?", en: "Can I end the cooperation?" },
+				answer: {
+					pl: "Tak, z okresem wypowiedzenia ustalonym w umowie. Konta i dane zostają u Ciebie, a historię kampanii i wnioski przekazuję w uporządkowanej formie, także nowemu partnerowi.",
+					en: "Yes, with the notice period agreed in the contract. The accounts and data stay with you, and I hand over the campaign history and findings in an orderly form, also to a new partner.",
+				},
+			},
+		],
+		seo: {
+			title: {
+				pl: "SEO i Google Ads dla firm | Michał Janiec",
+				en: "SEO and Google Ads for businesses | Michał Janiec",
+			},
+			description: {
+				pl: "Pozycjonowanie, kampanie Google Ads i analityka GA4 dla małych i średnich firm. Jeden kontakt od strony po reklamy. Bezpłatna wycena.",
+				en: "SEO, Google Ads campaigns and GA4 analytics for small and medium businesses. One contact from the website to the ads. Free quote.",
+			},
+		},
 	},
 ];

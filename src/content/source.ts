@@ -4,6 +4,7 @@ import type {
 	Education,
 	Experience,
 	FaqItem,
+	LocalPage,
 	PricingPlan,
 	ProcessStep,
 	Service,
@@ -31,4 +32,6 @@ export interface ContentSource {
 	getPricingPlans(locale: Locale): Promise<PricingPlan[]>;
 	getFaq(locale: Locale): Promise<FaqItem[]>;
 	getProcess(locale: Locale): Promise<ProcessStep[]>;
+	getLocalPages(locale: Locale): Promise<LocalPage[]>;
+	getLocalPage(locale: Locale, slug: string): Promise<LocalPage | null>;
 }

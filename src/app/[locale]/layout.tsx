@@ -6,6 +6,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
 import { AberrationField } from "@/components/effects/aberration-field";
+import { ScrollReveal } from "@/components/effects/scroll-reveal";
 import { AlternateSlugsProvider } from "@/components/i18n/alternate-slugs";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -42,7 +43,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		formatDetection: { telephone: false },
 		verification: {
 			google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
-			other: process.env.BING_SITE_VERIFICATION ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION } : undefined,
+			other: process.env.BING_SITE_VERIFICATION
+				? { "msvalidate.01": process.env.BING_SITE_VERIFICATION }
+				: undefined,
 		},
 	};
 }
@@ -52,7 +55,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 	if (!hasLocale(routing.locales, locale)) notFound();
 	setRequestLocale(locale);
 
-	const [t, settings] = await Promise.all([getTranslations("common"), content.getSiteSettings(locale)]);
+	const [t, settings] = await Promise.all([
+		getTranslations("common"),
+		content.getSiteSettings(locale),
+	]);
 
 	return (
 		<html lang={locale} className={fontVariables} suppressHydrationWarning>
@@ -67,7 +73,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 								{t("skipToContent")}
 							</a>
 							<Header />
-							<main id="main" className="flex grow flex-col">
+							<main id="main" tabIndex={-1} className="flex grow flex-col outline-none">
 								{children}
 							</main>
 							<Footer />
@@ -75,6 +81,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 					</ThemeProvider>
 				</NextIntlClientProvider>
 				<AberrationField />
+				<ScrollReveal />
 				<JsonLd data={personJsonLd(settings)} />
 				<Analytics />
 			</body>

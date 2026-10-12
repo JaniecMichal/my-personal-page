@@ -2,7 +2,17 @@ import { ButtonLink } from "@/components/ui/button-link";
 import type { PricingPlan } from "@/content";
 import { cn } from "@/lib/cn";
 
-export function PricingPlans({ plans, ctaLabel }: { plans: PricingPlan[]; ctaLabel: string }) {
+/** `headingLevel` 2 on the pricing page directly under the h1, 3 inside a titled section. */
+export function PricingPlans({
+	plans,
+	ctaLabel,
+	headingLevel = 3,
+}: {
+	plans: PricingPlan[];
+	ctaLabel: string;
+	headingLevel?: 2 | 3;
+}) {
+	const Heading = `h${headingLevel}` as const;
 	return (
 		<div
 			className={cn(
@@ -12,6 +22,7 @@ export function PricingPlans({ plans, ctaLabel }: { plans: PricingPlan[]; ctaLab
 		>
 			{plans.map((plan) => (
 				<article
+					data-reveal
 					key={plan.id}
 					className={cn(
 						"brackets relative flex flex-col gap-5 p-7 md:p-9",
@@ -19,7 +30,7 @@ export function PricingPlans({ plans, ctaLabel }: { plans: PricingPlan[]; ctaLab
 					)}
 				>
 					<span className="label">{plan.kicker}</span>
-					<h3 className="font-serif text-4xl leading-none">{plan.name}</h3>
+					<Heading className="font-serif text-4xl leading-none">{plan.name}</Heading>
 					<p className="font-dots text-4xl font-black">{plan.price}</p>
 					<ul className="grow text-sm leading-[1.9]">
 						{plan.features.map((feature) => (

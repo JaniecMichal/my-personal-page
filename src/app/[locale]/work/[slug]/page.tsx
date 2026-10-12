@@ -31,11 +31,14 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { locale, slug } = await params;
-	const study = await content.getCaseStudy(locale, slug);
+	const [study, t] = await Promise.all([
+		content.getCaseStudy(locale, slug),
+		getTranslations({ locale, namespace: "work.detail" }),
+	]);
 	if (!study) return {};
 	return pageMetadata({
 		locale,
-		title: study.seo.title ?? `${study.client}: ${study.title} | Michał Janiec`,
+		title: study.seo.title ?? t("metaTitle", { client: study.client }),
 		description: study.seo.description ?? study.summary,
 		hrefFor: (l) => ({ pathname: "/work/[slug]", params: { slug: study.slugs[l] } }),
 		noIndex: study.seo.noIndex,
@@ -59,20 +62,34 @@ export default async function CaseStudyPage({ params }: Props) {
 	return (
 		<article>
 			<SetAlternateSlugs slugs={study.slugs} />
-			<header className="inverse relative overflow-hidden bg-[radial-gradient(60%_70%_at_78%_40%,rgb(46_59_255/0.5),rgb(46_59_255/0.1)_45%,transparent_70%)]">
-				<div className="pointer-events-none absolute -right-32 top-10 w-[520px] opacity-80 lg:w-[620px]">
+			<header className="relative overflow-hidden inverse bg-[radial-gradient(60%_70%_at_78%_40%,rgb(46_59_255/0.5),rgb(46_59_255/0.1)_45%,transparent_70%)]">
+				<div className="pointer-events-none absolute top-10 -right-32 w-[520px] opacity-80 lg:w-[620px]">
 					<Sphere className="text-inverse-ink" count={700} />
 				</div>
 				<Container className="relative flex flex-col gap-10 py-16 lg:py-24">
 					<nav aria-label="Breadcrumb" className="label">
-						<Link href="/" className="text-muted">{tc("breadcrumbHome")}</Link> /{" "}
-						<Link href="/work" className="text-muted">{tc("nav.work")}</Link> /{" "}
-						<span className="text-ink" aria-current="page">{study.client}</span>
+						<Link href="/" className="text-muted">
+							{tc("breadcrumbHome")}
+						</Link>{" "}
+						/{" "}
+						<Link href="/work" className="text-muted">
+							{tc("nav.work")}
+						</Link>{" "}
+						/{" "}
+						<span className="text-ink" aria-current="page">
+							{study.client}
+						</span>
 					</nav>
 					<div className="flex max-w-[960px] flex-col gap-7">
-						<span className="label">{t("label")} · {study.stack.slice(0, 2).join(" · ")}</span>
-						<h1 className="ab-xl font-serif text-6xl leading-[0.9] tracking-[-0.05em] md:text-8xl lg:text-[140px]">{study.client}</h1>
-						<p className="font-serif text-2xl leading-[1.15] text-ink-soft md:text-[40px]">{study.summary}</p>
+						<span className="label">
+							{t("label")} · {study.stack.slice(0, 2).join(" · ")}
+						</span>
+						<h1 className="font-serif text-6xl leading-[0.9] tracking-[-0.05em] ab-xl md:text-8xl lg:text-[140px]">
+							{study.client}
+						</h1>
+						<p className="font-serif text-2xl leading-[1.15] text-ink-soft md:text-[40px]">
+							{study.summary}
+						</p>
 					</div>
 					<dl className="grid gap-6 border-t border-rule pt-7 sm:grid-cols-2 lg:grid-cols-4">
 						{[
@@ -92,8 +109,13 @@ export default async function CaseStudyPage({ params }: Props) {
 
 			<Container className="grid gap-5 pt-16 md:grid-cols-3 lg:gap-6 lg:pt-24">
 				{study.metrics.map((m) => (
-					<div key={m.label} className="brackets relative flex flex-col gap-2 bg-surface p-7 md:p-9">
-						<span className="font-dots text-5xl leading-none font-black text-accent md:text-7xl">{m.value}</span>
+					<div
+						key={m.label}
+						className="brackets relative flex flex-col gap-2 bg-surface p-7 md:p-9"
+					>
+						<span className="font-dots text-5xl leading-none font-black text-accent md:text-7xl">
+							{m.value}
+						</span>
 						<span className="label">{m.label}</span>
 					</div>
 				))}
@@ -101,12 +123,19 @@ export default async function CaseStudyPage({ params }: Props) {
 
 			<Container className="flex flex-col gap-16 py-20 lg:gap-24 lg:py-28">
 				{study.chapters.map((chapter, i) => (
-					<section key={chapter.title} className="grid gap-6 border-t border-ink pt-7 lg:grid-cols-12">
+					<section
+						key={chapter.title}
+						className="grid gap-6 border-t border-ink pt-7 lg:grid-cols-12"
+					>
 						<div className="flex flex-col gap-3 lg:col-span-4">
-							<span className="font-dots text-[22px] font-black text-accent">{String(i + 1).padStart(2, "0")}</span>
-							<h2 className="font-serif text-5xl leading-none tracking-[-0.03em]">{chapter.title}</h2>
+							<span className="font-dots text-[22px] font-black text-accent">
+								{String(i + 1).padStart(2, "0")}
+							</span>
+							<h2 className="font-serif text-5xl leading-none tracking-[-0.03em]">
+								{chapter.title}
+							</h2>
 						</div>
-						<div className="flex flex-col gap-5 text-base leading-[1.75] text-ink-soft lg:col-span-7 lg:col-start-6 md:text-[17px]">
+						<div className="flex flex-col gap-5 text-base leading-[1.75] text-ink-soft md:text-[17px] lg:col-span-7 lg:col-start-6">
 							{chapter.body.map((p) => (
 								<p key={p}>{p}</p>
 							))}
@@ -124,9 +153,18 @@ export default async function CaseStudyPage({ params }: Props) {
 							alt={img.alt}
 							width={img.width}
 							height={img.height}
-							sizes={img.height > img.width ? "(min-width: 1024px) 33vw, 100vw" : "(min-width: 1024px) 50vw, 100vw"}
+							sizes={
+								img.height > img.width
+									? "(min-width: 1024px) 33vw, 100vw"
+									: "(min-width: 1024px) 50vw, 100vw"
+							}
 							// Phone screenshots sit three in a row, desktop ones two in a row.
-							className={cn("w-full", img.height > img.width ? "mx-auto max-w-[390px] sm:col-span-4" : "sm:col-span-12 lg:col-span-6")}
+							className={cn(
+								"w-full",
+								img.height > img.width
+									? "mx-auto max-w-[390px] sm:col-span-4"
+									: "sm:col-span-12 lg:col-span-6",
+							)}
 						/>
 					))
 				) : (
@@ -138,9 +176,14 @@ export default async function CaseStudyPage({ params }: Props) {
 				<Container className="grid gap-6 py-20 lg:grid-cols-12 lg:py-28">
 					<span className="label lg:col-span-3">{t("quote")}</span>
 					<figure className="flex flex-col gap-6 lg:col-span-9">
-						<blockquote className="font-serif text-3xl leading-[1.12] tracking-[-0.02em] md:text-[52px]">„{study.quote.text}”</blockquote>
+						<blockquote className="font-serif text-3xl leading-[1.12] tracking-[-0.02em] md:text-[52px]">
+							„{study.quote.text}”
+						</blockquote>
 						<figcaption className="text-sm">
 							<strong>{study.quote.author}</strong> · {study.quote.role}
+							{study.quote.lang !== locale && (
+								<span className="mt-1 block text-xs text-muted">{tc("translatedQuote")}</span>
+							)}
 						</figcaption>
 					</figure>
 				</Container>
@@ -148,12 +191,21 @@ export default async function CaseStudyPage({ params }: Props) {
 
 			<Container className="flex flex-col gap-4 py-12 sm:flex-row sm:flex-wrap">
 				{study.liveUrl && (
-					<a href={study.liveUrl} target="_blank" rel="noopener" className="text-[13px] uppercase tracking-[0.1em]">
+					<a
+						href={study.liveUrl}
+						target="_blank"
+						rel="noopener"
+						className="text-[13px] tracking-[0.1em] uppercase"
+					>
 						{t("visit")} ↗
 					</a>
 				)}
 				{study.services.map((s) => (
-					<Link key={s.slug} href={{ pathname: "/services/[slug]", params: { slug: s.slug } }} className="text-[13px] uppercase tracking-[0.1em]">
+					<Link
+						key={s.slug}
+						href={{ pathname: "/services/[slug]", params: { slug: s.slug } }}
+						className="text-[13px] tracking-[0.1em] uppercase"
+					>
 						{s.title} →
 					</Link>
 				))}
@@ -163,11 +215,13 @@ export default async function CaseStudyPage({ params }: Props) {
 				<Container className="pb-20">
 					<Link
 						href={{ pathname: "/work/[slug]", params: { slug: next.slug } }}
-						className="inverse brackets relative flex min-h-48 items-center justify-between gap-6 p-8 no-underline md:px-16"
+						className="brackets relative flex min-h-48 items-center justify-between gap-6 inverse p-8 no-underline md:px-16"
 					>
 						<span className="flex flex-col gap-3">
 							<span className="label">{t("next")}</span>
-							<span className="font-serif text-4xl text-inverse-ink md:text-6xl">{next.client}</span>
+							<span className="font-serif text-4xl text-inverse-ink md:text-6xl">
+								{next.client}
+							</span>
 						</span>
 						<span className="font-dots text-5xl font-black text-inverse-accent">→</span>
 					</Link>

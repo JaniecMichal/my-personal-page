@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { WaveField } from "@/components/effects/wave-field";
 import { CaseStudyCard } from "@/components/sections/case-study-card";
 import { Container } from "@/components/ui/container";
 import { content } from "@/content";
@@ -11,7 +12,12 @@ type Props = { params: Promise<{ locale: Locale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: "work.meta" });
-	return pageMetadata({ locale, title: t("title"), description: t("description"), hrefFor: () => "/work" });
+	return pageMetadata({
+		locale,
+		title: t("title"),
+		description: t("description"),
+		hrefFor: () => "/work",
+	});
 }
 
 export default async function WorkPage({ params }: Props) {
@@ -24,14 +30,24 @@ export default async function WorkPage({ params }: Props) {
 	]);
 
 	return (
-		<section className="inverse grow">
-			<Container className="flex flex-col gap-6 py-16 lg:py-24">
-				<h1 className="ab-xl font-serif text-6xl leading-[0.92] tracking-[-0.04em] md:text-8xl lg:text-[128px]">{t("title")}</h1>
-				<p className="max-w-[640px] text-base leading-relaxed text-ink-soft md:text-lg">{t("lead")}</p>
+		<section className="relative isolate grow overflow-hidden inverse">
+			{/* The home hero's line field, light on black: a square as tall as the whole section, centred behind the projects. */}
+			<WaveField
+				className="absolute top-1/2 left-1/2 z-0 h-[105%] -translate-x-1/2 -translate-y-1/2 text-ink"
+				strength={1.6}
+			/>
+			<Container className="relative z-10 flex flex-col gap-6 py-16 lg:py-24">
+				<h1 className="font-serif text-6xl leading-[0.92] tracking-[-0.04em] ab-xl md:text-8xl lg:text-[128px]">
+					{t("title")}
+				</h1>
+				<p className="max-w-[640px] text-base leading-relaxed text-ink-soft md:text-lg">
+					{t("lead")}
+				</p>
 			</Container>
-			<Container className="grid gap-8 pb-24 lg:grid-cols-2">
+			<Container className="relative z-10 grid gap-8 pb-24 lg:grid-cols-2">
 				{studies.map((study, i) => (
 					<CaseStudyCard
+						headingLevel={2}
 						key={study.slug}
 						study={study}
 						readLabel={tc("cta.read")}

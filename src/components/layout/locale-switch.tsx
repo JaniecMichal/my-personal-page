@@ -18,13 +18,18 @@ export function LocaleSwitch({ className }: { className?: string }) {
 		<div
 			role="group"
 			aria-label={t("label")}
-			className={cn("flex text-[13px] tracking-[0.12em] shadow-[inset_0_0_0_1px_var(--ink)]", className)}
+			className={cn(
+				"flex text-[13px] tracking-[0.12em] shadow-[inset_0_0_0_1px_var(--ink)]",
+				className,
+			)}
 		>
 			{routing.locales.map((l) => {
 				const active = l === locale;
 				const slug = alternates?.[l] ?? params.slug;
 				// Pathname is the internal template (e.g. "/services/[slug]"); params fill it in.
-				const href = (slug ? { pathname, params: { slug } } : { pathname }) as Parameters<typeof Link>[0]["href"];
+				const href = (slug ? { pathname, params: { slug } } : { pathname }) as Parameters<
+					typeof Link
+				>[0]["href"];
 
 				return (
 					<Link
@@ -34,13 +39,13 @@ export function LocaleSwitch({ className }: { className?: string }) {
 						hrefLang={l}
 						lang={l}
 						aria-current={active ? "true" : undefined}
-						aria-label={t(l)}
 						className={cn(
 							"flex min-h-11 min-w-11 items-center justify-center px-3 uppercase no-underline",
 							active ? "bg-ink text-ground" : "text-ink hover:text-accent",
 						)}
 					>
 						{l}
+						<span className="sr-only"> – {t(l)}</span>
 					</Link>
 				);
 			})}

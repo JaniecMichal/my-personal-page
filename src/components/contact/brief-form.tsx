@@ -138,11 +138,25 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 				</label>
 			</div>
 
-			<h2 className="font-serif text-4xl leading-[1.05] md:text-[44px]">{t("heading")}</h2>
+			<div className="flex flex-col gap-2">
+				<h2 className="font-serif text-4xl leading-[1.05] md:text-[44px]">{t("heading")}</h2>
+				<p className="text-xs text-muted">
+					<span aria-hidden="true" className="text-accent">
+						*
+					</span>{" "}
+					{t("requiredNote")}
+				</p>
+			</div>
 
 			<div className="grid gap-6 sm:grid-cols-2">
 				<label className="flex flex-col gap-2">
-					<span className="label">{t("name")}</span>
+					<span className="label">
+						{t("name")}
+						<span aria-hidden="true" className="text-accent">
+							{" "}
+							*
+						</span>
+					</span>
 					<input
 						name="name"
 						type="text"
@@ -155,7 +169,13 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 					{error("name")}
 				</label>
 				<label className="flex flex-col gap-2">
-					<span className="label">{t("email")}</span>
+					<span className="label">
+						{t("email")}
+						<span aria-hidden="true" className="text-accent">
+							{" "}
+							*
+						</span>
+					</span>
 					<input
 						name="email"
 						type="email"
@@ -169,7 +189,13 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 				</label>
 			</div>
 			<label className="flex flex-col gap-2">
-				<span className="label">{t("message")}</span>
+				<span className="label">
+					{t("message")}
+					<span aria-hidden="true" className="text-accent">
+						{" "}
+						*
+					</span>
+				</span>
 				<textarea
 					name="message"
 					rows={4}
@@ -271,21 +297,29 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 			</div>
 
 			<div className="flex flex-col gap-2">
-				<label className="flex items-start gap-3 text-xs leading-relaxed text-ink-soft">
+				{/* The privacy link sits outside the <label>, so the checkbox's name is only the consent text. */}
+				<div className="flex items-start gap-3 text-xs leading-relaxed text-ink-soft">
 					<input
+						id="brief-consent"
 						type="checkbox"
 						name="consent"
 						required
 						className="mt-0.5 size-5 shrink-0 accent-accent"
 						{...invalidProps("consent")}
 					/>
-					<span>
-						{t("consent")}{" "}
-						<Link href="/privacy" className="text-accent">
+					<p>
+						<label htmlFor="brief-consent" className="cursor-pointer">
+							{t("consent")}
+							<span aria-hidden="true" className="text-accent">
+								{" "}
+								*
+							</span>
+						</label>{" "}
+						<Link href="/privacy" className="text-accent underline underline-offset-2">
 							{t("privacy")}
 						</Link>
-					</span>
-				</label>
+					</p>
+				</div>
 				{error("consent")}
 			</div>
 
