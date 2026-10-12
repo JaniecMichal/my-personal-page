@@ -245,7 +245,7 @@
 		"body": {
 			"p1": "The data controller is Michał Janiec, running a sole-trader business as Michał Janiec - FrontDev, Katowice, Poland, tax ID (NIP) 9542827947, email: <email></email>.",
 			"p2": "Data from the form (name, email, company, project description) is used only to answer your enquiry and prepare an offer (Art. 6(1)(a) and (b) GDPR).",
-			"p3": "Messages are sent through Mailgun (Sinch Mailgun, EU servers). I don't sell or share data with anyone else.",
+			"p3": "Messages are sent through Mailgun (Sinch Mailgun, US servers; transfers outside the EEA rely on the EU Standard Contractual Clauses). I don't sell or share data with anyone else.",
 			"p4": "I keep the data until our conversation about working together ends, then for up to 12 months. You have the right to access, correct, delete and restrict processing, and to complain to the Polish supervisory authority (UODO).",
 			"p5": "This site uses Vercel Analytics, which uses no cookies and collects no personal data."
 		}

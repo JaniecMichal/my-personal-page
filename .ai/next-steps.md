@@ -26,6 +26,10 @@ Progress log:
   company are optional, behind an "add project details" checkbox. Field errors now clear as soon as the field is fixed. `.env.local` has the
   Mailgun vars, so the local form sends real emails. Email removed from the contact sidebar and
   the success message (still in the footer and in the send-error fallback).
+- 2026-10-12: Mailgun key rotated. The EU domain was deleted by accident; `mjaniec.it` was re-added in
+  the **US region** (EU not available on the plan), DKIM TXT `krs._domainkey` added in OVH, domain
+  **active**, test send OK. Env is now `MAILGUN_REGION=us`; privacy policy updated (US servers, SCCs).
+  If nazielono sends through this domain, its config also needs region `us`.
 
 Related docs: [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
@@ -62,8 +66,8 @@ See [content-guide.md](./content-guide.md) for *what* to write.
 
 ## 3. Email and search setup before launch (~30 min) ← next
 
-Setup facts (2026-09-29): the Mailgun domain `mjaniec.it` already exists (EU, set up for the
-nazielono contact form) and is reused here. DNS is at **OVH** (`ns20.ovh.net` / `dns20.ovh.net`), so all records go into the OVH DNS zone.
+Setup facts (updated 2026-10-12): the Mailgun domain `mjaniec.it` is in the **US region** (re-created
+2026-10-12, DKIM `krs._domainkey`), shared with the nazielono contact form. DNS is at **OVH** (`ns20.ovh.net` / `dns20.ovh.net`), so all records go into the OVH DNS zone.
 Current zone: A `@` → `76.76.21.21` (Vercel), TXT `@` `v=spf1 include:mailgun.org ~all` (the Mailgun
 domain), TXT `@` `1|www.mjaniec.it` (OVH
 redirect artifact, check before launch), no MX, no DMARC yet.
@@ -71,7 +75,7 @@ redirect artifact, check before launch), no MX, no DMARC yet.
 Order: 3a Mailgun → 3b Vercel env vars → 3c test brief → 3d Search Console. Update this file after each.
 
 - [x] **3a Mailgun**: reuse domain `mjaniec.it` (EU, DKIM verified, shared with nazielono), own sending key. Still to do (optional): TXT `_dmarc` `v=DMARC1; p=none;` in OVH.
-- [x] **3b Vercel env vars** (Production + Preview): `MAILGUN_API_KEY` (sending key, Sensitive), `MAILGUN_DOMAIN=mjaniec.it`, `MAILGUN_REGION=eu`, `MAILGUN_FROM=mjaniec.it <no-reply@mjaniec.it>`, `CONTACT_TO_EMAIL`, `NEXT_PUBLIC_SITE_URL=https://mjaniec.it`. Optional: `OPENAI_API_KEY` for the terminal.
+- [x] **3b Vercel env vars** (Production + Preview): `MAILGUN_API_KEY` (sending key, Sensitive), `MAILGUN_DOMAIN=mjaniec.it`, `MAILGUN_REGION=us`, `MAILGUN_FROM=mjaniec.it <no-reply@mjaniec.it>`, `CONTACT_TO_EMAIL`, `NEXT_PUBLIC_SITE_URL=https://mjaniec.it`. Optional: `OPENAI_API_KEY` for the terminal.
   `CONTACT_TO_EMAIL` must be a real mailbox (e.g. Gmail): `mjaniec.it` has no MX, so it can't receive.
   Paste the key only in Vercel, never in chat. After saving, **redeploy** the latest `rebuild` preview
   (Deployments → ⋯ → Redeploy), because env vars apply only to new builds.
