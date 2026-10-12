@@ -2,7 +2,7 @@
 
 Status (2026-09-24): the rebuild is pushed to `rebuild` and a PR `rebuild` → `main` is open (Vercel
 preview). Build, lint and typecheck pass, 40 pages are statically generated. All real content is in
-(sections 1–2 done). **Next up: launch (section 4).**
+(sections 1–2 done). **LIVE since 2026-10-12** at https://www.mjaniec.it. Next up: post-launch items in section 4, then UI corrections.
 
 Progress log:
 
@@ -33,6 +33,8 @@ Progress log:
   and a new sending key. OVH: old `1|www` TXT removed, `_dmarc` `p=none` added.
 - 2026-10-12: primary domain is `www.mjaniec.it`; all canonical URLs switched to www. Apex A record
   changed in OVH from `76.76.21.21` to Vercel's current `216.198.79.1`. Search Console verified.
+- 2026-10-12: **launched**: PR merged, production smoke test 27/27. The smoke test now checks English
+  via the `NEXT_LOCALE` cookie (from Poland the geo rule always picks /pl, by design).
 
 Related docs: [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
@@ -92,8 +94,8 @@ Order: 3a Mailgun → 3b Vercel env vars → 3c test brief → 3d Search Console
 
 ## 4. Launch
 
-- [ ] Merge the PR into `main` (Vercel deploys production).
-- [ ] Smoke test: `scripts/smoke.sh` (production) or `scripts/smoke.sh <preview-url>`. Covers: `/` redirects to the right language, `/pl` and `/en` load, the brief form sends, old URLs (`/about`, `/projects`) redirect.
+- [x] Merge the PR into `main` (Vercel deploys production). (2026-10-12)
+- [x] (2026-10-12, 27/27 on production) Smoke test: `scripts/smoke.sh` (production) or `scripts/smoke.sh <preview-url>`. Covers: `/` redirects to the right language, `/pl` and `/en` load, the brief form sends, old URLs (`/about`, `/projects`) redirect.
 - [ ] Search Console: submit `sitemap.xml`, request indexing for `/pl`, `/en`, `/pl/uslugi`, `/en/services` and the service pages.
 - [ ] Bing Webmaster Tools: import from Search Console, submit the same sitemap.
 - [ ] Google Business Profile as a service-area business in Katowice / Silesia, linking to `https://www.mjaniec.it/pl`.

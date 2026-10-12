@@ -14,7 +14,8 @@ location() { curl -s -o /dev/null -w "%{redirect_url}" "${@:2}" "$BASE$1"; }
 echo "Smoke test: $BASE"
 echo "Language detection on /"
 check "/ with pl Accept-Language -> /pl" "*/pl" "$(location / -H 'Accept-Language: pl-PL,pl;q=0.9')"
-check "/ with en Accept-Language -> /en" "*/en" "$(location / -H 'Accept-Language: en-US,en;q=0.9')"
+# A visitor in Poland gets /pl regardless of browser language (geo rule), so English is checked via the cookie.
+check "/ with NEXT_LOCALE=en cookie -> /en" "*/en" "$(location / -H 'Cookie: NEXT_LOCALE=en')"
 
 echo "Old URLs"
 for p in /about /experience /skills /projects /for-business; do
