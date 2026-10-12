@@ -23,8 +23,9 @@ Progress log:
   (27 checks, all pass on a local production build). DNS unchanged: still no DMARC.
 - 2026-10-12: 3b + 3c done (env vars in Vercel, test brief arrived). Brief form simplified to one
   step: only name, email, message and consent are required; project type, budget, timeline and
-  company are optional. Field errors now clear as soon as the field is fixed. `.env.local` has the
-  Mailgun vars, so the local form sends real emails.
+  company are optional, behind an "add project details" checkbox. Field errors now clear as soon as the field is fixed. `.env.local` has the
+  Mailgun vars, so the local form sends real emails. Email removed from the contact sidebar and
+  the success message (still in the footer and in the send-error fallback).
 
 Related docs: [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)

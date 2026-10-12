@@ -1,10 +1,17 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { type ChangeEvent, type FormEvent, startTransition, useActionState, useEffect, useRef, useState } from "react";
+import {
+	type ChangeEvent,
+	type FormEvent,
+	startTransition,
+	useActionState,
+	useEffect,
+	useRef,
+	useState,
+} from "react";
 import { submitBrief } from "@/actions/brief";
 import { buttonClass } from "@/components/ui/button-link";
-import { EmailLink } from "@/components/ui/email-link";
 import { Link } from "@/i18n/navigation";
 import {
 	BUDGETS,
@@ -29,14 +36,21 @@ type Errors = Partial<Record<BriefErrorKey, true>>;
 function fieldValue(form: HTMLFormElement, field: BriefErrorKey) {
 	const el = form.elements.namedItem(field) as HTMLInputElement | HTMLTextAreaElement | null;
 	if (!el) return "";
-	return el instanceof HTMLInputElement && el.type === "checkbox" ? (el.checked ? "on" : "") : el.value;
+	return el instanceof HTMLInputElement && el.type === "checkbox"
+		? el.checked
+			? "on"
+			: ""
+		: el.value;
 }
 
 export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 	const t = useTranslations("contact.form");
 	const locale = useLocale();
-	const [state, action, pending] = useActionState<BriefState, FormData>(submitBrief, { status: "idle" });
+	const [state, action, pending] = useActionState<BriefState, FormData>(submitBrief, {
+		status: "idle",
+	});
 	const [errors, setErrors] = useState<Errors>({});
+	const [showDetails, setShowDetails] = useState(false);
 	const formRef = useRef<HTMLFormElement>(null);
 	const successRef = useRef<HTMLParagraphElement>(null);
 
@@ -44,7 +58,8 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 	useEffect(() => {
 		if (state.status !== "invalid") return;
 		const next: Errors = {};
-		for (const key of Object.values(state.errors)) if (key && REQUIRED.includes(key)) next[key] = true;
+		for (const key of Object.values(state.errors))
+			if (key && REQUIRED.includes(key)) next[key] = true;
 		setErrors(next);
 	}, [state]);
 
@@ -78,13 +93,19 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 
 	if (state.status === "success") {
 		return (
-			<div className="brackets relative flex min-h-[520px] flex-col justify-center gap-6 bg-surface p-8 md:p-12" role="status">
-				<p ref={successRef} tabIndex={-1} className="font-dots text-6xl font-black text-accent outline-none">
+			<div
+				className="brackets relative flex min-h-[520px] flex-col justify-center gap-6 bg-surface p-8 md:p-12"
+				role="status"
+			>
+				<p
+					ref={successRef}
+					tabIndex={-1}
+					className="font-dots text-6xl font-black text-accent outline-none"
+				>
 					OK ✓
 				</p>
 				<h2 className="font-serif text-4xl leading-none md:text-[56px]">{t("successTitle")}</h2>
 				<p className="text-[15px] leading-relaxed text-ink-soft">{t("successBody")}</p>
-				<EmailLink encoded={encodedEmail} className={cn(buttonClass("line"), "self-start")} />
 			</div>
 		);
 	}
@@ -122,12 +143,28 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 			<div className="grid gap-6 sm:grid-cols-2">
 				<label className="flex flex-col gap-2">
 					<span className="label">{t("name")}</span>
-					<input name="name" type="text" autoComplete="name" required maxLength={120} className={input} {...invalidProps("name")} />
+					<input
+						name="name"
+						type="text"
+						autoComplete="name"
+						required
+						maxLength={120}
+						className={input}
+						{...invalidProps("name")}
+					/>
 					{error("name")}
 				</label>
 				<label className="flex flex-col gap-2">
 					<span className="label">{t("email")}</span>
-					<input name="email" type="email" autoComplete="email" required maxLength={200} className={input} {...invalidProps("email")} />
+					<input
+						name="email"
+						type="email"
+						autoComplete="email"
+						required
+						maxLength={200}
+						className={input}
+						{...invalidProps("email")}
+					/>
 					{error("email")}
 				</label>
 			</div>
@@ -146,51 +183,91 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 			</label>
 
 			<div className="flex flex-col gap-6 border-t border-dashed border-rule-strong pt-8">
-				<div>
-					<p className="font-serif text-2xl leading-tight md:text-3xl">{t("detailsTitle")}</p>
-					<p className="mt-1 text-sm text-ink-soft">{t("detailsHint")}</p>
-				</div>
-
-				<fieldset>
-					<legend className={groupLegend}>{t("typeLabel")}</legend>
-					<div className="flex flex-wrap gap-3">
-						{PROJECT_TYPES.map((type) => (
-							<label key={type} className={chip}>
-								<input type="checkbox" name="types" value={type} className="size-4 accent-accent" />
-								{t(`types.${type}`)}
-							</label>
-						))}
-					</div>
-				</fieldset>
-
-				<fieldset>
-					<legend className={groupLegend}>{t("budgetLabel")}</legend>
-					<div className="flex flex-wrap gap-3">
-						{BUDGETS.map((budget) => (
-							<label key={budget} className={chip}>
-								<input type="radio" name="budget" value={budget} className="size-4 accent-accent" />
-								{t(`budgets.${budget}`)}
-							</label>
-						))}
-					</div>
-				</fieldset>
-
-				<fieldset>
-					<legend className={groupLegend}>{t("timelineLabel")}</legend>
-					<div className="flex flex-wrap gap-3">
-						{TIMELINES.map((timeline) => (
-							<label key={timeline} className={chip}>
-								<input type="radio" name="timeline" value={timeline} className="size-4 accent-accent" />
-								{t(`timelines.${timeline}`)}
-							</label>
-						))}
-					</div>
-				</fieldset>
-
-				<label className="flex flex-col gap-2">
-					<span className="label">{t("company")}</span>
-					<input name="company" type="text" autoComplete="organization" maxLength={200} className={input} />
+				<label className="flex min-h-11 cursor-pointer items-start gap-3">
+					<input
+						type="checkbox"
+						checked={showDetails}
+						onChange={(e) => setShowDetails(e.target.checked)}
+						aria-controls="brief-details"
+						className="mt-1.5 size-5 shrink-0 accent-accent"
+					/>
+					<span>
+						<span className="block font-serif text-2xl leading-tight md:text-3xl">
+							{t("detailsTitle")}
+						</span>
+						<span className="mt-1 block text-sm text-ink-soft">{t("detailsHint")}</span>
+					</span>
 				</label>
+
+				{/* Disabled while hidden, so details picked and then hidden again are not sent. */}
+				<fieldset
+					id="brief-details"
+					hidden={!showDetails}
+					disabled={!showDetails}
+					className="flex flex-col gap-6"
+				>
+					<fieldset>
+						<legend className={groupLegend}>{t("typeLabel")}</legend>
+						<div className="flex flex-wrap gap-3">
+							{PROJECT_TYPES.map((type) => (
+								<label key={type} className={chip}>
+									<input
+										type="checkbox"
+										name="types"
+										value={type}
+										className="size-4 accent-accent"
+									/>
+									{t(`types.${type}`)}
+								</label>
+							))}
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<legend className={groupLegend}>{t("budgetLabel")}</legend>
+						<div className="flex flex-wrap gap-3">
+							{BUDGETS.map((budget) => (
+								<label key={budget} className={chip}>
+									<input
+										type="radio"
+										name="budget"
+										value={budget}
+										className="size-4 accent-accent"
+									/>
+									{t(`budgets.${budget}`)}
+								</label>
+							))}
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<legend className={groupLegend}>{t("timelineLabel")}</legend>
+						<div className="flex flex-wrap gap-3">
+							{TIMELINES.map((timeline) => (
+								<label key={timeline} className={chip}>
+									<input
+										type="radio"
+										name="timeline"
+										value={timeline}
+										className="size-4 accent-accent"
+									/>
+									{t(`timelines.${timeline}`)}
+								</label>
+							))}
+						</div>
+					</fieldset>
+
+					<label className="flex flex-col gap-2">
+						<span className="label">{t("company")}</span>
+						<input
+							name="company"
+							type="text"
+							autoComplete="organization"
+							maxLength={200}
+							className={input}
+						/>
+					</label>
+				</fieldset>
 			</div>
 
 			<div className="flex flex-col gap-2">
@@ -215,13 +292,19 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 			<div aria-live="polite">
 				{state.status === "error" && (
 					<p className="text-sm text-[#d4351c] dark:text-[#ff7a66]">
-						{state.reason === "rateLimit" ? t("errors.rateLimit") : t("errors.generic", { email: decodeEmail(encodedEmail) })}
+						{state.reason === "rateLimit"
+							? t("errors.rateLimit")
+							: t("errors.generic", { email: decodeEmail(encodedEmail) })}
 					</p>
 				)}
 			</div>
 
 			<div className="flex justify-end border-t border-dashed border-rule-strong pt-6">
-				<button type="submit" disabled={pending} className={cn(buttonClass("primary"), "disabled:opacity-60")}>
+				<button
+					type="submit"
+					disabled={pending}
+					className={cn(buttonClass("primary"), "disabled:opacity-60")}
+				>
 					{pending ? t("sending") : `${t("submit")} ↗`}
 				</button>
 			</div>

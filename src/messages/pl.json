@@ -219,7 +219,7 @@
 			"submit": "Wyślij brief",
 			"sending": "Wysyłam…",
 			"successTitle": "Dzięki! Odezwę się w ciągu 24 godzin.",
-			"successBody": "Brief dotarł. Chcesz przyspieszyć? Napisz od razu na e-mail.",
+			"successBody": "Brief dotarł. Odpowiem na adres e-mail podany w formularzu.",
 			"errors": {
 				"name": "Podaj imię (min. 2 znaki).",
 				"email": "Podaj poprawny adres e-mail.",
@@ -229,8 +229,8 @@
 				"rateLimit": "Za dużo prób. Spróbuj za kilka minut."
 			},
 			"messagePlaceholder": "Co chcesz zbudować lub poprawić? Link do obecnej strony też się przyda.",
-			"detailsTitle": "Szczegóły projektu (opcjonalnie)",
-			"detailsHint": "Pomogą mi przygotować trafniejszą wycenę. Możesz je pominąć.",
+			"detailsTitle": "Dodaj szczegóły projektu (opcjonalnie)",
+			"detailsHint": "Rodzaj projektu, budżet, termin. Pomogą mi przygotować trafniejszą wycenę.",
 			"typeLabel": "Czego potrzebujesz? Możesz zaznaczyć kilka.",
 			"budgetLabel": "Budżet",
 			"timelineLabel": "Termin"

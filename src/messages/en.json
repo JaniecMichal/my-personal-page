@@ -219,7 +219,7 @@
 			"submit": "Send brief",
 			"sending": "Sending…",
 			"successTitle": "Thanks! I'll get back to you within 24 hours.",
-			"successBody": "Your brief arrived. Want to speed things up? Email me directly.",
+			"successBody": "Your brief arrived. I'll reply to the email address you gave.",
 			"errors": {
 				"name": "Enter your name (min. 2 characters).",
 				"email": "Enter a valid email address.",
@@ -229,8 +229,8 @@
 				"rateLimit": "Too many attempts. Try again in a few minutes."
 			},
 			"messagePlaceholder": "What do you want to build or fix? A link to your current site helps too.",
-			"detailsTitle": "Project details (optional)",
-			"detailsHint": "They help me give a more accurate quote. Feel free to skip them.",
+			"detailsTitle": "Add project details (optional)",
+			"detailsHint": "Project type, budget, timeline. They help me give a more accurate quote.",
 			"typeLabel": "What do you need? Pick one or more.",
 			"budgetLabel": "Budget",
 			"timelineLabel": "Timeline"
