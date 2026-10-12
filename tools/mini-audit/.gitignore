@@ -1,0 +1,4 @@
+node_modules/
+out/
+# Prospect lists stay local: business names and notes are not for the repo.
+targets.csv

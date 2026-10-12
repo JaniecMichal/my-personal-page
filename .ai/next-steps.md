@@ -232,7 +232,7 @@ limit (100 a day), but it waits until tomorrow too.
 
 - [ ] Google Business Profile (service area, link to the Katowice page), then Bing Places and Apple
   Business Connect.
-- [ ] Code: mini-audit script (URLs → PageSpeed mobile + phone screenshot → PDF) for local outreach.
+- [x] Code: mini-audit script: `tools/mini-audit/` (see its README). CSV of businesses → one A4 PDF each + `summary.csv`.
 - [ ] Code: IndexNow (Bing pinged on every deploy, no more manual Bing submissions).
 - [ ] Code: `llms.txt` in Polish + Katowice page + new services; Vercel Analytics with a
   "brief sent" event.

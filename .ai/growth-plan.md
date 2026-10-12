@@ -225,6 +225,6 @@ dzień 10 (krótkie przypomnienie z jednym pomysłem), potem odpuść. Nie dzwo�
 1. IndexNow (klucz + powiadomienie Binga przy wdrożeniu).
 2. `llms.txt` po polsku + strona Katowice + nowe usługi; osobny `llms-full.txt` z FAQ usług.
 3. Vercel Analytics + zdarzenie „brief wysłany”.
-4. Skrypt do mini-audytów: lista adresów → PageSpeed (mobile) + zrzut ekranu z telefonu + PDF.
+4. ✓ Skrypt do mini-audytów: `tools/mini-audit/` (instrukcja w README).
 5. Szkielet bloga (`/pl/blog` ↔ `/en/notes`) z pierwszym wpisem „Ile kosztuje strona internetowa”.
 6. Arkusz do śledzenia widoczności w AI i lejka (szablon CSV).
