@@ -1,14 +1,12 @@
 # Next steps — mjaniec.it
 
-Status (2026-10-13): technical plan ([technical-plan.md](./technical-plan.md)) audited and implemented on
-branch **`tech-plan`** (not deployed): see [technical-audit.md](./technical-audit.md) for results and the
-5 open decisions. After merge + deploy: run `scripts/smoke.sh`, then `scripts/indexnow.sh`.
-
-Status (2026-10-12): **live at https://www.mjaniec.it**. Post-launch round 1 (`ui-corrections`,
-section 6) merged and deployed: 46 static pages, 38 URLs in the sitemap, smoke 27/27 on production.
-Current branch: **`growth`** (section 7).
-**Next up:** section 7, "Tomorrow (2026-10-13)": indexing requests for the new pages. Then the
-growth plan ([growth-plan.md](./growth-plan.md)): Google Business Profile, mini-audit script.
+Status (2026-10-13): **live at https://www.mjaniec.it**. Technical plan deployed (PR #4: `/` → `/pl`
+308, robots blocks AI training bots, security headers, 404 fix, `brief_sent`, IndexNow, llms.txt PL,
+landing from 1 000 zł). Production smoke **35/35**, IndexNow sent 38 URLs (HTTP 202).
+**Next up:** [business-plan-status.md](./business-plan-status.md): GSC indexing requests (10 URLs
+listed there), then Michał fills in the facts table F01–F12, then content changes for the MVP (CP2).
+Plans: [business-plan.md](./business-plan.md) (what/why, D1–D6) · [technical-plan.md](./technical-plan.md)
+(how) · results: [technical-audit.md](./technical-audit.md).
 
 Progress log:
 
@@ -51,6 +49,11 @@ Progress log:
   retrieval failed" (Vercel could not fetch the commit, build never started); fixed with
   `vercel redeploy … --target production`. Smoke 27/27. Google "Request indexing" quota used up
   for the day (10 URLs), so the new pages wait until tomorrow.
+
+- 2026-10-13: technical plan audited (`.ai/technical-audit.md`) and implemented, landing price
+  500 → 1 000 zł, PR #4 merged and deployed. Smoke 35/35 on production, `scripts/indexnow.sh` sent 38 URLs.
+  Business plan added (`.ai/business-plan.md`, D1–D6 approved); status + facts table prefilled in
+  `.ai/business-plan-status.md`.
 
 Related docs: [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
@@ -213,7 +216,7 @@ Follow-ups:
 
 Plan and methodology: [growth-plan.md](./growth-plan.md).
 
-### Tomorrow (2026-10-13): index the new pages
+### 2026-10-13: index the new pages (updated list: business-plan-status.md, "Order of work")
 
 Google allows about 10 "Request indexing" a day per property; today's 10 are used. Bing has its own
 limit (100 a day), but it waits until tomorrow too.
@@ -227,7 +230,8 @@ limit (100 a day), but it waits until tomorrow too.
   - `https://www.mjaniec.it/en/services/seo-and-google-ads`
 - [ ] **Google Search Console → Sitemaps**: resubmit `sitemap.xml` (no daily limit). Check that the
   status changed from "Nie udało się odczytać" to "Udane".
-- [ ] **Bing Webmaster Tools → URL Submission**: the same 6 URLs.
+- [x] **Bing**: all 38 URLs sent via IndexNow (2026-10-13, HTTP 202). Check the IndexNow report in Bing
+  Webmaster Tools tomorrow; manual URL Submission only if nothing shows up after 2 days.
 - [ ] Optional, with requests left: the case studies and the remaining service pages
   (`/pl/uslugi/sklepy-shopify`, `/pl/uslugi/wordpress`, `/pl/uslugi/aplikacje-react`,
   `/pl/uslugi/frontend-dla-zespolow-rails`, `/pl/uslugi/audyt-szybkosci-seo`).

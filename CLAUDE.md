@@ -101,6 +101,7 @@ placeholder and flag it instead. Real facts: `src/content/local/cv.ts` and `src/
 ## Docs
 
 - `.ai/next-steps.md`: current status and to-do list (**start here**)
+- `.ai/business-plan.md` (PL, D1–D6: offer, journeys, user stories) and `.ai/business-plan-status.md` (facts table F01–F12, order of work). **No content change without a confirmed fact.**
 - `.ai/technical-plan.md` (PL, owner-approved ADRs) and `.ai/technical-audit.md` (audit + status per TECH task)
 - `.ai/rebuild-plan.md`: original plan, IA, tech decisions
 - `.ai/search-console.md`: Google Search Console / Bing setup
