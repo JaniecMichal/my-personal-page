@@ -1,5 +1,9 @@
 # Next steps — mjaniec.it
 
+Status (2026-10-13): technical plan ([technical-plan.md](./technical-plan.md)) audited and implemented on
+branch **`tech-plan`** (not deployed): see [technical-audit.md](./technical-audit.md) for results and the
+5 open decisions. After merge + deploy: run `scripts/smoke.sh`, then `scripts/indexnow.sh`.
+
 Status (2026-10-12): **live at https://www.mjaniec.it**. Post-launch round 1 (`ui-corrections`,
 section 6) merged and deployed: 46 static pages, 38 URLs in the sitemap, smoke 27/27 on production.
 Current branch: **`growth`** (section 7).
@@ -202,7 +206,7 @@ Follow-ups:
 - [ ] AI offer pages: see [ai-services-ideas.md](./ai-services-ideas.md) (hub + 4 offers).
 - [ ] Per-page OG images in the Signal style (`opengraph-image.tsx`); the current one is the old
   design, only resized.
-- [ ] `http://mjaniec.it` takes two redirect hops; wrong-locale slugs redirect with 307 (next-intl).
+- [ ] `http://mjaniec.it` takes two redirect hops (Vercel domain layer); wrong-locale slugs redirect with 307 (next-intl).
 - [ ] Google Business Profile (section 4) — the Katowice page is the natural link target.
 
 ## 7. Growth (branch `growth`, from 2026-10-12)
@@ -271,7 +275,7 @@ Nothing measures conversions yet, and leads would sit in three places (Gmail, mi
 - [ ] Google Business Profile (service area, link to the Katowice page), then Bing Places and Apple
   Business Connect.
 - [x] Code: mini-audit script: `tools/mini-audit/` (see its README). CSV of businesses → one A4 PDF each + `summary.csv`.
-- [ ] Code: IndexNow (Bing pinged on every deploy, no more manual Bing submissions).
-- [ ] Code: `llms.txt` in Polish + Katowice page + new services; Vercel Analytics with a
-  "brief sent" event.
+- [x] Code: IndexNow (`scripts/indexnow.sh`, run after each production deploy). Branch `tech-plan`.
+- [x] Code: `llms.txt` with the Katowice page + Polish URLs; `brief_sent` Vercel Analytics event
+  (visible on Pro only). Branch `tech-plan`.
 - [ ] Warm network: list of 30 people, referral message (template in growth-plan.md).

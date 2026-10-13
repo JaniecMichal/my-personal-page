@@ -4,6 +4,8 @@ export const routing = defineRouting({
 	locales: ["pl", "en"],
 	defaultLocale: "pl",
 	localePrefix: "always",
+	// "/" always goes to /pl (next.config.js); no cookie or Accept-Language negotiation.
+	localeDetection: false,
 	pathnames: {
 		"/": "/",
 		"/services": { pl: "/uslugi", en: "/services" },

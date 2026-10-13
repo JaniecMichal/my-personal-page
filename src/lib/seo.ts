@@ -11,15 +11,13 @@ export const localizedUrl = (href: Href, locale: Locale) =>
 
 /**
  * hreflang alternates. `hrefFor` returns the href per locale, so detail pages can pass
- * translated slugs. `x-default` points at the default locale (or the bare root for the home page).
+ * translated slugs. `x-default` points at the default locale (never the bare root, which only redirects).
  */
 export const alternatesFor = (locale: Locale, hrefFor: (locale: Locale) => Href) => {
 	const languages = Object.fromEntries(
 		routing.locales.map((l) => [l, localizedUrl(hrefFor(l), l)]),
 	) as Record<string, string>;
-	// The bare root picks a language itself, so it's the x-default for the home page.
-	const defaultHref = hrefFor(routing.defaultLocale);
-	languages["x-default"] = defaultHref === "/" ? absoluteUrl("/") : localizedUrl(defaultHref, routing.defaultLocale);
+	languages["x-default"] = localizedUrl(hrefFor(routing.defaultLocale), routing.defaultLocale);
 
 	return { canonical: localizedUrl(hrefFor(locale), locale), languages };
 };

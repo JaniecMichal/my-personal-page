@@ -8,7 +8,8 @@ export type BriefErrorKey = "name" | "email" | "message" | "consent";
 
 export type BriefState =
 	| { status: "idle" }
-	| { status: "success" }
+	// `types` is set only when an email really went out (the honeypot gets a bare success).
+	| { status: "success"; types?: string[] }
 	| { status: "invalid"; errors: Partial<Record<BriefField, BriefErrorKey>> }
 	| { status: "error"; reason: "generic" | "rateLimit" };
 

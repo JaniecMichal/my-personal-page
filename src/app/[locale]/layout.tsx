@@ -21,6 +21,8 @@ import { SITE_URL } from "@/lib/site";
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };
 
 export const generateStaticParams = () => routing.locales.map((locale) => ({ locale }));
+// "/foo.xml" skips the middleware (matcher ignores dots); without this it rendered with locale "foo.xml" and crashed (500).
+export const dynamicParams = false;
 
 export const viewport: Viewport = {
 	themeColor: [

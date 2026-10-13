@@ -89,7 +89,7 @@ export async function submitBrief(_prev: BriefState, formData: FormData): Promis
 			html,
 			tags: ["brief", ...data.types],
 		});
-		return { status: "success" };
+		return { status: "success", types: data.types };
 	} catch (error) {
 		console.error("[brief] Sending failed:", error);
 		return { status: "error", reason: "generic" };
