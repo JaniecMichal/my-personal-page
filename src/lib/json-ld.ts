@@ -36,7 +36,7 @@ export const businessJsonLd = (settings: SiteSettings, locale: Locale, services:
 	// One @id, one url: the same business node is emitted on both locales.
 	url: `${SITE_URL}/pl`,
 	image: `${SITE_URL}/mjaniec-og.jpg`,
-	priceRange: locale === "pl" ? "od 500 zł netto" : "from 500 PLN net",
+	priceRange: locale === "pl" ? "od 1 000 zł netto" : "from 1,000 PLN net",
 	...(settings.phone ? { telephone: settings.phone } : {}),
 	founder: { "@id": PERSON_ID },
 	address: {

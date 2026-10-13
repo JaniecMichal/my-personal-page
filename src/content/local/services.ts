@@ -15,7 +15,7 @@ export const services: LocalService[] = [
 			en: "You don't need to know anything about technology. Tell me what should happen: more calls, enquiries or bookings. I pick the right tools, build the site and make sure customers can find it. My main technology is Next.js: sites that are fast, secure and easy for Google to read.",
 		},
 		tags: ["Next.js", "SEO", "CMS"],
-		priceFrom: { pl: "od 500 zł", en: "from 500 PLN" },
+		priceFrom: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 		timeline: { pl: "od kilku dni do 3 tygodni", en: "a few days to 3 weeks" },
 		included: [
 			{
@@ -55,7 +55,7 @@ export const services: LocalService[] = [
 				id: "business-landing",
 				kicker: { pl: "Na dobry start", en: "Quick start" },
 				name: { pl: "Strona-wizytówka", en: "One-page site" },
-				price: { pl: "od 500 zł", en: "from 500 PLN" },
+				price: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 				features: {
 					pl: [
 						"1 strona, do 6 sekcji",
@@ -176,7 +176,7 @@ export const services: LocalService[] = [
 			en: "A business website that loads in a blink, looks great on phones and is ready for SEO. Built in Next.js with a friendly CMS for your content.",
 		},
 		tags: ["Next.js", "SEO", "CMS"],
-		priceFrom: { pl: "od 500 zł", en: "from 500 PLN" },
+		priceFrom: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 		timeline: { pl: "od kilku dni do 3 tygodni", en: "a few days to 3 weeks" },
 		included: [
 			{
@@ -213,7 +213,7 @@ export const services: LocalService[] = [
 				id: "nextjs-landing",
 				kicker: { pl: "Na dobry start", en: "Quick start" },
 				name: "Landing page",
-				price: { pl: "od 500 zł", en: "from 500 PLN" },
+				price: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 				features: {
 					pl: [
 						"1 strona, do 6 sekcji",
