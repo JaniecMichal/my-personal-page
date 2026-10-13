@@ -36,7 +36,10 @@ Wnioski:
 - [ ] **Spójne dane (NAP)** wszędzie: „Michał Janiec”, ten sam e-mail, ten sam adres URL, ten sam
   opis w jednym zdaniu. Pilnuj tego w każdym nowym profilu.
 - [ ] **Analityka konwersji**: włącz Vercel Analytics (albo Plausible) i licz wysłane briefy jako
-  zdarzenie. Bez tego nie wiadomo, co działa. *(Do zrobienia w kodzie.)*
+  zdarzenie, a wejścia z kartek po `utm_source=mini-audyt`. Bez tego nie wiadomo, co działa.
+  *(Do zrobienia w kodzie; szczegóły i arkusz leadów: `next-steps.md`, sekcja 7.)*
+- [ ] **Telefon na stronie**: mini-audyt własnej strony znajduje tylko ten problem. Klienci lokalni
+  wolą dzwonić, a kartka z audytu to mówi.
 - [ ] **IndexNow** dla Binga: nowa i zmieniona strona trafia do indeksu w godziny, nie tygodnie.
   Bing zasila ChatGPT i Copilota. *(Do zrobienia w kodzie.)*
 - [ ] **`llms.txt` po polsku** + strona Katowice i nowe usługi w pliku. *(Do zrobienia w kodzie.)*
@@ -225,6 +228,6 @@ dzień 10 (krótkie przypomnienie z jednym pomysłem), potem odpuść. Nie dzwo�
 1. IndexNow (klucz + powiadomienie Binga przy wdrożeniu).
 2. `llms.txt` po polsku + strona Katowice + nowe usługi; osobny `llms-full.txt` z FAQ usług.
 3. Vercel Analytics + zdarzenie „brief wysłany”.
-4. Skrypt do mini-audytów: lista adresów → PageSpeed (mobile) + zrzut ekranu z telefonu + PDF.
+4. ✓ Skrypt do mini-audytów: `tools/mini-audit/` (instrukcja w README).
 5. Szkielet bloga (`/pl/blog` ↔ `/en/notes`) z pierwszym wpisem „Ile kosztuje strona internetowa”.
 6. Arkusz do śledzenia widoczności w AI i lejka (szablon CSV).

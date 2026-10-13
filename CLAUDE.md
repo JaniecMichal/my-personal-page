@@ -20,7 +20,8 @@ npx next lint --dir src     # lint (add --fix for import order / type imports)
   a headless browser (playwright-core with `channel: "chrome"` works on this machine; install it in the
   scratchpad, not in the project).
 - No `.env` is needed locally. Without Mailgun keys the brief form logs the email to the server console.
-  `DEV_GEO_COUNTRY=PL` in `.env.local` simulates a visitor from Poland.
+- `scripts/smoke.sh [base-url]` checks redirects, pages, canonical/hreflang, robots, headers.
+  `scripts/indexnow.sh` pings Bing with all sitemap URLs after a production deploy.
 
 ## Git
 
@@ -40,7 +41,7 @@ npx next lint --dir src     # lint (add --fix for import order / type imports)
 | `src/app/terminal/` + `src/components/terminal/` | English-only CLI easter egg (older WIP code, 2-space indent). Reads local content directly. |
 | `src/i18n/routing.ts` | Locales and **localized pathnames** (`/pl/uslugi` ↔ `/en/services`). Add every new route here. |
 | `src/i18n/navigation.ts` | Locale-aware `Link`, `redirect`, `usePathname`, `getPathname`. Always use these, not `next/link`, inside `[locale]`. |
-| `src/middleware.ts` | Root `/` language detection (cookie → any Polish in Accept-Language → Vercel geo PL → first supported language → en abroad / pl), then next-intl. |
+| `src/middleware.ts` | Plain next-intl (`localeDetection: false`). The bare `/` is a permanent 308 to `/pl` in `next.config.js` (ADR-001: no language detection). |
 | `src/messages/{pl,en}.json` | UI copy. Typed via `src/global.d.ts`. |
 | `src/content/` | **Content layer.** Pages only call `content.getX(locale)` from `@/content`. |
 | `src/content/types.ts` | Domain types mirroring planned Sanity schemas. |
@@ -100,6 +101,7 @@ placeholder and flag it instead. Real facts: `src/content/local/cv.ts` and `src/
 ## Docs
 
 - `.ai/next-steps.md`: current status and to-do list (**start here**)
+- `.ai/technical-plan.md` (PL, owner-approved ADRs) and `.ai/technical-audit.md` (audit + status per TECH task)
 - `.ai/rebuild-plan.md`: original plan, IA, tech decisions
 - `.ai/search-console.md`: Google Search Console / Bing setup
 - `.ai/content-guide.md`: how to write the content

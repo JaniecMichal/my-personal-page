@@ -75,7 +75,7 @@ export const pricingPlans: LocalizedDeep<PricingPlan>[] = [
 		id: "landing",
 		kicker: { pl: "Na dobry start", en: "Quick start" },
 		name: "Landing page",
-		price: { pl: "od 500 zł", en: "from 500 PLN" },
+		price: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 		features: {
 			pl: [
 				"1 strona, do 6 sekcji",
@@ -157,8 +157,8 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		id: "cost",
 		question: { pl: "Ile kosztuje strona internetowa?", en: "How much does a website cost?" },
 		answer: {
-			pl: "Prosty landing page z gotowego projektu graficznego kosztuje od 500 zł netto, a strona firmowa z CMS od 2 900 zł netto. Dokładną wycenę dostajesz po krótkim briefie. Cena zależy od liczby podstron, integracji i tego, czy treści są gotowe.",
-			en: "A simple landing page built from your ready design starts from 500 PLN net, and a business website with a CMS from 2,900 PLN net. You get an exact quote after a short brief. The price depends on the number of pages, integrations and whether the content is ready.",
+			pl: "Prosty landing page z gotowego projektu graficznego kosztuje od 1 000 zł netto, a strona firmowa z CMS od 2 900 zł netto. Dokładną wycenę dostajesz po krótkim briefie. Cena zależy od liczby podstron, integracji i tego, czy treści są gotowe.",
+			en: "A simple landing page built from your ready design starts from 1,000 PLN net, and a business website with a CMS from 2,900 PLN net. You get an exact quote after a short brief. The price depends on the number of pages, integrations and whether the content is ready.",
 		},
 	},
 	{

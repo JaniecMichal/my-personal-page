@@ -1,10 +1,14 @@
 # Next steps — mjaniec.it
 
-Status (2026-10-12): **live at https://www.mjaniec.it** since 2026-10-12 (rebuild merged, 27/27 smoke
-checks on production). Branch **`ui-corrections`** holds the first post-launch round (section 6):
-not merged yet. 44 static pages, build + lint + typecheck pass, axe clean on key pages in both themes.
-**Next up:** review `ui-corrections` locally → push → check the Vercel preview → merge. Then the open
-items in sections 4–6.
+Status (2026-10-13): technical plan ([technical-plan.md](./technical-plan.md)) audited and implemented on
+branch **`tech-plan`** (not deployed): see [technical-audit.md](./technical-audit.md) for results and the
+5 open decisions. After merge + deploy: run `scripts/smoke.sh`, then `scripts/indexnow.sh`.
+
+Status (2026-10-12): **live at https://www.mjaniec.it**. Post-launch round 1 (`ui-corrections`,
+section 6) merged and deployed: 46 static pages, 38 URLs in the sitemap, smoke 27/27 on production.
+Current branch: **`growth`** (section 7).
+**Next up:** section 7, "Tomorrow (2026-10-13)": indexing requests for the new pages. Then the
+growth plan ([growth-plan.md](./growth-plan.md)): Google Business Profile, mini-audit script.
 
 Progress log:
 
@@ -43,6 +47,10 @@ Progress log:
   terminal hides the AI prompt while `OPENAI_API_KEY` is unset; SEO/a11y audit fixes; new service
   "Strona internetowa dla firmy"; local page Katowice; scroll reveal + link underline;
   `.ai/ai-services-ideas.md`.
+- 2026-10-12: PR #3 (`ui-corrections`) merged. Production deploy failed with "Git information
+  retrieval failed" (Vercel could not fetch the commit, build never started); fixed with
+  `vercel redeploy … --target production`. Smoke 27/27. Google "Request indexing" quota used up
+  for the day (10 URLs), so the new pages wait until tomorrow.
 
 Related docs: [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
@@ -58,7 +66,7 @@ Related docs: [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-
 
 All placeholders look like `[X]`, `[MIESIĄC]`, `[LEVEL]`. Find them with `grep -rn "\[" src/content src/messages`.
 
-- [x] **Prices**: landing page od 500 zł, website with CMS od 2 900 zł, Shopify od 2 500 / 5 900 zł, audit od 900 zł, one rate 120 zł/h, trial task up to 10 h at 100 zł/h (all net).
+- [x] **Prices**: landing page od 1 000 zł (raised 2026-10-13, was 500), website with CMS od 2 900 zł, Shopify od 2 500 / 5 900 zł, audit od 900 zł, one rate 120 zł/h, trial task up to 10 h at 100 zł/h (all net).
 - [x] **Availability**: "Open to new projects", no date.
 - [x] **Case studies** in `src/content/local/work.ts`: nazielono.pro, jemWszkole.pl and Braintrust, with screenshots in `public/work/` and a quote each.
 - [x] **CV facts**: English B2, no notice period shown.
@@ -198,5 +206,76 @@ Follow-ups:
 - [ ] AI offer pages: see [ai-services-ideas.md](./ai-services-ideas.md) (hub + 4 offers).
 - [ ] Per-page OG images in the Signal style (`opengraph-image.tsx`); the current one is the old
   design, only resized.
-- [ ] `http://mjaniec.it` takes two redirect hops; wrong-locale slugs redirect with 307 (next-intl).
+- [ ] `http://mjaniec.it` takes two redirect hops (Vercel domain layer); wrong-locale slugs redirect with 307 (next-intl).
 - [ ] Google Business Profile (section 4) — the Katowice page is the natural link target.
+
+## 7. Growth (branch `growth`, from 2026-10-12)
+
+Plan and methodology: [growth-plan.md](./growth-plan.md).
+
+### Tomorrow (2026-10-13): index the new pages
+
+Google allows about 10 "Request indexing" a day per property; today's 10 are used. Bing has its own
+limit (100 a day), but it waits until tomorrow too.
+
+- [ ] **Google Search Console → URL inspection → Request indexing** (6 URLs):
+  - `https://www.mjaniec.it/pl/strony-internetowe/katowice`
+  - `https://www.mjaniec.it/pl/uslugi/strona-internetowa-dla-firmy`
+  - `https://www.mjaniec.it/pl/uslugi/seo-i-google-ads`
+  - `https://www.mjaniec.it/en/web-design/katowice`
+  - `https://www.mjaniec.it/en/services/business-website`
+  - `https://www.mjaniec.it/en/services/seo-and-google-ads`
+- [ ] **Google Search Console → Sitemaps**: resubmit `sitemap.xml` (no daily limit). Check that the
+  status changed from "Nie udało się odczytać" to "Udane".
+- [ ] **Bing Webmaster Tools → URL Submission**: the same 6 URLs.
+- [ ] Optional, with requests left: the case studies and the remaining service pages
+  (`/pl/uslugi/sklepy-shopify`, `/pl/uslugi/wordpress`, `/pl/uslugi/aplikacje-react`,
+  `/pl/uslugi/frontend-dla-zespolow-rails`, `/pl/uslugi/audyt-szybkosci-seo`).
+
+### Fixes found by the mini-audit (own site, 2026-10-12)
+
+- [ ] **Phone number on the site**: the only issue the audit finds on mjaniec.it is "no visible phone
+  number". Add `phone` in `src/content/local/settings.ts` (it already renders as a `tel:` link on the
+  contact page); also show a tap-to-call link in the header or the mobile menu, and in JSON-LD
+  (`telephone`, already wired). Local clients prefer calling, and the leaflet says so.
+- [ ] **Mobile performance 88 → 90+**: Lighthouse mobile LCP 2.8 s on `/pl` (the hero `h1`).
+  Ideas: start the WebGL hero field after first paint / on idle, check font loading for the serif
+  italic, keep the field off the critical path. Re-run `tools/mini-audit` before/after.
+
+### Tracking and one place for lead data
+
+Nothing measures conversions yet, and leads would sit in three places (Gmail, mini-audit CSV, notes).
+
+- [ ] **Analytics**: Vercel Web Analytics (free on Hobby, no cookies, so no banner needed) or
+  Plausible. Custom event **"brief_sent"** (with project type) from the brief form, and UTM
+  reporting for `utm_source=mini-audyt` (QR on printed audits).
+- [ ] **Search Console + Bing**: weekly 5-minute look at clicks, impressions and queries; note them in
+  the KPI tab.
+- [ ] **Lead sheet** (Google Sheets, one file, private):
+  - tab **Leady**: firma, źródło (ciepła sieć / partner / wizyta / platforma / strona / AI), etap
+    (znaleziony → kontakt → odpowiedź → rozmowa → wycena → wygrany / przegrany), data kontaktu,
+    następny krok + data, wartość, notatki;
+  - tab **Audyty**: paste `tools/mini-audit/out/summary.csv`;
+  - tab **KPI**: per month: kontakty, rozmowy, wyceny, wygrane, briefy ze strony, wejścia z QR,
+    kliknięcia z Google;
+  - tab **AI**: monthly check of 10 prompts in ChatGPT / Perplexity / Gemini / Claude (list in
+    growth-plan.md).
+- [ ] Later: **brief form → lead sheet automatically** (Google Sheets API or Notion), so website
+  leads land in the same place as outreach leads (the "Lead storage" item in section 5).
+
+### Mini-audit as a client tool (`tools/mini-audit`)
+
+- [x] `--report` mode for existing clients: neutral footer, "Raport strony" heading.
+- [ ] Before/after reports for every client project (material for case studies).
+- [ ] Monthly report for care clients (nazielono.pro: mobile 68/100, LCP 9.1 s, phone below the fold;
+  matches the open follow-up in section 2).
+
+### Next (from growth-plan.md)
+
+- [ ] Google Business Profile (service area, link to the Katowice page), then Bing Places and Apple
+  Business Connect.
+- [x] Code: mini-audit script: `tools/mini-audit/` (see its README). CSV of businesses → one A4 PDF each + `summary.csv`.
+- [x] Code: IndexNow (`scripts/indexnow.sh`, run after each production deploy). Branch `tech-plan`.
+- [x] Code: `llms.txt` with the Katowice page + Polish URLs; `brief_sent` Vercel Analytics event
+  (visible on Pro only). Branch `tech-plan`.
+- [ ] Warm network: list of 30 people, referral message (template in growth-plan.md).

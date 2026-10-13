@@ -6,12 +6,15 @@ export const dynamic = "force-static";
 /** Plain-text summary for AI assistants (https://llmstxt.org). */
 export async function GET() {
 	const locale = "en";
-	const [settings, services, studies, faq, plans] = await Promise.all([
+	const [settings, services, studies, faq, plans, localPages, servicesPl, localPagesPl] = await Promise.all([
 		content.getSiteSettings(locale),
 		content.getServices(locale),
 		content.getCaseStudies(locale),
 		content.getFaq(locale),
 		content.getPricingPlans(locale),
+		content.getLocalPages(locale),
+		content.getServices("pl"),
+		content.getLocalPages("pl"),
 	]);
 
 	const body = [
@@ -25,6 +28,9 @@ export async function GET() {
 		"## Services",
 		...services.map((s) => `- [${s.title}](${localizedUrl({ pathname: "/services/[slug]", params: { slug: s.slug } }, locale)}): ${s.summary} Price: ${s.priceFrom}.`),
 		"",
+		"## Local",
+		...localPages.map((p) => `- [${p.title}](${localizedUrl({ pathname: "/local/[slug]", params: { slug: p.slug } }, locale)}): ${p.seo.description ?? p.intro} Areas: ${[...p.districts, ...p.nearby].join(", ")}.`),
+		"",
 		"## Case studies",
 		...studies.map((s) => `- [${s.client}: ${s.title}](${localizedUrl({ pathname: "/work/[slug]", params: { slug: s.slug } }, locale)}): ${s.summary}`),
 		"",
@@ -36,7 +42,13 @@ export async function GET() {
 		"## Pages",
 		`- [CV](${localizedUrl("/cv", locale)})`,
 		`- [Contact / project brief](${localizedUrl("/contact", locale)})`,
-		`- [Polish version](${localizedUrl("/", "pl")})`,
+		"",
+		"## Polish version (default language of the site)",
+		`- [Strona główna](${localizedUrl("/", "pl")})`,
+		...servicesPl.map((s) => `- [${s.title}](${localizedUrl({ pathname: "/services/[slug]", params: { slug: s.slug } }, "pl")}): ${s.summary}`),
+		...localPagesPl.map((p) => `- [${p.title}](${localizedUrl({ pathname: "/local/[slug]", params: { slug: p.slug } }, "pl")})`),
+		`- [Cennik](${localizedUrl("/pricing", "pl")})`,
+		`- [Kontakt / brief](${localizedUrl("/contact", "pl")})`,
 		"",
 	].join("\n");
 

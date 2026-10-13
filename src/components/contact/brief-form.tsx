@@ -1,5 +1,6 @@
 "use client";
 
+import { track } from "@vercel/analytics";
 import { useLocale, useTranslations } from "next-intl";
 import {
 	type ChangeEvent,
@@ -64,8 +65,11 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 	}, [state]);
 
 	useEffect(() => {
-		if (state.status === "success") successRef.current?.focus();
-	}, [state.status]);
+		if (state.status !== "success") return;
+		successRef.current?.focus();
+		// Counted once per confirmed send; no form content, only the chosen project types.
+		if (state.types) track("brief_sent", { types: state.types.join(",") || "none", locale });
+	}, [state, locale]);
 
 	// Once a field has an error, re-check it as the user types so the message disappears when fixed.
 	const onChange = (e: ChangeEvent<HTMLFormElement>) => {

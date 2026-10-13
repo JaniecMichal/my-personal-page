@@ -95,8 +95,8 @@ export const localPages: LocalLocalPage[] = [
 					en: "How much does a website cost in Katowice?",
 				},
 				answer: {
-					pl: "Prosta strona-wizytówka zaczyna się od 500 zł netto, strona firmowa z panelem do edycji od 2 900 zł netto. Dokładną wycenę dostajesz w ciągu 24 godzin od wysłania briefu.",
-					en: "A simple one-page site starts at 500 PLN net, a business website with an editor at 2,900 PLN net. You get an exact quote within 24 hours of sending the brief.",
+					pl: "Prosta strona-wizytówka zaczyna się od 1 000 zł netto, strona firmowa z panelem do edycji od 2 900 zł netto. Dokładną wycenę dostajesz w ciągu 24 godzin od wysłania briefu.",
+					en: "A simple one-page site starts at 1,000 PLN net, a business website with an editor at 2,900 PLN net. You get an exact quote within 24 hours of sending the brief.",
 				},
 			},
 			{

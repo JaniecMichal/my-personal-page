@@ -1,0 +1,15 @@
+{
+	"name": "mini-audit",
+	"private": true,
+	"type": "module",
+	"description": "One-page website mini-audits (PDF, Polish) for local outreach. Separate from the website build.",
+	"scripts": {
+		"audit": "node audit.mjs"
+	},
+	"dependencies": {
+		"chrome-launcher": "1.2.1",
+		"lighthouse": "12.8.2",
+		"playwright-core": "1.56.1",
+		"qrcode": "1.5.4"
+	}
+}
