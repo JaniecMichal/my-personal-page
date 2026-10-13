@@ -66,7 +66,7 @@ Related docs: [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-
 
 All placeholders look like `[X]`, `[MIESIĄC]`, `[LEVEL]`. Find them with `grep -rn "\[" src/content src/messages`.
 
-- [x] **Prices**: landing page od 500 zł, website with CMS od 2 900 zł, Shopify od 2 500 / 5 900 zł, audit od 900 zł, one rate 120 zł/h, trial task up to 10 h at 100 zł/h (all net).
+- [x] **Prices**: landing page od 1 000 zł (raised 2026-10-13, was 500), website with CMS od 2 900 zł, Shopify od 2 500 / 5 900 zł, audit od 900 zł, one rate 120 zł/h, trial task up to 10 h at 100 zł/h (all net).
 - [x] **Availability**: "Open to new projects", no date.
 - [x] **Case studies** in `src/content/local/work.ts`: nazielono.pro, jemWszkole.pl and Braintrust, with screenshots in `public/work/` and a quote each.
 - [x] **CV facts**: English B2, no notice period shown.
