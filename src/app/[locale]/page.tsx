@@ -15,7 +15,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { content } from "@/content";
 import type { Locale } from "@/i18n/routing";
 import { encodeEmail } from "@/lib/email";
-import { businessJsonLd, faqJsonLd } from "@/lib/json-ld";
+import { faqJsonLd } from "@/lib/json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -90,7 +90,7 @@ export default async function HomePage({ params }: Props) {
 				</Container>
 			</section>
 			<FinalCta encodedEmail={encodeEmail(settings.email)} />
-			<JsonLd data={[businessJsonLd(settings, locale, services), faqJsonLd(faq)]} />
+			<JsonLd data={faqJsonLd(faq)} />
 		</>
 	);
 }

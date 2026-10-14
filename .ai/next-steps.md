@@ -75,6 +75,12 @@ Progress log:
   „Strona-wizytówka” / „Strona firmowa z panelem”; no „Najczęściej wybierany”. Problem-first meta for
   services, pricing, work and 6 service pages. Contact: next-step success message, no-passwords hint,
   one-off fix and B2B brief types. Mailgun tags capped at 3.
+- 2026-10-14 (`content-mvp`, part 3): Katowice page got the case-study grid and 4 FAQ answers. Structured
+  data after a review of nazielono.pro: `WebSite` + business node site-wide (no dangling `provider` refs),
+  Service `@id` + `offers` from the shown "from" price (net PLN, hourly as `UnitPriceSpecification`),
+  case studies with image / `about` → services, `CollectionPage` + breadcrumb on /uslugi and /realizacje,
+  `poweredByHeader: false`, AVIF/WebP. Later items in section 5. Next case study: zapachdomu.com
+  (notes in [case-study-zapachdomu.md](./case-study-zapachdomu.md)), then bilscy.info.
 
 Related docs: [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
@@ -155,6 +161,13 @@ Order: 3a Mailgun → 3b Vercel env vars → 3c test brief → 3d Search Console
 | Blog / notes | ongoing | 2 posts a month (topics in content-guide.md), route `/pl/blog` ↔ `/en/notes`. |
 | New case studies | ongoing | After the first Shopify and WordPress gigs. |
 | Next.js 16 | ½ day | Upgrade once the site is stable; migrate `next lint` to the ESLint CLI. |
+| Tests for SEO helpers | ½ day | Vitest for `json-ld.ts` / `seo.ts`: valid JSON, every `@id` resolves, no `[` placeholders, hreflang pairs symmetric (pattern from nazielono `tests/unit/`). |
+| E2E brief form | ½ day | One Playwright spec: validation, honeypot, success message, language switch on detail pages (nazielono `tests/e2e/contact-modal.spec.ts`). |
+| Brief funnel events | 1 h | `brief_start` on first focus and an error outcome next to `brief_sent`, so drop-off is visible (nazielono `lib/analytics.ts`). |
+| WebPage node per page | 1–2 h | `webPageJsonLd` (isPartOf `#website`, breadcrumb, mainEntity) on CV, contact, pricing; lists already have `CollectionPage`. |
+| CV `ProfilePage` | 1 h | `mainEntity → #person`, `knowsLanguage`, `worksFor`. Waits on English level and F12 (naming Visuality). |
+| Blog `BlogPosting` schema | with the blog | Port nazielono `lib/blog-structured-data.ts` (author, dates, `hasPart` from h2 ids), without Sanity-specific fields. |
+| Sanity revalidation webhook | with Sanity | nazielono `app/api/revalidate/sanity` as the reference. |
 
 ## 6. Post-launch round 1: branch `ui-corrections` (2026-10-12)
 

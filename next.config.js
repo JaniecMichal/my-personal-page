@@ -4,7 +4,9 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	poweredByHeader: false,
 	images: {
+		formats: ["image/avif", "image/webp"],
 		// cdn.sanity.io is ready for when content moves to Sanity.
 		remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
 	},

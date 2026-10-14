@@ -11,10 +11,9 @@ import { JsonLd } from "@/components/ui/json-ld";
 import { content } from "@/content";
 import { Link } from "@/i18n/navigation";
 import { type Locale, routing } from "@/i18n/routing";
-import { breadcrumbJsonLd } from "@/lib/json-ld";
+import { breadcrumbJsonLd, caseStudyJsonLd } from "@/lib/json-ld";
 import { cn } from "@/lib/cn";
 import { localizedUrl, pageMetadata } from "@/lib/seo";
-import { SITE_URL } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
 
@@ -234,16 +233,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
 			<JsonLd
 				data={[
-					{
-						"@context": "https://schema.org",
-						"@type": "CreativeWork",
-						name: study.title,
-						about: study.summary,
-						url,
-						inLanguage: locale,
-						creator: { "@id": `${SITE_URL}/#person` },
-						keywords: study.stack.join(", "),
-					},
+					caseStudyJsonLd(study, url, locale),
 					breadcrumbJsonLd([
 						{ name: tc("breadcrumbHome"), url: localizedUrl("/", locale) },
 						{ name: tc("nav.work"), url: localizedUrl("/work", locale) },

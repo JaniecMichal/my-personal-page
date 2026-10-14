@@ -15,7 +15,7 @@ import { JsonLd } from "@/components/ui/json-ld";
 import { content } from "@/content";
 import { routing } from "@/i18n/routing";
 import { fontVariables } from "@/lib/fonts";
-import { personJsonLd } from "@/lib/json-ld";
+import { businessJsonLd, personJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import { SITE_URL } from "@/lib/site";
 
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };
@@ -57,9 +57,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 	if (!hasLocale(routing.locales, locale)) notFound();
 	setRequestLocale(locale);
 
-	const [t, settings] = await Promise.all([
+	const [t, settings, services] = await Promise.all([
 		getTranslations("common"),
 		content.getSiteSettings(locale),
+		content.getServices(locale),
 	]);
 
 	return (
@@ -84,7 +85,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 				</NextIntlClientProvider>
 				<AberrationField />
 				<ScrollReveal />
-				<JsonLd data={personJsonLd(settings)} />
+				<JsonLd
+					data={[
+						personJsonLd(settings),
+						websiteJsonLd(settings),
+						businessJsonLd(settings, locale, services),
+					]}
+				/>
 				<SiteAnalytics />
 			</body>
 		</html>

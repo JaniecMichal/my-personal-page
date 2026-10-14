@@ -4,7 +4,9 @@ import { ServiceCard } from "@/components/sections/service-card";
 import { Container } from "@/components/ui/container";
 import { content } from "@/content";
 import type { Locale } from "@/i18n/routing";
-import { pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/ui/json-ld";
+import { breadcrumbJsonLd, collectionJsonLd } from "@/lib/json-ld";
+import { localizedUrl, pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
 
@@ -22,10 +24,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ServicesPage({ params }: Props) {
 	const { locale } = await params;
 	setRequestLocale(locale);
-	const [t, services] = await Promise.all([
+	const [t, tc, services] = await Promise.all([
 		getTranslations("services"),
+		getTranslations("common"),
 		content.getServices(locale),
 	]);
+	const url = localizedUrl("/services", locale);
 
 	return (
 		<>
@@ -46,6 +50,23 @@ export default async function ServicesPage({ params }: Props) {
 					))}
 				</Container>
 			</section>
+			<JsonLd
+				data={[
+					collectionJsonLd(
+						t("title"),
+						url,
+						locale,
+						services.map((x) => ({
+							name: x.title,
+							url: localizedUrl({ pathname: "/services/[slug]", params: { slug: x.slug } }, locale),
+						})),
+					),
+					breadcrumbJsonLd([
+						{ name: tc("breadcrumbHome"), url: localizedUrl("/", locale) },
+						{ name: tc("nav.services"), url },
+					]),
+				]}
+			/>
 		</>
 	);
 }
