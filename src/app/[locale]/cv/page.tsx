@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server";
 import { ButtonAnchor, ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -39,24 +40,37 @@ export default async function CvPage({ params }: Props) {
 	return (
 		<>
 			<section className="py-16 lg:py-24">
-				<Container className="flex flex-col gap-7">
-					<span className="label">{t("label")}</span>
-					<h1 className="font-serif text-6xl leading-[0.9] tracking-[-0.05em] ab md:text-8xl lg:text-[136px]">
-						{settings.name}
-					</h1>
-					<p className="max-w-[900px] font-serif text-2xl leading-[1.15] text-ink-soft md:text-[40px]">
-						{facts.summary}
-					</p>
-					<div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-						<ButtonAnchor href={settings.cvUrl} download>
-							{t("download")} ↓
-						</ButtonAnchor>
-						{linkedin && (
-							<ButtonAnchor href={linkedin.href} variant="line" target="_blank" rel="me noopener">
-								{t("linkedin")} ↗
+				<Container className="grid gap-12 lg:grid-cols-12 lg:items-center">
+					<div className="flex flex-col gap-7 lg:col-span-8">
+						<span className="label">{t("label")}</span>
+						<h1 className="font-serif text-6xl leading-[0.9] tracking-[-0.05em] ab md:text-8xl lg:text-[136px]">
+							{settings.name}
+						</h1>
+						<p className="max-w-[900px] font-serif text-2xl leading-[1.15] text-ink-soft md:text-[40px]">
+							{facts.summary}
+						</p>
+						<div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+							<ButtonAnchor href={settings.cvUrl} download>
+								{t("download")} ↓
 							</ButtonAnchor>
-						)}
+							{linkedin && (
+								<ButtonAnchor href={linkedin.href} variant="line" target="_blank" rel="me noopener">
+									{t("linkedin")} ↗
+								</ButtonAnchor>
+							)}
+						</div>
 					</div>
+					<figure className="brackets relative w-full max-w-[360px] bg-surface p-5 lg:col-span-4 lg:max-w-none">
+						<Image
+							src="/cv/michal-janiec.jpg"
+							alt={t("photoAlt")}
+							width={951}
+							height={960}
+							priority
+							sizes="(min-width: 1024px) 30vw, 360px"
+							className="aspect-square w-full object-cover object-top"
+						/>
+					</figure>
 				</Container>
 			</section>
 
