@@ -687,12 +687,8 @@ export const caseStudies: LocalCaseStudy[] = [
 				en: "I like working with you because you get straight to the point and always follow the goals the client sets, helping to achieve them by delivering the right changes.",
 			},
 			lang: "pl",
-			// TODO(quote): name and role of the agency contact, and their OK on this wording.
-			author: "[IMIĘ I NAZWISKO]",
-			role: {
-				pl: "Agencja SEO prowadząca zapachdomu.com",
-				en: "SEO agency running zapachdomu.com",
-			},
+			author: "Konrad Bilski",
+			role: "nazielono.pro",
 		},
 		liveUrl: "https://zapachdomu.com",
 		seo: {},

@@ -1,7 +1,7 @@
 # Case study: zapachdomu.com (materiał roboczy, 2026-10-14)
 
 **Status:** dodane do `work.ts` (branch `content-mvp`), zrzuty w `public/work/zapachdomu/` (ceny rozmyte).
-Otwarte: imię i nazwisko osoby z agencji przy cytacie (`[IMIĘ I NAZWISKO]`) i jej zgoda na brzmienie cytatu.
+Cytat: Konrad Bilski, nazielono.pro.
 Odpowiedzi Michała: klient = agencja SEO obsługująca sklep; efektów liczbowych brak (opisane jako oczekiwane);
 współpraca na razie zakończona; praca z ograniczonym dostępem jako atut.
 

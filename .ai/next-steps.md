@@ -82,7 +82,7 @@ Progress log:
   `poweredByHeader: false`, AVIF/WebP. Later items in section 5. Next case study: zapachdomu.com
   (notes in [case-study-zapachdomu.md](./case-study-zapachdomu.md)), then bilscy.info.
 - 2026-10-14 (`content-mvp`, part 4): zapachdomu.com case study (PL/EN, 4 chapters, prices blurred in the
-  screenshots). **Before merging:** the quote author is still `[IMIĘ I NAZWISKO]` in `work.ts`. All
+  screenshots). Quote: Konrad Bilski, nazielono.pro. All
   case-study screenshots now sit in CSS device frames (`DeviceFrame`: browser window with the host,
   phone for portrait images). Next: bilscy.info case study.
 
