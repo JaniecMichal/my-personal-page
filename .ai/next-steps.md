@@ -1,9 +1,12 @@
 # Next steps — mjaniec.it
 
-Status (2026-10-14, evening): **live at https://www.mjaniec.it**. Branch **`content-mvp`** (pushed,
-PR to `main` being opened, not on production yet): content-audit items 1–6 done, i.e. all unblocked text work.
-**Next up:** merge the PR, run `scripts/smoke.sh` and `scripts/indexnow.sh` after the deploy. Then items 7–12
-in [content-audit.md](./content-audit.md), which wait on Michał's answers (F01–F05, F08–F10, F12, phone).
+Status (2026-10-14, end of day): **live at https://www.mjaniec.it**. Branch **`content-mvp`** (pushed, **PR to
+`main` not opened yet**: https://github.com/JaniecMichal/my-personal-page/compare/main...content-mvp?expand=1).
+On the branch: content-audit items 1–6, Katowice page (case studies + 4 FAQ), structured data from the
+nazielono.pro review, 2 new case studies (zapachdomu.com, bilscy.info), device frames + carousel with autoplay.
+**Next up:** open and merge the PR, then `scripts/smoke.sh` and `scripts/indexnow.sh`, PSI on production for
+`/pl/realizacje/*`, Rich Results Test on one service page. Then items 7–12 in
+[content-audit.md](./content-audit.md), which wait on Michał's answers (F01–F05, F08–F10, F12, phone).
 Plans: [business-plan.md](./business-plan.md) (what/why, D1–D6) · [technical-plan.md](./technical-plan.md)
 (how) · results: [technical-audit.md](./technical-audit.md).
 
@@ -87,6 +90,16 @@ Progress log:
   phone for portrait images).
 - 2026-10-14 (`content-mvp`, part 5): bilscy.info case study (PL/EN, linked to `seo-sem`, cart prices
   blurred). Notes: [case-study-bilscy.md](./case-study-bilscy.md). To check: Saturday block on a Saturday.
+- 2026-10-14 (`content-mvp`, part 6): case-study screenshots in an Embla carousel (`CaseStudyGallery`,
+  `embla-carousel-react` + `-autoplay` 8.6.0): several slides in view (one-per-view was tried and reverted),
+  autoplay 4.5 s that pauses on hover / focus / off-screen, pause button (WCAG 2.2.2), off with reduced
+  motion. `ImageAsset.framed` skips `DeviceFrame` for images that already contain a mock-up (jemWszkole
+  parent dashboard). Canonicals checked on all 42 sitemap URLs: each page is self-canonical with hreflang.
+- 2026-10-14 Lighthouse mobile, local production build (simulated throttling; SEO/best-practices dips are
+  local only: canonical points to www, Vercel Analytics script missing): case studies 94–95 (nazielono 95
+  on a repeat run, 88 on the first), /pl/realizacje 93 (71 on a noisy first run), desktop nazielono 100.
+  LCP ~2.9–3.2 s on mobile; the LCP element is the summary text in the case-study header, not a
+  screenshot. Idea if PSI on production agrees: check the serif font loading for the header text.
 
 Related docs: [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
