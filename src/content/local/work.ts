@@ -693,4 +693,134 @@ export const caseStudies: LocalCaseStudy[] = [
 		liveUrl: "https://zapachdomu.com",
 		seo: {},
 	},
+	{
+		id: "bilscy",
+		slug: "bilscy",
+		order: 5,
+		client: "bilscy.info",
+		title: {
+			pl: "Sklep szkółki bylin: śledzenie konwersji Google Ads i zmiany w koszyku na żywym sklepie",
+			en: "A perennial nursery's online store: Google Ads conversion tracking and checkout changes on a live shop",
+		},
+		summary: {
+			pl: "Gospodarstwo Ogrodnicze Bilscy potrzebowało zmian, których nie była w stanie wykonać firma opiekująca się sklepem. Wdrożyłem śledzenie sprzedaży w GA4 i Google Ads, blokadę dostawy w sobotę i walidację płatności, pracując na działającym sklepie przez FTP.",
+			en: "Gospodarstwo Ogrodnicze Bilscy needed changes the company looking after its store couldn't deliver. I shipped sales tracking in GA4 and Google Ads, a Saturday delivery block and payment validation, working on the live store over FTP.",
+		},
+		period: { pl: "06.2026 → 07.2026", en: "Jun 2026 → Jul 2026" },
+		role: {
+			pl: "Frontend developer, wdrożenia na działającym sklepie",
+			en: "Frontend developer, changes on a live store",
+		},
+		stack: [
+			"AtomStore",
+			"CakePHP",
+			"JavaScript",
+			"jQuery",
+			"Google Tag Manager",
+			"GA4",
+			"Google Ads",
+			"Consent Mode",
+		],
+		services: ["seo-sem"],
+		metrics: [
+			{
+				value: "17 712",
+				label: {
+					pl: "kodów pocztowych w blokadzie sobotniej",
+					en: "postcodes in the Saturday block",
+				},
+			},
+			{
+				value: "GA4",
+				label: { pl: "sprzedaż z danymi produktów", en: "sales with product data" },
+			},
+		],
+		chapters: [
+			{
+				title: { pl: "Problem", en: "Problem" },
+				body: {
+					pl: [
+						"Gospodarstwo Ogrodnicze Bilscy prowadzi sklep z bylinami i cebulami kwiatowymi na platformie AtomStore. Agencja prowadząca kampanie potrzebowała dokładnych danych o sprzedaży w GA4 i Google Ads, a sklep kolejnych zmian w koszyku. Firma, która opiekowała się stroną, nie była w stanie ich wykonać.",
+						"Dostęp do projektu był ograniczony: serwer FTP i ręczna podmiana plików szablonu, bez dostępu do rdzenia platformy i bez osobnego środowiska testowego. Każda zmiana trafiała od razu na działający sklep, w którym klienci składają zamówienia.",
+					],
+					en: [
+						"Gospodarstwo Ogrodnicze Bilscy runs a store with perennials and flower bulbs on the AtomStore platform. The agency running its campaigns needed accurate sales data in GA4 and Google Ads, and the store needed further checkout changes. The company looking after the site couldn't deliver them.",
+						"Access was limited: an FTP server and manual replacement of template files, with no access to the platform core and no separate test environment. Every change went straight to the live store, where customers place orders.",
+					],
+				},
+			},
+			{
+				title: { pl: "Rozwiązanie", en: "Solution" },
+				body: {
+					pl: [
+						"Śledzenie sprzedaży: zgody (Consent Mode) ładowane przed tagami Google, zdarzenie zakupu z pełnymi danymi zamówienia i listą produktów oraz dane do konwersji rozszerzonych Google Ads, z telefonem w jednym formacie i zaszyfrowanym e-mailem. Ta sama struktura na obu stronach po zamówieniu, więc w Google Tag Manager wystarcza jedna konfiguracja. Gdy dane się nie zgadzały, znalazłem przyczynę: część zdarzeń wysyłał sam rdzeń platformy.",
+						"Blokada dostawy w sobotę: kurier z doręczeniem w sobotę jest niedostępny dla 17 712 kodów pocztowych z listy klienta. Kupujący widzi komunikat przy polu kodu pocztowego, zanim przejdzie do płatności, a lista kodów po kompresji waży około 20 KB.",
+						"Walidacja płatności: koszyk nie przepuszcza zamówienia bez wybranej metody płatności, pokazuje komunikat i przewija do właściwej sekcji.",
+					],
+					en: [
+						"Sales tracking: consent (Consent Mode) loaded before the Google tags, a purchase event with full order data and the product list, and data for Google Ads enhanced conversions, with the phone number in one format and a hashed email. The same structure on both post-order pages, so Google Tag Manager needs a single setup. When the numbers didn't match, I found the cause: some events were sent by the platform core itself.",
+						"Saturday delivery block: Saturday courier delivery is unavailable for 17,712 postcodes from the client's list. Shoppers see a message next to the postcode field before they get to payment, and the compressed postcode list weighs about 20 KB.",
+						"Payment validation: the checkout won't let an order through without a payment method, shows a message and scrolls to the right section.",
+					],
+				},
+			},
+			{
+				title: { pl: "Proces", en: "Process" },
+				body: {
+					pl: [
+						"Bez środowiska testowego zachowałem maksymalną ostrożność. Najpierw zsynchronizowałem repozytorium szablonu z tym, co faktycznie działa na serwerze, a każda zmiana miała przygotowaną drogę powrotu. Nowy kod jest defensywny: jeśli skrypt zawiedzie, zamówienie przechodzi normalnie, a ewentualny błąd serwera pokazuje stronę w wyglądzie sklepu zamiast pustego ekranu.",
+						"Każde wdrożenie ma dokumentację: co i gdzie wgrać przez FTP oraz jak sprawdzić zdarzenia w podglądzie Google Tag Manager. Dla klienta przygotowałem też analizę odświeżenia wyglądu sklepu w trzech wariantach, z ryzykami i rekomendacją kolejności prac.",
+					],
+					en: [
+						"With no test environment, I took maximum care. First I synced the template repository with what actually runs on the server, and every change had a way back ready. The new code is defensive: if a script fails, the order goes through normally, and a server error shows a page in the store's design instead of a blank screen.",
+						"Every rollout is documented: what to upload where over FTP and how to check the events in Google Tag Manager preview. I also prepared an analysis of a store redesign in three variants, with the risks and a recommended order of work.",
+					],
+				},
+			},
+			{
+				title: { pl: "Efekt", en: "Result" },
+				body: {
+					pl: [
+						"Zmiany, których klient potrzebował, działają na żywym sklepie. Sprzedaż z danymi produktów jest widoczna w GA4 i Google Ads, więc agencja może optymalizować kampanie na podstawie rzeczywistych zamówień.",
+						"Koszyk pilnuje dostawy w sobotę i wyboru płatności, a dokumentacja pozwala kolejnej osobie kontynuować pracę bez zgadywania, co i gdzie zostało zmienione.",
+					],
+					en: [
+						"The changes the client needed work on the live store. Sales with product data are visible in GA4 and Google Ads, so the agency can optimise campaigns based on real orders.",
+						"The checkout handles Saturday delivery and payment choice, and the documentation lets the next person continue without guessing what was changed and where.",
+					],
+				},
+			},
+		],
+		cover: {
+			src: "/work/bilscy/home-desktop.png",
+			alt: {
+				pl: "Strona główna sklepu bilscy.info z bylinami i cebulami kwiatowymi",
+				en: "bilscy.info home page with perennials and flower bulbs",
+			},
+			width: 1920,
+			height: 890,
+		},
+		gallery: [
+			{
+				src: "/work/bilscy/home-desktop.png",
+				alt: {
+					pl: "Strona główna sklepu bilscy.info",
+					en: "bilscy.info home page",
+				},
+				width: 1920,
+				height: 890,
+			},
+			{
+				src: "/work/bilscy/cart-payment-desktop.png",
+				alt: {
+					pl: "Koszyk: wybór dostawy i metody płatności",
+					en: "Checkout: choosing delivery and a payment method",
+				},
+				width: 1920,
+				height: 885,
+			},
+		],
+		liveUrl: "https://www.bilscy.info",
+		seo: {},
+	},
 ];

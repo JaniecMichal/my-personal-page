@@ -84,7 +84,9 @@ Progress log:
 - 2026-10-14 (`content-mvp`, part 4): zapachdomu.com case study (PL/EN, 4 chapters, prices blurred in the
   screenshots). Quote: Konrad Bilski, nazielono.pro. All
   case-study screenshots now sit in CSS device frames (`DeviceFrame`: browser window with the host,
-  phone for portrait images). Next: bilscy.info case study.
+  phone for portrait images).
+- 2026-10-14 (`content-mvp`, part 5): bilscy.info case study (PL/EN, linked to `seo-sem`, cart prices
+  blurred). Notes: [case-study-bilscy.md](./case-study-bilscy.md). To check: Saturday block on a Saturday.
 
 Related docs: [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)

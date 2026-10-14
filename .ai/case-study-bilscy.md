@@ -1,5 +1,11 @@
 # Case study: bilscy.info (szkic, 2026-10-14)
 
+**Status:** dodane do `work.ts` (branch `content-mvp`), zrzuty w `public/work/bilscy/` (ceny w koszyku rozmyte).
+Odpowiedzi Michała: klient = sklep (właściciele to rodzice CEO nazielono.pro, agencji nie nazywamy);
+zgoda jest; konwersje widoczne w GA4/Ads; firma supportowa nie odpowiedziała; blokada sobotnia
+niesprawdzona w sobotę (na stronie bez twierdzenia, że przetestowana); brak cytatu; współpraca zakończona.
+Usługa: `seo-sem`.
+
 Źródło: `~/personal_projects/bliscy/bilscy_template` (`progress.md`, `docs/*.md`, git). Nic z tego nie jest
 jeszcze na stronie.
 
