@@ -64,7 +64,7 @@
 		"work": {
 			"index": "02 — Case studies",
 			"title": "Wybrane realizacje",
-			"cta": "Masz podobny projekt? Opowiedz mi o nim, odpiszę w ciągu 24 godzin w dni robocze."
+			"cta": "Masz podobny projekt? Opowiedz mi o nim, odpiszę w ciągu 24 godzin."
 		},
 		"process": {
 			"index": "03 — Proces",
@@ -88,7 +88,7 @@
 		"final": {
 			"index": "07 — Kontakt",
 			"title": "Zbudujmy to.",
-			"lead": "Krótki brief zajmie 3 minuty. Odpiszę w ciągu 24 godzin w dni robocze, a wycenę z terminem dostaniesz w 2–3 dni robocze."
+			"lead": "Krótki brief zajmie 3 minuty. Odpiszę w ciągu 24 godzin, a wycenę z terminem dostaniesz w 2–3 dni robocze."
 		}
 	},
 	"services": {
@@ -114,7 +114,7 @@
 			"whyBody2": "Masz jedną osobę, która pisze kod, odpisuje na wiadomości i zostaje po starcie.",
 			"plans": "Pakiety",
 			"plansNote": "Ceny netto",
-			"ctaTitle": "Opowiedz mi o projekcie. Odpiszę w ciągu 24 godzin w dni robocze.",
+			"ctaTitle": "Opowiedz mi o projekcie. Odpiszę w ciągu 24 godzin.",
 			"ctaButton": "Zacznij brief",
 			"related": "Zobacz, jak pracuję w realnym projekcie"
 		}
@@ -183,11 +183,11 @@
 	"contact": {
 		"meta": {
 			"title": "Kontakt i wycena projektu | Michał Janiec",
-			"description": "Opisz projekt w krótkim formularzu albo napisz e-mail. Odpowiadam w ciągu 24 godzin w dni robocze."
+			"description": "Opisz projekt w krótkim formularzu albo napisz e-mail. Odpowiadam w ciągu 24 godzin."
 		},
 		"label": "Kontakt · brief projektu",
 		"title": "Opowiedz mi o projekcie.",
-		"lead": "Wystarczy imię, e-mail i kilka słów o projekcie. Szczegóły są opcjonalne. Odpowiadam w ciągu 24 godzin w dni robocze, z pytaniami albo wstępnymi widełkami. Pełną wycenę dostajesz w 2–3 dni robocze.",
+		"lead": "Wystarczy imię, e-mail i kilka słów o projekcie. Szczegóły są opcjonalne. Odpowiadam w ciągu 24 godzin, z pytaniami albo wstępnymi widełkami. Pełną wycenę dostajesz w 2–3 dni robocze.",
 		"alt": "Wolisz inaczej?",
 		"form": {
 			"label": "Brief projektu",
@@ -224,7 +224,7 @@
 			"privacy": "Polityka prywatności",
 			"submit": "Wyślij brief",
 			"sending": "Wysyłam…",
-			"successTitle": "Dzięki! Odezwę się w ciągu 24 godzin w dni robocze.",
+			"successTitle": "Dzięki! Odezwę się w ciągu 24 godzin.",
 			"successBody": "Brief dotarł. Odpowiem na adres e-mail podany w formularzu.",
 			"errors": {
 				"name": "Podaj imię (min. 2 znaki).",

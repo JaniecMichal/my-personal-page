@@ -128,8 +128,8 @@ export const localPages: LocalLocalPage[] = [
 				en: "Web design Katowice | Michał Janiec",
 			},
 			description: {
-				pl: "Strony firmowe, sklepy i aplikacje dla firm z Katowic i Śląska. Spotkanie na miejscu, lokalne SEO, faktura VAT. Odpowiedź w 24 h w dni robocze.",
-				en: "Business websites, online stores and web apps for companies in Katowice and Silesia. Meet in person, local SEO, VAT invoice. Reply within 24 hours on working days.",
+				pl: "Strony firmowe, sklepy i aplikacje dla firm z Katowic i Śląska. Spotkanie na miejscu, lokalne SEO, faktura VAT. Odpowiedź w 24 h.",
+				en: "Business websites, online stores and web apps for companies in Katowice and Silesia. Meet in person, local SEO, VAT invoice. Reply within 24 hours.",
 			},
 		},
 	},
