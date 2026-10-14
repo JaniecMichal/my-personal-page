@@ -151,6 +151,8 @@ export default async function CaseStudyPage({ params }: Props) {
 							previous: t("galleryPrevious"),
 							next: t("galleryNext"),
 							slide: t.raw("gallerySlide") as string,
+							pause: t("galleryPause"),
+							play: t("galleryPlay"),
 						}}
 						slides={study.gallery.map((img) => ({
 							key: img.src,

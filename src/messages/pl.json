@@ -140,7 +140,9 @@
 			"gallery": "Zrzuty ekranu",
 			"galleryPrevious": "Poprzedni zrzut ekranu",
 			"galleryNext": "Następny zrzut ekranu",
-			"gallerySlide": "{n} z {total}"
+			"gallerySlide": "{n} z {total}",
+			"galleryPause": "Wstrzymaj automatyczne przewijanie",
+			"galleryPlay": "Wznów automatyczne przewijanie"
 		}
 	},
 	"pricing": {

@@ -140,7 +140,9 @@
 			"gallery": "Screenshots",
 			"galleryPrevious": "Previous screenshot",
 			"galleryNext": "Next screenshot",
-			"gallerySlide": "{n} of {total}"
+			"gallerySlide": "{n} of {total}",
+			"galleryPause": "Pause autoplay",
+			"galleryPlay": "Resume autoplay"
 		}
 	},
 	"pricing": {
