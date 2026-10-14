@@ -1,12 +1,9 @@
 # Next steps — mjaniec.it
 
-Status (2026-10-14): **live at https://www.mjaniec.it**. Performance fix deployed (PR #7 `perf`, PSI
-better; CV hero photo). Text work in progress on branch **`content-mvp`** (pushed, **no PR yet**, not on
-production).
-**Next up:** [content-audit.md](./content-audit.md), "Order of work". Start with items 1–3 (unblocked):
-business-website page, one CTA wording + package names, pricing („Najczęściej wybierany”, Shopify card).
-Items 7–12 wait on Michał's answers (F01–F05, F08–F10, F12; questions at the end of content-audit.md).
-When a batch is done: open a PR `content-mvp` → `main`, run `scripts/smoke.sh` after deploy.
+Status (2026-10-14, evening): **live at https://www.mjaniec.it**. Branch **`content-mvp`** (pushed,
+PR to `main` being opened, not on production yet): content-audit items 1–6 done, i.e. all unblocked text work.
+**Next up:** merge the PR, run `scripts/smoke.sh` and `scripts/indexnow.sh` after the deploy. Then items 7–12
+in [content-audit.md](./content-audit.md), which wait on Michał's answers (F01–F05, F08–F10, F12, phone).
 Plans: [business-plan.md](./business-plan.md) (what/why, D1–D6) · [technical-plan.md](./technical-plan.md)
 (how) · results: [technical-audit.md](./technical-audit.md).
 
@@ -72,6 +69,12 @@ Progress log:
   home FAQ 13 Qs (field `group: "about"` keeps the 2 „about me” Qs off /cennik), final CTA
   „Porozmawiajmy.” (fluid size), business-website FAQ 6 Qs. Decided: F05 (SEO via Na Zielono, not named),
   F06, F07 (5+). Full map of what's left: [content-audit.md](./content-audit.md).
+- 2026-10-14 (`content-mvp`, part 2): content-audit items 1–6. Business-website page: support row per service,
+  custom-quote line under packages, nazielono linked, new „Dlaczego developer”, confident speed/Google
+  lines (Michał prefers benefit-led copy over hedged wording). One CTA „Opowiedz o projekcie”; packages
+  „Strona-wizytówka” / „Strona firmowa z panelem”; no „Najczęściej wybierany”. Problem-first meta for
+  services, pricing, work and 6 service pages. Contact: next-step success message, no-passwords hint,
+  one-off fix and B2B brief types. Mailgun tags capped at 3.
 
 Related docs: [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
