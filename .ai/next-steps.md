@@ -56,6 +56,7 @@ Progress log:
   `.ai/business-plan-status.md`.
 - 2026-10-13: own visits excluded from Vercel Analytics (`SiteAnalytics`, `beforeSend`). Opt a browser
   out once on the live site: dev tools console → `localStorage.setItem("va-disable", "1")` (laptop and phone).
+  Full steps incl. phone bookmarklet: [analytics-optout.md](./analytics-optout.md).
 - 2026-10-14 (`perf`, based on `analytics-optout`): PSI mobile 59. Cause: `WaveField` created the WebGL
   context and compiled its shader during hydration, which blocked the first paint (production FCP 2.46 s
   with the HTML loaded at 0.42 s). Now it starts after `load` + idle, compiles with
@@ -64,7 +65,7 @@ Progress log:
   throttling, no GPU): LCP 1.8 → 1.4 s. CV hero shows the photo (`public/cv/michal-janiec.jpg`, the old
   site's photo from git history) in a `brackets` frame. To do: PSI on the preview / production.
 
-Related docs: [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
+Related docs: [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
 
 ---
