@@ -136,7 +136,11 @@
 			"visit": "Visit the site",
 			"services": "Services in this project",
 			"screenshot": "Screenshot coming soon",
-			"metaTitle": "{client} — case study | Michał Janiec"
+			"metaTitle": "{client} — case study | Michał Janiec",
+			"gallery": "Screenshots",
+			"galleryPrevious": "Previous screenshot",
+			"galleryNext": "Next screenshot",
+			"gallerySlide": "{n} of {total}"
 		}
 	},
 	"pricing": {

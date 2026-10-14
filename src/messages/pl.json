@@ -136,7 +136,11 @@
 			"visit": "Zobacz stronę",
 			"services": "Usługi w tym projekcie",
 			"screenshot": "Zrzut ekranu wkrótce",
-			"metaTitle": "{client} — realizacja | Michał Janiec"
+			"metaTitle": "{client} — realizacja | Michał Janiec",
+			"gallery": "Zrzuty ekranu",
+			"galleryPrevious": "Poprzedni zrzut ekranu",
+			"galleryNext": "Następny zrzut ekranu",
+			"gallerySlide": "{n} z {total}"
 		}
 	},
 	"pricing": {

@@ -5,6 +5,7 @@ import { Sphere } from "@/components/effects/sphere";
 import { SetAlternateSlugs } from "@/components/i18n/alternate-slugs";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { CaseStudyGallery } from "@/components/sections/case-study-gallery";
 import { DeviceFrame, hostOf } from "@/components/ui/device-frame";
 import { ImagePlaceholder } from "@/components/ui/image-placeholder";
 import { JsonLd } from "@/components/ui/json-ld";
@@ -12,7 +13,6 @@ import { content } from "@/content";
 import { Link } from "@/i18n/navigation";
 import { type Locale, routing } from "@/i18n/routing";
 import { breadcrumbJsonLd, caseStudyJsonLd } from "@/lib/json-ld";
-import { cn } from "@/lib/cn";
 import { localizedUrl, pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
@@ -143,28 +143,33 @@ export default async function CaseStudyPage({ params }: Props) {
 				))}
 			</Container>
 
-			<Container className="grid items-start gap-5 sm:grid-cols-12 lg:gap-6">
+			<Container>
 				{study.gallery.length > 0 ? (
-					study.gallery.map((img) => (
-						<DeviceFrame
-							key={img.src}
-							image={img}
-							host={hostOf(study.liveUrl)}
-							sizes={
-								img.height > img.width
-									? "(min-width: 1024px) 33vw, 100vw"
-									: "(min-width: 1024px) 50vw, 100vw"
-							}
-							// Phone screenshots sit three in a row, desktop ones two in a row.
-							className={cn(
-								img.height > img.width
-									? "mx-auto max-w-[390px] sm:col-span-4"
-									: "sm:col-span-12 lg:col-span-6",
-							)}
-						/>
-					))
+					<CaseStudyGallery
+						labels={{
+							region: t("gallery"),
+							previous: t("galleryPrevious"),
+							next: t("galleryNext"),
+							slide: t.raw("gallerySlide") as string,
+						}}
+						slides={study.gallery.map((img) => ({
+							key: img.src,
+							portrait: img.height > img.width,
+							node: (
+								<DeviceFrame
+									image={img}
+									host={hostOf(study.liveUrl)}
+									sizes={
+										img.height > img.width
+											? "(min-width: 1024px) 22vw, 62vw"
+											: "(min-width: 1024px) 68vw, 92vw"
+									}
+								/>
+							),
+						}))}
+					/>
 				) : (
-					<ImagePlaceholder label={t("screenshot")} className="aspect-[16/9] sm:col-span-12" />
+					<ImagePlaceholder label={t("screenshot")} className="aspect-[16/9]" />
 				)}
 			</Container>
 
