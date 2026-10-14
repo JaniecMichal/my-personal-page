@@ -5,13 +5,25 @@ import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import type { CaseStudy } from "@/content";
 
-export async function WorkGrid({ studies }: { studies: CaseStudy[] }) {
+/** `title` / `index` default to the home page section heading. */
+export async function WorkGrid({
+	studies,
+	title,
+	index,
+}: {
+	studies: CaseStudy[];
+	title?: string;
+	index?: string;
+}) {
 	const t = await getTranslations();
 
 	return (
 		<section id="work" className="inverse py-20 lg:py-32">
 			<Container className="flex flex-col gap-10 lg:gap-14">
-				<SectionHeader title={t("home.work.title")} index={t("home.work.index")} />
+				<SectionHeader
+					title={title ?? t("home.work.title")}
+					index={index ?? t("home.work.index")}
+				/>
 				<div className="grid gap-8 lg:grid-cols-2">
 					{studies.map((study, i) => (
 						<CaseStudyCard
