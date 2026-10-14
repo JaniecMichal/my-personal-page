@@ -11,8 +11,8 @@ export const services: LocalService[] = [
 			en: "A new website for your business: a clear offer, easy contact, built for Google and phones. You edit the content yourself.",
 		},
 		intro: {
-			pl: "Nie musisz znać się na technologii. Mówisz mi, co ma się wydarzyć: więcej telefonów, zapytań albo rezerwacji. Ja dobieram rozwiązanie, buduję stronę i przygotowuję ją technicznie pod Google. Moją główną technologią jest Next.js: strony są szybkie i bezpieczne, a treści zmieniasz sam w panelu.",
-			en: "You don't need to know anything about technology. Tell me what should happen: more calls, enquiries or bookings. I pick the right tools, build the site and set it up technically for Google. My main technology is Next.js: sites that are fast and secure, and you edit the content yourself.",
+			pl: "Nie musisz znać się na technologii. Mówisz mi, co ma się wydarzyć: więcej telefonów, zapytań albo rezerwacji. Ja dobieram rozwiązanie, buduję stronę i dbam o to, żeby klienci ją znaleźli: strona spełnia techniczne standardy Google, więc ma solidne podstawy, żeby pojawiać się wysoko w wynikach i przyciągać nowych klientów. Moją główną technologią jest Next.js: strony są szybkie i bezpieczne, a treści zmieniasz sam w panelu.",
+			en: "You don't need to know anything about technology. Tell me what should happen: more calls, enquiries or bookings. I pick the right tools, build the site and make sure customers can find it: the site meets Google's technical standards, which gives it a solid basis to rank well and bring in new customers. My main technology is Next.js: sites that are fast and secure, and you edit the content yourself.",
 		},
 		tags: ["Next.js", "SEO", "CMS"],
 		priceFrom: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
@@ -29,8 +29,8 @@ export const services: LocalService[] = [
 			{
 				title: { pl: "„Strona wygląda staro na telefonie”", en: "“It looks dated on phones”" },
 				description: {
-					pl: "Większość klientów wchodzi z telefonu. Strona jest projektowana najpierw pod mały ekran, a szybkość ładowania sprawdzam na telefonie przed oddaniem.",
-					en: "Most customers visit on a phone. The site is designed for small screens first, and I test loading speed on a phone before handover.",
+					pl: "Większość klientów wchodzi z telefonu. Strona jest projektowana najpierw pod mały ekran i zoptymalizowana tak, żeby na każdym urządzeniu ładowała się błyskawicznie i osiągała najlepsze możliwe wyniki.",
+					en: "Most customers visit on a phone. The site is designed for small screens first and optimised to load instantly and score as high as possible on every device.",
 				},
 			},
 			{
