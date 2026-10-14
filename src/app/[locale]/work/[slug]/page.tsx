@@ -161,7 +161,11 @@ export default async function CaseStudyPage({ params }: Props) {
 								<DeviceFrame
 									image={img}
 									host={hostOf(study.liveUrl)}
-									sizes={img.height > img.width ? "340px" : "(min-width: 1100px) 1040px, 100vw"}
+									sizes={
+										img.height > img.width
+											? "(min-width: 1024px) 22vw, 62vw"
+											: "(min-width: 1024px) 68vw, 92vw"
+									}
 								/>
 							),
 						}))}

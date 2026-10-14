@@ -6,7 +6,7 @@ import { type ReactNode, useCallback, useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/cn";
 
 type Props = {
-	/** One slide per screenshot (a `DeviceFrame`). `portrait` marks phone screenshots, shown at phone size. */
+	/** One slide per screenshot (a `DeviceFrame`). `portrait` marks phone screenshots, which get narrower slides. */
 	slides: { key: string; portrait: boolean; node: ReactNode }[];
 	/** `slide` is a template with `{n}` and `{total}`, e.g. "{n} z {total}". */
 	labels: {
@@ -124,17 +124,14 @@ export function CaseStudyGallery({ slides, labels }: Props) {
 							aria-label={labels.slide
 								.replace("{n}", String(i + 1))
 								.replace("{total}", String(slides.length))}
-							className="min-w-0 shrink-0 grow-0 basis-full pl-5 lg:pl-6"
+							className={cn(
+								"min-w-0 shrink-0 grow-0 pl-5 lg:pl-6",
+								slide.portrait
+									? "basis-[62%] sm:basis-[36%] lg:basis-[22%]"
+									: "basis-[92%] lg:basis-[68%]",
+							)}
 						>
-							{/* One screenshot at a time: phones at phone size, desktops capped so they stay legible. */}
-							<div
-								className={cn(
-									"mx-auto",
-									slide.portrait ? "w-[72%] max-w-[340px]" : "max-w-[1040px]",
-								)}
-							>
-								{slide.node}
-							</div>
+							{slide.node}
 						</div>
 					))}
 				</div>
