@@ -118,8 +118,19 @@ export const services: LocalService[] = [
 					en: "Which technology will you use?",
 				},
 				answer: {
-					pl: "Takiej, która pasuje do celu i budżetu. Najczęściej to Next.js z prostym panelem do edycji, czasem WordPress, a dla sklepu Shopify. Przed startem tłumaczę, dlaczego wybieram dane rozwiązanie.",
-					en: "Whatever fits the goal and budget. Most often Next.js with a simple editor, sometimes WordPress, and Shopify for online stores. I explain the choice before we start.",
+					pl: "Takiej, która pasuje do celu i budżetu. Najczęściej to Next.js z prostym panelem do edycji: strony są szybkie, bezpieczne i dobrze radzą sobie w Google. Jeśli masz już stronę na WordPressie albo zespół, który go zna, zostajemy przy nim, a przy sklepie internetowym wybieram Shopify. Przed startem tłumaczę, dlaczego proponuję dane rozwiązanie.",
+					en: "Whatever fits the goal and budget. Most often it's Next.js with a simple editor: the sites are fast, secure and do well on Google. If you already have a WordPress site or a team that knows it, we stay with WordPress, and for an online store I choose Shopify. Before we start I explain why I suggest a given option.",
+				},
+			},
+			{
+				id: "business-faq-5",
+				question: {
+					pl: "Czym różni się strona-wizytówka od strony firmowej?",
+					en: "What's the difference between a one-page site and a business website?",
+				},
+				answer: {
+					pl: "Strona-wizytówka (od 1 000 zł netto) to jedna strona do 6 sekcji, budowana z Twojego gotowego projektu graficznego, z formularzem kontaktowym i jedną rundą poprawek. Strona firmowa z panelem (od 2 900 zł netto) ma do 5 podstron, panel do edycji treści, SEO z danymi strukturalnymi i 30 dni wsparcia po starcie. Jeśli nie wiesz, którą wybrać, opisz firmę w briefie, a zaproponuję wariant.",
+					en: "A one-page site (from 1,000 PLN net) is a single page with up to 6 sections, built from your ready design, with a contact form and one round of fixes. A website with an editor (from 2,900 PLN net) has up to 5 pages, a content editor, SEO with structured data and 30 days of support after launch. If you're not sure which one you need, describe your business in the brief and I'll suggest one.",
 				},
 			},
 			{
@@ -129,8 +140,8 @@ export const services: LocalService[] = [
 					en: "I don't have copy or photos. What then?",
 				},
 				answer: {
-					pl: "Pomagam ułożyć strukturę i treści na podstawie krótkiej rozmowy o Twojej firmie. Zdjęcia możemy na start dobrać ze stocków i podmienić później.",
-					en: "I help you shape the structure and copy from a short conversation about your business. We can start with stock photos and swap them later.",
+					pl: "To częsta sytuacja. Pomagam ułożyć strukturę strony i treści na podstawie krótkiej rozmowy o Twojej firmie: co robisz, dla kogo i o co klienci najczęściej pytają. Zdjęcia możemy na start dobrać ze stocków i podmienić później na własne, bez przebudowy strony.",
+					en: "That's common. I help you shape the page structure and copy from a short conversation about your business: what you do, who for and what customers ask most often. We can start with stock photos and swap in your own later, without rebuilding the site.",
 				},
 			},
 			{
@@ -140,16 +151,27 @@ export const services: LocalService[] = [
 					en: "Will the site show up on Google?",
 				},
 				answer: {
-					pl: "Strona dostaje SEO techniczne, mapę strony, dane strukturalne i zgłoszenie do Google Search Console. Pozycja zależy też od konkurencji i treści, więc mówię uczciwie, czego się spodziewać.",
-					en: "The site gets technical SEO, a sitemap, structured data and a Google Search Console submission. Rankings also depend on competition and content, so I'm honest about what to expect.",
+					pl: "Strona dostaje SEO techniczne, mapę strony, dane strukturalne i zgłoszenie do Google Search Console, więc Google może ją szybko znaleźć i poprawnie zrozumieć. Pozycja w wynikach zależy jednak też od konkurencji w Twojej branży i od treści, dlatego nie obiecuję miejsc w rankingu, tylko mówię uczciwie, czego się spodziewać. Jeśli chcesz stałego pozycjonowania albo kampanii Google Ads, to osobna usługa.",
+					en: "The site gets technical SEO, a sitemap, structured data and a Google Search Console submission, so Google can find it quickly and understand it correctly. Rankings also depend on the competition in your industry and on the content, so I don't promise positions, I tell you honestly what to expect. Ongoing SEO or Google Ads campaigns are a separate service.",
 				},
 			},
 			{
 				id: "business-faq-4",
 				question: { pl: "Kto będzie właścicielem strony?", en: "Who owns the website?" },
 				answer: {
-					pl: "Ty. Domena, hosting i kod są na Ciebie, a ja przekazuję wszystkie dostępy po wdrożeniu.",
-					en: "You do. The domain, hosting and code are in your name, and I hand over all access after launch.",
+					pl: "Ty. Domenę i hosting rejestrujemy na Ciebie, a po wdrożeniu dostajesz kod i wszystkie dostępy. Możesz później rozwijać stronę ze mną albo z kimkolwiek innym.",
+					en: "You do. The domain and hosting are registered in your name, and after launch you get the code and all access. Later you can keep developing the site with me or with anyone else.",
+				},
+			},
+			{
+				id: "business-faq-6",
+				question: {
+					pl: "Co jeśli po starcie będę chciał coś zmienić?",
+					en: "What if I want changes after launch?",
+				},
+				answer: {
+					pl: "Teksty, zdjęcia, ceny czy godziny otwarcia zmieniasz sam w panelu. Strona firmowa ma w cenie 30 dni wsparcia, a strona-wizytówka jedną rundę poprawek. Później nowe sekcje, poprawki, aktualizacje i kopie zapasowe rozliczam godzinowo: 120 zł/h netto, co 15 minut, minimum 1 h.",
+					en: "You change texts, photos, prices or opening hours yourself in the editor. The business website includes 30 days of support, the one-page site one round of fixes. After that, new sections, fixes, updates and backups are billed hourly: 120 PLN/h net, in 15-minute steps, with a 1-hour minimum.",
 				},
 			},
 		],

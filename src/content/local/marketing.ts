@@ -245,8 +245,8 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		group: "cooperation",
 		question: { pl: "Co dzieje się po oddaniu strony?", en: "What happens after launch?" },
 		answer: {
-			pl: "Pakiety mają w cenie 30 dni wsparcia po starcie: poprawiam błędy i odpowiadam na pytania. Później zmiany i rozwój możesz zlecać jednorazowo, rozliczane godzinowo (120 zł/h netto), albo wybrać stałą opiekę w abonamencie. Abonament nie jest obowiązkowy.",
-			en: "Packages include 30 days of support after launch: I fix bugs and answer questions. After that you can order changes and new features one at a time, billed hourly (120 PLN/h net), or choose ongoing care on a monthly plan. The monthly plan is optional.",
+			pl: "Strona firmowa z panelem ma w cenie 30 dni wsparcia po starcie: poprawiam błędy i odpowiadam na pytania, a strona-wizytówka jedną rundę poprawek. Później zmiany i rozwój zlecasz wtedy, gdy ich potrzebujesz, rozliczane godzinowo (120 zł/h netto, co 15 minut, minimum 1 h). Jeśli potrzebujesz stałej opieki, ustalimy jej zakres indywidualnie.",
+			en: "The website with an editor includes 30 days of support after launch: I fix bugs and answer questions. The one-page site includes one round of fixes. After that you order changes and new features when you need them, billed hourly (120 PLN/h net, in 15-minute steps, 1-hour minimum). If you need ongoing care, we agree its scope individually.",
 		},
 	},
 	{
