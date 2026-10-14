@@ -54,6 +54,8 @@ Progress log:
   500 → 1 000 zł, PR #4 merged and deployed. Smoke 35/35 on production, `scripts/indexnow.sh` sent 38 URLs.
   Business plan added (`.ai/business-plan.md`, D1–D6 approved); status + facts table prefilled in
   `.ai/business-plan-status.md`.
+- 2026-10-13: own visits excluded from Vercel Analytics (`SiteAnalytics`, `beforeSend`). Opt a browser
+  out once on the live site: dev tools console → `localStorage.setItem("va-disable", "1")` (laptop and phone).
 
 Related docs: [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)

@@ -1,5 +1,4 @@
 import "@/styles/globals.css";
-import { Analytics } from "@vercel/analytics/react";
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -10,6 +9,7 @@ import { ScrollReveal } from "@/components/effects/scroll-reveal";
 import { AlternateSlugsProvider } from "@/components/i18n/alternate-slugs";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { SiteAnalytics } from "@/components/layout/site-analytics";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { JsonLd } from "@/components/ui/json-ld";
 import { content } from "@/content";
@@ -85,7 +85,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 				<AberrationField />
 				<ScrollReveal />
 				<JsonLd data={personJsonLd(settings)} />
-				<Analytics />
+				<SiteAnalytics />
 			</body>
 		</html>
 	);
