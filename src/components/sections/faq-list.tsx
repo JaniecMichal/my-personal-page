@@ -1,12 +1,11 @@
 import type { FaqItem } from "@/content";
 
 /** Native <details>, so answers stay in the HTML for search engines and work without JS. */
-/** `openFirst` opens the first answer, e.g. only in the first of several lists on a page. */
-export function FaqList({ items, openFirst = true }: { items: FaqItem[]; openFirst?: boolean }) {
+export function FaqList({ items }: { items: FaqItem[] }) {
 	return (
 		<div className="flex flex-col border-t border-ink">
 			{items.map((item, i) => (
-				<details key={item.id} className="group border-b border-rule" open={openFirst && i === 0}>
+				<details key={item.id} className="group border-b border-rule" open={i === 0}>
 					<summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-6 py-6 font-serif text-2xl md:text-[32px] [&::-webkit-details-marker]:hidden">
 						<span>{item.question}</span>
 						<span
