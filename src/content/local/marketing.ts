@@ -157,8 +157,8 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		id: "cost",
 		question: { pl: "Ile kosztuje strona internetowa?", en: "How much does a website cost?" },
 		answer: {
-			pl: "Prosty landing page z gotowego projektu graficznego kosztuje od 1 000 zł netto, a strona firmowa z CMS od 2 900 zł netto. Dokładną wycenę dostajesz po krótkim briefie. Cena zależy od liczby podstron, integracji i tego, czy treści są gotowe.",
-			en: "A simple landing page built from your ready design starts from 1,000 PLN net, and a business website with a CMS from 2,900 PLN net. You get an exact quote after a short brief. The price depends on the number of pages, integrations and whether the content is ready.",
+			pl: "Prosty landing page z gotowego projektu graficznego kosztuje od 1 000 zł netto, a strona firmowa z CMS od 2 900 zł netto. Dokładną wycenę dostajesz po krótkim briefie. Cena zależy od liczby podstron, integracji i tego, czy treści są gotowe. Projekty niestandardowe wyceniam indywidualnie.",
+			en: "A simple landing page built from your ready design starts from 1,000 PLN net, and a business website with a CMS from 2,900 PLN net. You get an exact quote after a short brief. The price depends on the number of pages, integrations and whether the content is ready. Custom projects get an individual quote.",
 		},
 	},
 	{
@@ -178,6 +178,17 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		answer: {
 			pl: "Od zadania próbnego: do 10 godzin pracy po 100 zł/h netto, bez zobowiązań. Jeśli współpraca się sprawdzi, dalej rozliczamy się po 120 zł/h netto albo w stałej cenie projektu.",
 			en: "With a trial task: up to 10 hours of work at 100 PLN/h net, with no commitment. If it works well, we continue at 120 PLN/h net or at a fixed project price.",
+		},
+	},
+	{
+		id: "existing-site",
+		question: {
+			pl: "Czy poprawisz moją obecną stronę?",
+			en: "Can you fix my existing website?",
+		},
+		answer: {
+			pl: "Tak. Naprawiam błędy, dodaję nowe sekcje, przyspieszam i przenoszę istniejące strony, najczęściej na WordPressie, bez przepisywania wszystkiego od zera. Takie prace rozliczam godzinowo, 120 zł/h netto.",
+			en: "Yes. I fix bugs, add new sections, speed up and migrate existing sites, most often on WordPress, without rewriting everything from scratch. This work is billed hourly at 120 PLN/h net.",
 		},
 	},
 	{
@@ -203,8 +214,8 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		id: "seo",
 		question: { pl: "Czy zajmiesz się też SEO?", en: "Do you take care of SEO?" },
 		answer: {
-			pl: "Tak. Każda strona ma poprawne metadane, dane strukturalne, mapę strony i dobre wyniki Core Web Vitals od pierwszego dnia.",
-			en: "Yes. Every site ships with correct metadata, structured data, a sitemap and good Core Web Vitals from day one.",
+			pl: "Tak, w zakresie technicznym. Każda strona ma poprawne metadane, dane strukturalne i mapę strony, a przed oddaniem sprawdzam jej szybkość (Core Web Vitals). Stałe pozycjonowanie i kampanie reklamowe to osobna usługa: SEO i Google Ads.",
+			en: "Yes, the technical side. Every site ships with correct metadata, structured data and a sitemap, and I check its speed (Core Web Vitals) before handover. Ongoing SEO and ad campaigns are a separate service: SEO and Google Ads.",
 		},
 	},
 	{
