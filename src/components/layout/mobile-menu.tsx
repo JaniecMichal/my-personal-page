@@ -74,7 +74,7 @@ export function MobileMenu() {
 					</nav>
 					{/* The language switch stays in the header bar, so it isn't repeated here. */}
 					<ThemeToggle />
-					<ButtonLink href="/contact">{t("cta.quote")} ↗</ButtonLink>
+					<ButtonLink href="/contact">{t("cta.tellProject")} ↗</ButtonLink>
 				</div>
 			)}
 		</div>

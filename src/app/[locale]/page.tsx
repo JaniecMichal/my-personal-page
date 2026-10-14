@@ -73,6 +73,7 @@ export default async function HomePage({ params }: Props) {
 				<Container className="flex flex-col gap-10 lg:gap-14">
 					<SectionHeader title={t("pricing.title")} index={t("pricing.index")} />
 					<PricingPlans plans={plans} ctaLabel={t("pricing.cta")} />
+					<p className="max-w-[640px] text-sm leading-relaxed text-ink-soft">{t("pricing.note")}</p>
 				</Container>
 			</section>
 			<section className="pb-20 lg:pb-32">

@@ -74,7 +74,7 @@ export const pricingPlans: LocalizedDeep<PricingPlan>[] = [
 	{
 		id: "landing",
 		kicker: { pl: "Na dobry start", en: "Quick start" },
-		name: "Landing page",
+		name: { pl: "Strona-wizytówka", en: "One-page site" },
 		price: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 		features: {
 			pl: [
@@ -95,39 +95,34 @@ export const pricingPlans: LocalizedDeep<PricingPlan>[] = [
 	{
 		id: "website",
 		kicker: { pl: "Dla małych firm", en: "For small businesses" },
-		name: { pl: "Strona firmowa z CMS", en: "Business website with CMS" },
+		name: { pl: "Strona firmowa z panelem", en: "Website with an editor" },
 		price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
 		features: {
 			pl: [
 				"do 5 podstron",
-				"CMS do edycji",
+				"panel do edycji treści",
 				"SEO i dane strukturalne",
 				"wdrożenie + 30 dni wsparcia",
 			],
-			en: ["up to 5 pages", "editable CMS", "SEO and structured data", "launch + 30 days support"],
-		},
-		highlighted: false,
-	},
-	{
-		id: "shopify",
-		kicker: { pl: "Najczęściej wybierany", en: "Most popular" },
-		name: { pl: "Sklep Shopify", en: "Shopify store" },
-		price: { pl: "od 2 500 zł", en: "from 2,500 PLN" },
-		features: {
-			pl: [
-				"motyw dopasowany do marki",
-				"płatności i dostawy",
-				"import produktów",
-				"szkolenie z panelu",
-			],
 			en: [
-				"theme tailored to your brand",
-				"payments and shipping",
-				"product import",
-				"admin training",
+				"up to 5 pages",
+				"content editor",
+				"SEO and structured data",
+				"launch + 30 days support",
 			],
 		},
 		highlighted: true,
+	},
+	{
+		id: "shopify",
+		kicker: { pl: "Dla sklepów internetowych", en: "For online stores" },
+		name: { pl: "Sklep Shopify", en: "Shopify store" },
+		price: { pl: "od 2 500 zł", en: "from 2,500 PLN" },
+		features: {
+			pl: ["dopasowanie motywu", "do 50 produktów", "płatności i dostawy", "checklista startowa"],
+			en: ["theme customisation", "up to 50 products", "payments and shipping", "launch checklist"],
+		},
+		highlighted: false,
 	},
 	{
 		id: "hourly",
@@ -158,8 +153,8 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		group: "cooperation",
 		question: { pl: "Ile kosztuje strona internetowa?", en: "How much does a website cost?" },
 		answer: {
-			pl: "Prosty landing page z gotowego projektu graficznego kosztuje od 1 000 zł netto, a strona firmowa z CMS od 2 900 zł netto. Cena zależy głównie od liczby podstron, integracji z innymi narzędziami i tego, czy teksty oraz zdjęcia są już gotowe. Po krótkim briefie dostajesz dokładną wycenę z zakresem w 2–3 dni robocze. Projekty niestandardowe wyceniam indywidualnie.",
-			en: "A simple landing page built from your ready design starts from 1,000 PLN net, and a business website with a CMS from 2,900 PLN net. The price depends mostly on the number of pages, integrations with other tools and whether the texts and photos are ready. After a short brief you get an exact quote with the scope within 2–3 working days. Custom projects get an individual quote.",
+			pl: "Prosta strona-wizytówka z gotowego projektu graficznego kosztuje od 1 000 zł netto, a strona firmowa z panelem do edycji od 2 900 zł netto. Cena zależy głównie od liczby podstron, integracji z innymi narzędziami i tego, czy teksty oraz zdjęcia są już gotowe. Po krótkim briefie dostajesz dokładną wycenę z zakresem w 2–3 dni robocze. Projekty niestandardowe wyceniam indywidualnie.",
+			en: "A simple one-page site built from your ready design starts from 1,000 PLN net, and a website with an editor from 2,900 PLN net. The price depends mostly on the number of pages, integrations with other tools and whether the texts and photos are ready. After a short brief you get an exact quote with the scope within 2–3 working days. Custom projects get an individual quote.",
 		},
 	},
 	{
@@ -167,8 +162,8 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		group: "cooperation",
 		question: { pl: "Ile trwa realizacja?", en: "How long does it take?" },
 		answer: {
-			pl: "Landing page zwykle powstaje w kilka dni, strona firmowa z CMS w 2–3 tygodnie, a sklep Shopify w 3–5 tygodni. Termin w dużej mierze zależy od tego, jak szybko są gotowe treści i decyzje. Przy dłuższych projektach co tydzień dostajesz podgląd na żywo, więc widzisz postęp i możesz komentować na bieżąco.",
-			en: "A landing page usually takes a few days, a business website with a CMS 2–3 weeks, a Shopify store 3–5 weeks. The timeline depends a lot on how quickly the content and decisions are ready. On longer projects you get a live preview every week, so you can see the progress and comment as we go.",
+			pl: "Strona-wizytówka zwykle powstaje w kilka dni, strona firmowa z panelem w 2–3 tygodnie, a sklep Shopify w 3–5 tygodni. Termin w dużej mierze zależy od tego, jak szybko są gotowe treści i decyzje. Przy dłuższych projektach co tydzień dostajesz podgląd na żywo, więc widzisz postęp i możesz komentować na bieżąco.",
+			en: "A one-page site usually takes a few days, a website with an editor 2–3 weeks, a Shopify store 3–5 weeks. The timeline depends a lot on how quickly the content and decisions are ready. On longer projects you get a live preview every week, so you can see the progress and comment as we go.",
 		},
 	},
 	{

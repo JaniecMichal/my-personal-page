@@ -28,7 +28,7 @@ export async function WorkGrid({ studies }: { studies: CaseStudy[] }) {
 						</p>
 						<div className="flex flex-wrap gap-3">
 							<ButtonLink href="/contact" variant="light">
-								{t("common.cta.brief")} ↗
+								{t("common.cta.tellProject")} ↗
 							</ButtonLink>
 							<ButtonLink
 								href="/work"

@@ -77,7 +77,7 @@ export default async function LocalLandingPage({ params }: Props) {
 							{page.intro}
 						</p>
 						<div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-							<ButtonLink href="/contact">{tc("cta.quote")} ↗</ButtonLink>
+							<ButtonLink href="/contact">{tc("cta.tellProject")} ↗</ButtonLink>
 							<ButtonLink href="/pricing" variant="line">
 								{tc("nav.pricing")}
 							</ButtonLink>

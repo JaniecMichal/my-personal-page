@@ -15,7 +15,7 @@ export async function Header() {
 	return (
 		<header
 			className={cn(
-				"sticky top-0 z-50 flex h-16 items-center justify-between border-b border-rule bg-ground/90 backdrop-blur-md lg:h-22",
+				"sticky top-0 z-50 flex h-16 items-center justify-between gap-6 border-b border-rule bg-ground/90 backdrop-blur-md lg:h-22",
 				gutter,
 			)}
 		>
@@ -29,7 +29,7 @@ export async function Header() {
 
 			<nav
 				aria-label={t("nav.label")}
-				className="hidden gap-9 text-[13px] tracking-[0.14em] uppercase lg:flex"
+				className="hidden gap-6 text-[13px] tracking-[0.14em] uppercase lg:flex xl:gap-9"
 			>
 				{NAV_ITEMS.map((item) => (
 					<NavLink key={item.href} href={item.href} className="pb-1.5">
@@ -42,7 +42,7 @@ export async function Header() {
 				<LocaleSwitch />
 				<ThemeToggle />
 				<ButtonLink href="/contact" size="sm" className="ml-3">
-					{t("cta.quote")} ↗
+					{t("cta.tellProject")} ↗
 				</ButtonLink>
 			</div>
 

@@ -229,7 +229,7 @@ export default async function CaseStudyPage({ params }: Props) {
 			)}
 
 			<Container className="pb-20">
-				<ButtonLink href="/contact">{tc("cta.quote")} ↗</ButtonLink>
+				<ButtonLink href="/contact">{tc("cta.tellProject")} ↗</ButtonLink>
 			</Container>
 
 			<JsonLd

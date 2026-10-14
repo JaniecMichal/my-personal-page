@@ -236,19 +236,19 @@ export const services: LocalService[] = [
 			{
 				id: "nextjs-landing",
 				kicker: { pl: "Na dobry start", en: "Quick start" },
-				name: "Landing page",
+				name: { pl: "Strona-wizytówka", en: "One-page site" },
 				price: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 				features: {
 					pl: [
 						"1 strona, do 6 sekcji",
 						"z Twojego projektu graficznego",
-						"bez CMS",
+						"bez panelu do edycji",
 						"wdrożenie + 1 runda poprawek",
 					],
 					en: [
 						"1 page, up to 6 sections",
 						"from your ready design",
-						"no CMS",
+						"no content editor",
 						"launch + 1 round of fixes",
 					],
 				},
@@ -257,18 +257,18 @@ export const services: LocalService[] = [
 			{
 				id: "nextjs-website",
 				kicker: { pl: "Dla małych firm", en: "For small businesses" },
-				name: { pl: "Strona firmowa z CMS", en: "Website with CMS" },
+				name: { pl: "Strona firmowa z panelem", en: "Website with an editor" },
 				price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
 				features: {
 					pl: [
 						"do 5 podstron",
-						"CMS do edycji",
+						"panel do edycji treści",
 						"SEO i dane strukturalne",
 						"wdrożenie + 30 dni wsparcia",
 					],
 					en: [
 						"up to 5 pages",
-						"editable CMS",
+						"content editor",
 						"SEO and structured data",
 						"launch + 30 days support",
 					],
@@ -380,7 +380,7 @@ export const services: LocalService[] = [
 			},
 			{
 				id: "shopify-brand",
-				kicker: { pl: "Najczęściej wybierany", en: "Most popular" },
+				kicker: { pl: "Dla rozwijających się marek", en: "For growing brands" },
 				name: { pl: "Sklep marki", en: "Brand store" },
 				price: { pl: "od 5 900 zł", en: "from 5,900 PLN" },
 				features: {

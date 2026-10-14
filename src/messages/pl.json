@@ -10,9 +10,7 @@
 			"contact": "Kontakt"
 		},
 		"cta": {
-			"quote": "Wyceń projekt",
 			"call": "Umów rozmowę",
-			"brief": "Wyślij brief",
 			"read": "Czytaj",
 			"allWork": "Wszystkie realizacje",
 			"allServices": "Wszystkie usługi",
@@ -79,7 +77,8 @@
 		"pricing": {
 			"index": "05 — Cennik",
 			"title": "Przejrzyste ceny",
-			"cta": "Zapytaj o wycenę"
+			"cta": "Opowiedz o projekcie",
+			"note": "Ceny netto, wyjściowe dla typowego zakresu. Projekt niestandardowy wyceniam indywidualnie po krótkim briefie."
 		},
 		"faq": {
 			"index": "06 — FAQ",
@@ -114,8 +113,8 @@
 			"plans": "Pakiety",
 			"plansNote": "Ceny netto",
 			"custom": "To ceny wyjściowe dla typowego zakresu. Projekt niestandardowy wyceniam indywidualnie po krótkim briefie.",
-			"ctaTitle": "Opowiedz mi o projekcie. Odpiszę w ciągu 24 godzin.",
-			"ctaButton": "Zacznij brief",
+			"ctaTitle": "Masz projekt? Odpiszę w ciągu 24 godzin.",
+			"ctaButton": "Opowiedz o projekcie",
 			"related": "Zobacz, jak pracuję w realnym projekcie"
 		}
 	},
@@ -146,7 +145,7 @@
 			"description": "Przejrzyste ceny stron w Next.js, sklepów Shopify i współpracy godzinowej. Wycena w 2–3 dni robocze po krótkim briefie."
 		},
 		"title": "Cennik",
-		"lead": "Ceny orientacyjne netto. Dokładną wycenę dostajesz po krótkim briefie, w ciągu 2–3 dni roboczych.",
+		"lead": "Ceny orientacyjne netto. Dokładną wycenę dostajesz po krótkim briefie, w ciągu 2–3 dni roboczych. Projekty niestandardowe wyceniam indywidualnie.",
 		"drivers": "Co wpływa na cenę",
 		"driverList": {
 			"d1": "liczba podstron i szablonów",

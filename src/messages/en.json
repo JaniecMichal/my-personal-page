@@ -10,9 +10,7 @@
 			"contact": "Contact"
 		},
 		"cta": {
-			"quote": "Get a quote",
 			"call": "Book a call",
-			"brief": "Send a brief",
 			"read": "Read",
 			"allWork": "All work",
 			"allServices": "All services",
@@ -79,7 +77,8 @@
 		"pricing": {
 			"index": "05 — Pricing",
 			"title": "Clear pricing",
-			"cta": "Ask for a quote"
+			"cta": "Tell me about your project",
+			"note": "Net starting prices for a typical scope. A custom project gets its own quote after a short brief."
 		},
 		"faq": {
 			"index": "06 — FAQ",
@@ -114,8 +113,8 @@
 			"plans": "Packages",
 			"plansNote": "Prices net",
 			"custom": "These are starting prices for a typical scope. A custom project gets its own quote after a short brief.",
-			"ctaTitle": "Tell me about your project. I'll reply within 24 hours.",
-			"ctaButton": "Start the brief",
+			"ctaTitle": "Got a project? I'll reply within 24 hours.",
+			"ctaButton": "Tell me about your project",
 			"related": "See how I work on a real project"
 		}
 	},
@@ -146,7 +145,7 @@
 			"description": "Clear pricing for Next.js websites, Shopify stores and hourly work. A quote within 2–3 working days after a short brief."
 		},
 		"title": "Pricing",
-		"lead": "Indicative net prices. You get an exact quote after a short brief, within 2–3 working days.",
+		"lead": "Indicative net prices. You get an exact quote after a short brief, within 2–3 working days. Custom projects get an individual quote.",
 		"drivers": "What affects the price",
 		"driverList": {
 			"d1": "number of pages and templates",
