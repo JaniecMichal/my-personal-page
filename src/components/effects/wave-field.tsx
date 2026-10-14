@@ -191,6 +191,185 @@ function compile(gl: WebGL2RenderingContext, type: number, source: string) {
 	return shader;
 }
 
+type IdleWindow = Window & {
+	requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+	cancelIdleCallback?: (id: number) => void;
+};
+
+/** requestIdleCallback with a timeout, or a short timer where it is missing (Safari). */
+function whenIdle(cb: () => void) {
+	const w = window as IdleWindow;
+	return w.requestIdleCallback
+		? w.requestIdleCallback(cb, { timeout: 2000 })
+		: window.setTimeout(cb, 300);
+}
+
+function cancelIdle(id: number) {
+	const w = window as IdleWindow;
+	if (w.cancelIdleCallback) w.cancelIdleCallback(id);
+	else window.clearTimeout(id);
+}
+
+/** Uploads the geometry, starts the loop and wires the observers. Returns the cleanup. */
+function run(
+	gl: WebGL2RenderingContext,
+	program: WebGLProgram,
+	vs: WebGLShader,
+	fs: WebGLShader,
+	strength: number,
+) {
+	const canvas = gl.canvas as HTMLCanvasElement;
+	gl.useProgram(program);
+
+	const geometry = buildGeometry();
+	const buffer = gl.createBuffer();
+	gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+	gl.bufferData(gl.ARRAY_BUFFER, geometry, gl.STATIC_DRAW);
+	const aPos = gl.getAttribLocation(program, "aPos");
+	gl.enableVertexAttribArray(aPos);
+	gl.vertexAttribPointer(aPos, 3, gl.FLOAT, false, 0, 0);
+
+	const u = (name: string) => gl.getUniformLocation(program, name);
+	const uPhase = u("uPhase");
+	const uRipples = u("uRipples");
+	const uInk = u("uInk");
+	const uOpacity = u("uOpacity");
+	gl.uniformMatrix4fv(u("uProj"), false, perspective(FOV, 0.1, 10));
+	gl.uniform1f(u("uTilt"), TILT);
+	gl.enable(gl.BLEND);
+	gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+
+	const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	const ripples = new Float32Array(MAX_RIPPLES * 4).map((_, i) => (i % 4 === 3 ? -1 : 0));
+	const vertexCount = geometry.length / 3;
+	let nextRipple = 0;
+	let lastHit: [number, number, number] | null = null;
+	let phase = 0;
+	let visible = true;
+	let raf = 0;
+	let last = performance.now();
+
+	const readColor = () => gl.uniform3fv(uInk, toRgb(getComputedStyle(canvas).color));
+
+	const resize = () => {
+		const size = canvas.clientWidth;
+		// DPR 1.5 at most, and no more than ~2 MP for this (very large) canvas.
+		const dpr = Math.max(
+			0.5,
+			Math.min(window.devicePixelRatio || 1, 1.5, 1400 / Math.max(size, 1)),
+		);
+		canvas.width = Math.round(size * dpr);
+		canvas.height = Math.round(size * dpr);
+		gl.viewport(0, 0, canvas.width, canvas.height);
+		// Thinner backing store means fewer pixels per line: keep the ink weight constant.
+		gl.uniform1f(uOpacity, 0.4 * strength * Math.min(1, dpr));
+	};
+
+	const draw = () => {
+		gl.uniform1f(uPhase, phase);
+		gl.uniform4fv(uRipples, ripples);
+		gl.clearColor(0, 0, 0, 0);
+		gl.clear(gl.COLOR_BUFFER_BIT);
+		gl.drawArrays(gl.LINES, 0, vertexCount);
+	};
+
+	const loop = (now: number) => {
+		const dt = Math.min((now - last) / 1000, 0.1);
+		last = now;
+		phase += dt * 0.08;
+		for (let i = 3; i < ripples.length; i += 4) {
+			const age = ripples[i] ?? -1;
+			if (age >= 0) ripples[i] = age > 5 ? -1 : age + dt;
+		}
+		draw();
+		if (visible) raf = requestAnimationFrame(loop);
+	};
+
+	// Ray from the camera through the pointer onto the unit sphere; a miss uses the closest point.
+	const onPointer = (e: PointerEvent) => {
+		const rect = canvas.getBoundingClientRect();
+		if (
+			e.clientX < rect.left ||
+			e.clientX > rect.right ||
+			e.clientY < rect.top ||
+			e.clientY > rect.bottom
+		)
+			return;
+		const t = Math.tan(FOV / 2);
+		const dx = (((e.clientX - rect.left) / rect.width) * 2 - 1) * t;
+		const dy = (1 - ((e.clientY - rect.top) / rect.height) * 2) * t;
+		const len = Math.hypot(dx, dy, 1);
+		const d = [dx / len, dy / len, -1 / len] as const;
+		const b = d[2] * CAMERA_Z;
+		const disc = b * b - (CAMERA_Z * CAMERA_Z - 1);
+		const s = disc >= 0 ? -b - Math.sqrt(disc) : -b;
+		const hx = d[0] * s;
+		const hy = d[1] * s;
+		const hz = d[2] * s + CAMERA_Z;
+		const hl = Math.hypot(hx, hy, hz) || 1;
+		const hit: [number, number, number] = [hx / hl, hy / hl, hz / hl];
+		const moved = lastHit
+			? Math.hypot(hit[0] - lastHit[0], hit[1] - lastHit[1], hit[2] - lastHit[2])
+			: 1;
+		if (moved < 0.12) return;
+		lastHit = hit;
+		ripples.set([...hit, 0], nextRipple * 4);
+		nextRipple = (nextRipple + 1) % MAX_RIPPLES;
+	};
+
+	resize();
+	readColor();
+	draw();
+	// Fade in (see the canvas classes) instead of popping in after load.
+	canvas.style.opacity = "1";
+
+	const resizeObserver = new ResizeObserver(() => {
+		resize();
+		draw();
+	});
+	resizeObserver.observe(canvas);
+	const themeObserver = new MutationObserver(() => {
+		readColor();
+		draw();
+	});
+	themeObserver.observe(document.documentElement, {
+		attributes: true,
+		attributeFilter: ["data-theme"],
+	});
+	const onVisibility = () => {
+		last = performance.now();
+	};
+
+	let intersection: IntersectionObserver | undefined;
+	if (!reduced) {
+		window.addEventListener("pointermove", onPointer, { passive: true });
+		document.addEventListener("visibilitychange", onVisibility);
+		intersection = new IntersectionObserver(([entry]) => {
+			const wasVisible = visible;
+			visible = entry?.isIntersecting ?? false;
+			if (visible && !wasVisible) {
+				last = performance.now();
+				raf = requestAnimationFrame(loop);
+			}
+		});
+		intersection.observe(canvas);
+		raf = requestAnimationFrame(loop);
+	}
+
+	return () => {
+		cancelAnimationFrame(raf);
+		resizeObserver.disconnect();
+		themeObserver.disconnect();
+		intersection?.disconnect();
+		window.removeEventListener("pointermove", onPointer);
+		document.removeEventListener("visibilitychange", onVisibility);
+		gl.deleteBuffer(buffer);
+		gl.deleteProgram(program);
+		gl.deleteShader(vs);
+		gl.deleteShader(fs);
+	};
+}
+
 /** `strength` scales the line opacity, e.g. for very large fields that render at a lower resolution. */
 export function WaveField({ className, strength = 1 }: { className?: string; strength?: number }) {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -198,166 +377,58 @@ export function WaveField({ className, strength = 1 }: { className?: string; str
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		if (!canvas) return;
-		const gl = canvas.getContext("webgl2", {
-			alpha: true,
-			antialias: true,
-			premultipliedAlpha: true,
-		});
-		if (!gl) return;
-		const vs = compile(gl, gl.VERTEX_SHADER, VERTEX);
-		const fs = compile(gl, gl.FRAGMENT_SHADER, FRAGMENT);
-		const program = vs && fs ? gl.createProgram() : null;
-		if (!vs || !fs || !program) return;
-		gl.attachShader(program, vs);
-		gl.attachShader(program, fs);
-		gl.linkProgram(program);
-		if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return;
-		gl.useProgram(program);
+		let cancelled = false;
+		let cleanup: (() => void) | undefined;
+		let idle = 0;
+		let poll = 0;
 
-		const geometry = buildGeometry();
-		const buffer = gl.createBuffer();
-		gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-		gl.bufferData(gl.ARRAY_BUFFER, geometry, gl.STATIC_DRAW);
-		const aPos = gl.getAttribLocation(program, "aPos");
-		gl.enableVertexAttribArray(aPos);
-		gl.vertexAttribPointer(aPos, 3, gl.FLOAT, false, 0, 0);
-
-		const u = (name: string) => gl.getUniformLocation(program, name);
-		const uPhase = u("uPhase");
-		const uRipples = u("uRipples");
-		const uInk = u("uInk");
-		const uOpacity = u("uOpacity");
-		gl.uniformMatrix4fv(u("uProj"), false, perspective(FOV, 0.1, 10));
-		gl.uniform1f(u("uTilt"), TILT);
-		gl.enable(gl.BLEND);
-		gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-
-		const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-		const ripples = new Float32Array(MAX_RIPPLES * 4).map((_, i) => (i % 4 === 3 ? -1 : 0));
-		const vertexCount = geometry.length / 3;
-		let nextRipple = 0;
-		let lastHit: [number, number, number] | null = null;
-		let phase = 0;
-		let visible = true;
-		let raf = 0;
-		let last = performance.now();
-
-		const readColor = () => gl.uniform3fv(uInk, toRgb(getComputedStyle(canvas).color));
-
-		const resize = () => {
-			const size = canvas.clientWidth;
-			// DPR 1.5 at most, and no more than ~2 MP for this (very large) canvas.
-			const dpr = Math.max(
-				0.5,
-				Math.min(window.devicePixelRatio || 1, 1.5, 1400 / Math.max(size, 1)),
-			);
-			canvas.width = Math.round(size * dpr);
-			canvas.height = Math.round(size * dpr);
-			gl.viewport(0, 0, canvas.width, canvas.height);
-			// Thinner backing store means fewer pixels per line: keep the ink weight constant.
-			gl.uniform1f(uOpacity, 0.4 * strength * Math.min(1, dpr));
-		};
-
-		const draw = () => {
-			gl.uniform1f(uPhase, phase);
-			gl.uniform4fv(uRipples, ripples);
-			gl.clearColor(0, 0, 0, 0);
-			gl.clear(gl.COLOR_BUFFER_BIT);
-			gl.drawArrays(gl.LINES, 0, vertexCount);
-		};
-
-		const loop = (now: number) => {
-			const dt = Math.min((now - last) / 1000, 0.1);
-			last = now;
-			phase += dt * 0.08;
-			for (let i = 3; i < ripples.length; i += 4) {
-				const age = ripples[i] ?? -1;
-				if (age >= 0) ripples[i] = age > 5 ? -1 : age + dt;
-			}
-			draw();
-			if (visible) raf = requestAnimationFrame(loop);
-		};
-
-		// Ray from the camera through the pointer onto the unit sphere; a miss uses the closest point.
-		const onPointer = (e: PointerEvent) => {
-			const rect = canvas.getBoundingClientRect();
-			if (
-				e.clientX < rect.left ||
-				e.clientX > rect.right ||
-				e.clientY < rect.top ||
-				e.clientY > rect.bottom
-			)
-				return;
-			const t = Math.tan(FOV / 2);
-			const dx = (((e.clientX - rect.left) / rect.width) * 2 - 1) * t;
-			const dy = (1 - ((e.clientY - rect.top) / rect.height) * 2) * t;
-			const len = Math.hypot(dx, dy, 1);
-			const d = [dx / len, dy / len, -1 / len] as const;
-			const b = d[2] * CAMERA_Z;
-			const disc = b * b - (CAMERA_Z * CAMERA_Z - 1);
-			const s = disc >= 0 ? -b - Math.sqrt(disc) : -b;
-			const hx = d[0] * s;
-			const hy = d[1] * s;
-			const hz = d[2] * s + CAMERA_Z;
-			const hl = Math.hypot(hx, hy, hz) || 1;
-			const hit: [number, number, number] = [hx / hl, hy / hl, hz / hl];
-			const moved = lastHit
-				? Math.hypot(hit[0] - lastHit[0], hit[1] - lastHit[1], hit[2] - lastHit[2])
-				: 1;
-			if (moved < 0.12) return;
-			lastHit = hit;
-			ripples.set([...hit, 0], nextRipple * 4);
-			nextRipple = (nextRipple + 1) % MAX_RIPPLES;
-		};
-
-		resize();
-		readColor();
-		draw();
-
-		const resizeObserver = new ResizeObserver(() => {
-			resize();
-			draw();
-		});
-		resizeObserver.observe(canvas);
-		const themeObserver = new MutationObserver(() => {
-			readColor();
-			draw();
-		});
-		themeObserver.observe(document.documentElement, {
-			attributes: true,
-			attributeFilter: ["data-theme"],
-		});
-		const onVisibility = () => {
-			last = performance.now();
-		};
-
-		let intersection: IntersectionObserver | undefined;
-		if (!reduced) {
-			window.addEventListener("pointermove", onPointer, { passive: true });
-			document.addEventListener("visibilitychange", onVisibility);
-			intersection = new IntersectionObserver(([entry]) => {
-				const wasVisible = visible;
-				visible = entry?.isIntersecting ?? false;
-				if (visible && !wasVisible) {
-					last = performance.now();
-					raf = requestAnimationFrame(loop);
-				}
+		// Creating the context and compiling the shader blocks the compositor, so nothing on the
+		// page could paint until it is done. Start only after load, once the main thread is idle.
+		const start = () => {
+			idle = whenIdle(() => {
+				if (cancelled) return;
+				// No GPU (software rendering): skip the effect instead of burning the CPU.
+				const gl = canvas.getContext("webgl2", {
+					alpha: true,
+					antialias: true,
+					premultipliedAlpha: true,
+					failIfMajorPerformanceCaveat: true,
+				});
+				if (!gl) return;
+				const vs = compile(gl, gl.VERTEX_SHADER, VERTEX);
+				const fs = compile(gl, gl.FRAGMENT_SHADER, FRAGMENT);
+				const program = vs && fs ? gl.createProgram() : null;
+				if (!vs || !fs || !program) return;
+				gl.attachShader(program, vs);
+				gl.attachShader(program, fs);
+				gl.linkProgram(program);
+				// Without the extension the status check below blocks until the compile is done.
+				const parallel = gl.getExtension("KHR_parallel_shader_compile");
+				const linked = () => {
+					if (cancelled) return;
+					if (parallel && !gl.getProgramParameter(program, parallel.COMPLETION_STATUS_KHR)) {
+						poll = requestAnimationFrame(linked);
+						return;
+					}
+					if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+						console.warn("[wave-field]", gl.getProgramInfoLog(program));
+						return;
+					}
+					cleanup = run(gl, program, vs, fs, strength);
+				};
+				linked();
 			});
-			intersection.observe(canvas);
-			raf = requestAnimationFrame(loop);
-		}
+		};
+
+		if (document.readyState === "complete") start();
+		else window.addEventListener("load", start, { once: true });
 
 		return () => {
-			cancelAnimationFrame(raf);
-			resizeObserver.disconnect();
-			themeObserver.disconnect();
-			intersection?.disconnect();
-			window.removeEventListener("pointermove", onPointer);
-			document.removeEventListener("visibilitychange", onVisibility);
-			gl.deleteBuffer(buffer);
-			gl.deleteProgram(program);
-			gl.deleteShader(vs);
-			gl.deleteShader(fs);
+			cancelled = true;
+			window.removeEventListener("load", start);
+			cancelIdle(idle);
+			cancelAnimationFrame(poll);
+			cleanup?.();
 		};
 	}, [strength]);
 
@@ -365,7 +436,10 @@ export function WaveField({ className, strength = 1 }: { className?: string; str
 		<canvas
 			ref={canvasRef}
 			aria-hidden="true"
-			className={cn("pointer-events-none aspect-square", className)}
+			className={cn(
+				"pointer-events-none aspect-square opacity-0 transition-opacity duration-1000",
+				className,
+			)}
 		/>
 	);
 }

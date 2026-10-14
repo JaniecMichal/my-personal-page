@@ -34,16 +34,30 @@ export function AberrationField() {
 			current.y += (target.y - current.y) * 0.08;
 			current.s += (target.s - current.s) * 0.12;
 
-			root.style.setProperty("--ab-x", current.x.toFixed(2));
-			root.style.setProperty("--ab-y", current.y.toFixed(2));
-			root.style.setProperty("--ab-s", current.s.toFixed(2));
+			// A variable on <html> restyles the whole page, so only write values that changed.
+			set("--ab-x", current.x.toFixed(2));
+			set("--ab-y", current.y.toFixed(2));
+			set("--ab-s", current.s.toFixed(2));
 			raf = requestAnimationFrame(tick);
 		};
 
-		window.addEventListener("pointermove", onPointer, { passive: true });
-		raf = requestAnimationFrame(tick);
+		const written: Record<string, string> = {};
+		const set = (name: string, value: string) => {
+			if (written[name] === value) return;
+			written[name] = value;
+			root.style.setProperty(name, value);
+		};
+
+		// Not needed for the first paint: start once the page has loaded.
+		const start = () => {
+			window.addEventListener("pointermove", onPointer, { passive: true });
+			raf = requestAnimationFrame(tick);
+		};
+		if (document.readyState === "complete") start();
+		else window.addEventListener("load", start, { once: true });
 
 		return () => {
+			window.removeEventListener("load", start);
 			window.removeEventListener("pointermove", onPointer);
 			cancelAnimationFrame(raf);
 		};
