@@ -93,8 +93,7 @@ export default async function ServicePage({ params }: Props) {
 						{[
 							[t("detail.from"), service.priceFrom],
 							[t("detail.timeline"), service.timeline],
-							// "30 days included" belongs to the project packages, not to hourly or partner work.
-							...(service.plans.length > 0 ? [[t("detail.support"), t("detail.supportValue")]] : []),
+							...(service.support ? [[t("detail.support"), service.support]] : []),
 							[t("detail.invoice"), t("detail.invoiceValue")],
 						].map(([k, v]) => (
 							<div
@@ -156,6 +155,9 @@ export default async function ServicePage({ params }: Props) {
 					<Container className="flex flex-col gap-10">
 						<SectionHeader title={t("detail.plans")} index={t("detail.plansNote")} />
 						<PricingPlans plans={service.plans} ctaLabel={tc("cta.quote")} />
+						<p className="max-w-[640px] text-sm leading-relaxed text-ink-soft">
+							{t("detail.custom")}
+						</p>
 					</Container>
 				</section>
 			)}

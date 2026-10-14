@@ -65,6 +65,8 @@ export type Service = {
 	tags: string[];
 	priceFrom: string;
 	timeline: string;
+	/** "At a glance" support row; only for services whose packages include fixes or support. */
+	support?: string;
 	included: { title: string; description: string }[];
 	plans: PricingPlan[];
 	faq: FaqItem[];

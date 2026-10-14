@@ -26,7 +26,7 @@ export const caseStudies: LocalCaseStudy[] = [
 			"Mailgun",
 			"Netlify",
 		],
-		services: ["nextjs-websites", "speed-seo-audit"],
+		services: ["business-website", "nextjs-websites", "speed-seo-audit"],
 		metrics: [
 			{
 				value: { pl: "0,6 s", en: "0.6 s" },

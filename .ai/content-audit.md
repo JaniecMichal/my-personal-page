@@ -9,12 +9,15 @@ table in [business-plan-status.md](./business-plan-status.md). Done before this 
 
 **Unblocked (J1 first):**
 
-1. [ ] **Strona internetowa dla firmy**: remove „ładuje się w ułamku sekundy” (`services.ts:31`),
+1. [x] **Strona internetowa dla firmy**: remove „ładuje się w ułamku sekundy” (`services.ts:31`),
    „dbam o to, żeby klienci ją znaleźli” / „dobrze widoczne w Google” (`:14`); „W skrócie” support row
    per package (now „30 dni w cenie” for every service with plans, `services/[slug]/page.tsx:97`, but the
    1 000 zł package has 1 round of fixes); D2 line „projekty niestandardowe = wycena indywidualna”; link
    the nazielono case to this page (`work.ts:29` points to `nextjs-websites`); non-technical „Dlaczego
    developer” block (now Web3 / UK banks, and „zero wtyczkowego chaosu” clashes with the WordPress offer).
+   Done 2026-10-14: support row is a per-service `support` field (Shopify: „30 dni (Sklep marki)”), D2
+   line under every package grid, nazielono linked, „Dlaczego developer” rewritten for all services.
+   „wizytówkę” in „Nie ma mnie w Google” stays until F10.
 2. [ ] **One CTA wording**: „Wyceń projekt” (header, `common.cta.quote`), „Wyślij brief”, „Zacznij brief”,
    „Zapytaj o wycenę” → „Opowiedz o projekcie”. One name per package (1 000 zł: „Strona-wizytówka” vs
    „Landing page”; 2 900 zł: „z panelem” vs „z CMS”). D2 line on /cennik and home pricing.
@@ -22,7 +25,7 @@ table in [business-plan-status.md](./business-plan-status.md). Done before this 
    „od 2 500 zł” lists items only the 5 900 zł package has.
 4. [ ] **Meta titles/descriptions** problem-first (services, pricing, work); Polish label for the home work
    section („02 — Case studies”).
-5. [ ] „ułamek sekundy” on the Next.js page (`services.ts:197`); audit page („dlaczego Google jej nie lubi”).
+5. [x] „ułamek sekundy” on the Next.js page (`services.ts:197`); audit page („dlaczego Google jej nie lubi”).
 6. [ ] **Contact**: success message with the next step (quote in 2–3 dni robocze), „nie wysyłaj haseł”
    near the form, brief types for B2B and one-off fix vs care.
 

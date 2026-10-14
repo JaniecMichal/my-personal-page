@@ -11,12 +11,13 @@ export const services: LocalService[] = [
 			en: "A new website for your business: a clear offer, easy contact, built for Google and phones. You edit the content yourself.",
 		},
 		intro: {
-			pl: "Nie musisz znać się na technologii. Mówisz mi, co ma się wydarzyć: więcej telefonów, zapytań albo rezerwacji. Ja dobieram rozwiązanie, buduję stronę i dbam o to, żeby klienci ją znaleźli. Moją główną technologią jest Next.js: strony są szybkie, bezpieczne i dobrze widoczne w Google.",
-			en: "You don't need to know anything about technology. Tell me what should happen: more calls, enquiries or bookings. I pick the right tools, build the site and make sure customers can find it. My main technology is Next.js: sites that are fast, secure and easy for Google to read.",
+			pl: "Nie musisz znać się na technologii. Mówisz mi, co ma się wydarzyć: więcej telefonów, zapytań albo rezerwacji. Ja dobieram rozwiązanie, buduję stronę i przygotowuję ją technicznie pod Google. Moją główną technologią jest Next.js: strony są szybkie i bezpieczne, a treści zmieniasz sam w panelu.",
+			en: "You don't need to know anything about technology. Tell me what should happen: more calls, enquiries or bookings. I pick the right tools, build the site and set it up technically for Google. My main technology is Next.js: sites that are fast and secure, and you edit the content yourself.",
 		},
 		tags: ["Next.js", "SEO", "CMS"],
 		priceFrom: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 		timeline: { pl: "od kilku dni do 3 tygodni", en: "a few days to 3 weeks" },
+		support: { pl: "1 runda poprawek albo 30 dni", en: "1 fix round or 30 days" },
 		included: [
 			{
 				title: { pl: "„Nie ma mnie w Google”", en: "“I'm not on Google”" },
@@ -28,8 +29,8 @@ export const services: LocalService[] = [
 			{
 				title: { pl: "„Strona wygląda staro na telefonie”", en: "“It looks dated on phones”" },
 				description: {
-					pl: "Większość klientów wchodzi z telefonu. Strona jest projektowana najpierw pod mały ekran i ładuje się w ułamku sekundy.",
-					en: "Most customers visit on a phone. The site is designed for small screens first and loads in a blink.",
+					pl: "Większość klientów wchodzi z telefonu. Strona jest projektowana najpierw pod mały ekran, a szybkość ładowania sprawdzam na telefonie przed oddaniem.",
+					en: "Most customers visit on a phone. The site is designed for small screens first, and I test loading speed on a phone before handover.",
 				},
 			},
 			{
@@ -194,12 +195,13 @@ export const services: LocalService[] = [
 			en: "Next.js websites you can edit yourself. I check speed and technical SEO before handover.",
 		},
 		intro: {
-			pl: "Strona firmowa, która ładuje się w ułamku sekundy, dobrze wygląda na telefonie i jest gotowa na SEO. Zbudowana w Next.js, z wygodnym CMS do edycji treści.",
-			en: "A business website that loads in a blink, looks great on phones and is ready for SEO. Built in Next.js with a friendly CMS for your content.",
+			pl: "Strona firmowa, która szybko się ładuje, dobrze wygląda na telefonie i jest przygotowana technicznie pod SEO. Zbudowana w Next.js, z wygodnym CMS do edycji treści.",
+			en: "A business website that loads fast, looks great on phones and is technically ready for SEO. Built in Next.js with a friendly CMS for your content.",
 		},
 		tags: ["Next.js", "SEO", "CMS"],
 		priceFrom: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 		timeline: { pl: "od kilku dni do 3 tygodni", en: "a few days to 3 weeks" },
+		support: { pl: "1 runda poprawek albo 30 dni", en: "1 fix round or 30 days" },
 		included: [
 			{
 				title: { pl: "Projekt i wdrożenie", en: "Design to launch" },
@@ -309,6 +311,7 @@ export const services: LocalService[] = [
 		tags: ["Shopify", "Liquid"],
 		priceFrom: { pl: "od 2 500 zł", en: "from 2,500 PLN" },
 		timeline: { pl: "3–5 tygodni", en: "3–5 weeks" },
+		support: { pl: "30 dni (Sklep marki)", en: "30 days (Brand store)" },
 		included: [
 			{
 				title: { pl: "Konfiguracja sklepu", en: "Store setup" },
@@ -507,8 +510,8 @@ export const services: LocalService[] = [
 		order: 3,
 		title: { pl: "Audyt szybkości i SEO", en: "Speed and SEO audit" },
 		summary: {
-			pl: "Sprawdzam, co spowalnia stronę i dlaczego Google jej nie lubi. Raport z priorytetami plus poprawki.",
-			en: "I find what slows your site down and why Google doesn't like it. A prioritised report, plus the fixes.",
+			pl: "Sprawdzam, co spowalnia stronę i co przeszkadza jej w Google. Raport z priorytetami plus poprawki.",
+			en: "I find what slows your site down and what holds it back on Google. A prioritised report, plus the fixes.",
 		},
 		intro: {
 			pl: "Mierzę Core Web Vitals, sprawdzam SEO techniczne i dostępność, a potem dostajesz listę poprawek od najważniejszych. Mogę je też wdrożyć.",
