@@ -32,6 +32,8 @@ export function DeviceFrame({ image, sizes, host, className, imageClassName }: P
 		/>
 	);
 
+	if (image.framed) return <div className={className}>{screenshot}</div>;
+
 	if (image.height > image.width) {
 		return (
 			<div

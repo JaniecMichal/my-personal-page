@@ -16,6 +16,8 @@ export type ImageAsset = {
 	alt: string;
 	width: number;
 	height: number;
+	/** The image already contains a device mock-up, so `DeviceFrame` shows it without its own frame. */
+	framed?: boolean;
 };
 
 /**

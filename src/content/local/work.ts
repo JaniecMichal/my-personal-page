@@ -354,6 +354,7 @@ export const caseStudies: LocalCaseStudy[] = [
 				},
 				width: 331,
 				height: 555,
+				framed: true,
 			},
 			{
 				src: "/work/jemwszkole/order-meal-mobile.png",
