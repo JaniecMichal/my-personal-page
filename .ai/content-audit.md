@@ -18,11 +18,15 @@ table in [business-plan-status.md](./business-plan-status.md). Done before this 
    Done 2026-10-14: support row is a per-service `support` field (Shopify: „30 dni (Sklep marki)”), D2
    line under every package grid, nazielono linked, „Dlaczego developer” rewritten for all services.
    „wizytówkę” in „Nie ma mnie w Google” stays until F10.
-2. [ ] **One CTA wording**: „Wyceń projekt” (header, `common.cta.quote`), „Wyślij brief”, „Zacznij brief”,
+2. [x] **One CTA wording**: „Wyceń projekt” (header, `common.cta.quote`), „Wyślij brief”, „Zacznij brief”,
    „Zapytaj o wycenę” → „Opowiedz o projekcie”. One name per package (1 000 zł: „Strona-wizytówka” vs
    „Landing page”; 2 900 zł: „z panelem” vs „z CMS”). D2 line on /cennik and home pricing.
-3. [ ] **Pricing**: drop „Najczęściej wybierany” (`marketing.ts:113`, `services.ts:380`); Shopify card
+3. [x] **Pricing**: drop „Najczęściej wybierany” (`marketing.ts:113`, `services.ts:380`); Shopify card
    „od 2 500 zł” lists items only the 5 900 zł package has.
+   Done 2026-10-14 (items 2–3): every CTA is „Opowiedz o projekcie” / „Tell me about your project” (the
+   form's submit button stays „Wyślij brief”); packages are „Strona-wizytówka” (1 000 zł) and „Strona
+   firmowa z panelem” (2 900 zł) everywhere, chosen by Michał; the 2 900 zł card is highlighted on
+   /cennik instead of Shopify; the Shopify card matches Starter; custom-quote line on /cennik and home.
 4. [ ] **Meta titles/descriptions** problem-first (services, pricing, work); Polish label for the home work
    section („02 — Case studies”).
 5. [x] „ułamek sekundy” on the Next.js page (`services.ts:197`); audit page („dlaczego Google jej nie lubi”).
