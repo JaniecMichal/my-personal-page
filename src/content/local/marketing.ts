@@ -266,8 +266,8 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		group: "about",
 		question: { pl: "Kim jest Michał Janiec?", en: "Who is Michał Janiec?" },
 		answer: {
-			pl: "Jestem Michał Janiec, Senior Frontend Developer z Katowic. Od ponad 5 lat buduję frontendy w zespołach produktowych, od marketplace Web3 z 50 inżynierami po platformę dla brytyjskich banków, a na co dzień pracuję też nad frontendem w Rails w Visuality. Pod marką mjaniec.it tworzę strony internetowe, sklepy i aplikacje bezpośrednio dla firm.",
-			en: "I'm Michał Janiec, a Senior Frontend Developer based in Katowice, Poland. For 5+ years I've built frontends in product teams, from a Web3 marketplace with 50 engineers to a platform for UK banks, and day to day I also work on Rails frontends at Visuality. Under the mjaniec.it name I build websites, online stores and web apps directly for businesses.",
+			pl: "Michał Janiec to programista z Katowic, który od 2021 roku zawodowo tworzy strony i aplikacje internetowe, dziś jako Senior Frontend Developer. Pod marką mjaniec.it pracuje bezpośrednio z firmami: tworzy nowe strony, rozwija i naprawia istniejące serwisy, a po starcie zostaje do dalszych zmian. Na co dzień korzysta z React, Next.js i TypeScript, a przy sklepach i istniejących stronach także z Shopify i WordPressa.",
+			en: "Michał Janiec is a developer from Katowice, Poland, who has built websites and web apps professionally since 2021, now as a Senior Frontend Developer. Under the mjaniec.it name he works directly with businesses: he builds new websites, develops and fixes existing ones, and stays on for changes after launch. Day to day he works with React, Next.js and TypeScript, and with Shopify and WordPress for stores and existing sites.",
 		},
 	},
 	{
