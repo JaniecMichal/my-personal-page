@@ -1,10 +1,12 @@
 # Next steps — mjaniec.it
 
-Status (2026-10-13): **live at https://www.mjaniec.it**. Technical plan deployed (PR #4: `/` → `/pl`
-308, robots blocks AI training bots, security headers, 404 fix, `brief_sent`, IndexNow, llms.txt PL,
-landing from 1 000 zł). Production smoke **35/35**, IndexNow sent 38 URLs (HTTP 202).
-**Next up:** [business-plan-status.md](./business-plan-status.md): GSC indexing requests (10 URLs
-listed there), then Michał fills in the facts table F01–F12, then content changes for the MVP (CP2).
+Status (2026-10-14): **live at https://www.mjaniec.it**. Performance fix deployed (PR #7 `perf`, PSI
+better; CV hero photo). Text work in progress on branch **`content-mvp`** (pushed, **no PR yet**, not on
+production).
+**Next up:** [content-audit.md](./content-audit.md), "Order of work". Start with items 1–3 (unblocked):
+business-website page, one CTA wording + package names, pricing („Najczęściej wybierany”, Shopify card).
+Items 7–12 wait on Michał's answers (F01–F05, F08–F10, F12; questions at the end of content-audit.md).
+When a batch is done: open a PR `content-mvp` → `main`, run `scripts/smoke.sh` after deploy.
 Plans: [business-plan.md](./business-plan.md) (what/why, D1–D6) · [technical-plan.md](./technical-plan.md)
 (how) · results: [technical-audit.md](./technical-audit.md).
 
@@ -64,6 +66,12 @@ Progress log:
   `AberrationField` starts after load and writes the CSS variables only on change. Local mobile (real
   throttling, no GPU): LCP 1.8 → 1.4 s. CV hero shows the photo (`public/cv/michal-janiec.jpg`, the old
   site's photo from git history) in a `brackets` frame. To do: PSI on the preview / production.
+- 2026-10-14 (`content-mvp`): text work per the business plan. Home hero „Strony internetowe dla firm.”
+  (CTAs „Opowiedz o projekcie” / „Zobacz realizacje”), services order by segment + „W czym mogę pomóc”,
+  F06 site-wide (first reply „w ciągu 24 godzin”, no „dni robocze” on it; quote „2–3 dni robocze”),
+  home FAQ 13 Qs (field `group: "about"` keeps the 2 „about me” Qs off /cennik), final CTA
+  „Porozmawiajmy.” (fluid size), business-website FAQ 6 Qs. Decided: F05 (SEO via Na Zielono, not named),
+  F06, F07 (5+). Full map of what's left: [content-audit.md](./content-audit.md).
 
 Related docs: [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
