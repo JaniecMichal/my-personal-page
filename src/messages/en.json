@@ -17,7 +17,9 @@
 			"allWork": "All work",
 			"allServices": "All services",
 			"downloadCv": "Download CV (PDF)",
-			"seeService": "See the service"
+			"seeService": "See the service",
+			"tellProject": "Tell me about your project",
+			"seeWork": "See my work"
 		},
 		"language": {
 			"label": "Language",
@@ -47,12 +49,12 @@
 	},
 	"home": {
 		"meta": {
-			"title": "Websites, stores and web apps — Michał Janiec",
-			"description": "Fast Next.js websites, Shopify stores, WordPress fixes and React apps. Senior frontend developer from Katowice, Poland. Quote within 24 hours."
+			"title": "Websites for businesses — Michał Janiec, Katowice",
+			"description": "Websites for businesses in Katowice, Silesia and remotely: new sites, plus development and fixes for existing ones. Senior frontend developer, 5+ years of experience."
 		},
 		"hero": {
-			"title": "Websites, stores and web apps that <em>sell.</em>",
-			"lead": "I build fast Next.js websites, Shopify stores, WordPress fixes and React apps. 5+ years in product teams, now working directly with your business."
+			"title": "Websites for <em>businesses.</em>",
+			"lead": "I build new websites and develop and fix existing ones. I work directly with businesses in Katowice and across Silesia, and remotely across Poland, the EU and the UK. 5+ years of experience in product teams."
 		},
 		"trust": "Worked with",
 		"services": {

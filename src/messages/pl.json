@@ -17,7 +17,9 @@
 			"allWork": "Wszystkie realizacje",
 			"allServices": "Wszystkie usługi",
 			"downloadCv": "Pobierz CV (PDF)",
-			"seeService": "Zobacz usługę"
+			"seeService": "Zobacz usługę",
+			"tellProject": "Opowiedz o projekcie",
+			"seeWork": "Zobacz realizacje"
 		},
 		"language": {
 			"label": "Język",
@@ -47,12 +49,12 @@
 	},
 	"home": {
 		"meta": {
-			"title": "Strony, sklepy i aplikacje — Michał Janiec, Katowice",
-			"description": "Buduję szybkie strony w Next.js, sklepy Shopify, poprawki WordPress i aplikacje React. Senior frontend developer z Katowic, 5+ lat doświadczenia. Wycena w 24 h."
+			"title": "Strony internetowe dla firm — Michał Janiec, Katowice",
+			"description": "Strony internetowe dla firm z Katowic i Śląska: nowe strony, rozwój i naprawy istniejących serwisów. Senior frontend developer, 5+ lat doświadczenia."
 		},
 		"hero": {
-			"title": "Strony, sklepy i aplikacje, które <em>sprzedają.</em>",
-			"lead": "Buduję szybkie strony w Next.js, sklepy Shopify, poprawki WordPress i aplikacje React. Ponad 5 lat w zespołach produktowych, teraz pracuję bezpośrednio z Twoją firmą."
+			"title": "Strony internetowe dla <em>firm.</em>",
+			"lead": "Tworzę nowe strony, rozwijam i naprawiam istniejące serwisy. Pracuję bezpośrednio z firmami z Katowic i całego Śląska, zdalnie w całej Polsce. Ponad 5 lat doświadczenia w zespołach produktowych."
 		},
 		"trust": "Pracowałem z",
 		"services": {
