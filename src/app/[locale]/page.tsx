@@ -83,8 +83,16 @@ export default async function HomePage({ params }: Props) {
 							{t("faq.title")}
 						</h2>
 					</div>
-					<div className="lg:col-span-8">
-						<FaqList items={faq} />
+					<div className="flex flex-col gap-12 lg:col-span-8">
+						{(["cooperation", "about"] as const).map((group, i) => (
+							<div key={group} className="flex flex-col gap-4">
+								<h3 className="label">{t(`faq.${group}`)}</h3>
+								<FaqList
+									items={faq.filter((f) => (f.group ?? "cooperation") === group)}
+									openFirst={i === 0}
+								/>
+							</div>
+						))}
 					</div>
 				</Container>
 			</section>

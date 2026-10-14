@@ -83,7 +83,9 @@
 		},
 		"faq": {
 			"index": "06 — FAQ",
-			"title": "Common questions"
+			"title": "Common questions",
+			"cooperation": "Working together",
+			"about": "About me"
 		},
 		"final": {
 			"index": "07 — Contact",

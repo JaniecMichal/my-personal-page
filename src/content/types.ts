@@ -165,6 +165,8 @@ export type PricingPlan = {
 
 export type FaqItem = {
 	id: string;
+	/** Home FAQ section: questions about working together, or about Michał / mjaniec.it. */
+	group?: "cooperation" | "about";
 	question: string;
 	answer: string;
 };

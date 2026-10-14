@@ -71,7 +71,7 @@ export const TESTIMONIALS_QUERY = /* groq */ `
 
 export const FAQ_QUERY = /* groq */ `
 *[_type == "faq" && showOnHome == true] | order(order asc) {
-	"id": _id, ${t("question")}, ${t("answer")}
+	"id": _id, group, ${t("question")}, ${t("answer")}
 }`;
 
 export const LOCAL_PAGES_QUERY = /* groq */ `

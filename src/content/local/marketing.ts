@@ -155,22 +155,103 @@ export const pricingPlans: LocalizedDeep<PricingPlan>[] = [
 export const faq: LocalizedDeep<FaqItem>[] = [
 	{
 		id: "cost",
+		group: "cooperation",
 		question: { pl: "Ile kosztuje strona internetowa?", en: "How much does a website cost?" },
 		answer: {
-			pl: "Prosty landing page z gotowego projektu graficznego kosztuje od 1 000 zł netto, a strona firmowa z CMS od 2 900 zł netto. Dokładną wycenę dostajesz po krótkim briefie. Cena zależy od liczby podstron, integracji i tego, czy treści są gotowe. Projekty niestandardowe wyceniam indywidualnie.",
-			en: "A simple landing page built from your ready design starts from 1,000 PLN net, and a business website with a CMS from 2,900 PLN net. You get an exact quote after a short brief. The price depends on the number of pages, integrations and whether the content is ready. Custom projects get an individual quote.",
+			pl: "Prosty landing page z gotowego projektu graficznego kosztuje od 1 000 zł netto, a strona firmowa z CMS od 2 900 zł netto. Cena zależy głównie od liczby podstron, integracji z innymi narzędziami i tego, czy teksty oraz zdjęcia są już gotowe. Po krótkim briefie dostajesz dokładną wycenę z zakresem w 2–3 dni robocze. Projekty niestandardowe wyceniam indywidualnie.",
+			en: "A simple landing page built from your ready design starts from 1,000 PLN net, and a business website with a CMS from 2,900 PLN net. The price depends mostly on the number of pages, integrations with other tools and whether the texts and photos are ready. After a short brief you get an exact quote with the scope within 2–3 working days. Custom projects get an individual quote.",
 		},
 	},
 	{
 		id: "time",
+		group: "cooperation",
 		question: { pl: "Ile trwa realizacja?", en: "How long does it take?" },
 		answer: {
-			pl: "Landing page zwykle kilka dni, strona firmowa z CMS 2–3 tygodnie, sklep Shopify 3–5 tygodni. Przy dłuższych projektach co tydzień dostajesz podgląd na żywo.",
-			en: "A landing page usually takes a few days, a business website with a CMS 2–3 weeks, a Shopify store 3–5 weeks. On longer projects you get a live preview every week.",
+			pl: "Landing page zwykle powstaje w kilka dni, strona firmowa z CMS w 2–3 tygodnie, a sklep Shopify w 3–5 tygodni. Termin w dużej mierze zależy od tego, jak szybko są gotowe treści i decyzje. Przy dłuższych projektach co tydzień dostajesz podgląd na żywo, więc widzisz postęp i możesz komentować na bieżąco.",
+			en: "A landing page usually takes a few days, a business website with a CMS 2–3 weeks, a Shopify store 3–5 weeks. The timeline depends a lot on how quickly the content and decisions are ready. On longer projects you get a live preview every week, so you can see the progress and comment as we go.",
+		},
+	},
+	{
+		id: "existing-site",
+		group: "cooperation",
+		question: { pl: "Czy poprawisz moją obecną stronę?", en: "Can you fix my existing website?" },
+		answer: {
+			pl: "Tak. Naprawiam błędy, dodaję nowe sekcje, przyspieszam i przenoszę istniejące strony, najczęściej na WordPressie, bez przepisywania wszystkiego od zera. Zanim cokolwiek zmienię, sprawdzam motyw, wtyczki i hosting, żeby poprawka nie zepsuła czegoś innego. Takie prace rozliczam godzinowo, 120 zł/h netto. Jeśli nie wiesz, co dokładnie szwankuje, dobrym startem jest audyt szybkości i SEO.",
+			en: "Yes. I fix bugs, add new sections, speed up and migrate existing sites, most often on WordPress, without rewriting everything from scratch. Before changing anything I review the theme, plugins and hosting, so a fix doesn't break something else. This work is billed hourly at 120 PLN/h net. If you're not sure what exactly is wrong, a speed and SEO audit is a good place to start.",
+		},
+	},
+	{
+		id: "edit",
+		group: "cooperation",
+		question: { pl: "Czy sam będę mógł edytować treści?", en: "Can I edit the content myself?" },
+		answer: {
+			pl: "Tak. Podpinam wygodny panel do edycji (CMS) albo korzystamy z panelu Shopify lub WordPressa, zależnie od projektu. Po wdrożeniu pokazuję, jak zmieniać teksty, zdjęcia i podstrony, żeby drobne zmiany nie wymagały programisty.",
+			en: "Yes. I connect a friendly editing panel (CMS), or we use the Shopify or WordPress admin, depending on the project. After launch I show you how to change texts, photos and pages, so small changes don't need a developer.",
+		},
+	},
+	{
+		id: "prepare",
+		group: "cooperation",
+		question: { pl: "Co muszę przygotować na start?", en: "What do I need to prepare?" },
+		answer: {
+			pl: "Na początek wystarczy krótki opis firmy i tego, co strona ma załatwiać. Pomagają też: logo i kolory, teksty (choćby robocze), zdjęcia, 2–3 strony, które Ci się podobają, oraz informacja, gdzie są domena i obecny hosting. Nie wysyłaj haseł w formularzu ani mailem. Dostępy ustalimy osobno, gdy zaczniemy pracę.",
+			en: "To start, a short description of your business and what the site should do is enough. It also helps to have your logo and colours, texts (even rough drafts), photos, 2–3 sites you like, and where your domain and current hosting are. Please don't send passwords in the form or by email. We'll sort out access separately once the work starts.",
+		},
+	},
+	{
+		id: "seo",
+		group: "cooperation",
+		question: { pl: "Czy zajmiesz się też SEO?", en: "Do you take care of SEO?" },
+		answer: {
+			pl: "Tak, w zakresie technicznym. Każda strona ma poprawne metadane, dane strukturalne i mapę strony, a przed oddaniem sprawdzam jej szybkość (Core Web Vitals) i podpinam Google Search Console. Stałe pozycjonowanie i kampanie Google Ads prowadzę razem ze sprawdzonym zespołem specjalistów, a Twoim jedynym kontaktem zostaję ja. Szczegóły są na stronie usługi SEO i Google Ads.",
+			en: "Yes, the technical side. Every site ships with correct metadata, structured data and a sitemap, and before handover I check its speed (Core Web Vitals) and connect Google Search Console. Ongoing SEO and Google Ads campaigns I run together with a trusted team of specialists, and I stay your single point of contact. Details are on the SEO and Google Ads service page.",
+		},
+	},
+	{
+		id: "remote",
+		group: "cooperation",
+		question: {
+			pl: "Czy pracujesz z firmami spoza Katowic?",
+			en: "Do you work with companies outside Poland?",
+		},
+		answer: {
+			pl: "Tak. Pracuję zdalnie z firmami z całej Polski, a także z UE i Wielkiej Brytanii. Rozmawiamy przez wideo, a postęp widzisz na podglądzie strony. Z firmami z Katowic i Śląska chętnie spotkam się też na miejscu.",
+			en: "Yes. I work remotely with businesses across Poland, the EU and the UK. We talk over video, and you follow the progress on a live preview of the site. With companies in Katowice and Silesia I'm also happy to meet in person.",
+		},
+	},
+	{
+		id: "invoice",
+		group: "cooperation",
+		question: { pl: "Czy wystawiasz fakturę VAT?", en: "Do you issue VAT invoices?" },
+		answer: {
+			pl: "Tak. Prowadzę jednoosobową działalność gospodarczą i wystawiam faktury VAT. Mogę też pracować na umowę o dzieło lub umowę zlecenie, jeśli tak Ci wygodniej.",
+			en: "Yes. I run a sole-trader business in Poland and issue VAT invoices, so B2B works out of the box. For Polish clients I can also work on a contract for specific work or a mandate contract.",
+		},
+	},
+	{
+		id: "ownership",
+		group: "cooperation",
+		question: {
+			pl: "Do kogo należą domena, hosting i kod?",
+			en: "Who owns the domain, hosting and code?",
+		},
+		answer: {
+			pl: "Do Ciebie. Domena, hosting i kod są na Ciebie, a po wdrożeniu przekazuję wszystkie dostępy. Dzięki temu nie jesteś uzależniony od jednego wykonawcy i w każdej chwili możesz rozwijać stronę z kimś innym.",
+			en: "You do. The domain, hosting and code are in your name, and I hand over all access after launch. That way you're not tied to one developer and can keep building the site with someone else at any time.",
+		},
+	},
+	{
+		id: "after-launch",
+		group: "cooperation",
+		question: { pl: "Co dzieje się po oddaniu strony?", en: "What happens after launch?" },
+		answer: {
+			pl: "Pakiety mają w cenie 30 dni wsparcia po starcie: poprawiam błędy i odpowiadam na pytania. Później zmiany i rozwój możesz zlecać jednorazowo, rozliczane godzinowo (120 zł/h netto), albo wybrać stałą opiekę w abonamencie. Abonament nie jest obowiązkowy.",
+			en: "Packages include 30 days of support after launch: I fix bugs and answer questions. After that you can order changes and new features one at a time, billed hourly (120 PLN/h net), or choose ongoing care on a monthly plan. The monthly plan is optional.",
 		},
 	},
 	{
 		id: "trial",
+		group: "cooperation",
 		question: {
 			pl: "Jak zacząć współpracę przy większym projekcie?",
 			en: "How do we start on a bigger project?",
@@ -181,49 +262,21 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		},
 	},
 	{
-		id: "existing-site",
-		question: {
-			pl: "Czy poprawisz moją obecną stronę?",
-			en: "Can you fix my existing website?",
-		},
+		id: "who",
+		group: "about",
+		question: { pl: "Kim jest Michał Janiec?", en: "Who is Michał Janiec?" },
 		answer: {
-			pl: "Tak. Naprawiam błędy, dodaję nowe sekcje, przyspieszam i przenoszę istniejące strony, najczęściej na WordPressie, bez przepisywania wszystkiego od zera. Takie prace rozliczam godzinowo, 120 zł/h netto.",
-			en: "Yes. I fix bugs, add new sections, speed up and migrate existing sites, most often on WordPress, without rewriting everything from scratch. This work is billed hourly at 120 PLN/h net.",
+			pl: "Jestem Michał Janiec, Senior Frontend Developer z Katowic. Od ponad 5 lat buduję frontendy w zespołach produktowych, od marketplace Web3 z 50 inżynierami po platformę dla brytyjskich banków, a na co dzień pracuję też nad frontendem w Rails w Visuality. Pod marką mjaniec.it tworzę strony internetowe, sklepy i aplikacje bezpośrednio dla firm.",
+			en: "I'm Michał Janiec, a Senior Frontend Developer based in Katowice, Poland. For 5+ years I've built frontends in product teams, from a Web3 marketplace with 50 engineers to a platform for UK banks, and day to day I also work on Rails frontends at Visuality. Under the mjaniec.it name I build websites, online stores and web apps directly for businesses.",
 		},
 	},
 	{
-		id: "edit",
-		question: { pl: "Czy sam będę mógł edytować treści?", en: "Can I edit the content myself?" },
+		id: "agency",
+		group: "about",
+		question: { pl: "Czy mjaniec.it to agencja?", en: "Is mjaniec.it an agency?" },
 		answer: {
-			pl: "Tak. Podpinam wygodny CMS albo panel Shopify/WordPress i pokazuję, jak z niego korzystać.",
-			en: "Yes. I connect a friendly CMS or the Shopify/WordPress admin and show you how to use it.",
-		},
-	},
-	{
-		id: "remote",
-		question: {
-			pl: "Czy pracujesz z firmami spoza Katowic?",
-			en: "Do you work with companies outside Poland?",
-		},
-		answer: {
-			pl: "Tak, pracuję zdalnie z klientami z całej Polski, UE i Wielkiej Brytanii. Na Śląsku chętnie spotkam się na miejscu.",
-			en: "Yes. I work remotely with clients across Poland, the EU and the UK, and I'm happy to meet in person in Silesia.",
-		},
-	},
-	{
-		id: "seo",
-		question: { pl: "Czy zajmiesz się też SEO?", en: "Do you take care of SEO?" },
-		answer: {
-			pl: "Tak, w zakresie technicznym. Każda strona ma poprawne metadane, dane strukturalne i mapę strony, a przed oddaniem sprawdzam jej szybkość (Core Web Vitals). Stałe pozycjonowanie i kampanie reklamowe to osobna usługa: SEO i Google Ads.",
-			en: "Yes, the technical side. Every site ships with correct metadata, structured data and a sitemap, and I check its speed (Core Web Vitals) before handover. Ongoing SEO and ad campaigns are a separate service: SEO and Google Ads.",
-		},
-	},
-	{
-		id: "invoice",
-		question: { pl: "Czy wystawiasz fakturę VAT?", en: "Do you issue VAT invoices?" },
-		answer: {
-			pl: "Tak. Prowadzę jednoosobową działalność gospodarczą i wystawiam faktury VAT. Mogę też pracować na umowę o dzieło lub umowę zlecenie, jeśli tak Ci wygodniej.",
-			en: "Yes. I run a sole-trader business in Poland and issue VAT invoices, so B2B works out of the box. For Polish clients I can also work on a contract for specific work or a mandate contract.",
+			pl: "Nie. mjaniec.it to jednoosobowa działalność: rozmawiasz bezpośrednio ze mną, czyli z osobą, która pisze kod, bez pośredników po drodze. Przy stałym pozycjonowaniu i kampaniach reklamowych współpracuję ze sprawdzonym zespołem specjalistów, ale kontakt i odpowiedzialność za stronę zostają po mojej stronie.",
+			en: "No. mjaniec.it is a one-person business: you talk directly to me, the person who writes the code, with no middlemen. For ongoing SEO and ad campaigns I work with a trusted team of specialists, but the contact and responsibility for your site stay with me.",
 		},
 	},
 ];

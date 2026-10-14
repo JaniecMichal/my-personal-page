@@ -83,7 +83,9 @@
 		},
 		"faq": {
 			"index": "06 — FAQ",
-			"title": "Częste pytania"
+			"title": "Częste pytania",
+			"cooperation": "Współpraca",
+			"about": "O mnie"
 		},
 		"final": {
 			"index": "07 — Kontakt",
