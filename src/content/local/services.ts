@@ -181,6 +181,10 @@ export const services: LocalService[] = [
 				pl: "Strona internetowa dla firmy | Michał Janiec",
 				en: "Website for your business | Michał Janiec",
 			},
+			description: {
+				pl: "Nowa strona dla firmy z Katowic i całego Śląska: czytelna oferta, łatwy kontakt, szybka na telefonie i gotowa pod Google. Od 1 000 zł netto.",
+				en: "A new website for your business: a clear offer, easy contact, fast on phones and built for Google. From 1,000 PLN net.",
+			},
 		},
 	},
 	{
@@ -417,7 +421,16 @@ export const services: LocalService[] = [
 			},
 		],
 		faq: [],
-		seo: {},
+		seo: {
+			title: {
+				pl: "Sklep internetowy na Shopify | Michał Janiec",
+				en: "Shopify store setup | Michał Janiec",
+			},
+			description: {
+				pl: "Chcesz sprzedawać online? Zakładam sklep Shopify z płatnościami i dostawami, dopasowuję motyw do marki i importuję produkty. Od 2 500 zł netto.",
+				en: "Want to sell online? I set up a Shopify store with payments and shipping, tailor the theme to your brand and import your products. From 2,500 PLN net.",
+			},
+		},
 	},
 	{
 		id: "wordpress",
@@ -460,7 +473,16 @@ export const services: LocalService[] = [
 		],
 		plans: [],
 		faq: [],
-		seo: {},
+		seo: {
+			title: {
+				pl: "Naprawa i przyspieszenie WordPress | Michał Janiec",
+				en: "WordPress fixes and speed-ups | Michał Janiec",
+			},
+			description: {
+				pl: "Strona na WordPressie działa wolno, ma błędy albo potrzebuje nowych sekcji? Naprawiam, przyspieszam i rozwijam ją bez przepisywania od zera. 120 zł/h netto.",
+				en: "Is your WordPress site slow, broken or missing sections? I fix it, speed it up and extend it without rebuilding from scratch. 120 PLN/h net.",
+			},
+		},
 	},
 	{
 		id: "web-apps",
@@ -481,7 +503,16 @@ export const services: LocalService[] = [
 		included: [],
 		plans: [],
 		faq: [],
-		seo: {},
+		seo: {
+			title: {
+				pl: "Aplikacje webowe na zamówienie | Michał Janiec",
+				en: "Custom web applications | Michał Janiec",
+			},
+			description: {
+				pl: "Potrzebujesz panelu, SaaS albo MVP? Prowadzę projekt od makiety w Figmie do działającej aplikacji w React i Next.js, z testami. Wycena po krótkim briefie.",
+				en: "Need a dashboard, a SaaS or an MVP? I take it from a Figma mockup to a working React and Next.js app, with tests. A quote after a short brief.",
+			},
+		},
 	},
 	{
 		id: "frontend-for-rails-teams",
@@ -502,7 +533,16 @@ export const services: LocalService[] = [
 		included: [],
 		plans: [],
 		faq: [],
-		seo: {},
+		seo: {
+			title: {
+				pl: "Frontend developer dla zespołów Rails | Michał Janiec",
+				en: "Frontend developer for Rails teams | Michał Janiec",
+			},
+			description: {
+				pl: "Brakuje frontendowca w zespole Rails? Dołączam z doświadczeniem w Stimulus, Hotwire, ERB i Tailwind i dowożę interfejs. B2B, faktura VAT.",
+				en: "Short of a frontend developer on your Rails team? I join with Stimulus, Hotwire, ERB and Tailwind experience and ship the interface. B2B, VAT invoice.",
+			},
+		},
 	},
 	{
 		id: "speed-seo-audit",
@@ -523,7 +563,16 @@ export const services: LocalService[] = [
 		included: [],
 		plans: [],
 		faq: [],
-		seo: {},
+		seo: {
+			title: {
+				pl: "Audyt szybkości strony i SEO | Michał Janiec",
+				en: "Website speed and SEO audit | Michał Janiec",
+			},
+			description: {
+				pl: "Strona wolno się ładuje albo nie widać jej w Google? Sprawdzam, co ją blokuje, i daję raport z priorytetami, a poprawki mogę wdrożyć sam. Od 900 zł netto.",
+				en: "Is your site slow or hard to find on Google? I find what holds it back, give you a prioritised report and can ship the fixes myself. From 900 PLN net.",
+			},
+		},
 	},
 	{
 		id: "seo-sem",

@@ -60,7 +60,7 @@
 			"title": "W czym mogę pomóc"
 		},
 		"work": {
-			"index": "02 — Case studies",
+			"index": "02 — Realizacje",
 			"title": "Wybrane realizacje",
 			"cta": "Masz podobny projekt? Opowiedz mi o nim, odpiszę w ciągu 24 godzin."
 		},
@@ -92,8 +92,8 @@
 	},
 	"services": {
 		"meta": {
-			"title": "Usługi: strony Next.js, Shopify, WordPress | Michał Janiec",
-			"description": "Strony firmowe w Next.js, sklepy Shopify, poprawki i przyspieszanie WordPress, aplikacje React i frontend dla zespołów Rails. Katowice i zdalnie."
+			"title": "Strony, sklepy i naprawy stron dla firm | Michał Janiec",
+			"description": "Potrzebujesz nowej strony, sklepu albo naprawy obecnej? Strony dla firm, sklepy Shopify, WordPress, aplikacje webowe i audyty. Katowice i zdalnie."
 		},
 		"title": "Usługi",
 		"lead": "Jedna osoba od kodu, kontaktu i opieki po starcie. Wybierz, czego potrzebujesz, albo opisz projekt w briefie.",
@@ -120,8 +120,8 @@
 	},
 	"work": {
 		"meta": {
-			"title": "Realizacje i case studies | Michał Janiec",
-			"description": "Wybrane projekty: strona agencji SEO w Next.js, modernizacja platformy obiadów szkolnych, marketplace Web3 Braintrust."
+			"title": "Realizacje: strony i aplikacje dla firm | Michał Janiec",
+			"description": "Zobacz, jak pracuję: strona agencji marketingowej w Next.js, modernizacja platformy obiadów szkolnych i marketplace Web3 Braintrust. Problem, podejście, efekt."
 		},
 		"title": "Realizacje",
 		"lead": "Kilka projektów, przy których odpowiadałem za frontend. Z kontekstem, podejściem i efektem.",
@@ -141,8 +141,8 @@
 	},
 	"pricing": {
 		"meta": {
-			"title": "Cennik stron i sklepów Shopify | Michał Janiec",
-			"description": "Przejrzyste ceny stron w Next.js, sklepów Shopify i współpracy godzinowej. Wycena w 2–3 dni robocze po krótkim briefie."
+			"title": "Ile kosztuje strona internetowa? Cennik | Michał Janiec",
+			"description": "Strona-wizytówka od 1 000 zł, strona firmowa z panelem od 2 900 zł, sklep Shopify od 2 500 zł netto. Dokładna wycena w 2–3 dni robocze po krótkim briefie."
 		},
 		"title": "Cennik",
 		"lead": "Ceny orientacyjne netto. Dokładną wycenę dostajesz po krótkim briefie, w ciągu 2–3 dni roboczych. Projekty niestandardowe wyceniam indywidualnie.",
@@ -192,11 +192,12 @@
 			"label": "Brief projektu",
 			"heading": "Opowiedz o projekcie",
 			"types": {
-				"website": "Strona firmowa",
+				"website": "Nowa strona dla firmy",
+				"fix": "Jednorazowa poprawka lub naprawa",
 				"shopify": "Sklep Shopify",
-				"wordpress": "WordPress: poprawki",
-				"webapp": "Aplikacja React",
-				"team": "Frontend dla zespołu",
+				"wordpress": "WordPress: poprawki i rozwój",
+				"webapp": "Aplikacja webowa",
+				"team": "Frontend dla zespołu lub agencji (B2B)",
 				"audit": "Audyt szybkości / SEO",
 				"marketing": "SEO / Google Ads",
 				"job": "Oferta pracy / rekrutacja",
@@ -223,8 +224,8 @@
 			"privacy": "Polityka prywatności",
 			"submit": "Wyślij brief",
 			"sending": "Wysyłam…",
-			"successTitle": "Dzięki! Odezwę się w ciągu 24 godzin.",
-			"successBody": "Brief dotarł. Odpowiem na adres e-mail podany w formularzu.",
+			"successTitle": "Dzięki! Brief dotarł.",
+			"successBody": "W ciągu 24 godzin odpiszę na podany adres e-mail, z pytaniami albo wstępnymi widełkami. Pełną wycenę z zakresem, ceną i terminem dostaniesz w 2–3 dni robocze.",
 			"errors": {
 				"name": "Podaj imię (min. 2 znaki).",
 				"email": "Podaj poprawny adres e-mail.",
@@ -234,6 +235,7 @@
 				"rateLimit": "Za dużo prób. Spróbuj za kilka minut."
 			},
 			"messagePlaceholder": "Co chcesz zbudować lub poprawić? Link do obecnej strony też się przyda.",
+			"messageHint": "Nie wpisuj tu haseł ani danych dostępowych. Jeśli będą potrzebne, ustalimy bezpieczny sposób ich przekazania.",
 			"detailsTitle": "Dodaj szczegóły projektu (opcjonalnie)",
 			"detailsHint": "Rodzaj projektu, budżet, termin. Pomogą mi przygotować trafniejszą wycenę.",
 			"typeLabel": "Czego potrzebujesz? Możesz zaznaczyć kilka.",

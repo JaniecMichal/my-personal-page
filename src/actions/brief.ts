@@ -87,7 +87,8 @@ export async function submitBrief(_prev: BriefState, formData: FormData): Promis
 			subject: data.types.length ? `Brief: ${data.types.join(", ")} — ${data.name}` : `Brief — ${data.name}`,
 			text,
 			html,
-			tags: ["brief", ...data.types],
+			// Mailgun accepts at most 3 tags per message.
+			tags: ["brief", ...data.types].slice(0, 3),
 		});
 		return { status: "success", types: data.types };
 	} catch (error) {

@@ -27,11 +27,15 @@ table in [business-plan-status.md](./business-plan-status.md). Done before this 
    form's submit button stays „Wyślij brief”); packages are „Strona-wizytówka” (1 000 zł) and „Strona
    firmowa z panelem” (2 900 zł) everywhere, chosen by Michał; the 2 900 zł card is highlighted on
    /cennik instead of Shopify; the Shopify card matches Starter; custom-quote line on /cennik and home.
-4. [ ] **Meta titles/descriptions** problem-first (services, pricing, work); Polish label for the home work
+4. [x] **Meta titles/descriptions** problem-first (services, pricing, work); Polish label for the home work
    section („02 — Case studies”).
 5. [x] „ułamek sekundy” on the Next.js page (`services.ts:197`); audit page („dlaczego Google jej nie lubi”).
-6. [ ] **Contact**: success message with the next step (quote in 2–3 dni robocze), „nie wysyłaj haseł”
+6. [x] **Contact**: success message with the next step (quote in 2–3 dni robocze), „nie wysyłaj haseł”
    near the form, brief types for B2B and one-off fix vs care.
+   Done 2026-10-14 (items 4, 6): problem-first meta for services, pricing, work and 6 service pages
+   (SEO/Ads and Next.js unchanged); home label „02 — Realizacje”; success message names both steps;
+   no-passwords hint under the message; new brief type „Jednorazowa poprawka lub naprawa”, B2B on the team
+   type. A „stała opieka” type waits on F04.
 
 **Waiting on one decision each (one answer unblocks the whole row):**
 
