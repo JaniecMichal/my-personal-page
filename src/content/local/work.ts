@@ -683,8 +683,8 @@ export const caseStudies: LocalCaseStudy[] = [
 		],
 		quote: {
 			text: {
-				pl: "Lubię z Tobą pracować, bo jesteś konkretny i zawsze starasz się podążać za celami, które wyznacza klient, i pomagać je zrealizować, dostarczając odpowiednie zmiany.",
-				en: "I like working with you because you get straight to the point and always follow the goals the client sets, helping to achieve them by delivering the right changes.",
+				pl: "Lubię z Tobą pracować, bo jesteś konkretny i zawsze starasz się podążać za celami.",
+				en: "I like working with you because you get straight to the point and always try to follow the goals.",
 			},
 			lang: "pl",
 			author: "Konrad Bilski",
