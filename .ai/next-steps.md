@@ -65,7 +65,7 @@ Progress log:
   throttling, no GPU): LCP 1.8 → 1.4 s. CV hero shows the photo (`public/cv/michal-janiec.jpg`, the old
   site's photo from git history) in a `brackets` frame. To do: PSI on the preview / production.
 
-Related docs: [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
+Related docs: [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
 
 ---
