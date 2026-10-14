@@ -546,4 +546,155 @@ export const caseStudies: LocalCaseStudy[] = [
 		liveUrl: "https://www.usebraintrust.com",
 		seo: {},
 	},
+	{
+		id: "zapachdomu",
+		slug: "zapachdomu",
+		order: 4,
+		client: "zapachdomu.com",
+		title: {
+			pl: "Sklep Shopify z zestawami prezentowymi: opisy SEO w kategoriach pod Google i Google Ads",
+			en: "A Shopify gift-box store: SEO category descriptions for Google and Google Ads",
+		},
+		summary: {
+			pl: "Agencja SEO prowadząca sklep zapachdomu.com potrzebowała bogatszych treści w kategoriach, bez spychania produktów w dół strony. Dodałem edytowalne opisy z „Czytaj więcej”, którymi zespół zarządza sam w panelu Shopify.",
+			en: "The SEO agency running zapachdomu.com needed richer content on category pages without pushing the products down. I added editable descriptions with “Read more” that the team manages itself in the Shopify admin.",
+		},
+		period: { pl: "09.2026", en: "Sep 2026" },
+		role: {
+			pl: "Shopify developer, wsparcie agencji SEO",
+			en: "Shopify developer, supporting an SEO agency",
+		},
+		stack: ["Shopify", "Liquid", "Dawn (Online Store 2.0)", "Metafields", "JavaScript", "CSS"],
+		services: ["shopify"],
+		metrics: [
+			{
+				value: { pl: "4 DNI", en: "4 DAYS" },
+				label: { pl: "od startu do publikacji", en: "from start to launch" },
+			},
+			{
+				value: "SEO",
+				label: { pl: "opis w każdej kategorii", en: "a description on every category" },
+			},
+		],
+		chapters: [
+			{
+				title: { pl: "Problem", en: "Problem" },
+				body: {
+					pl: [
+						"zapachdomu.com to sklep Shopify z rzemieślniczymi zestawami prezentowymi: kawa, herbata, miody, słodycze i dodatki od polskich manufaktur. Sklep prowadzi agencja SEO, która zgłosiła się do mnie, gdy główny developer projektu był niedostępny.",
+						"Strony kategorii miały za mało treści, żeby Google i Google Ads dobrze rozumiały, czego dotyczą. Agencja potrzebowała miejsca na rozbudowane, unikalne opisy w każdej kategorii. Jednocześnie tekst nad listą produktów był już zbyt długi i spychał produkty w dół, szczególnie na telefonie.",
+					],
+					en: [
+						"zapachdomu.com is a Shopify store with artisan gift boxes: coffee, tea, honey, sweets and extras from Polish makers. The store is run by an SEO agency, which came to me while the project's main developer was unavailable.",
+						"The category pages had too little content for Google and Google Ads to understand what they were about. The agency needed room for rich, unique descriptions on every category. At the same time, the text above the product list was already too long and pushed the products down, especially on phones.",
+					],
+				},
+			},
+			{
+				title: { pl: "Rozwiązanie", en: "Solution" },
+				body: {
+					pl: [
+						"Każda kategoria dostała własne pole na opis SEO pod listą produktów. Bogatsza, unikalna treść na każdej stronie pomaga Google i Google Ads lepiej dopasować stronę do wyszukiwań i reklam. Cały tekst trafia do HTML-a strony, więc wyszukiwarka widzi go w całości, a odwiedzający widzi krótki podgląd z przyciskiem „Czytaj więcej”.",
+						"Górny opis kategorii zwija się do pierwszego akapitu, więc produkty są widoczne od razu. Wszystkie zmiany wizualne dopracowałem z myślą o telefonach, na których odbywa się większość zakupów. Przy okazji poprawiłem błąd motywu, przez który „Czytaj więcej” pojawiało się także przy krótkich tekstach.",
+						"Treściami zarządza zespół klienta. Opis edytuje się w panelu Shopify jak każde inne pole, a sposób przycinania podglądu ustawia się w edytorze motywu, bez zmian w kodzie. Pusta kategoria nie pokazuje pustego bloku, a opis dostała też strona ze wszystkimi produktami.",
+					],
+					en: [
+						"Every category got its own SEO description field below the product list. Richer, unique content on each page helps Google and Google Ads match the page to searches and ads. The full text is in the page's HTML, so search engines see all of it, while visitors see a short preview with a “Read more” button.",
+						"The top category description now collapses to its first paragraph, so the products are visible straight away. I polished every visual change for phones, where most shopping happens. Along the way I fixed a theme bug that showed “Read more” even for short texts.",
+						"The client's team manages the content. The description is edited in the Shopify admin like any other field, and the preview length is set in the theme editor, without touching code. An empty category shows no empty block, and the all-products page got a description too.",
+					],
+				},
+			},
+			{
+				title: { pl: "Proces", en: "Process" },
+				body: {
+					pl: [
+						"Wdrożenie przeszło przez bezpieczny proces: kopia zapasowa i duplikat motywu, podgląd do akceptacji przez klienta, publikacja i poprzednia wersja gotowa do przywrócenia jednym kliknięciem. Przed i po zmianach sprawdziłem, że liczba i kolejność produktów na liście się nie zmieniły.",
+						"Pracowałem wyłącznie w motywie sklepu, z ograniczonym dostępem, bez wglądu w dane klientów i zamówienia. Zespół dostał instrukcję edycji opisów i przygotowania tekstów, żeby mógł rozwijać treści samodzielnie, niezależnie od dostępności developera.",
+						"Na koniec przygotowałem dla klienta analizę dalszych zmian: strukturę nagłówków i FAQ na stronie dla firm oraz porządek w metatagach, z rekomendacjami, jak je wdrożyć.",
+					],
+					en: [
+						"The rollout followed a safe process: a backup and a duplicate of the theme, a preview for the client to approve, publishing, and the previous version ready to restore in one click. Before and after the change I checked that the number and order of products in the list stayed the same.",
+						"I worked only in the store's theme, with limited access and no view of customer or order data. The team got a guide to editing the descriptions and preparing the texts, so it can grow the content on its own, regardless of developer availability.",
+						"Finally, I prepared an analysis of further changes for the client: the heading structure and FAQ on the business page and a clean-up of meta tags, with recommendations on how to implement them.",
+					],
+				},
+			},
+			{
+				title: { pl: "Efekt", en: "Result" },
+				body: {
+					pl: [
+						"Opisy już działają w sklepie, na przykład w kategorii zestawów na Dzień Nauczyciela: krótki opis nad produktami i rozbudowany tekst z „Czytaj więcej” pod nimi. Zespół dodaje kolejne treści sam, w panelu Shopify.",
+						"Bogatsze strony kategorii mają zwiększyć widoczność sklepu w Google i trafność kampanii Google Ads, a w efekcie liczbę odwiedzin i potencjalnych klientów.",
+					],
+					en: [
+						"The descriptions are live in the store, for example in the Teacher's Day gift box category: a short intro above the products and a full text with “Read more” below them. The team adds new content itself, in the Shopify admin.",
+						"Richer category pages are meant to raise the store's visibility in Google and the relevance of its Google Ads campaigns, and with them the number of visits and potential customers.",
+					],
+				},
+			},
+		],
+		cover: {
+			src: "/work/zapachdomu/home-desktop.png",
+			alt: {
+				pl: "Strona główna sklepu zapachdomu.com z zestawami prezentowymi",
+				en: "zapachdomu.com home page with gift boxes",
+			},
+			width: 1920,
+			height: 963,
+		},
+		gallery: [
+			{
+				src: "/work/zapachdomu/category-desktop.png",
+				alt: {
+					pl: "Kategoria zestawów na Dzień Nauczyciela ze zwiniętym opisem nad produktami",
+					en: "Teacher's Day category with a collapsed description above the products",
+				},
+				width: 1920,
+				height: 915,
+			},
+			{
+				src: "/work/zapachdomu/category-description-desktop.png",
+				alt: {
+					pl: "Opis SEO pod listą produktów z przyciskiem „Czytaj więcej”",
+					en: "SEO description below the product list with a “Read more” button",
+				},
+				width: 1920,
+				height: 935,
+			},
+			{
+				src: "/work/zapachdomu/category-mobile.png",
+				alt: {
+					pl: "Kategoria na telefonie: krótki opis i produkty od razu widoczne",
+					en: "Category on a phone: a short intro and the products straight away",
+				},
+				width: 343,
+				height: 709,
+			},
+			{
+				src: "/work/zapachdomu/category-description-mobile.png",
+				alt: {
+					pl: "Opis SEO z „Czytaj więcej” na telefonie",
+					en: "SEO description with “Read more” on a phone",
+				},
+				width: 343,
+				height: 709,
+			},
+		],
+		quote: {
+			text: {
+				pl: "Lubię z Tobą pracować, bo jesteś konkretny i zawsze starasz się podążać za celami, które wyznacza klient, i pomagać je zrealizować, dostarczając odpowiednie zmiany.",
+				en: "I like working with you because you get straight to the point and always follow the goals the client sets, helping to achieve them by delivering the right changes.",
+			},
+			lang: "pl",
+			// TODO(quote): name and role of the agency contact, and their OK on this wording.
+			author: "[IMIĘ I NAZWISKO]",
+			role: {
+				pl: "Agencja SEO prowadząca zapachdomu.com",
+				en: "SEO agency running zapachdomu.com",
+			},
+		},
+		liveUrl: "https://zapachdomu.com",
+		seo: {},
+	},
 ];

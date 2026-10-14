@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import Image from "next/image";
 import { Sphere } from "@/components/effects/sphere";
 import { SetAlternateSlugs } from "@/components/i18n/alternate-slugs";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { DeviceFrame, hostOf } from "@/components/ui/device-frame";
 import { ImagePlaceholder } from "@/components/ui/image-placeholder";
 import { JsonLd } from "@/components/ui/json-ld";
 import { content } from "@/content";
@@ -146,12 +146,10 @@ export default async function CaseStudyPage({ params }: Props) {
 			<Container className="grid items-start gap-5 sm:grid-cols-12 lg:gap-6">
 				{study.gallery.length > 0 ? (
 					study.gallery.map((img) => (
-						<Image
+						<DeviceFrame
 							key={img.src}
-							src={img.src}
-							alt={img.alt}
-							width={img.width}
-							height={img.height}
+							image={img}
+							host={hostOf(study.liveUrl)}
 							sizes={
 								img.height > img.width
 									? "(min-width: 1024px) 33vw, 100vw"
@@ -159,7 +157,6 @@ export default async function CaseStudyPage({ params }: Props) {
 							}
 							// Phone screenshots sit three in a row, desktop ones two in a row.
 							className={cn(
-								"w-full",
 								img.height > img.width
 									? "mx-auto max-w-[390px] sm:col-span-4"
 									: "sm:col-span-12 lg:col-span-6",

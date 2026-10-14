@@ -1,5 +1,10 @@
 # Case study: zapachdomu.com (materiał roboczy, 2026-10-14)
 
+**Status:** dodane do `work.ts` (branch `content-mvp`), zrzuty w `public/work/zapachdomu/` (ceny rozmyte).
+Otwarte: imię i nazwisko osoby z agencji przy cytacie (`[IMIĘ I NAZWISKO]`) i jej zgoda na brzmienie cytatu.
+Odpowiedzi Michała: klient = agencja SEO obsługująca sklep; efektów liczbowych brak (opisane jako oczekiwane);
+współpraca na razie zakończona; praca z ograniczonym dostępem jako atut.
+
 Źródło: notatki w `~/personal_projects/zapachdomu` (bez gita, praca w panelu Shopify). Nic tu nie jest
 jeszcze na stronie. Przed publikacją potrzebne odpowiedzi Michała (sekcja „Pytania”).
 

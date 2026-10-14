@@ -81,6 +81,10 @@ Progress log:
   case studies with image / `about` → services, `CollectionPage` + breadcrumb on /uslugi and /realizacje,
   `poweredByHeader: false`, AVIF/WebP. Later items in section 5. Next case study: zapachdomu.com
   (notes in [case-study-zapachdomu.md](./case-study-zapachdomu.md)), then bilscy.info.
+- 2026-10-14 (`content-mvp`, part 4): zapachdomu.com case study (PL/EN, 4 chapters, prices blurred in the
+  screenshots). **Before merging:** the quote author is still `[IMIĘ I NAZWISKO]` in `work.ts`. All
+  case-study screenshots now sit in CSS device frames (`DeviceFrame`: browser window with the host,
+  phone for portrait images). Next: bilscy.info case study.
 
 Related docs: [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
