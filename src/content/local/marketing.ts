@@ -230,8 +230,8 @@ export const processSteps: LocalizedDeep<ProcessStep>[] = [
 		id: "quote",
 		title: { pl: "Wycena i plan", en: "Quote and plan" },
 		description: {
-			pl: "W ciągu 48 h dostajesz zakres, cenę i harmonogram. Bez ukrytych kosztów.",
-			en: "Within 48 h you get the scope, price and timeline. No hidden costs.",
+			pl: "W 2–3 dni robocze dostajesz zakres, cenę i harmonogram. Bez ukrytych kosztów.",
+			en: "Within 2–3 working days you get the scope, price and timeline. No hidden costs.",
 		},
 	},
 	{

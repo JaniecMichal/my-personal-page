@@ -64,7 +64,7 @@
 		"work": {
 			"index": "02 — Case studies",
 			"title": "Selected work",
-			"cta": "Got a similar project? Tell me about it and I'll reply within 24 hours."
+			"cta": "Got a similar project? Tell me about it and I'll reply within 24 hours on working days."
 		},
 		"process": {
 			"index": "03 — Process",
@@ -88,7 +88,7 @@
 		"final": {
 			"index": "07 — Contact",
 			"title": "Let's build it.",
-			"lead": "A short brief takes 3 minutes. I'll reply within 24 hours with a rough quote and timeline."
+			"lead": "A short brief takes 3 minutes. I'll reply within 24 hours on working days, and you get a quote with a timeline in 2–3 working days."
 		}
 	},
 	"services": {
@@ -114,7 +114,7 @@
 			"whyBody2": "You get one person who writes the code, answers your messages and stays around after launch.",
 			"plans": "Packages",
 			"plansNote": "Prices net",
-			"ctaTitle": "Tell me about your project. I'll reply within 24 hours.",
+			"ctaTitle": "Tell me about your project. I'll reply within 24 hours on working days.",
 			"ctaButton": "Start the brief",
 			"related": "See how I work on a real project"
 		}
@@ -143,10 +143,10 @@
 	"pricing": {
 		"meta": {
 			"title": "Pricing: websites and Shopify stores | Michał Janiec",
-			"description": "Clear pricing for Next.js websites, Shopify stores and hourly work. A quote within 24 hours after a short brief."
+			"description": "Clear pricing for Next.js websites, Shopify stores and hourly work. A quote within 2–3 working days after a short brief."
 		},
 		"title": "Pricing",
-		"lead": "Indicative net prices. You get an exact quote after a short brief, usually within 48 hours.",
+		"lead": "Indicative net prices. You get an exact quote after a short brief, within 2–3 working days.",
 		"drivers": "What affects the price",
 		"driverList": {
 			"d1": "number of pages and templates",
@@ -183,11 +183,11 @@
 	"contact": {
 		"meta": {
 			"title": "Contact and project quote | Michał Janiec",
-			"description": "Describe your project in a short form or send an email. I reply within 24 hours."
+			"description": "Describe your project in a short form or send an email. I reply within 24 hours on working days."
 		},
 		"label": "Contact · project brief",
 		"title": "Tell me about your project.",
-		"lead": "Just your name, email and a few words about the project. The details are optional. I reply within 24 hours with a rough quote or questions.",
+		"lead": "Just your name, email and a few words about the project. The details are optional. I reply within 24 hours on working days, with questions or a rough range. The full quote follows in 2–3 working days.",
 		"alt": "Prefer another way?",
 		"form": {
 			"label": "Project brief",
@@ -224,7 +224,7 @@
 			"privacy": "Privacy policy",
 			"submit": "Send brief",
 			"sending": "Sending…",
-			"successTitle": "Thanks! I'll get back to you within 24 hours.",
+			"successTitle": "Thanks! I'll get back to you within 24 hours on working days.",
 			"successBody": "Your brief arrived. I'll reply to the email address you gave.",
 			"errors": {
 				"name": "Enter your name (min. 2 characters).",

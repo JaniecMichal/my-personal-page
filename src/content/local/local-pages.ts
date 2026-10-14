@@ -95,8 +95,8 @@ export const localPages: LocalLocalPage[] = [
 					en: "How much does a website cost in Katowice?",
 				},
 				answer: {
-					pl: "Prosta strona-wizytówka zaczyna się od 1 000 zł netto, strona firmowa z panelem do edycji od 2 900 zł netto. Dokładną wycenę dostajesz w ciągu 24 godzin od wysłania briefu.",
-					en: "A simple one-page site starts at 1,000 PLN net, a business website with an editor at 2,900 PLN net. You get an exact quote within 24 hours of sending the brief.",
+					pl: "Prosta strona-wizytówka zaczyna się od 1 000 zł netto, strona firmowa z panelem do edycji od 2 900 zł netto. Dokładną wycenę dostajesz w 2–3 dni robocze od wysłania briefu.",
+					en: "A simple one-page site starts at 1,000 PLN net, a business website with an editor at 2,900 PLN net. You get an exact quote within 2–3 working days of sending the brief.",
 				},
 			},
 			{
@@ -128,8 +128,8 @@ export const localPages: LocalLocalPage[] = [
 				en: "Web design Katowice | Michał Janiec",
 			},
 			description: {
-				pl: "Strony firmowe, sklepy i aplikacje dla firm z Katowic i Śląska. Spotkanie na miejscu, lokalne SEO, faktura VAT. Wycena w 24 godziny.",
-				en: "Business websites, online stores and web apps for companies in Katowice and Silesia. Meet in person, local SEO, VAT invoice. Quote within 24 hours.",
+				pl: "Strony firmowe, sklepy i aplikacje dla firm z Katowic i Śląska. Spotkanie na miejscu, lokalne SEO, faktura VAT. Odpowiedź w 24 h w dni robocze.",
+				en: "Business websites, online stores and web apps for companies in Katowice and Silesia. Meet in person, local SEO, VAT invoice. Reply within 24 hours on working days.",
 			},
 		},
 	},
