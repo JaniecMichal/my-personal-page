@@ -7,8 +7,8 @@ export const services: LocalService[] = [
 		order: 1,
 		title: { pl: "Strona internetowa dla firmy", en: "A website for your business" },
 		summary: {
-			pl: "Strona, która przyprowadza klientów: widać Cię w Google, dobrze działa na telefonie i sam ją edytujesz.",
-			en: "A website that brings in customers: you show up on Google, it works well on phones and you can edit it yourself.",
+			pl: "Nowa strona dla Twojej firmy: czytelna oferta, łatwy kontakt, przygotowana pod Google i telefony. Treści zmieniasz sam.",
+			en: "A new website for your business: a clear offer, easy contact, built for Google and phones. You edit the content yourself.",
 		},
 		intro: {
 			pl: "Nie musisz znać się na technologii. Mówisz mi, co ma się wydarzyć: więcej telefonów, zapytań albo rezerwacji. Ja dobieram rozwiązanie, buduję stronę i dbam o to, żeby klienci ją znaleźli. Moją główną technologią jest Next.js: strony są szybkie, bezpieczne i dobrze widoczne w Google.",
@@ -165,11 +165,11 @@ export const services: LocalService[] = [
 		// Indexed since launch; reachable from the services page and footer, not shown on the home page.
 		showOnHome: false,
 		slug: { pl: "strony-nextjs", en: "nextjs-websites" },
-		order: 2,
+		order: 8,
 		title: { pl: "Strony firmowe w Next.js", en: "Business websites in Next.js" },
 		summary: {
-			pl: "Szybkie, dobrze pozycjonowane strony, które edytujesz sam. Core Web Vitals na zielono od pierwszego dnia.",
-			en: "Fast websites that rank well and that you can edit yourself. Green Core Web Vitals from day one.",
+			pl: "Strony w Next.js, które edytujesz sam. Szybkość i SEO techniczne sprawdzam przed oddaniem projektu.",
+			en: "Next.js websites you can edit yourself. I check speed and technical SEO before handover.",
 		},
 		intro: {
 			pl: "Strona firmowa, która ładuje się w ułamku sekundy, dobrze wygląda na telefonie i jest gotowa na SEO. Zbudowana w Next.js, z wygodnym CMS do edycji treści.",
@@ -274,7 +274,7 @@ export const services: LocalService[] = [
 	{
 		id: "shopify",
 		slug: { pl: "sklepy-shopify", en: "shopify-stores" },
-		order: 3,
+		order: 4,
 		title: { pl: "Sklepy Shopify", en: "Shopify stores" },
 		summary: {
 			pl: "Wdrożenie, motyw dopasowany do marki, poprawki i integracje. Sklep gotowy do sprzedaży.",
@@ -397,7 +397,7 @@ export const services: LocalService[] = [
 	{
 		id: "wordpress",
 		slug: { pl: "wordpress", en: "wordpress" },
-		order: 4,
+		order: 2,
 		title: { pl: "WordPress: poprawki i przyspieszenie", en: "WordPress fixes and speed-ups" },
 		summary: {
 			pl: "Nowe sekcje, naprawa błędów, migracje i optymalizacja, bez przepisywania wszystkiego od zera.",
@@ -482,7 +482,7 @@ export const services: LocalService[] = [
 	{
 		id: "speed-seo-audit",
 		slug: { pl: "audyt-szybkosci-seo", en: "speed-seo-audit" },
-		order: 7,
+		order: 3,
 		title: { pl: "Audyt szybkości i SEO", en: "Speed and SEO audit" },
 		summary: {
 			pl: "Sprawdzam, co spowalnia stronę i dlaczego Google jej nie lubi. Raport z priorytetami plus poprawki.",
@@ -503,11 +503,11 @@ export const services: LocalService[] = [
 	{
 		id: "seo-sem",
 		slug: { pl: "seo-i-google-ads", en: "seo-and-google-ads" },
-		order: 8,
+		order: 7,
 		title: { pl: "SEO i Google Ads", en: "SEO and Google Ads" },
 		summary: {
-			pl: "Więcej klientów z Google: pozycjonowanie, kampanie reklamowe i analityka, które pracują razem ze stroną.",
-			en: "More customers from Google: SEO, ad campaigns and analytics that work together with your website.",
+			pl: "Lepsza widoczność w Google i efekty, które możesz zmierzyć: pozycjonowanie, kampanie reklamowe i analityka, które działają razem ze stroną.",
+			en: "Better visibility on Google, with results you can measure: SEO, ad campaigns and analytics that work together with your website.",
 		},
 		intro: {
 			pl: "Dobra strona to połowa sukcesu, druga połowa to ruch. Pozycjonowanie i kampanie Google Ads prowadzę razem ze sprawdzonym zespołem specjalistów od marketingu. Ty masz jeden kontakt, a strona, SEO i reklamy grają do jednej bramki: więcej zapytań i sprzedaży.",
