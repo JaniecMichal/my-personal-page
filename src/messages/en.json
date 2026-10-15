@@ -1,6 +1,7 @@
 {
 	"common": {
 		"skipToContent": "Skip to content",
+		"phone": "Phone",
 		"nav": {
 			"label": "Main navigation",
 			"services": "Services",

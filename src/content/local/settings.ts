@@ -6,8 +6,7 @@ export const siteSettings: LocalizedDeep<SiteSettings> = {
 	role: "Senior Frontend Developer",
 	location: { pl: "Katowice, Śląsk · zdalnie PL/EU/UK", en: "Katowice, Poland · remote PL/EU/UK" },
 	email: "michal.janiec95@gmail.com",
-	// TODO: add a phone number if you want local clients to call.
-	phone: undefined,
+	phone: "+48 794 236 099",
 	availability: {
 		pl: "Otwarty na nowe projekty",
 		en: "Open to new projects",

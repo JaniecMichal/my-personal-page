@@ -234,11 +234,11 @@ export const caseStudies: LocalCaseStudy[] = [
 			en: "A school canteen platform: from MVP to a modern app without a full rewrite",
 		},
 		summary: {
-			pl: "Przejąłem rolę głównego frontend developera platformy, która pomaga szkołom w całej Polsce organizować stołówkę, i dowiozłem kluczowe funkcje na start nowej wersji.",
-			en: "I took over as lead frontend developer of a platform that helps schools across Poland run their canteens, and shipped the key features needed to launch its new version.",
+			pl: "Jako jedyny frontend developer odpowiadam za cały frontend platformy, która pomaga szkołom w całej Polsce organizować stołówkę. Dowiozłem kluczowe funkcje na start nowej wersji.",
+			en: "As the sole frontend developer, I own the whole frontend of a platform that helps schools across Poland run their canteens. I shipped the key features needed to launch its new version.",
 		},
 		period: { pl: "02.2025 → wsparcie frontendowe", en: "Feb 2025 → frontend support" },
-		role: { pl: "Główny frontend developer", en: "Lead frontend developer" },
+		role: { pl: "Jedyny frontend developer", en: "Sole frontend developer" },
 		stack: ["React", "TypeScript", "Vite", "Chakra UI"],
 		services: ["web-apps"],
 		metrics: [
@@ -284,12 +284,12 @@ export const caseStudies: LocalCaseStudy[] = [
 				title: { pl: "Podejście", en: "Approach" },
 				body: {
 					pl: [
-						"Przejąłem rolę głównego frontend developera i dowiozłem ostatnie kluczowe funkcje, niezbędne do wystartowania z nową wersją platformy.",
+						"Przejąłem frontend jako jedyny developer tej części aplikacji, więc odpowiadam za nią w całości. Dowiozłem ostatnie kluczowe funkcje, niezbędne do wystartowania z nową wersją platformy.",
 						"Oprócz dowożenia brakujących elementów z własnej inicjatywy proponowałem i wprowadzałem kolejne usprawnienia. Najważniejszym była migracja z create-react-app na nowoczesne Vite, bez przepisywania aplikacji od zera.",
 						"Dużo uwagi poświęciłem interfejsowi. Z aplikacji korzystają zarówno administratorzy w szkołach, jak i rodzice, dlatego musi być intuicyjna i niezawodna, również na telefonie.",
 					],
 					en: [
-						"I took over as lead frontend developer and shipped the last key features required to launch the new version of the platform.",
+						"I took over the frontend as its only developer, so I am fully responsible for that part of the app. I shipped the last key features required to launch the new version of the platform.",
 						"Beyond the missing pieces, I proactively proposed and delivered a series of improvements. The biggest one was migrating from create-react-app to modern Vite, without rewriting the app from scratch.",
 						"I put a lot of care into the interface. The app is used by school administrators and by parents alike, so it has to be intuitive and reliable, on phones too.",
 					],
@@ -397,11 +397,11 @@ export const caseStudies: LocalCaseStudy[] = [
 			en: "A Web3 talent marketplace with a 50-engineer team",
 		},
 		summary: {
-			pl: "3,5 roku przy amerykańskim marketplace freelancerów opartym na Web3: od komponentów i testów po prowadzenie zespołu i architekturę nowych modułów.",
-			en: "3.5 years on a US freelance marketplace built on Web3: from components and tests to leading a team and designing new modules.",
+			pl: "3,5 roku przy amerykańskim marketplace freelancerów opartym na Web3: od komponentów i testów po rolę Feature Ownera i architekturę nowych modułów.",
+			en: "3.5 years on a US freelance marketplace built on Web3: from components and tests to owning features as Feature Owner and designing new modules.",
 		},
 		period: { pl: "06.2021 → 12.2024", en: "Jun 2021 → Dec 2024" },
-		role: { pl: "Frontend Developer, lider zespołu", en: "Frontend Developer, team lead" },
+		role: { pl: "Frontend Developer, Feature Owner", en: "Frontend Developer, Feature Owner" },
 		stack: [
 			"React",
 			"TypeScript",
@@ -455,15 +455,15 @@ export const caseStudies: LocalCaseStudy[] = [
 				},
 			},
 			{
-				title: { pl: "Prowadzenie zespołu i architektura", en: "Leading and architecture" },
+				title: { pl: "Feature Owner i architektura", en: "Feature ownership and architecture" },
 				body: {
 					pl: [
 						"W bezpośrednim kontakcie z klientem doprecyzowywałem wymagania nowych funkcji i doradzałem technicznie, tak żeby rozwiązania były spójne z celami biznesowymi projektu.",
-						"Zarządzałem zespołem deweloperskim i dowoziłem nowe funkcje w ramach przydzielonego zakresu, na czas. Projektowałem architekturę nowych części aplikacji, tak aby były skalowalne i łatwe w utrzymaniu.",
+						"Jako Feature Owner prowadziłem wybrane funkcje od początku do końca: dzieliłem pracę w zespole, koordynowałem programistów i dowoziłem całość na czas, w ramach przydzielonego zakresu. Projektowałem architekturę nowych części aplikacji, tak aby były skalowalne i łatwe w utrzymaniu.",
 					],
 					en: [
 						"Working directly with the client, I clarified requirements for new features and gave technical advice, so that solutions stayed aligned with the project's business goals.",
-						"I managed a development team and delivered new features on time within the assigned scope. I designed the architecture for new parts of the app to keep them scalable and maintainable.",
+						"As Feature Owner I led selected features end to end: I split the work within the team, coordinated the developers and delivered on time within the assigned scope. I designed the architecture for new parts of the app to keep them scalable and maintainable.",
 					],
 				},
 			},

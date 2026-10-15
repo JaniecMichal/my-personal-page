@@ -5,3 +5,8 @@
 export const encodeEmail = (email: string) => btoa(email.split("").reverse().join(""));
 
 export const decodeEmail = (encoded: string) => atob(encoded).split("").reverse().join("");
+
+/** The phone number uses the same encoding, so it also appears only after hydration. */
+export const encodePhone = encodeEmail;
+
+export const decodePhone = decodeEmail;

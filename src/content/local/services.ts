@@ -80,13 +80,13 @@ export const services: LocalService[] = [
 				price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
 				features: {
 					pl: [
-						"do 5 podstron",
+						"do 4 podstron",
 						"panel do edycji treści",
 						"SEO i dane strukturalne",
 						"wdrożenie + 30 dni wsparcia",
 					],
 					en: [
-						"up to 5 pages",
+						"up to 4 pages",
 						"content editor",
 						"SEO and structured data",
 						"launch + 30 days support",
@@ -98,15 +98,20 @@ export const services: LocalService[] = [
 				id: "business-care",
 				kicker: { pl: "Dla działających stron", en: "For live sites" },
 				name: { pl: "Zmiany i opieka", en: "Changes and care" },
-				price: { pl: "120 zł/h", en: "120 PLN/h" },
+				price: { pl: "90–150 zł/h", en: "90–150 PLN/h" },
 				features: {
 					pl: [
-						"nowe sekcje i poprawki",
-						"aktualizacje i kopie zapasowe",
-						"rozliczenie co 15 min",
-						"minimum 1 h",
+						"nowe sekcje, poprawki, aktualizacje",
+						"stały pakiet od 2–4 h miesięcznie",
+						"priorytetowa odpowiedź w pakiecie",
+						"albo jednorazowe zlecenia",
 					],
-					en: ["new sections and fixes", "updates and backups", "billed per 15 min", "1 h minimum"],
+					en: [
+						"new sections, fixes, updates",
+						"monthly plan from 2–4 h",
+						"priority response on a plan",
+						"or one-off jobs",
+					],
 				},
 				highlighted: false,
 			},
@@ -130,8 +135,8 @@ export const services: LocalService[] = [
 					en: "What's the difference between a one-page site and a business website?",
 				},
 				answer: {
-					pl: "Strona-wizytówka (od 1 000 zł netto) to jedna strona do 6 sekcji, budowana z Twojego gotowego projektu graficznego, z formularzem kontaktowym i jedną rundą poprawek. Strona firmowa z panelem (od 2 900 zł netto) ma do 5 podstron, panel do edycji treści, SEO z danymi strukturalnymi i 30 dni wsparcia po starcie. Jeśli nie wiesz, którą wybrać, opisz firmę w briefie, a zaproponuję wariant.",
-					en: "A one-page site (from 1,000 PLN net) is a single page with up to 6 sections, built from your ready design, with a contact form and one round of fixes. A website with an editor (from 2,900 PLN net) has up to 5 pages, a content editor, SEO with structured data and 30 days of support after launch. If you're not sure which one you need, describe your business in the brief and I'll suggest one.",
+					pl: "Strona-wizytówka (od 1 000 zł netto) to jedna strona do 6 sekcji, budowana z Twojego gotowego projektu graficznego, z formularzem kontaktowym i jedną rundą poprawek. Prosty panel do edycji treści też mieści się w tej cenie. Strona firmowa z panelem (od 2 900 zł netto) ma do 4 podstron, panel do edycji treści (WordPress, Shopify, Sanity albo inny headless CMS, zależnie od potrzeb), SEO z danymi strukturalnymi i 30 dni wsparcia po starcie. Jeśli nie wiesz, którą wybrać, opisz firmę w briefie, a zaproponuję wariant.",
+					en: "A one-page site (from 1,000 PLN net) is a single page with up to 6 sections, built from your ready design, with a contact form and one round of fixes. A simple content editor fits in that price too. A website with an editor (from 2,900 PLN net) has up to 4 pages, a content editor (WordPress, Shopify, Sanity or another headless CMS, whatever suits you), SEO with structured data and 30 days of support after launch. If you're not sure which one you need, describe your business in the brief and I'll suggest one.",
 				},
 			},
 			{
@@ -171,8 +176,8 @@ export const services: LocalService[] = [
 					en: "What if I want changes after launch?",
 				},
 				answer: {
-					pl: "Teksty, zdjęcia, ceny czy godziny otwarcia zmieniasz sam w panelu. Strona firmowa ma w cenie 30 dni wsparcia, a strona-wizytówka jedną rundę poprawek. Później nowe sekcje, poprawki, aktualizacje i kopie zapasowe rozliczam godzinowo: 120 zł/h netto, co 15 minut, minimum 1 h.",
-					en: "You change texts, photos, prices or opening hours yourself in the editor. The business website includes 30 days of support, the one-page site one round of fixes. After that, new sections, fixes, updates and backups are billed hourly: 120 PLN/h net, in 15-minute steps, with a 1-hour minimum.",
+					pl: "Teksty, zdjęcia, ceny czy godziny otwarcia zmieniasz sam w panelu. Strona firmowa ma w cenie 30 dni wsparcia, a strona-wizytówka jedną rundę poprawek. Później możesz wybrać stałą opiekę, czyli pakiet od 2–4 godzin miesięcznie z priorytetową odpowiedzią, albo zlecać nowe sekcje, poprawki i aktualizacje jednorazowo. Stawka to 90–150 zł/h netto, zależnie od złożoności prac.",
+					en: "You change texts, photos, prices or opening hours yourself in the editor. The business website includes 30 days of support, the one-page site one round of fixes. After that you can choose ongoing care, a plan from 2–4 hours a month with priority response, or order new sections, fixes and updates as one-off jobs. The rate is 90–150 PLN/h net, depending on complexity.",
 				},
 			},
 		],
@@ -246,13 +251,13 @@ export const services: LocalService[] = [
 					pl: [
 						"1 strona, do 6 sekcji",
 						"z Twojego projektu graficznego",
-						"bez panelu do edycji",
+						"prosty panel do edycji w cenie",
 						"wdrożenie + 1 runda poprawek",
 					],
 					en: [
 						"1 page, up to 6 sections",
 						"from your ready design",
-						"no content editor",
+						"simple content editor included",
 						"launch + 1 round of fixes",
 					],
 				},
@@ -265,13 +270,13 @@ export const services: LocalService[] = [
 				price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
 				features: {
 					pl: [
-						"do 5 podstron",
+						"do 4 podstron",
 						"panel do edycji treści",
 						"SEO i dane strukturalne",
 						"wdrożenie + 30 dni wsparcia",
 					],
 					en: [
-						"up to 5 pages",
+						"up to 4 pages",
 						"content editor",
 						"SEO and structured data",
 						"launch + 30 days support",
@@ -283,15 +288,20 @@ export const services: LocalService[] = [
 				id: "nextjs-care",
 				kicker: { pl: "Dla działających stron", en: "For live sites" },
 				name: { pl: "Zmiany i opieka", en: "Changes and care" },
-				price: { pl: "120 zł/h", en: "120 PLN/h" },
+				price: { pl: "90–150 zł/h", en: "90–150 PLN/h" },
 				features: {
 					pl: [
-						"nowe sekcje i poprawki",
-						"aktualizacje zależności",
-						"rozliczenie co 15 min",
-						"minimum 1 h",
+						"nowe sekcje, poprawki, aktualizacje",
+						"stały pakiet od 2–4 h miesięcznie",
+						"priorytetowa odpowiedź w pakiecie",
+						"albo jednorazowe zlecenia",
 					],
-					en: ["new sections and fixes", "dependency updates", "billed per 15 min", "1 h minimum"],
+					en: [
+						"new sections, fixes, updates",
+						"monthly plan from 2–4 h",
+						"priority response on a plan",
+						"or one-off jobs",
+					],
 				},
 				highlighted: false,
 			},
@@ -320,8 +330,8 @@ export const services: LocalService[] = [
 			{
 				title: { pl: "Konfiguracja sklepu", en: "Store setup" },
 				description: {
-					pl: "Domena, płatności (Przelewy24, BLIK, Stripe), dostawy, podatki i strony prawne.",
-					en: "Domain, payments (Przelewy24, BLIK, Stripe), shipping, taxes and legal pages.",
+					pl: "Domena, płatności, dostawy, podatki i strony prawne.",
+					en: "Domain, payments, shipping, taxes and legal pages.",
 				},
 			},
 			{
@@ -334,8 +344,8 @@ export const services: LocalService[] = [
 			{
 				title: { pl: "Import produktów", en: "Product import" },
 				description: {
-					pl: "CSV albo migracja z WooCommerce lub innej platformy, z wariantami i zdjęciami.",
-					en: "CSV or migration from WooCommerce or another platform, with variants and images.",
+					pl: "Import z pliku CSV, z wariantami i zdjęciami. Przeniesienie sklepu z innej platformy wyceniam po sprawdzeniu danych.",
+					en: "Import from a CSV file, with variants and images. Moving a store from another platform is quoted after I check the data.",
 				},
 			},
 			{
@@ -348,8 +358,8 @@ export const services: LocalService[] = [
 			{
 				title: { pl: "Integracje", en: "Integrations" },
 				description: {
-					pl: "Faktury, newsletter, analityka, feedy Meta i Google.",
-					en: "Invoices, newsletter, analytics, Meta and Google feeds.",
+					pl: "Faktury, newsletter i analityka.",
+					en: "Invoices, newsletter and analytics.",
 				},
 			},
 			{
@@ -390,13 +400,13 @@ export const services: LocalService[] = [
 				features: {
 					pl: [
 						"własne sekcje",
-						"migracja i import",
+						"import produktów",
 						"przegląd szybkości i SEO",
 						"szkolenie + 30 dni opieki",
 					],
 					en: [
 						"custom sections",
-						"migration and import",
+						"product import",
 						"speed and SEO pass",
 						"training + 30 days care",
 					],
@@ -407,15 +417,20 @@ export const services: LocalService[] = [
 				id: "shopify-care",
 				kicker: { pl: "Dla działających sklepów", en: "For live stores" },
 				name: { pl: "Poprawki i opieka", en: "Fixes and care" },
-				price: { pl: "120 zł/h", en: "120 PLN/h" },
+				price: { pl: "90–150 zł/h", en: "90–150 PLN/h" },
 				features: {
 					pl: [
 						"błędy i nowe sekcje",
 						"porządki w aplikacjach",
-						"miesięczny raport",
-						"szybka reakcja",
+						"stały pakiet od 2–4 h miesięcznie",
+						"priorytetowa odpowiedź",
 					],
-					en: ["bug fixes, new sections", "app clean-up", "monthly report", "priority response"],
+					en: [
+						"bug fixes, new sections",
+						"app clean-up",
+						"monthly plan from 2–4 h",
+						"priority response",
+					],
 				},
 				highlighted: false,
 			},
@@ -446,7 +461,7 @@ export const services: LocalService[] = [
 			en: "Got a WordPress site that is slow or needs changes? I fix bugs, add sections, tidy up plugins and make it load faster.",
 		},
 		tags: ["WordPress", "PHP"],
-		priceFrom: { pl: "120 zł/h", en: "120 PLN/h" },
+		priceFrom: { pl: "90–150 zł/h", en: "90–150 PLN/h" },
 		timeline: { pl: "od 1 dnia", en: "from 1 day" },
 		included: [
 			{
@@ -470,6 +485,13 @@ export const services: LocalService[] = [
 					en: "Caching, images, plugin clean-up, better Core Web Vitals.",
 				},
 			},
+			{
+				title: { pl: "Jednorazowo albo w stałej opiece", en: "One-off or ongoing care" },
+				description: {
+					pl: "Pojedyncza naprawa albo stały pakiet od 2–4 h miesięcznie z priorytetową odpowiedzią.",
+					en: "A single fix, or a monthly plan from 2–4 h with priority response.",
+				},
+			},
 		],
 		plans: [],
 		faq: [],
@@ -479,8 +501,8 @@ export const services: LocalService[] = [
 				en: "WordPress fixes and speed-ups | Michał Janiec",
 			},
 			description: {
-				pl: "Strona na WordPressie działa wolno, ma błędy albo potrzebuje nowych sekcji? Naprawiam, przyspieszam i rozwijam ją bez przepisywania od zera. 120 zł/h netto.",
-				en: "Is your WordPress site slow, broken or missing sections? I fix it, speed it up and extend it without rebuilding from scratch. 120 PLN/h net.",
+				pl: "Strona na WordPressie działa wolno, ma błędy albo potrzebuje nowych sekcji? Naprawiam, przyspieszam i rozwijam ją bez przepisywania od zera. 90–150 zł/h netto.",
+				en: "Is your WordPress site slow, broken or missing sections? I fix it, speed it up and extend it without rebuilding from scratch. 90–150 PLN/h net.",
 			},
 		},
 	},
@@ -524,8 +546,8 @@ export const services: LocalService[] = [
 			en: "Stimulus, Hotwire, ERB and Tailwind. I join your team and ship the UI. It's what I do daily at Visuality.",
 		},
 		intro: {
-			pl: "Twój zespół Rails potrzebuje kogoś od interfejsu? Piszę widoki ERB, kontrolery Stimulus i Tailwind, rozumiem kod Rails i dogaduję się z backendem.",
-			en: "Your Rails team needs someone for the UI? I write ERB views, Stimulus controllers and Tailwind, read Rails code and work well with backend developers.",
+			pl: "Twój zespół Rails potrzebuje kogoś od interfejsu? Piszę widoki ERB, kontrolery Stimulus i Tailwind, rozumiem kod Rails i dogaduję się z backendem. Mogę dołączyć do zespołu na część etatu albo na ustaloną liczbę godzin w tygodniu.",
+			en: "Your Rails team needs someone for the UI? I write ERB views, Stimulus controllers and Tailwind, read Rails code and work well with backend developers. I can join part-time or for an agreed number of hours a week.",
 		},
 		tags: ["Rails", "Stimulus", "Tailwind"],
 		priceFrom: { pl: "120 zł/h", en: "120 PLN/h" },
@@ -554,8 +576,8 @@ export const services: LocalService[] = [
 			en: "I find what slows your site down and what holds it back on Google. A prioritised report, plus the fixes.",
 		},
 		intro: {
-			pl: "Mierzę Core Web Vitals, sprawdzam SEO techniczne i dostępność, a potem dostajesz listę poprawek od najważniejszych. Mogę je też wdrożyć.",
-			en: "I measure Core Web Vitals, check technical SEO and accessibility, then hand you a list of fixes, most important first. I can implement them too.",
+			pl: "Mierzę Core Web Vitals, sprawdzam SEO techniczne i dostępność. Dostajesz raport PDF z listą poprawek od najważniejszych, a na krótkiej rozmowie omawiam wyniki i wyceniam potrzebne prace. Poprawki mogę też wdrożyć.",
+			en: "I measure Core Web Vitals, check technical SEO and accessibility. You get a PDF report with a list of fixes, most important first, and on a short call I walk you through the results and quote the work needed. I can implement the fixes too.",
 		},
 		tags: ["Lighthouse", "CWV", "SEO"],
 		priceFrom: { pl: "od 900 zł", en: "from 900 PLN" },

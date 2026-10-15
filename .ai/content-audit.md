@@ -39,19 +39,19 @@ table in [business-plan-status.md](./business-plan-status.md). Done before this 
 
 **Waiting on one decision each (one answer unblocks the whole row):**
 
-7. [ ] **F04 support**: process step „Opieka: Abonament albo…” (no website plan exists), WordPress page as
+7. [x] (2026-10-15) **F04 support**: process step „Opieka: Abonament albo…” (no website plan exists), WordPress page as
    J2 „naprawy i poprawki” with one-off vs care, care packages on business / Shopify / Next.js pages,
    Shopify care „miesięczny raport, szybka reakcja”.
-8. [ ] **F03 agency trial**: pricing card 4 „Wsparcie, zespoły, agencje”, FAQ „trial”, Rails/B2B page (NDA,
+8. [x] (2026-10-15) **F03 agency trial**: pricing card 4 „Wsparcie, zespoły, agencje”, FAQ „trial”, Rails/B2B page (NDA,
    white-label, cooperation model).
-9. [ ] **F09 + F10 meetings / Google Business Profile**: Katowice page and meta („kawa przy Rynku”,
+9. [x] (2026-10-15) **F09 + F10 meetings / Google Business Profile**: Katowice page and meta („kawa przy Rynku”,
    „dojadę do Krakowa”, „lokalne SEO… znaleźli Cię”), „wizytówka” on the business-website page.
-10. [ ] **F01 + F02 prices and scope**: Shopify scope (payments, WooCommerce migration, feeds), audit scope,
+10. [x] (2026-10-15) **F01 + F02 prices and scope**: Shopify scope (payments, WooCommerce migration, feeds), audit scope,
     web apps (D2 line), keep or merge the Next.js page.
-11. [ ] **F05 referral terms**: SEO/Ads page „my part / partner's part”, remove result promises („więcej
+11. [x] (2026-10-15) **F05 referral terms**: SEO/Ads page „my part / partner's part”, remove result promises („więcej
     zapytań i sprzedaży”, „ruch od pierwszego dnia”, ChatGPT/Gemini), privacy policy „nie udostępniam
     danych innym podmiotom” vs passing enquiries to the partner (`pl.json:255`).
-12. [ ] **F08 + F12 permissions / facts**: testimonials and Konrad Bilski quote; trust strip lists Visuality
+12. [x] (2026-10-15) **F08 + F12 permissions / facts**: testimonials and Konrad Bilski quote; trust strip lists Visuality
     (employer) and Gainflow (own startup) as „Pracowałem z”; jemWszkole „Główny” (case) vs „Jedyny” (CV);
     Braintrust „lider zespołu” (case) vs CV; naming Visuality and its bank project.
 

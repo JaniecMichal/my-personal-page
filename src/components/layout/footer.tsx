@@ -2,9 +2,10 @@ import NextLink from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/container";
 import { EmailLink } from "@/components/ui/email-link";
+import { PhoneLink } from "@/components/ui/phone-link";
 import { content } from "@/content";
 import { Link } from "@/i18n/navigation";
-import { encodeEmail } from "@/lib/email";
+import { encodeEmail, encodePhone } from "@/lib/email";
 
 // min-h-11 keeps every footer link a 44px touch target; the column gap is the row height itself.
 const linkClass =
@@ -73,6 +74,13 @@ export async function Footer() {
 				<div className="flex flex-col text-muted">
 					<span className="mb-2 label">{settings.name}</span>
 					<EmailLink encoded={encodeEmail(settings.email)} className={linkClass} />
+					{settings.phone && (
+						<PhoneLink
+							encoded={encodePhone(settings.phone)}
+							label={t("phone")}
+							className={linkClass}
+						/>
+					)}
 					<span>{settings.location}</span>
 					<span>
 						{t("footer.rights", { year: new Date().getFullYear() })} ·{" "}
