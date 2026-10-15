@@ -273,6 +273,28 @@ Follow-ups:
 
 Plan and methodology: [growth-plan.md](./growth-plan.md).
 
+### 2026-10-16: re-index pages changed by the owner answers (after the `status-2026-10-15` merge)
+
+The 10 Google requests for 2026-10-15 are used (Katowice, new services, zapachdomu, bilscy). Run these
+on 2026-10-16, only after the PR is merged and deployed. Run `scripts/indexnow.sh` right after the
+merge for Bing (no daily limit worth worrying about).
+
+- [ ] **Google Search Console → URL inspection → Request indexing** (10 URLs, most important first):
+  - `https://www.mjaniec.it/pl/cennik`
+  - `https://www.mjaniec.it/pl/uslugi/strona-internetowa-dla-firmy`
+  - `https://www.mjaniec.it/pl/uslugi/sklepy-shopify`
+  - `https://www.mjaniec.it/pl/uslugi/wordpress`
+  - `https://www.mjaniec.it/pl/uslugi/audyt-szybkosci-seo`
+  - `https://www.mjaniec.it/pl/uslugi/frontend-dla-zespolow-rails`
+  - `https://www.mjaniec.it/pl/realizacje/jemwszkole`
+  - `https://www.mjaniec.it/pl/realizacje/braintrust`
+  - `https://www.mjaniec.it/pl/kontakt`
+  - `https://www.mjaniec.it/en/pricing`
+- [ ] Optional, the day after (2026-10-17): `/en/services/business-website`,
+  `/en/services/shopify-stores`, `/en/services/wordpress`, `/en/services/speed-seo-audit`,
+  `/en/services/frontend-for-rails-teams`, `/pl/uslugi/strony-nextjs`, `/en/work/jemwszkole`,
+  `/en/work/braintrust`, `/en/contact`.
+
 ### 2026-10-13: index the new pages (updated list: business-plan-status.md, "Order of work")
 
 Google allows about 10 "Request indexing" a day per property; today's 10 are used. Bing has its own
