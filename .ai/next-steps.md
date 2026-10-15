@@ -1,16 +1,12 @@
 # Next steps — mjaniec.it
 
-Status (2026-10-15): **live at https://www.mjaniec.it**. PR #8 (`content-mvp`) **merged into `main`**
-(`5dcb454`) and deployed: content-audit items 1–6, Katowice page (case studies + 4 FAQ), structured data
-from the nazielono.pro review, 2 new case studies (zapachdomu.com, bilscy.info), device frames + carousel
-with autoplay. After the merge: smoke test passed, all 42 sitemap URLs return 200, build/lint/typecheck
-clean, IndexNow sent (42 URLs, HTTP 200), 10 URLs requested in Google Search Console, PSI and Rich
-Results Test OK. Branch `status-2026-10-15`: owner answers
-F01–F05, F08–F10, F12 applied (content-audit items 7–12, decisions in
-[business-plan-status.md](./business-plan-status.md)), phone +48 794 236 099 on contact + footer via
-`PhoneLink` (decoded after hydration, not in HTML or JSON-LD). **Next up:** merge that branch, set up
-Michał's own Google Business Profile, then section 7 (analytics, lead sheet). Optional: `/pl/realizacje`
-mobile LCP 3.0 s / Speed Index 4.0 s (score 93, not urgent).
+Status (2026-10-15, end of day): **live at https://www.mjaniec.it**. PR #8 (`content-mvp`) and PR #9
+(`status-2026-10-15`, owner answers F01–F05, F08–F10, F12) are **merged and deployed**. Both followed by
+smoke test (all passed), IndexNow (42 URLs, HTTP 200); PSI and Rich Results Test OK.
+**Next up:** 2026-10-16 request indexing for the 10 URLs in section 7 ("re-index pages changed by the
+owner answers"), set up Michał's own Google Business Profile, then section 7 (analytics, lead sheet).
+Optional: `/pl/realizacje` mobile LCP 3.0 s / Speed Index 4.0 s (score 93), 17 Dependabot alerts on
+`main`, tests for SEO helpers and fact consistency (section 5).
 Plans: [business-plan.md](./business-plan.md) (what/why, D1–D6) · [technical-plan.md](./technical-plan.md)
 (how) · results: [technical-audit.md](./technical-audit.md).
 
@@ -104,6 +100,14 @@ Progress log:
   on a repeat run, 88 on the first), /pl/realizacje 93 (71 on a noisy first run), desktop nazielono 100.
   LCP ~2.9–3.2 s on mobile; the LCP element is the summary text in the case-study header, not a
   screenshot. Idea if PSI on production agrees: check the serif font loading for the header text.
+- 2026-10-15 PR #8 merged (`5dcb454`): smoke test passed, all 42 sitemap URLs 200, IndexNow sent,
+  10 URLs requested in Google Search Console (Katowice, new services, zapachdomu, bilscy).
+- 2026-10-15 PR #9 merged (`efc97ea`, `0ea6aba`): owner answers applied. Care plans (2–4 h a month or
+  one-off) at 90–150 zł/h, hourly/team work stays 120 zł/h; agency trial replaced by part-time work in
+  teams; website package up to 4 pages, CMS per project; audit = PDF + fixes list + call with a quote;
+  Shopify claims trimmed (no WooCommerce migration, feeds or named gateways); jemWszkole "sole frontend
+  developer", Braintrust "Feature Owner"; phone on contact + footer via `PhoneLink` (no JSON-LD
+  `telephone`). Smoke test passed, IndexNow sent after deploy.
 
 Related docs: [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
