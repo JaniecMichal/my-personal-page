@@ -82,7 +82,7 @@ export default async function ServicePage({ params }: Props) {
 							{service.intro}
 						</p>
 						<div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-							<ButtonLink href="/contact">{tc("cta.quote")} ↗</ButtonLink>
+							<ButtonLink href="/contact">{tc("cta.tellProject")} ↗</ButtonLink>
 							<ButtonLink href="/pricing" variant="line">
 								{tc("nav.pricing")}
 							</ButtonLink>
@@ -93,8 +93,7 @@ export default async function ServicePage({ params }: Props) {
 						{[
 							[t("detail.from"), service.priceFrom],
 							[t("detail.timeline"), service.timeline],
-							// "30 days included" belongs to the project packages, not to hourly or partner work.
-							...(service.plans.length > 0 ? [[t("detail.support"), t("detail.supportValue")]] : []),
+							...(service.support ? [[t("detail.support"), service.support]] : []),
 							[t("detail.invoice"), t("detail.invoiceValue")],
 						].map(([k, v]) => (
 							<div
@@ -155,7 +154,10 @@ export default async function ServicePage({ params }: Props) {
 				<section className="py-20 lg:py-28">
 					<Container className="flex flex-col gap-10">
 						<SectionHeader title={t("detail.plans")} index={t("detail.plansNote")} />
-						<PricingPlans plans={service.plans} ctaLabel={tc("cta.quote")} />
+						<PricingPlans plans={service.plans} ctaLabel={tc("cta.tellProject")} />
+						<p className="max-w-[640px] text-sm leading-relaxed text-ink-soft">
+							{t("detail.custom")}
+						</p>
 					</Container>
 				</section>
 			)}

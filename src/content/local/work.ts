@@ -26,7 +26,7 @@ export const caseStudies: LocalCaseStudy[] = [
 			"Mailgun",
 			"Netlify",
 		],
-		services: ["nextjs-websites", "speed-seo-audit"],
+		services: ["business-website", "nextjs-websites", "speed-seo-audit"],
 		metrics: [
 			{
 				value: { pl: "0,6 s", en: "0.6 s" },
@@ -354,6 +354,7 @@ export const caseStudies: LocalCaseStudy[] = [
 				},
 				width: 331,
 				height: 555,
+				framed: true,
 			},
 			{
 				src: "/work/jemwszkole/order-meal-mobile.png",
@@ -544,6 +545,283 @@ export const caseStudies: LocalCaseStudy[] = [
 			},
 		],
 		liveUrl: "https://www.usebraintrust.com",
+		seo: {},
+	},
+	{
+		id: "zapachdomu",
+		slug: "zapachdomu",
+		order: 4,
+		client: "zapachdomu.com",
+		title: {
+			pl: "Sklep Shopify z zestawami prezentowymi: opisy SEO w kategoriach pod Google i Google Ads",
+			en: "A Shopify gift-box store: SEO category descriptions for Google and Google Ads",
+		},
+		summary: {
+			pl: "Agencja SEO prowadząca sklep zapachdomu.com potrzebowała bogatszych treści w kategoriach, bez spychania produktów w dół strony. Dodałem edytowalne opisy z „Czytaj więcej”, którymi zespół zarządza sam w panelu Shopify.",
+			en: "The SEO agency running zapachdomu.com needed richer content on category pages without pushing the products down. I added editable descriptions with “Read more” that the team manages itself in the Shopify admin.",
+		},
+		period: { pl: "09.2026", en: "Sep 2026" },
+		role: {
+			pl: "Shopify developer, wsparcie agencji SEO",
+			en: "Shopify developer, supporting an SEO agency",
+		},
+		stack: ["Shopify", "Liquid", "Dawn (Online Store 2.0)", "Metafields", "JavaScript", "CSS"],
+		services: ["shopify"],
+		metrics: [
+			{
+				value: { pl: "4 DNI", en: "4 DAYS" },
+				label: { pl: "od startu do publikacji", en: "from start to launch" },
+			},
+			{
+				value: "SEO",
+				label: { pl: "opis w każdej kategorii", en: "a description on every category" },
+			},
+		],
+		chapters: [
+			{
+				title: { pl: "Problem", en: "Problem" },
+				body: {
+					pl: [
+						"zapachdomu.com to sklep Shopify z rzemieślniczymi zestawami prezentowymi: kawa, herbata, miody, słodycze i dodatki od polskich manufaktur. Sklep prowadzi agencja SEO, która zgłosiła się do mnie, gdy główny developer projektu był niedostępny.",
+						"Strony kategorii miały za mało treści, żeby Google i Google Ads dobrze rozumiały, czego dotyczą. Agencja potrzebowała miejsca na rozbudowane, unikalne opisy w każdej kategorii. Jednocześnie tekst nad listą produktów był już zbyt długi i spychał produkty w dół, szczególnie na telefonie.",
+					],
+					en: [
+						"zapachdomu.com is a Shopify store with artisan gift boxes: coffee, tea, honey, sweets and extras from Polish makers. The store is run by an SEO agency, which came to me while the project's main developer was unavailable.",
+						"The category pages had too little content for Google and Google Ads to understand what they were about. The agency needed room for rich, unique descriptions on every category. At the same time, the text above the product list was already too long and pushed the products down, especially on phones.",
+					],
+				},
+			},
+			{
+				title: { pl: "Rozwiązanie", en: "Solution" },
+				body: {
+					pl: [
+						"Każda kategoria dostała własne pole na opis SEO pod listą produktów. Bogatsza, unikalna treść na każdej stronie pomaga Google i Google Ads lepiej dopasować stronę do wyszukiwań i reklam. Cały tekst trafia do HTML-a strony, więc wyszukiwarka widzi go w całości, a odwiedzający widzi krótki podgląd z przyciskiem „Czytaj więcej”.",
+						"Górny opis kategorii zwija się do pierwszego akapitu, więc produkty są widoczne od razu. Wszystkie zmiany wizualne dopracowałem z myślą o telefonach, na których odbywa się większość zakupów. Przy okazji poprawiłem błąd motywu, przez który „Czytaj więcej” pojawiało się także przy krótkich tekstach.",
+						"Treściami zarządza zespół klienta. Opis edytuje się w panelu Shopify jak każde inne pole, a sposób przycinania podglądu ustawia się w edytorze motywu, bez zmian w kodzie. Pusta kategoria nie pokazuje pustego bloku, a opis dostała też strona ze wszystkimi produktami.",
+					],
+					en: [
+						"Every category got its own SEO description field below the product list. Richer, unique content on each page helps Google and Google Ads match the page to searches and ads. The full text is in the page's HTML, so search engines see all of it, while visitors see a short preview with a “Read more” button.",
+						"The top category description now collapses to its first paragraph, so the products are visible straight away. I polished every visual change for phones, where most shopping happens. Along the way I fixed a theme bug that showed “Read more” even for short texts.",
+						"The client's team manages the content. The description is edited in the Shopify admin like any other field, and the preview length is set in the theme editor, without touching code. An empty category shows no empty block, and the all-products page got a description too.",
+					],
+				},
+			},
+			{
+				title: { pl: "Proces", en: "Process" },
+				body: {
+					pl: [
+						"Wdrożenie przeszło przez bezpieczny proces: kopia zapasowa i duplikat motywu, podgląd do akceptacji przez klienta, publikacja i poprzednia wersja gotowa do przywrócenia jednym kliknięciem. Przed i po zmianach sprawdziłem, że liczba i kolejność produktów na liście się nie zmieniły.",
+						"Pracowałem wyłącznie w motywie sklepu, z ograniczonym dostępem, bez wglądu w dane klientów i zamówienia. Zespół dostał instrukcję edycji opisów i przygotowania tekstów, żeby mógł rozwijać treści samodzielnie, niezależnie od dostępności developera.",
+						"Na koniec przygotowałem dla klienta analizę dalszych zmian: strukturę nagłówków i FAQ na stronie dla firm oraz porządek w metatagach, z rekomendacjami, jak je wdrożyć.",
+					],
+					en: [
+						"The rollout followed a safe process: a backup and a duplicate of the theme, a preview for the client to approve, publishing, and the previous version ready to restore in one click. Before and after the change I checked that the number and order of products in the list stayed the same.",
+						"I worked only in the store's theme, with limited access and no view of customer or order data. The team got a guide to editing the descriptions and preparing the texts, so it can grow the content on its own, regardless of developer availability.",
+						"Finally, I prepared an analysis of further changes for the client: the heading structure and FAQ on the business page and a clean-up of meta tags, with recommendations on how to implement them.",
+					],
+				},
+			},
+			{
+				title: { pl: "Efekt", en: "Result" },
+				body: {
+					pl: [
+						"Opisy już działają w sklepie, na przykład w kategorii zestawów na Dzień Nauczyciela: krótki opis nad produktami i rozbudowany tekst z „Czytaj więcej” pod nimi. Zespół dodaje kolejne treści sam, w panelu Shopify.",
+						"Bogatsze strony kategorii mają zwiększyć widoczność sklepu w Google i trafność kampanii Google Ads, a w efekcie liczbę odwiedzin i potencjalnych klientów.",
+					],
+					en: [
+						"The descriptions are live in the store, for example in the Teacher's Day gift box category: a short intro above the products and a full text with “Read more” below them. The team adds new content itself, in the Shopify admin.",
+						"Richer category pages are meant to raise the store's visibility in Google and the relevance of its Google Ads campaigns, and with them the number of visits and potential customers.",
+					],
+				},
+			},
+		],
+		cover: {
+			src: "/work/zapachdomu/home-desktop.png",
+			alt: {
+				pl: "Strona główna sklepu zapachdomu.com z zestawami prezentowymi",
+				en: "zapachdomu.com home page with gift boxes",
+			},
+			width: 1920,
+			height: 963,
+		},
+		gallery: [
+			{
+				src: "/work/zapachdomu/category-desktop.png",
+				alt: {
+					pl: "Kategoria zestawów na Dzień Nauczyciela ze zwiniętym opisem nad produktami",
+					en: "Teacher's Day category with a collapsed description above the products",
+				},
+				width: 1920,
+				height: 915,
+			},
+			{
+				src: "/work/zapachdomu/category-description-desktop.png",
+				alt: {
+					pl: "Opis SEO pod listą produktów z przyciskiem „Czytaj więcej”",
+					en: "SEO description below the product list with a “Read more” button",
+				},
+				width: 1920,
+				height: 935,
+			},
+			{
+				src: "/work/zapachdomu/category-mobile.png",
+				alt: {
+					pl: "Kategoria na telefonie: krótki opis i produkty od razu widoczne",
+					en: "Category on a phone: a short intro and the products straight away",
+				},
+				width: 343,
+				height: 709,
+			},
+			{
+				src: "/work/zapachdomu/category-description-mobile.png",
+				alt: {
+					pl: "Opis SEO z „Czytaj więcej” na telefonie",
+					en: "SEO description with “Read more” on a phone",
+				},
+				width: 343,
+				height: 709,
+			},
+		],
+		quote: {
+			text: {
+				pl: "Lubię z Tobą pracować, bo jesteś konkretny i zawsze starasz się podążać za celami.",
+				en: "I like working with you because you get straight to the point and always try to follow the goals.",
+			},
+			lang: "pl",
+			author: "Konrad Bilski",
+			role: "nazielono.pro",
+		},
+		liveUrl: "https://zapachdomu.com",
+		seo: {},
+	},
+	{
+		id: "bilscy",
+		slug: "bilscy",
+		order: 5,
+		client: "bilscy.info",
+		title: {
+			pl: "Sklep szkółki bylin: śledzenie konwersji Google Ads i zmiany w koszyku na żywym sklepie",
+			en: "A perennial nursery's online store: Google Ads conversion tracking and checkout changes on a live shop",
+		},
+		summary: {
+			pl: "Gospodarstwo Ogrodnicze Bilscy potrzebowało zmian, których nie była w stanie wykonać firma opiekująca się sklepem. Wdrożyłem śledzenie sprzedaży w GA4 i Google Ads, blokadę dostawy w sobotę i walidację płatności, pracując na działającym sklepie przez FTP.",
+			en: "Gospodarstwo Ogrodnicze Bilscy needed changes the company looking after its store couldn't deliver. I shipped sales tracking in GA4 and Google Ads, a Saturday delivery block and payment validation, working on the live store over FTP.",
+		},
+		period: { pl: "06.2026 → 07.2026", en: "Jun 2026 → Jul 2026" },
+		role: {
+			pl: "Frontend developer, wdrożenia na działającym sklepie",
+			en: "Frontend developer, changes on a live store",
+		},
+		stack: [
+			"AtomStore",
+			"CakePHP",
+			"JavaScript",
+			"jQuery",
+			"Google Tag Manager",
+			"GA4",
+			"Google Ads",
+			"Consent Mode",
+		],
+		services: ["seo-sem"],
+		metrics: [
+			{
+				value: "17 712",
+				label: {
+					pl: "kodów pocztowych w blokadzie sobotniej",
+					en: "postcodes in the Saturday block",
+				},
+			},
+			{
+				value: "GA4",
+				label: { pl: "sprzedaż z danymi produktów", en: "sales with product data" },
+			},
+		],
+		chapters: [
+			{
+				title: { pl: "Problem", en: "Problem" },
+				body: {
+					pl: [
+						"Gospodarstwo Ogrodnicze Bilscy prowadzi sklep z bylinami i cebulami kwiatowymi na platformie AtomStore. Agencja prowadząca kampanie potrzebowała dokładnych danych o sprzedaży w GA4 i Google Ads, a sklep kolejnych zmian w koszyku. Firma, która opiekowała się stroną, nie była w stanie ich wykonać.",
+						"Dostęp do projektu był ograniczony: serwer FTP i ręczna podmiana plików szablonu, bez dostępu do rdzenia platformy i bez osobnego środowiska testowego. Każda zmiana trafiała od razu na działający sklep, w którym klienci składają zamówienia.",
+					],
+					en: [
+						"Gospodarstwo Ogrodnicze Bilscy runs a store with perennials and flower bulbs on the AtomStore platform. The agency running its campaigns needed accurate sales data in GA4 and Google Ads, and the store needed further checkout changes. The company looking after the site couldn't deliver them.",
+						"Access was limited: an FTP server and manual replacement of template files, with no access to the platform core and no separate test environment. Every change went straight to the live store, where customers place orders.",
+					],
+				},
+			},
+			{
+				title: { pl: "Rozwiązanie", en: "Solution" },
+				body: {
+					pl: [
+						"Śledzenie sprzedaży: zgody (Consent Mode) ładowane przed tagami Google, zdarzenie zakupu z pełnymi danymi zamówienia i listą produktów oraz dane do konwersji rozszerzonych Google Ads, z telefonem w jednym formacie i zaszyfrowanym e-mailem. Ta sama struktura na obu stronach po zamówieniu, więc w Google Tag Manager wystarcza jedna konfiguracja. Gdy dane się nie zgadzały, znalazłem przyczynę: część zdarzeń wysyłał sam rdzeń platformy.",
+						"Blokada dostawy w sobotę: kurier z doręczeniem w sobotę jest niedostępny dla 17 712 kodów pocztowych z listy klienta. Kupujący widzi komunikat przy polu kodu pocztowego, zanim przejdzie do płatności, a lista kodów po kompresji waży około 20 KB.",
+						"Walidacja płatności: koszyk nie przepuszcza zamówienia bez wybranej metody płatności, pokazuje komunikat i przewija do właściwej sekcji.",
+					],
+					en: [
+						"Sales tracking: consent (Consent Mode) loaded before the Google tags, a purchase event with full order data and the product list, and data for Google Ads enhanced conversions, with the phone number in one format and a hashed email. The same structure on both post-order pages, so Google Tag Manager needs a single setup. When the numbers didn't match, I found the cause: some events were sent by the platform core itself.",
+						"Saturday delivery block: Saturday courier delivery is unavailable for 17,712 postcodes from the client's list. Shoppers see a message next to the postcode field before they get to payment, and the compressed postcode list weighs about 20 KB.",
+						"Payment validation: the checkout won't let an order through without a payment method, shows a message and scrolls to the right section.",
+					],
+				},
+			},
+			{
+				title: { pl: "Proces", en: "Process" },
+				body: {
+					pl: [
+						"Bez środowiska testowego zachowałem maksymalną ostrożność. Najpierw zsynchronizowałem repozytorium szablonu z tym, co faktycznie działa na serwerze, a każda zmiana miała przygotowaną drogę powrotu. Nowy kod jest defensywny: jeśli skrypt zawiedzie, zamówienie przechodzi normalnie, a ewentualny błąd serwera pokazuje stronę w wyglądzie sklepu zamiast pustego ekranu.",
+						"Każde wdrożenie ma dokumentację: co i gdzie wgrać przez FTP oraz jak sprawdzić zdarzenia w podglądzie Google Tag Manager. Dla klienta przygotowałem też analizę odświeżenia wyglądu sklepu w trzech wariantach, z ryzykami i rekomendacją kolejności prac.",
+					],
+					en: [
+						"With no test environment, I took maximum care. First I synced the template repository with what actually runs on the server, and every change had a way back ready. The new code is defensive: if a script fails, the order goes through normally, and a server error shows a page in the store's design instead of a blank screen.",
+						"Every rollout is documented: what to upload where over FTP and how to check the events in Google Tag Manager preview. I also prepared an analysis of a store redesign in three variants, with the risks and a recommended order of work.",
+					],
+				},
+			},
+			{
+				title: { pl: "Efekt", en: "Result" },
+				body: {
+					pl: [
+						"Zmiany, których klient potrzebował, działają na żywym sklepie. Sprzedaż z danymi produktów jest widoczna w GA4 i Google Ads, więc agencja może optymalizować kampanie na podstawie rzeczywistych zamówień.",
+						"Koszyk pilnuje dostawy w sobotę i wyboru płatności, a dokumentacja pozwala kolejnej osobie kontynuować pracę bez zgadywania, co i gdzie zostało zmienione.",
+					],
+					en: [
+						"The changes the client needed work on the live store. Sales with product data are visible in GA4 and Google Ads, so the agency can optimise campaigns based on real orders.",
+						"The checkout handles Saturday delivery and payment choice, and the documentation lets the next person continue without guessing what was changed and where.",
+					],
+				},
+			},
+		],
+		cover: {
+			src: "/work/bilscy/home-desktop.png",
+			alt: {
+				pl: "Strona główna sklepu bilscy.info z bylinami i cebulami kwiatowymi",
+				en: "bilscy.info home page with perennials and flower bulbs",
+			},
+			width: 1920,
+			height: 890,
+		},
+		gallery: [
+			{
+				src: "/work/bilscy/home-desktop.png",
+				alt: {
+					pl: "Strona główna sklepu bilscy.info",
+					en: "bilscy.info home page",
+				},
+				width: 1920,
+				height: 890,
+			},
+			{
+				src: "/work/bilscy/cart-payment-desktop.png",
+				alt: {
+					pl: "Koszyk: wybór dostawy i metody płatności",
+					en: "Checkout: choosing delivery and a payment method",
+				},
+				width: 1920,
+				height: 885,
+			},
+		],
+		liveUrl: "https://www.bilscy.info",
 		seo: {},
 	},
 ];

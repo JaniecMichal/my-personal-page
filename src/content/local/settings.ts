@@ -24,8 +24,8 @@ export const siteSettings: LocalizedDeep<SiteSettings> = {
 			en: "Michał Janiec — websites, stores and web apps | Senior Frontend Developer",
 		},
 		description: {
-			pl: "Buduję szybkie strony w Next.js, sklepy Shopify, poprawki WordPress i aplikacje React. Senior frontend developer z Katowic, 5+ lat doświadczenia. Wycena w 24 h.",
-			en: "I build fast Next.js websites, Shopify stores, WordPress fixes and React apps. Senior frontend developer from Katowice, Poland, 5+ years of experience. Quote within 24 hours.",
+			pl: "Strony internetowe dla firm z Katowic i Śląska: nowe strony, rozwój i naprawy istniejących serwisów. Senior frontend developer, 5+ lat doświadczenia.",
+			en: "Websites for businesses in Katowice, Silesia and remotely: new sites, plus development and fixes for existing ones. Senior frontend developer, 5+ years of experience.",
 		},
 	},
 };

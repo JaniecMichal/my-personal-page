@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Sphere } from "@/components/effects/sphere";
 import { SetAlternateSlugs } from "@/components/i18n/alternate-slugs";
 import { FaqList } from "@/components/sections/faq-list";
+import { WorkGrid } from "@/components/sections/work-grid";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -47,11 +48,12 @@ export default async function LocalLandingPage({ params }: Props) {
 	const page = await content.getLocalPage(locale, slug);
 	if (!page) notFound();
 
-	const [t, tc, ts, services] = await Promise.all([
+	const [t, tc, ts, services, studies] = await Promise.all([
 		getTranslations("local"),
 		getTranslations("common"),
 		getTranslations("services"),
 		content.getServices(locale),
+		content.getCaseStudies(locale),
 	]);
 	const url = localizedUrl({ pathname: "/local/[slug]", params: { slug } }, locale);
 
@@ -77,7 +79,7 @@ export default async function LocalLandingPage({ params }: Props) {
 							{page.intro}
 						</p>
 						<div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-							<ButtonLink href="/contact">{tc("cta.quote")} ↗</ButtonLink>
+							<ButtonLink href="/contact">{tc("cta.tellProject")} ↗</ButtonLink>
 							<ButtonLink href="/pricing" variant="line">
 								{tc("nav.pricing")}
 							</ButtonLink>
@@ -138,6 +140,8 @@ export default async function LocalLandingPage({ params }: Props) {
 			</section>
 
 			<ServicesGrid title={t("servicesTitle")} index={t("servicesIndex")} services={services} />
+
+			<WorkGrid studies={studies} title={t("workTitle")} index={t("workIndex")} />
 
 			{page.faq.length > 0 && (
 				<section className="pb-20 lg:pb-28">

@@ -16,6 +16,8 @@ export type ImageAsset = {
 	alt: string;
 	width: number;
 	height: number;
+	/** The image already contains a device mock-up, so `DeviceFrame` shows it without its own frame. */
+	framed?: boolean;
 };
 
 /**
@@ -65,6 +67,8 @@ export type Service = {
 	tags: string[];
 	priceFrom: string;
 	timeline: string;
+	/** "At a glance" support row; only for services whose packages include fixes or support. */
+	support?: string;
 	included: { title: string; description: string }[];
 	plans: PricingPlan[];
 	faq: FaqItem[];
@@ -165,6 +169,8 @@ export type PricingPlan = {
 
 export type FaqItem = {
 	id: string;
+	/** "about": questions about Michał / mjaniec.it, shown on the home page only (not on pricing). */
+	group?: "cooperation" | "about";
 	question: string;
 	answer: string;
 };

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { DeviceFrame, hostOf } from "@/components/ui/device-frame";
 import { ImagePlaceholder } from "@/components/ui/image-placeholder";
 import type { CaseStudy } from "@/content";
 import { Link } from "@/i18n/navigation";
@@ -33,12 +33,10 @@ export function CaseStudyCard({
 			)}
 		>
 			{study.cover ? (
-				<Image
-					src={study.cover.src}
-					alt={study.cover.alt}
-					width={study.cover.width}
-					height={study.cover.height}
-					className="aspect-[16/10] w-full object-cover"
+				<DeviceFrame
+					image={study.cover}
+					host={hostOf(study.liveUrl)}
+					imageClassName="aspect-[16/10] object-cover object-top"
 					sizes="(min-width: 1024px) 50vw, 100vw"
 				/>
 			) : (

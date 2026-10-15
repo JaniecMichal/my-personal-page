@@ -13,6 +13,8 @@
     "@typescript-eslint/eslint-plugin": "^8.70.1",
     "@vercel/analytics": "^1.6.1",
     "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "8.6.0",
+    "embla-carousel-react": "8.6.0",
     "eslint": "^9.39.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",

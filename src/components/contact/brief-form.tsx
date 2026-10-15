@@ -208,8 +208,12 @@ export function BriefForm({ encodedEmail }: { encodedEmail: string }) {
 					placeholder={t("messagePlaceholder")}
 					className={cn(input, "resize-y placeholder:text-muted")}
 					{...invalidProps("message")}
+					aria-describedby={errors.message ? "message-error message-hint" : "message-hint"}
 				/>
 				{error("message")}
+				<span id="message-hint" className="text-xs leading-relaxed text-muted">
+					{t("messageHint")}
+				</span>
 			</label>
 
 			<div className="flex flex-col gap-6 border-t border-dashed border-rule-strong pt-8">

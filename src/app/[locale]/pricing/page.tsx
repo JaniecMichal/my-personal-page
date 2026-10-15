@@ -31,6 +31,8 @@ export default async function PricingPage({ params }: Props) {
 		content.getPricingPlans(locale),
 		content.getFaq(locale),
 	]);
+	// The "about me" questions belong on the home page only.
+	const workFaq = faq.filter((f) => f.group !== "about");
 
 	return (
 		<>
@@ -61,11 +63,11 @@ export default async function PricingPage({ params }: Props) {
 				<Container className="grid gap-8 lg:grid-cols-12">
 					<h2 className="font-serif text-5xl leading-none lg:col-span-4">{th("faq.title")}</h2>
 					<div className="lg:col-span-8">
-						<FaqList items={faq} />
+						<FaqList items={workFaq} />
 					</div>
 				</Container>
 			</section>
-			<JsonLd data={faqJsonLd(faq)} />
+			<JsonLd data={faqJsonLd(workFaq)} />
 		</>
 	);
 }

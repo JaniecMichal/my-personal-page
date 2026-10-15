@@ -7,16 +7,17 @@ export const services: LocalService[] = [
 		order: 1,
 		title: { pl: "Strona internetowa dla firmy", en: "A website for your business" },
 		summary: {
-			pl: "Strona, która przyprowadza klientów: widać Cię w Google, dobrze działa na telefonie i sam ją edytujesz.",
-			en: "A website that brings in customers: you show up on Google, it works well on phones and you can edit it yourself.",
+			pl: "Nowa strona dla Twojej firmy: czytelna oferta, łatwy kontakt, przygotowana pod Google i telefony. Treści zmieniasz sam.",
+			en: "A new website for your business: a clear offer, easy contact, built for Google and phones. You edit the content yourself.",
 		},
 		intro: {
-			pl: "Nie musisz znać się na technologii. Mówisz mi, co ma się wydarzyć: więcej telefonów, zapytań albo rezerwacji. Ja dobieram rozwiązanie, buduję stronę i dbam o to, żeby klienci ją znaleźli. Moją główną technologią jest Next.js: strony są szybkie, bezpieczne i dobrze widoczne w Google.",
-			en: "You don't need to know anything about technology. Tell me what should happen: more calls, enquiries or bookings. I pick the right tools, build the site and make sure customers can find it. My main technology is Next.js: sites that are fast, secure and easy for Google to read.",
+			pl: "Nie musisz znać się na technologii. Mówisz mi, co ma się wydarzyć: więcej telefonów, zapytań albo rezerwacji. Ja dobieram rozwiązanie, buduję stronę i dbam o to, żeby klienci ją znaleźli: strona spełnia techniczne standardy Google, więc ma solidne podstawy, żeby pojawiać się wysoko w wynikach i przyciągać nowych klientów. Moją główną technologią jest Next.js: strony są szybkie i bezpieczne, a treści zmieniasz sam w panelu.",
+			en: "You don't need to know anything about technology. Tell me what should happen: more calls, enquiries or bookings. I pick the right tools, build the site and make sure customers can find it: the site meets Google's technical standards, which gives it a solid basis to rank well and bring in new customers. My main technology is Next.js: sites that are fast and secure, and you edit the content yourself.",
 		},
 		tags: ["Next.js", "SEO", "CMS"],
 		priceFrom: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 		timeline: { pl: "od kilku dni do 3 tygodni", en: "a few days to 3 weeks" },
+		support: { pl: "1 runda poprawek albo 30 dni", en: "1 fix round or 30 days" },
 		included: [
 			{
 				title: { pl: "„Nie ma mnie w Google”", en: "“I'm not on Google”" },
@@ -28,8 +29,8 @@ export const services: LocalService[] = [
 			{
 				title: { pl: "„Strona wygląda staro na telefonie”", en: "“It looks dated on phones”" },
 				description: {
-					pl: "Większość klientów wchodzi z telefonu. Strona jest projektowana najpierw pod mały ekran i ładuje się w ułamku sekundy.",
-					en: "Most customers visit on a phone. The site is designed for small screens first and loads in a blink.",
+					pl: "Większość klientów wchodzi z telefonu. Strona jest projektowana najpierw pod mały ekran i zoptymalizowana tak, żeby na każdym urządzeniu ładowała się błyskawicznie i osiągała najlepsze możliwe wyniki.",
+					en: "Most customers visit on a phone. The site is designed for small screens first and optimised to load instantly and score as high as possible on every device.",
 				},
 			},
 			{
@@ -118,8 +119,19 @@ export const services: LocalService[] = [
 					en: "Which technology will you use?",
 				},
 				answer: {
-					pl: "Takiej, która pasuje do celu i budżetu. Najczęściej to Next.js z prostym panelem do edycji, czasem WordPress, a dla sklepu Shopify. Przed startem tłumaczę, dlaczego wybieram dane rozwiązanie.",
-					en: "Whatever fits the goal and budget. Most often Next.js with a simple editor, sometimes WordPress, and Shopify for online stores. I explain the choice before we start.",
+					pl: "Takiej, która pasuje do celu i budżetu. Najczęściej to Next.js z prostym panelem do edycji: strony są szybkie, bezpieczne i dobrze radzą sobie w Google. Jeśli masz już stronę na WordPressie albo zespół, który go zna, zostajemy przy nim, a przy sklepie internetowym wybieram Shopify. Przed startem tłumaczę, dlaczego proponuję dane rozwiązanie.",
+					en: "Whatever fits the goal and budget. Most often it's Next.js with a simple editor: the sites are fast, secure and do well on Google. If you already have a WordPress site or a team that knows it, we stay with WordPress, and for an online store I choose Shopify. Before we start I explain why I suggest a given option.",
+				},
+			},
+			{
+				id: "business-faq-5",
+				question: {
+					pl: "Czym różni się strona-wizytówka od strony firmowej?",
+					en: "What's the difference between a one-page site and a business website?",
+				},
+				answer: {
+					pl: "Strona-wizytówka (od 1 000 zł netto) to jedna strona do 6 sekcji, budowana z Twojego gotowego projektu graficznego, z formularzem kontaktowym i jedną rundą poprawek. Strona firmowa z panelem (od 2 900 zł netto) ma do 5 podstron, panel do edycji treści, SEO z danymi strukturalnymi i 30 dni wsparcia po starcie. Jeśli nie wiesz, którą wybrać, opisz firmę w briefie, a zaproponuję wariant.",
+					en: "A one-page site (from 1,000 PLN net) is a single page with up to 6 sections, built from your ready design, with a contact form and one round of fixes. A website with an editor (from 2,900 PLN net) has up to 5 pages, a content editor, SEO with structured data and 30 days of support after launch. If you're not sure which one you need, describe your business in the brief and I'll suggest one.",
 				},
 			},
 			{
@@ -129,8 +141,8 @@ export const services: LocalService[] = [
 					en: "I don't have copy or photos. What then?",
 				},
 				answer: {
-					pl: "Pomagam ułożyć strukturę i treści na podstawie krótkiej rozmowy o Twojej firmie. Zdjęcia możemy na start dobrać ze stocków i podmienić później.",
-					en: "I help you shape the structure and copy from a short conversation about your business. We can start with stock photos and swap them later.",
+					pl: "To częsta sytuacja. Pomagam ułożyć strukturę strony i treści na podstawie krótkiej rozmowy o Twojej firmie: co robisz, dla kogo i o co klienci najczęściej pytają. Zdjęcia możemy na start dobrać ze stocków i podmienić później na własne, bez przebudowy strony.",
+					en: "That's common. I help you shape the page structure and copy from a short conversation about your business: what you do, who for and what customers ask most often. We can start with stock photos and swap in your own later, without rebuilding the site.",
 				},
 			},
 			{
@@ -140,16 +152,27 @@ export const services: LocalService[] = [
 					en: "Will the site show up on Google?",
 				},
 				answer: {
-					pl: "Strona dostaje SEO techniczne, mapę strony, dane strukturalne i zgłoszenie do Google Search Console. Pozycja zależy też od konkurencji i treści, więc mówię uczciwie, czego się spodziewać.",
-					en: "The site gets technical SEO, a sitemap, structured data and a Google Search Console submission. Rankings also depend on competition and content, so I'm honest about what to expect.",
+					pl: "Strona dostaje SEO techniczne, mapę strony, dane strukturalne i zgłoszenie do Google Search Console, więc Google może ją szybko znaleźć i poprawnie zrozumieć. Pozycja w wynikach zależy jednak też od konkurencji w Twojej branży i od treści, dlatego nie obiecuję miejsc w rankingu, tylko mówię uczciwie, czego się spodziewać. Jeśli chcesz stałego pozycjonowania albo kampanii Google Ads, to osobna usługa.",
+					en: "The site gets technical SEO, a sitemap, structured data and a Google Search Console submission, so Google can find it quickly and understand it correctly. Rankings also depend on the competition in your industry and on the content, so I don't promise positions, I tell you honestly what to expect. Ongoing SEO or Google Ads campaigns are a separate service.",
 				},
 			},
 			{
 				id: "business-faq-4",
 				question: { pl: "Kto będzie właścicielem strony?", en: "Who owns the website?" },
 				answer: {
-					pl: "Ty. Domena, hosting i kod są na Ciebie, a ja przekazuję wszystkie dostępy po wdrożeniu.",
-					en: "You do. The domain, hosting and code are in your name, and I hand over all access after launch.",
+					pl: "Ty. Domenę i hosting rejestrujemy na Ciebie, a po wdrożeniu dostajesz kod i wszystkie dostępy. Możesz później rozwijać stronę ze mną albo z kimkolwiek innym.",
+					en: "You do. The domain and hosting are registered in your name, and after launch you get the code and all access. Later you can keep developing the site with me or with anyone else.",
+				},
+			},
+			{
+				id: "business-faq-6",
+				question: {
+					pl: "Co jeśli po starcie będę chciał coś zmienić?",
+					en: "What if I want changes after launch?",
+				},
+				answer: {
+					pl: "Teksty, zdjęcia, ceny czy godziny otwarcia zmieniasz sam w panelu. Strona firmowa ma w cenie 30 dni wsparcia, a strona-wizytówka jedną rundę poprawek. Później nowe sekcje, poprawki, aktualizacje i kopie zapasowe rozliczam godzinowo: 120 zł/h netto, co 15 minut, minimum 1 h.",
+					en: "You change texts, photos, prices or opening hours yourself in the editor. The business website includes 30 days of support, the one-page site one round of fixes. After that, new sections, fixes, updates and backups are billed hourly: 120 PLN/h net, in 15-minute steps, with a 1-hour minimum.",
 				},
 			},
 		],
@@ -158,6 +181,10 @@ export const services: LocalService[] = [
 				pl: "Strona internetowa dla firmy | Michał Janiec",
 				en: "Website for your business | Michał Janiec",
 			},
+			description: {
+				pl: "Nowa strona dla firmy z Katowic i całego Śląska: czytelna oferta, łatwy kontakt, szybka na telefonie i gotowa pod Google. Od 1 000 zł netto.",
+				en: "A new website for your business: a clear offer, easy contact, fast on phones and built for Google. From 1,000 PLN net.",
+			},
 		},
 	},
 	{
@@ -165,19 +192,20 @@ export const services: LocalService[] = [
 		// Indexed since launch; reachable from the services page and footer, not shown on the home page.
 		showOnHome: false,
 		slug: { pl: "strony-nextjs", en: "nextjs-websites" },
-		order: 2,
+		order: 8,
 		title: { pl: "Strony firmowe w Next.js", en: "Business websites in Next.js" },
 		summary: {
-			pl: "Szybkie, dobrze pozycjonowane strony, które edytujesz sam. Core Web Vitals na zielono od pierwszego dnia.",
-			en: "Fast websites that rank well and that you can edit yourself. Green Core Web Vitals from day one.",
+			pl: "Strony w Next.js, które edytujesz sam. Szybkość i SEO techniczne sprawdzam przed oddaniem projektu.",
+			en: "Next.js websites you can edit yourself. I check speed and technical SEO before handover.",
 		},
 		intro: {
-			pl: "Strona firmowa, która ładuje się w ułamku sekundy, dobrze wygląda na telefonie i jest gotowa na SEO. Zbudowana w Next.js, z wygodnym CMS do edycji treści.",
-			en: "A business website that loads in a blink, looks great on phones and is ready for SEO. Built in Next.js with a friendly CMS for your content.",
+			pl: "Strona firmowa, która szybko się ładuje, dobrze wygląda na telefonie i jest przygotowana technicznie pod SEO. Zbudowana w Next.js, z wygodnym CMS do edycji treści.",
+			en: "A business website that loads fast, looks great on phones and is technically ready for SEO. Built in Next.js with a friendly CMS for your content.",
 		},
 		tags: ["Next.js", "SEO", "CMS"],
 		priceFrom: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 		timeline: { pl: "od kilku dni do 3 tygodni", en: "a few days to 3 weeks" },
+		support: { pl: "1 runda poprawek albo 30 dni", en: "1 fix round or 30 days" },
 		included: [
 			{
 				title: { pl: "Projekt i wdrożenie", en: "Design to launch" },
@@ -212,19 +240,19 @@ export const services: LocalService[] = [
 			{
 				id: "nextjs-landing",
 				kicker: { pl: "Na dobry start", en: "Quick start" },
-				name: "Landing page",
+				name: { pl: "Strona-wizytówka", en: "One-page site" },
 				price: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
 				features: {
 					pl: [
 						"1 strona, do 6 sekcji",
 						"z Twojego projektu graficznego",
-						"bez CMS",
+						"bez panelu do edycji",
 						"wdrożenie + 1 runda poprawek",
 					],
 					en: [
 						"1 page, up to 6 sections",
 						"from your ready design",
-						"no CMS",
+						"no content editor",
 						"launch + 1 round of fixes",
 					],
 				},
@@ -233,18 +261,18 @@ export const services: LocalService[] = [
 			{
 				id: "nextjs-website",
 				kicker: { pl: "Dla małych firm", en: "For small businesses" },
-				name: { pl: "Strona firmowa z CMS", en: "Website with CMS" },
+				name: { pl: "Strona firmowa z panelem", en: "Website with an editor" },
 				price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
 				features: {
 					pl: [
 						"do 5 podstron",
-						"CMS do edycji",
+						"panel do edycji treści",
 						"SEO i dane strukturalne",
 						"wdrożenie + 30 dni wsparcia",
 					],
 					en: [
 						"up to 5 pages",
-						"editable CMS",
+						"content editor",
 						"SEO and structured data",
 						"launch + 30 days support",
 					],
@@ -274,7 +302,7 @@ export const services: LocalService[] = [
 	{
 		id: "shopify",
 		slug: { pl: "sklepy-shopify", en: "shopify-stores" },
-		order: 3,
+		order: 4,
 		title: { pl: "Sklepy Shopify", en: "Shopify stores" },
 		summary: {
 			pl: "Wdrożenie, motyw dopasowany do marki, poprawki i integracje. Sklep gotowy do sprzedaży.",
@@ -287,6 +315,7 @@ export const services: LocalService[] = [
 		tags: ["Shopify", "Liquid"],
 		priceFrom: { pl: "od 2 500 zł", en: "from 2,500 PLN" },
 		timeline: { pl: "3–5 tygodni", en: "3–5 weeks" },
+		support: { pl: "30 dni (Sklep marki)", en: "30 days (Brand store)" },
 		included: [
 			{
 				title: { pl: "Konfiguracja sklepu", en: "Store setup" },
@@ -355,7 +384,7 @@ export const services: LocalService[] = [
 			},
 			{
 				id: "shopify-brand",
-				kicker: { pl: "Najczęściej wybierany", en: "Most popular" },
+				kicker: { pl: "Dla rozwijających się marek", en: "For growing brands" },
 				name: { pl: "Sklep marki", en: "Brand store" },
 				price: { pl: "od 5 900 zł", en: "from 5,900 PLN" },
 				features: {
@@ -392,12 +421,21 @@ export const services: LocalService[] = [
 			},
 		],
 		faq: [],
-		seo: {},
+		seo: {
+			title: {
+				pl: "Sklep internetowy na Shopify | Michał Janiec",
+				en: "Shopify store setup | Michał Janiec",
+			},
+			description: {
+				pl: "Chcesz sprzedawać online? Zakładam sklep Shopify z płatnościami i dostawami, dopasowuję motyw do marki i importuję produkty. Od 2 500 zł netto.",
+				en: "Want to sell online? I set up a Shopify store with payments and shipping, tailor the theme to your brand and import your products. From 2,500 PLN net.",
+			},
+		},
 	},
 	{
 		id: "wordpress",
 		slug: { pl: "wordpress", en: "wordpress" },
-		order: 4,
+		order: 2,
 		title: { pl: "WordPress: poprawki i przyspieszenie", en: "WordPress fixes and speed-ups" },
 		summary: {
 			pl: "Nowe sekcje, naprawa błędów, migracje i optymalizacja, bez przepisywania wszystkiego od zera.",
@@ -435,7 +473,16 @@ export const services: LocalService[] = [
 		],
 		plans: [],
 		faq: [],
-		seo: {},
+		seo: {
+			title: {
+				pl: "Naprawa i przyspieszenie WordPress | Michał Janiec",
+				en: "WordPress fixes and speed-ups | Michał Janiec",
+			},
+			description: {
+				pl: "Strona na WordPressie działa wolno, ma błędy albo potrzebuje nowych sekcji? Naprawiam, przyspieszam i rozwijam ją bez przepisywania od zera. 120 zł/h netto.",
+				en: "Is your WordPress site slow, broken or missing sections? I fix it, speed it up and extend it without rebuilding from scratch. 120 PLN/h net.",
+			},
+		},
 	},
 	{
 		id: "web-apps",
@@ -456,7 +503,16 @@ export const services: LocalService[] = [
 		included: [],
 		plans: [],
 		faq: [],
-		seo: {},
+		seo: {
+			title: {
+				pl: "Aplikacje webowe na zamówienie | Michał Janiec",
+				en: "Custom web applications | Michał Janiec",
+			},
+			description: {
+				pl: "Potrzebujesz panelu, SaaS albo MVP? Prowadzę projekt od makiety w Figmie do działającej aplikacji w React i Next.js, z testami. Wycena po krótkim briefie.",
+				en: "Need a dashboard, a SaaS or an MVP? I take it from a Figma mockup to a working React and Next.js app, with tests. A quote after a short brief.",
+			},
+		},
 	},
 	{
 		id: "frontend-for-rails-teams",
@@ -477,16 +533,25 @@ export const services: LocalService[] = [
 		included: [],
 		plans: [],
 		faq: [],
-		seo: {},
+		seo: {
+			title: {
+				pl: "Frontend developer dla zespołów Rails | Michał Janiec",
+				en: "Frontend developer for Rails teams | Michał Janiec",
+			},
+			description: {
+				pl: "Brakuje frontendowca w zespole Rails? Dołączam z doświadczeniem w Stimulus, Hotwire, ERB i Tailwind i dowożę interfejs. B2B, faktura VAT.",
+				en: "Short of a frontend developer on your Rails team? I join with Stimulus, Hotwire, ERB and Tailwind experience and ship the interface. B2B, VAT invoice.",
+			},
+		},
 	},
 	{
 		id: "speed-seo-audit",
 		slug: { pl: "audyt-szybkosci-seo", en: "speed-seo-audit" },
-		order: 7,
+		order: 3,
 		title: { pl: "Audyt szybkości i SEO", en: "Speed and SEO audit" },
 		summary: {
-			pl: "Sprawdzam, co spowalnia stronę i dlaczego Google jej nie lubi. Raport z priorytetami plus poprawki.",
-			en: "I find what slows your site down and why Google doesn't like it. A prioritised report, plus the fixes.",
+			pl: "Sprawdzam, co spowalnia stronę i co przeszkadza jej w Google. Raport z priorytetami plus poprawki.",
+			en: "I find what slows your site down and what holds it back on Google. A prioritised report, plus the fixes.",
 		},
 		intro: {
 			pl: "Mierzę Core Web Vitals, sprawdzam SEO techniczne i dostępność, a potem dostajesz listę poprawek od najważniejszych. Mogę je też wdrożyć.",
@@ -498,16 +563,25 @@ export const services: LocalService[] = [
 		included: [],
 		plans: [],
 		faq: [],
-		seo: {},
+		seo: {
+			title: {
+				pl: "Audyt szybkości strony i SEO | Michał Janiec",
+				en: "Website speed and SEO audit | Michał Janiec",
+			},
+			description: {
+				pl: "Strona wolno się ładuje albo nie widać jej w Google? Sprawdzam, co ją blokuje, i daję raport z priorytetami, a poprawki mogę wdrożyć sam. Od 900 zł netto.",
+				en: "Is your site slow or hard to find on Google? I find what holds it back, give you a prioritised report and can ship the fixes myself. From 900 PLN net.",
+			},
+		},
 	},
 	{
 		id: "seo-sem",
 		slug: { pl: "seo-i-google-ads", en: "seo-and-google-ads" },
-		order: 8,
+		order: 7,
 		title: { pl: "SEO i Google Ads", en: "SEO and Google Ads" },
 		summary: {
-			pl: "Więcej klientów z Google: pozycjonowanie, kampanie reklamowe i analityka, które pracują razem ze stroną.",
-			en: "More customers from Google: SEO, ad campaigns and analytics that work together with your website.",
+			pl: "Lepsza widoczność w Google i efekty, które możesz zmierzyć: pozycjonowanie, kampanie reklamowe i analityka, które działają razem ze stroną.",
+			en: "Better visibility on Google, with results you can measure: SEO, ad campaigns and analytics that work together with your website.",
 		},
 		intro: {
 			pl: "Dobra strona to połowa sukcesu, druga połowa to ruch. Pozycjonowanie i kampanie Google Ads prowadzę razem ze sprawdzonym zespołem specjalistów od marketingu. Ty masz jeden kontakt, a strona, SEO i reklamy grają do jednej bramki: więcej zapytań i sprzedaży.",

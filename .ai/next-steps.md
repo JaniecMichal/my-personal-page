@@ -1,10 +1,12 @@
 # Next steps — mjaniec.it
 
-Status (2026-10-13): **live at https://www.mjaniec.it**. Technical plan deployed (PR #4: `/` → `/pl`
-308, robots blocks AI training bots, security headers, 404 fix, `brief_sent`, IndexNow, llms.txt PL,
-landing from 1 000 zł). Production smoke **35/35**, IndexNow sent 38 URLs (HTTP 202).
-**Next up:** [business-plan-status.md](./business-plan-status.md): GSC indexing requests (10 URLs
-listed there), then Michał fills in the facts table F01–F12, then content changes for the MVP (CP2).
+Status (2026-10-14, end of day): **live at https://www.mjaniec.it**. Branch **`content-mvp`** (pushed, **PR to
+`main` not opened yet**: https://github.com/JaniecMichal/my-personal-page/compare/main...content-mvp?expand=1).
+On the branch: content-audit items 1–6, Katowice page (case studies + 4 FAQ), structured data from the
+nazielono.pro review, 2 new case studies (zapachdomu.com, bilscy.info), device frames + carousel with autoplay.
+**Next up:** open and merge the PR, then `scripts/smoke.sh` and `scripts/indexnow.sh`, PSI on production for
+`/pl/realizacje/*`, Rich Results Test on one service page. Then items 7–12 in
+[content-audit.md](./content-audit.md), which wait on Michał's answers (F01–F05, F08–F10, F12, phone).
 Plans: [business-plan.md](./business-plan.md) (what/why, D1–D6) · [technical-plan.md](./technical-plan.md)
 (how) · results: [technical-audit.md](./technical-audit.md).
 
@@ -56,6 +58,7 @@ Progress log:
   `.ai/business-plan-status.md`.
 - 2026-10-13: own visits excluded from Vercel Analytics (`SiteAnalytics`, `beforeSend`). Opt a browser
   out once on the live site: dev tools console → `localStorage.setItem("va-disable", "1")` (laptop and phone).
+  Full steps incl. phone bookmarklet: [analytics-optout.md](./analytics-optout.md).
 - 2026-10-14 (`perf`, based on `analytics-optout`): PSI mobile 59. Cause: `WaveField` created the WebGL
   context and compiled its shader during hydration, which blocked the first paint (production FCP 2.46 s
   with the HTML loaded at 0.42 s). Now it starts after `load` + idle, compiles with
@@ -63,8 +66,42 @@ Progress log:
   `AberrationField` starts after load and writes the CSS variables only on change. Local mobile (real
   throttling, no GPU): LCP 1.8 → 1.4 s. CV hero shows the photo (`public/cv/michal-janiec.jpg`, the old
   site's photo from git history) in a `brackets` frame. To do: PSI on the preview / production.
+- 2026-10-14 (`content-mvp`): text work per the business plan. Home hero „Strony internetowe dla firm.”
+  (CTAs „Opowiedz o projekcie” / „Zobacz realizacje”), services order by segment + „W czym mogę pomóc”,
+  F06 site-wide (first reply „w ciągu 24 godzin”, no „dni robocze” on it; quote „2–3 dni robocze”),
+  home FAQ 13 Qs (field `group: "about"` keeps the 2 „about me” Qs off /cennik), final CTA
+  „Porozmawiajmy.” (fluid size), business-website FAQ 6 Qs. Decided: F05 (SEO via Na Zielono, not named),
+  F06, F07 (5+). Full map of what's left: [content-audit.md](./content-audit.md).
+- 2026-10-14 (`content-mvp`, part 2): content-audit items 1–6. Business-website page: support row per service,
+  custom-quote line under packages, nazielono linked, new „Dlaczego developer”, confident speed/Google
+  lines (Michał prefers benefit-led copy over hedged wording). One CTA „Opowiedz o projekcie”; packages
+  „Strona-wizytówka” / „Strona firmowa z panelem”; no „Najczęściej wybierany”. Problem-first meta for
+  services, pricing, work and 6 service pages. Contact: next-step success message, no-passwords hint,
+  one-off fix and B2B brief types. Mailgun tags capped at 3.
+- 2026-10-14 (`content-mvp`, part 3): Katowice page got the case-study grid and 4 FAQ answers. Structured
+  data after a review of nazielono.pro: `WebSite` + business node site-wide (no dangling `provider` refs),
+  Service `@id` + `offers` from the shown "from" price (net PLN, hourly as `UnitPriceSpecification`),
+  case studies with image / `about` → services, `CollectionPage` + breadcrumb on /uslugi and /realizacje,
+  `poweredByHeader: false`, AVIF/WebP. Later items in section 5. Next case study: zapachdomu.com
+  (notes in [case-study-zapachdomu.md](./case-study-zapachdomu.md)), then bilscy.info.
+- 2026-10-14 (`content-mvp`, part 4): zapachdomu.com case study (PL/EN, 4 chapters, prices blurred in the
+  screenshots). Quote: Konrad Bilski, nazielono.pro. All
+  case-study screenshots now sit in CSS device frames (`DeviceFrame`: browser window with the host,
+  phone for portrait images).
+- 2026-10-14 (`content-mvp`, part 5): bilscy.info case study (PL/EN, linked to `seo-sem`, cart prices
+  blurred). Notes: [case-study-bilscy.md](./case-study-bilscy.md). To check: Saturday block on a Saturday.
+- 2026-10-14 (`content-mvp`, part 6): case-study screenshots in an Embla carousel (`CaseStudyGallery`,
+  `embla-carousel-react` + `-autoplay` 8.6.0): several slides in view (one-per-view was tried and reverted),
+  autoplay 4.5 s that pauses on hover / focus / off-screen, pause button (WCAG 2.2.2), off with reduced
+  motion. `ImageAsset.framed` skips `DeviceFrame` for images that already contain a mock-up (jemWszkole
+  parent dashboard). Canonicals checked on all 42 sitemap URLs: each page is self-canonical with hreflang.
+- 2026-10-14 Lighthouse mobile, local production build (simulated throttling; SEO/best-practices dips are
+  local only: canonical points to www, Vercel Analytics script missing): case studies 94–95 (nazielono 95
+  on a repeat run, 88 on the first), /pl/realizacje 93 (71 on a noisy first run), desktop nazielono 100.
+  LCP ~2.9–3.2 s on mobile; the LCP element is the summary text in the case-study header, not a
+  screenshot. Idea if PSI on production agrees: check the serif font loading for the header text.
 
-Related docs: [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
+Related docs: [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
 
 ---
@@ -143,6 +180,13 @@ Order: 3a Mailgun → 3b Vercel env vars → 3c test brief → 3d Search Console
 | Blog / notes | ongoing | 2 posts a month (topics in content-guide.md), route `/pl/blog` ↔ `/en/notes`. |
 | New case studies | ongoing | After the first Shopify and WordPress gigs. |
 | Next.js 16 | ½ day | Upgrade once the site is stable; migrate `next lint` to the ESLint CLI. |
+| Tests for SEO helpers | ½ day | Vitest for `json-ld.ts` / `seo.ts`: valid JSON, every `@id` resolves, no `[` placeholders, hreflang pairs symmetric (pattern from nazielono `tests/unit/`). |
+| E2E brief form | ½ day | One Playwright spec: validation, honeypot, success message, language switch on detail pages (nazielono `tests/e2e/contact-modal.spec.ts`). |
+| Brief funnel events | 1 h | `brief_start` on first focus and an error outcome next to `brief_sent`, so drop-off is visible (nazielono `lib/analytics.ts`). |
+| WebPage node per page | 1–2 h | `webPageJsonLd` (isPartOf `#website`, breadcrumb, mainEntity) on CV, contact, pricing; lists already have `CollectionPage`. |
+| CV `ProfilePage` | 1 h | `mainEntity → #person`, `knowsLanguage`, `worksFor`. Waits on English level and F12 (naming Visuality). |
+| Blog `BlogPosting` schema | with the blog | Port nazielono `lib/blog-structured-data.ts` (author, dates, `hasPart` from h2 ids), without Sanity-specific fields. |
+| Sanity revalidation webhook | with Sanity | nazielono `app/api/revalidate/sanity` as the reference. |
 
 ## 6. Post-launch round 1: branch `ui-corrections` (2026-10-12)
 

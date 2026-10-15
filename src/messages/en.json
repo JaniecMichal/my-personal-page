@@ -10,14 +10,14 @@
 			"contact": "Contact"
 		},
 		"cta": {
-			"quote": "Get a quote",
 			"call": "Book a call",
-			"brief": "Send a brief",
 			"read": "Read",
 			"allWork": "All work",
 			"allServices": "All services",
 			"downloadCv": "Download CV (PDF)",
-			"seeService": "See the service"
+			"seeService": "See the service",
+			"tellProject": "Tell me about your project",
+			"seeWork": "See my work"
 		},
 		"language": {
 			"label": "Language",
@@ -47,17 +47,17 @@
 	},
 	"home": {
 		"meta": {
-			"title": "Websites, stores and web apps — Michał Janiec",
-			"description": "Fast Next.js websites, Shopify stores, WordPress fixes and React apps. Senior frontend developer from Katowice, Poland. Quote within 24 hours."
+			"title": "Websites for businesses — Michał Janiec, Katowice",
+			"description": "Websites for businesses in Katowice, Silesia and remotely: new sites, plus development and fixes for existing ones. Senior frontend developer, 5+ years of experience."
 		},
 		"hero": {
-			"title": "Websites, stores and web apps that <em>sell.</em>",
-			"lead": "I build fast Next.js websites, Shopify stores, WordPress fixes and React apps. 5+ years in product teams, now working directly with your business."
+			"title": "Websites for <em>businesses.</em>",
+			"lead": "I build new websites and develop and fix existing ones. I work directly with businesses in Katowice and across Silesia, and remotely across Poland, the EU and the UK. 5+ years of experience in product teams."
 		},
 		"trust": "Worked with",
 		"services": {
 			"index": "01 — Services",
-			"title": "What I can build for you"
+			"title": "How I can help"
 		},
 		"work": {
 			"index": "02 — Case studies",
@@ -77,7 +77,8 @@
 		"pricing": {
 			"index": "05 — Pricing",
 			"title": "Clear pricing",
-			"cta": "Ask for a quote"
+			"cta": "Tell me about your project",
+			"note": "Net starting prices for a typical scope. A custom project gets its own quote after a short brief."
 		},
 		"faq": {
 			"index": "06 — FAQ",
@@ -85,14 +86,14 @@
 		},
 		"final": {
 			"index": "07 — Contact",
-			"title": "Let's build it.",
-			"lead": "A short brief takes 3 minutes. I'll reply within 24 hours with a rough quote and timeline."
+			"title": "Let's talk.",
+			"lead": "A short brief takes 3 minutes. I'll reply within 24 hours, and you get a quote with a timeline in 2–3 working days."
 		}
 	},
 	"services": {
 		"meta": {
-			"title": "Services: Next.js, Shopify, WordPress | Michał Janiec",
-			"description": "Business websites in Next.js, Shopify stores, WordPress fixes and speed-ups, React apps and frontend for Rails teams. Based in Poland, working remotely."
+			"title": "Websites, stores and fixes for businesses | Michał Janiec",
+			"description": "Need a new website, an online store or a fix for your current one? Business websites, Shopify, WordPress, web apps and audits. Katowice and remote."
 		},
 		"title": "Services",
 		"lead": "One person for the code, the communication and the care after launch. Pick what you need, or describe your project in the brief.",
@@ -101,26 +102,26 @@
 			"from": "Price",
 			"timeline": "Timeline",
 			"support": "Support",
-			"supportValue": "30 days included",
 			"invoice": "Invoice",
 			"invoiceValue": "VAT / B2B",
 			"included": "What you get",
 			"includedLabel": "Included",
 			"whyLabel": "Why a developer, not a template shop",
-			"whyTitle": "Your site is software. Treat it that way.",
-			"whyBody": "I've spent 5+ years building production frontends for product teams, from a 50-engineer Web3 marketplace to an enterprise platform for UK banks. The same habits go into your project: clean code, performance budgets and no plugin pile-ups.",
+			"whyTitle": "Your website is a business tool. It has to work, not just look good.",
+			"whyBody": "For 5+ years I've built websites and apps that real users rely on every day. I pick the tools to fit the goal and budget: Next.js, WordPress or Shopify, and before we start I explain why, without jargon. I check speed and technical SEO before handover.",
 			"whyBody2": "You get one person who writes the code, answers your messages and stays around after launch.",
 			"plans": "Packages",
 			"plansNote": "Prices net",
-			"ctaTitle": "Tell me about your project. I'll reply within 24 hours.",
-			"ctaButton": "Start the brief",
+			"custom": "These are starting prices for a typical scope. A custom project gets its own quote after a short brief.",
+			"ctaTitle": "Got a project? I'll reply within 24 hours.",
+			"ctaButton": "Tell me about your project",
 			"related": "See how I work on a real project"
 		}
 	},
 	"work": {
 		"meta": {
-			"title": "Work and case studies | Michał Janiec",
-			"description": "Selected projects: an SEO agency website in Next.js, a school-meal platform modernisation, the Braintrust Web3 marketplace."
+			"title": "Work: websites and apps for businesses | Michał Janiec",
+			"description": "See how I work: a marketing agency website in Next.js, a school-meal platform modernisation and the Braintrust Web3 marketplace. Problem, approach, result."
 		},
 		"title": "Work",
 		"lead": "A few projects where I owned the frontend, with the context, the approach and the result.",
@@ -135,16 +136,22 @@
 			"visit": "Visit the site",
 			"services": "Services in this project",
 			"screenshot": "Screenshot coming soon",
-			"metaTitle": "{client} — case study | Michał Janiec"
+			"metaTitle": "{client} — case study | Michał Janiec",
+			"gallery": "Screenshots",
+			"galleryPrevious": "Previous screenshot",
+			"galleryNext": "Next screenshot",
+			"gallerySlide": "{n} of {total}",
+			"galleryPause": "Pause autoplay",
+			"galleryPlay": "Resume autoplay"
 		}
 	},
 	"pricing": {
 		"meta": {
-			"title": "Pricing: websites and Shopify stores | Michał Janiec",
-			"description": "Clear pricing for Next.js websites, Shopify stores and hourly work. A quote within 24 hours after a short brief."
+			"title": "Website pricing: what a site costs | Michał Janiec",
+			"description": "One-page site from 1,000 PLN, website with an editor from 2,900 PLN, Shopify store from 2,500 PLN net. An exact quote within 2–3 working days after a short brief."
 		},
 		"title": "Pricing",
-		"lead": "Indicative net prices. You get an exact quote after a short brief, usually within 48 hours.",
+		"lead": "Indicative net prices. You get an exact quote after a short brief, within 2–3 working days. Custom projects get an individual quote.",
 		"drivers": "What affects the price",
 		"driverList": {
 			"d1": "number of pages and templates",
@@ -185,17 +192,18 @@
 		},
 		"label": "Contact · project brief",
 		"title": "Tell me about your project.",
-		"lead": "Just your name, email and a few words about the project. The details are optional. I reply within 24 hours with a rough quote or questions.",
+		"lead": "Just your name, email and a few words about the project. The details are optional. I reply within 24 hours, with questions or a rough range. The full quote follows in 2–3 working days.",
 		"alt": "Prefer another way?",
 		"form": {
 			"label": "Project brief",
 			"heading": "Tell me about it",
 			"types": {
-				"website": "Business website",
+				"website": "New business website",
+				"fix": "One-off fix or repair",
 				"shopify": "Shopify store",
-				"wordpress": "WordPress fixes",
-				"webapp": "React web app",
-				"team": "Frontend for a team",
+				"wordpress": "WordPress: fixes and development",
+				"webapp": "Web application",
+				"team": "Frontend for a team or agency (B2B)",
 				"audit": "Speed / SEO audit",
 				"marketing": "SEO / Google Ads",
 				"job": "Job offer / hiring",
@@ -222,8 +230,8 @@
 			"privacy": "Privacy policy",
 			"submit": "Send brief",
 			"sending": "Sending…",
-			"successTitle": "Thanks! I'll get back to you within 24 hours.",
-			"successBody": "Your brief arrived. I'll reply to the email address you gave.",
+			"successTitle": "Thanks! Your brief is in.",
+			"successBody": "Within 24 hours I'll reply to the email you gave, with questions or a rough range. The full quote with scope, price and timeline follows in 2–3 working days.",
 			"errors": {
 				"name": "Enter your name (min. 2 characters).",
 				"email": "Enter a valid email address.",
@@ -233,6 +241,7 @@
 				"rateLimit": "Too many attempts. Try again in a few minutes."
 			},
 			"messagePlaceholder": "What do you want to build or fix? A link to your current site helps too.",
+			"messageHint": "Don't put passwords or login details here. If I need access, we'll agree a safe way to share it.",
 			"detailsTitle": "Add project details (optional)",
 			"detailsHint": "Project type, budget, timeline. They help me give a more accurate quote.",
 			"typeLabel": "What do you need? Pick one or more.",
@@ -270,6 +279,8 @@
 		"nearbyTitle": "And across Silesia",
 		"servicesTitle": "How I can help",
 		"servicesIndex": "Services",
+		"workTitle": "See how I work",
+		"workIndex": "Work",
 		"faqLabel": "Questions"
 	}
 }

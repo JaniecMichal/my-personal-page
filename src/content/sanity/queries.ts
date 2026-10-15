@@ -18,7 +18,7 @@ const slugs = `"slugs": {
 
 export const SERVICES_QUERY = /* groq */ `
 *[_type == "service" && language == $locale] | order(order asc) {
-	"slug": slug.current, ${slugs}, order, showOnHome, title, summary, intro, tags, priceFrom, timeline,
+	"slug": slug.current, ${slugs}, order, showOnHome, title, summary, intro, tags, priceFrom, timeline, support,
 	included[]{ title, description },
 	plans[]->{ "id": _id, kicker, name, price, features, highlighted },
 	faq[]->{ "id": _id, ${t("question")}, ${t("answer")} },
@@ -27,7 +27,7 @@ export const SERVICES_QUERY = /* groq */ `
 
 export const SERVICE_QUERY = /* groq */ `
 *[_type == "service" && language == $locale && slug.current == $slug][0] {
-	"slug": slug.current, ${slugs}, order, showOnHome, title, summary, intro, tags, priceFrom, timeline,
+	"slug": slug.current, ${slugs}, order, showOnHome, title, summary, intro, tags, priceFrom, timeline, support,
 	included[]{ title, description },
 	plans[]->{ "id": _id, kicker, name, price, features, highlighted },
 	faq[]->{ "id": _id, ${t("question")}, ${t("answer")} },
@@ -71,7 +71,7 @@ export const TESTIMONIALS_QUERY = /* groq */ `
 
 export const FAQ_QUERY = /* groq */ `
 *[_type == "faq" && showOnHome == true] | order(order asc) {
-	"id": _id, ${t("question")}, ${t("answer")}
+	"id": _id, group, ${t("question")}, ${t("answer")}
 }`;
 
 export const LOCAL_PAGES_QUERY = /* groq */ `

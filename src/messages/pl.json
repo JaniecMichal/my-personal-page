@@ -10,14 +10,14 @@
 			"contact": "Kontakt"
 		},
 		"cta": {
-			"quote": "Wyceń projekt",
 			"call": "Umów rozmowę",
-			"brief": "Wyślij brief",
 			"read": "Czytaj",
 			"allWork": "Wszystkie realizacje",
 			"allServices": "Wszystkie usługi",
 			"downloadCv": "Pobierz CV (PDF)",
-			"seeService": "Zobacz usługę"
+			"seeService": "Zobacz usługę",
+			"tellProject": "Opowiedz o projekcie",
+			"seeWork": "Zobacz realizacje"
 		},
 		"language": {
 			"label": "Język",
@@ -47,20 +47,20 @@
 	},
 	"home": {
 		"meta": {
-			"title": "Strony, sklepy i aplikacje — Michał Janiec, Katowice",
-			"description": "Buduję szybkie strony w Next.js, sklepy Shopify, poprawki WordPress i aplikacje React. Senior frontend developer z Katowic, 5+ lat doświadczenia. Wycena w 24 h."
+			"title": "Strony internetowe dla firm — Michał Janiec, Katowice",
+			"description": "Strony internetowe dla firm z Katowic i Śląska: nowe strony, rozwój i naprawy istniejących serwisów. Senior frontend developer, 5+ lat doświadczenia."
 		},
 		"hero": {
-			"title": "Strony, sklepy i aplikacje, które <em>sprzedają.</em>",
-			"lead": "Buduję szybkie strony w Next.js, sklepy Shopify, poprawki WordPress i aplikacje React. Ponad 5 lat w zespołach produktowych, teraz pracuję bezpośrednio z Twoją firmą."
+			"title": "Strony internetowe dla <em>firm.</em>",
+			"lead": "Tworzę nowe strony, rozwijam i naprawiam istniejące serwisy. Pracuję bezpośrednio z firmami z Katowic i całego Śląska, zdalnie w całej Polsce. Ponad 5 lat doświadczenia w zespołach produktowych."
 		},
 		"trust": "Pracowałem z",
 		"services": {
 			"index": "01 — Usługi",
-			"title": "Co mogę dla Ciebie zbudować"
+			"title": "W czym mogę pomóc"
 		},
 		"work": {
-			"index": "02 — Case studies",
+			"index": "02 — Realizacje",
 			"title": "Wybrane realizacje",
 			"cta": "Masz podobny projekt? Opowiedz mi o nim, odpiszę w ciągu 24 godzin."
 		},
@@ -77,7 +77,8 @@
 		"pricing": {
 			"index": "05 — Cennik",
 			"title": "Przejrzyste ceny",
-			"cta": "Zapytaj o wycenę"
+			"cta": "Opowiedz o projekcie",
+			"note": "Ceny netto, wyjściowe dla typowego zakresu. Projekt niestandardowy wyceniam indywidualnie po krótkim briefie."
 		},
 		"faq": {
 			"index": "06 — FAQ",
@@ -85,14 +86,14 @@
 		},
 		"final": {
 			"index": "07 — Kontakt",
-			"title": "Zbudujmy to.",
-			"lead": "Krótki brief zajmie 3 minuty. Odpowiem w ciągu 24 godzin z wstępną wyceną i terminem."
+			"title": "Porozmawiajmy.",
+			"lead": "Krótki brief zajmie 3 minuty. Odpiszę w ciągu 24 godzin, a wycenę z terminem dostaniesz w 2–3 dni robocze."
 		}
 	},
 	"services": {
 		"meta": {
-			"title": "Usługi: strony Next.js, Shopify, WordPress | Michał Janiec",
-			"description": "Strony firmowe w Next.js, sklepy Shopify, poprawki i przyspieszanie WordPress, aplikacje React i frontend dla zespołów Rails. Katowice i zdalnie."
+			"title": "Strony, sklepy i naprawy stron dla firm | Michał Janiec",
+			"description": "Potrzebujesz nowej strony, sklepu albo naprawy obecnej? Strony dla firm, sklepy Shopify, WordPress, aplikacje webowe i audyty. Katowice i zdalnie."
 		},
 		"title": "Usługi",
 		"lead": "Jedna osoba od kodu, kontaktu i opieki po starcie. Wybierz, czego potrzebujesz, albo opisz projekt w briefie.",
@@ -101,26 +102,26 @@
 			"from": "Cena",
 			"timeline": "Czas",
 			"support": "Wsparcie",
-			"supportValue": "30 dni w cenie",
 			"invoice": "Faktura",
 			"invoiceValue": "VAT / B2B",
 			"included": "Co dostajesz",
 			"includedLabel": "W cenie",
 			"whyLabel": "Dlaczego developer, a nie gotowy szablon",
-			"whyTitle": "Twoja strona to oprogramowanie. Traktuję ją w ten sposób.",
-			"whyBody": "Od ponad 5 lat buduję frontendy produkcyjne dla zespołów produktowych: od marketplace Web3 z 50 inżynierami po platformę dla brytyjskich banków. Te same nawyki trafiają do Twojego projektu: czysty kod, budżet wydajności i zero wtyczkowego chaosu.",
+			"whyTitle": "Strona to narzędzie Twojej firmy. Ma działać, nie tylko ładnie wyglądać.",
+			"whyBody": "Od ponad 5 lat tworzę strony i aplikacje, z których na co dzień korzystają prawdziwi użytkownicy. Rozwiązanie dobieram do celu i budżetu: Next.js, WordPress albo Shopify, a przed startem tłumaczę bez żargonu, dlaczego właśnie to. Szybkość i SEO techniczne sprawdzam przed oddaniem projektu.",
 			"whyBody2": "Masz jedną osobę, która pisze kod, odpisuje na wiadomości i zostaje po starcie.",
 			"plans": "Pakiety",
 			"plansNote": "Ceny netto",
-			"ctaTitle": "Opowiedz mi o projekcie. Odpiszę w ciągu 24 godzin.",
-			"ctaButton": "Zacznij brief",
+			"custom": "To ceny wyjściowe dla typowego zakresu. Projekt niestandardowy wyceniam indywidualnie po krótkim briefie.",
+			"ctaTitle": "Masz projekt? Odpiszę w ciągu 24 godzin.",
+			"ctaButton": "Opowiedz o projekcie",
 			"related": "Zobacz, jak pracuję w realnym projekcie"
 		}
 	},
 	"work": {
 		"meta": {
-			"title": "Realizacje i case studies | Michał Janiec",
-			"description": "Wybrane projekty: strona agencji SEO w Next.js, modernizacja platformy obiadów szkolnych, marketplace Web3 Braintrust."
+			"title": "Realizacje: strony i aplikacje dla firm | Michał Janiec",
+			"description": "Zobacz, jak pracuję: strona agencji marketingowej w Next.js, modernizacja platformy obiadów szkolnych i marketplace Web3 Braintrust. Problem, podejście, efekt."
 		},
 		"title": "Realizacje",
 		"lead": "Kilka projektów, przy których odpowiadałem za frontend. Z kontekstem, podejściem i efektem.",
@@ -135,16 +136,22 @@
 			"visit": "Zobacz stronę",
 			"services": "Usługi w tym projekcie",
 			"screenshot": "Zrzut ekranu wkrótce",
-			"metaTitle": "{client} — realizacja | Michał Janiec"
+			"metaTitle": "{client} — realizacja | Michał Janiec",
+			"gallery": "Zrzuty ekranu",
+			"galleryPrevious": "Poprzedni zrzut ekranu",
+			"galleryNext": "Następny zrzut ekranu",
+			"gallerySlide": "{n} z {total}",
+			"galleryPause": "Wstrzymaj automatyczne przewijanie",
+			"galleryPlay": "Wznów automatyczne przewijanie"
 		}
 	},
 	"pricing": {
 		"meta": {
-			"title": "Cennik stron i sklepów Shopify | Michał Janiec",
-			"description": "Przejrzyste ceny stron w Next.js, sklepów Shopify i współpracy godzinowej. Wycena w 24 godziny po krótkim briefie."
+			"title": "Ile kosztuje strona internetowa? Cennik | Michał Janiec",
+			"description": "Strona-wizytówka od 1 000 zł, strona firmowa z panelem od 2 900 zł, sklep Shopify od 2 500 zł netto. Dokładna wycena w 2–3 dni robocze po krótkim briefie."
 		},
 		"title": "Cennik",
-		"lead": "Ceny orientacyjne netto. Dokładną wycenę dostajesz po krótkim briefie, zwykle w ciągu 48 godzin.",
+		"lead": "Ceny orientacyjne netto. Dokładną wycenę dostajesz po krótkim briefie, w ciągu 2–3 dni roboczych. Projekty niestandardowe wyceniam indywidualnie.",
 		"drivers": "Co wpływa na cenę",
 		"driverList": {
 			"d1": "liczba podstron i szablonów",
@@ -185,17 +192,18 @@
 		},
 		"label": "Kontakt · brief projektu",
 		"title": "Opowiedz mi o projekcie.",
-		"lead": "Wystarczy imię, e-mail i kilka słów o projekcie. Szczegóły są opcjonalne. Odpowiadam w ciągu 24 godzin z wstępną wyceną albo pytaniami.",
+		"lead": "Wystarczy imię, e-mail i kilka słów o projekcie. Szczegóły są opcjonalne. Odpowiadam w ciągu 24 godzin, z pytaniami albo wstępnymi widełkami. Pełną wycenę dostajesz w 2–3 dni robocze.",
 		"alt": "Wolisz inaczej?",
 		"form": {
 			"label": "Brief projektu",
 			"heading": "Opowiedz o projekcie",
 			"types": {
-				"website": "Strona firmowa",
+				"website": "Nowa strona dla firmy",
+				"fix": "Jednorazowa poprawka lub naprawa",
 				"shopify": "Sklep Shopify",
-				"wordpress": "WordPress: poprawki",
-				"webapp": "Aplikacja React",
-				"team": "Frontend dla zespołu",
+				"wordpress": "WordPress: poprawki i rozwój",
+				"webapp": "Aplikacja webowa",
+				"team": "Frontend dla zespołu lub agencji (B2B)",
 				"audit": "Audyt szybkości / SEO",
 				"marketing": "SEO / Google Ads",
 				"job": "Oferta pracy / rekrutacja",
@@ -222,8 +230,8 @@
 			"privacy": "Polityka prywatności",
 			"submit": "Wyślij brief",
 			"sending": "Wysyłam…",
-			"successTitle": "Dzięki! Odezwę się w ciągu 24 godzin.",
-			"successBody": "Brief dotarł. Odpowiem na adres e-mail podany w formularzu.",
+			"successTitle": "Dzięki! Brief dotarł.",
+			"successBody": "W ciągu 24 godzin odpiszę na podany adres e-mail, z pytaniami albo wstępnymi widełkami. Pełną wycenę z zakresem, ceną i terminem dostaniesz w 2–3 dni robocze.",
 			"errors": {
 				"name": "Podaj imię (min. 2 znaki).",
 				"email": "Podaj poprawny adres e-mail.",
@@ -233,6 +241,7 @@
 				"rateLimit": "Za dużo prób. Spróbuj za kilka minut."
 			},
 			"messagePlaceholder": "Co chcesz zbudować lub poprawić? Link do obecnej strony też się przyda.",
+			"messageHint": "Nie wpisuj tu haseł ani danych dostępowych. Jeśli będą potrzebne, ustalimy bezpieczny sposób ich przekazania.",
 			"detailsTitle": "Dodaj szczegóły projektu (opcjonalnie)",
 			"detailsHint": "Rodzaj projektu, budżet, termin. Pomogą mi przygotować trafniejszą wycenę.",
 			"typeLabel": "Czego potrzebujesz? Możesz zaznaczyć kilka.",
@@ -270,6 +279,8 @@
 		"nearbyTitle": "I z całego Śląska",
 		"servicesTitle": "W czym mogę pomóc",
 		"servicesIndex": "Usługi",
+		"workTitle": "Zobacz, jak pracuję",
+		"workIndex": "Realizacje",
 		"faqLabel": "Pytania"
 	}
 }

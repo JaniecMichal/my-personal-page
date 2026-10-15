@@ -95,8 +95,8 @@ export const localPages: LocalLocalPage[] = [
 					en: "How much does a website cost in Katowice?",
 				},
 				answer: {
-					pl: "Prosta strona-wizytówka zaczyna się od 1 000 zł netto, strona firmowa z panelem do edycji od 2 900 zł netto. Dokładną wycenę dostajesz w ciągu 24 godzin od wysłania briefu.",
-					en: "A simple one-page site starts at 1,000 PLN net, a business website with an editor at 2,900 PLN net. You get an exact quote within 24 hours of sending the brief.",
+					pl: "Prosta strona-wizytówka zaczyna się od 1 000 zł netto, strona firmowa z panelem do edycji od 2 900 zł netto. Dokładną wycenę dostajesz w 2–3 dni robocze od wysłania briefu.",
+					en: "A simple one-page site starts at 1,000 PLN net, a business website with an editor at 2,900 PLN net. You get an exact quote within 2–3 working days of sending the brief.",
 				},
 			},
 			{
@@ -121,6 +121,50 @@ export const localPages: LocalLocalPage[] = [
 					en: "That works too. Most of the work happens remotely anyway, and I can travel to Kraków for a meeting if needed.",
 				},
 			},
+			{
+				id: "katowice-faq-5",
+				question: {
+					pl: "Ile trwa zrobienie strony internetowej?",
+					en: "How long does it take to build a website?",
+				},
+				answer: {
+					pl: "Strona-wizytówka powstaje zwykle w kilka dni, strona firmowa z panelem w 2–3 tygodnie, a sklep Shopify w 3–5 tygodni. Najwięcej zależy od tego, jak szybko są gotowe teksty, zdjęcia i decyzje. Przy dłuższych projektach co tydzień dostajesz podgląd na żywo, więc widzisz postęp i możesz komentować na bieżąco.",
+					en: "A one-page site usually takes a few days, a website with an editor 2–3 weeks and a Shopify store 3–5 weeks. Most of it depends on how quickly the texts, photos and decisions are ready. On longer projects you get a live preview every week, so you see the progress and can comment as we go.",
+				},
+			},
+			{
+				id: "katowice-faq-6",
+				question: {
+					pl: "Jak wygląda współpraca krok po kroku?",
+					en: "What does working together look like?",
+				},
+				answer: {
+					pl: "Wysyłasz krótki brief, a ja odpisuję w ciągu 24 godzin z pytaniami albo wstępnymi widełkami. W 2–3 dni robocze dostajesz zakres, cenę i harmonogram, bez ukrytych kosztów. W trakcie budowy co tydzień widzisz postęp na podglądzie na żywo. Na koniec wdrażam stronę, podłączam domenę, analitykę i Google Search Console oraz pokazuję, jak samodzielnie zmieniać treści.",
+					en: "You send a short brief and I reply within 24 hours with questions or a rough range. Within 2–3 working days you get the scope, price and timeline, with no hidden costs. During the build you see the progress on a live preview every week. At the end I launch the site, connect the domain, analytics and Google Search Console, and show you how to edit the content yourself.",
+				},
+			},
+			{
+				id: "katowice-faq-7",
+				question: {
+					pl: "Dlaczego freelancer, a nie agencja?",
+					en: "Why a freelancer rather than an agency?",
+				},
+				answer: {
+					pl: "Pracujesz bezpośrednio z osobą, która pisze kod, więc nic nie gubi się między handlowcem, projektantem a programistą. Nie płacisz za biuro ani za pośredników, dlatego strona-wizytówka zaczyna się od 1 000 zł netto. Od ponad 5 lat pracuję w zespołach produktowych, więc dostajesz standardy dużych projektów w skali małej firmy, a po starcie na Twoje pytania odpowiada ta sama osoba.",
+					en: "You work directly with the person who writes the code, so nothing gets lost between a salesperson, a designer and a developer. You don't pay for an office or middlemen, which is why a one-page site starts at 1,000 PLN net. I've worked in product teams for 5+ years, so you get the standards of large projects at a small-business scale, and after launch the same person answers your questions.",
+				},
+			},
+			{
+				id: "katowice-faq-8",
+				question: {
+					pl: "Czy wystawiasz fakturę VAT?",
+					en: "Do you issue VAT invoices?",
+				},
+				answer: {
+					pl: "Tak. Prowadzę działalność gospodarczą i wystawiam faktury VAT. Jeśli wolisz, możemy też podpisać umowę o dzieło albo umowę zlecenie.",
+					en: "Yes. I run a registered business and issue VAT invoices. If you prefer, we can also sign a contract for specific work or a mandate contract.",
+				},
+			},
 		],
 		seo: {
 			title: {
@@ -128,8 +172,8 @@ export const localPages: LocalLocalPage[] = [
 				en: "Web design Katowice | Michał Janiec",
 			},
 			description: {
-				pl: "Strony firmowe, sklepy i aplikacje dla firm z Katowic i Śląska. Spotkanie na miejscu, lokalne SEO, faktura VAT. Wycena w 24 godziny.",
-				en: "Business websites, online stores and web apps for companies in Katowice and Silesia. Meet in person, local SEO, VAT invoice. Quote within 24 hours.",
+				pl: "Strony firmowe, sklepy i aplikacje dla firm z Katowic i Śląska. Spotkanie na miejscu, lokalne SEO, faktura VAT. Odpowiedź w 24 h.",
+				en: "Business websites, online stores and web apps for companies in Katowice and Silesia. Meet in person, local SEO, VAT invoice. Reply within 24 hours.",
 			},
 		},
 	},
