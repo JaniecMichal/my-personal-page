@@ -195,6 +195,7 @@ Order: 3a Mailgun → 3b Vercel env vars → 3c test brief → 3d Search Console
 | CV `ProfilePage` | 1 h | `mainEntity → #person`, `knowsLanguage`, `worksFor`. Waits on English level and F12 (naming Visuality). |
 | Blog `BlogPosting` schema | with the blog | Port nazielono `lib/blog-structured-data.ts` (author, dates, `hasPart` from h2 ids), without Sanity-specific fields. |
 | Sanity revalidation webhook | with Sanity | nazielono `app/api/revalidate/sanity` as the reference. |
+| Shorter redirect chains | 30 min + 1 dashboard change | httpstatus.io, 2026-10-15: `http://mjaniec.it` 3 hops, `https://mjaniec.it` 2, `http://www` 2, `https://www` 1 (→ `/pl`). The http → https hop is forced by Vercel and can't be removed. Fix: (1) in `next.config.js` add redirects with `has: [{ type: "host", value: "mjaniec.it" }]` that go straight to the final URL (`/` → `https://www.mjaniec.it/pl`, old URLs → their final `www` target, `/:path*` → `https://www.mjaniec.it/:path*`), test locally with a faked `Host`, merge; (2) **after** that deploy, Vercel → Settings → Domains → `mjaniec.it`: serve Production instead of "Redirect to www". Result: `https://mjaniec.it` 1 hop, `http://mjaniec.it` 2. Optional later: HSTS preload (`includeSubDomains; preload`), only after checking subdomains (Mailgun tracking); hard to undo. Low SEO impact, not urgent. |
 
 ## 6. Post-launch round 1: branch `ui-corrections` (2026-10-12)
 
