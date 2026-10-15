@@ -99,13 +99,13 @@ export const pricingPlans: LocalizedDeep<PricingPlan>[] = [
 		price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
 		features: {
 			pl: [
-				"do 5 podstron",
+				"do 4 podstron",
 				"panel do edycji treści",
 				"SEO i dane strukturalne",
 				"wdrożenie + 30 dni wsparcia",
 			],
 			en: [
-				"up to 5 pages",
+				"up to 4 pages",
 				"content editor",
 				"SEO and structured data",
 				"launch + 30 days support",
@@ -133,13 +133,13 @@ export const pricingPlans: LocalizedDeep<PricingPlan>[] = [
 			pl: [
 				"zmiany w WordPress, Next.js, Shopify",
 				"React, Next.js, frontend Rails",
-				"zadanie próbne: do 10 h po 100 zł/h",
+				"część etatu w Twoim zespole",
 				"rozliczenie co 15 min, raport godzin",
 			],
 			en: [
 				"changes in WordPress, Next.js, Shopify",
 				"React, Next.js, Rails frontend",
-				"trial task: up to 10 h at 100 PLN/h",
+				"part-time in your team",
 				"billed per 15 min, time report",
 			],
 		},
@@ -171,8 +171,8 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		group: "cooperation",
 		question: { pl: "Czy poprawisz moją obecną stronę?", en: "Can you fix my existing website?" },
 		answer: {
-			pl: "Tak. Naprawiam błędy, dodaję nowe sekcje, przyspieszam i przenoszę istniejące strony, najczęściej na WordPressie, bez przepisywania wszystkiego od zera. Zanim cokolwiek zmienię, sprawdzam motyw, wtyczki i hosting, żeby poprawka nie zepsuła czegoś innego. Takie prace rozliczam godzinowo, 120 zł/h netto. Jeśli nie wiesz, co dokładnie szwankuje, dobrym startem jest audyt szybkości i SEO.",
-			en: "Yes. I fix bugs, add new sections, speed up and migrate existing sites, most often on WordPress, without rewriting everything from scratch. Before changing anything I review the theme, plugins and hosting, so a fix doesn't break something else. This work is billed hourly at 120 PLN/h net. If you're not sure what exactly is wrong, a speed and SEO audit is a good place to start.",
+			pl: "Tak. Naprawiam błędy, dodaję nowe sekcje, przyspieszam i przenoszę istniejące strony, najczęściej na WordPressie, bez przepisywania wszystkiego od zera. Zanim cokolwiek zmienię, sprawdzam motyw, wtyczki i hosting, żeby poprawka nie zepsuła czegoś innego. Takie prace rozliczam godzinowo, 90–150 zł/h netto, zależnie od złożoności. Jeśli nie wiesz, co dokładnie szwankuje, dobrym startem jest audyt szybkości i SEO.",
+			en: "Yes. I fix bugs, add new sections, speed up and migrate existing sites, most often on WordPress, without rewriting everything from scratch. Before changing anything I review the theme, plugins and hosting, so a fix doesn't break something else. This work is billed hourly at 90–150 PLN/h net, depending on complexity. If you're not sure what exactly is wrong, a speed and SEO audit is a good place to start.",
 		},
 	},
 	{
@@ -180,8 +180,8 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		group: "cooperation",
 		question: { pl: "Czy sam będę mógł edytować treści?", en: "Can I edit the content myself?" },
 		answer: {
-			pl: "Tak. Podpinam wygodny panel do edycji (CMS) albo korzystamy z panelu Shopify lub WordPressa, zależnie od projektu. Po wdrożeniu pokazuję, jak zmieniać teksty, zdjęcia i podstrony, żeby drobne zmiany nie wymagały programisty.",
-			en: "Yes. I connect a friendly editing panel (CMS), or we use the Shopify or WordPress admin, depending on the project. After launch I show you how to change texts, photos and pages, so small changes don't need a developer.",
+			pl: "Tak. Dobieram panel do projektu: WordPress, Shopify, Sanity albo inny headless CMS. Po wdrożeniu pokazuję, jak zmieniać teksty, zdjęcia i podstrony, żeby drobne zmiany nie wymagały programisty.",
+			en: "Yes. I pick the editor that suits the project: WordPress, Shopify, Sanity or another headless CMS. After launch I show you how to change texts, photos and pages, so small changes don't need a developer.",
 		},
 	},
 	{
@@ -240,20 +240,20 @@ export const faq: LocalizedDeep<FaqItem>[] = [
 		group: "cooperation",
 		question: { pl: "Co dzieje się po oddaniu strony?", en: "What happens after launch?" },
 		answer: {
-			pl: "Strona firmowa z panelem ma w cenie 30 dni wsparcia po starcie: poprawiam błędy i odpowiadam na pytania, a strona-wizytówka jedną rundę poprawek. Później zmiany i rozwój zlecasz wtedy, gdy ich potrzebujesz, rozliczane godzinowo (120 zł/h netto, co 15 minut, minimum 1 h). Jeśli potrzebujesz stałej opieki, ustalimy jej zakres indywidualnie.",
-			en: "The website with an editor includes 30 days of support after launch: I fix bugs and answer questions. The one-page site includes one round of fixes. After that you order changes and new features when you need them, billed hourly (120 PLN/h net, in 15-minute steps, 1-hour minimum). If you need ongoing care, we agree its scope individually.",
+			pl: "Strona firmowa z panelem ma w cenie 30 dni wsparcia po starcie: poprawiam błędy i odpowiadam na pytania, a strona-wizytówka jedną rundę poprawek. Później możesz wybrać stałą opiekę, czyli pakiet od 2–4 godzin miesięcznie z priorytetową odpowiedzią, albo zlecać zmiany jednorazowo, wtedy gdy ich potrzebujesz. Stawka to 90–150 zł/h netto, zależnie od złożoności prac. Opiekuję się projektami w różnych technologiach: poza ekosystemem JavaScript (React, Next.js) pracuję na co dzień z Shopify, WordPressem i PHP, AtomStore oraz Ruby on Rails, więc przejmę też stronę, której nie budowałem.",
+			en: "The website with an editor includes 30 days of support after launch: I fix bugs and answer questions. The one-page site includes one round of fixes. After that you can choose ongoing care, a plan from 2–4 hours a month with priority response, or order changes as one-off jobs when you need them. The rate is 90–150 PLN/h net, depending on complexity. I look after projects across different technologies: beyond the JavaScript ecosystem (React, Next.js) I work with Shopify, WordPress and PHP, AtomStore and Ruby on Rails, so I can also take over a site I didn't build.",
 		},
 	},
 	{
-		id: "trial",
+		id: "team",
 		group: "cooperation",
 		question: {
-			pl: "Jak zacząć współpracę przy większym projekcie?",
-			en: "How do we start on a bigger project?",
+			pl: "Czy dołączysz do naszego zespołu na część etatu?",
+			en: "Can you join our team part-time?",
 		},
 		answer: {
-			pl: "Od zadania próbnego: do 10 godzin pracy po 100 zł/h netto, bez zobowiązań. Jeśli współpraca się sprawdzi, dalej rozliczamy się po 120 zł/h netto albo w stałej cenie projektu.",
-			en: "With a trial task: up to 10 hours of work at 100 PLN/h net, with no commitment. If it works well, we continue at 120 PLN/h net or at a fixed project price.",
+			pl: "Tak. Dołączam do zespołów i agencji na część etatu albo na ustaloną liczbę godzin w tygodniu i wzmacniam je jako frontend developer: React i Next.js, Shopify, WordPress albo frontend w Rails. Rozliczenie godzinowe, 120 zł/h netto, na fakturę VAT.",
+			en: "Yes. I join teams and agencies part-time or for an agreed number of hours a week, as a frontend developer: React and Next.js, Shopify, WordPress or a Rails frontend. Billed hourly at 120 PLN/h net, with a VAT invoice.",
 		},
 	},
 	{
@@ -313,8 +313,8 @@ export const processSteps: LocalizedDeep<ProcessStep>[] = [
 		id: "care",
 		title: { pl: "Opieka", en: "Care" },
 		description: {
-			pl: "Poprawki, aktualizacje i rozwój. Abonament albo rozliczenie godzinowe.",
-			en: "Fixes, updates and new features. A monthly plan or hourly billing.",
+			pl: "Poprawki, aktualizacje i rozwój. Stały pakiet godzin co miesiąc albo jednorazowe zlecenia.",
+			en: "Fixes, updates and new features. A monthly block of hours or one-off jobs.",
 		},
 	},
 ];

@@ -77,7 +77,7 @@ export const businessJsonLd = (settings: SiteSettings, locale: Locale, services:
 	url: `${SITE_URL}/pl`,
 	image: `${SITE_URL}/mjaniec-og.jpg`,
 	priceRange: locale === "pl" ? "od 1 000 zł netto" : "from 1,000 PLN net",
-	...(settings.phone ? { telephone: settings.phone } : {}),
+	// No `telephone`: the number is obfuscated on the page (PhoneLink), plain JSON-LD would expose it to scrapers.
 	founder: { "@id": PERSON_ID },
 	address: {
 		"@type": "PostalAddress",

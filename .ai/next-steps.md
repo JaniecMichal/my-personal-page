@@ -1,12 +1,16 @@
 # Next steps — mjaniec.it
 
-Status (2026-10-14, end of day): **live at https://www.mjaniec.it**. Branch **`content-mvp`** (pushed, **PR to
-`main` not opened yet**: https://github.com/JaniecMichal/my-personal-page/compare/main...content-mvp?expand=1).
-On the branch: content-audit items 1–6, Katowice page (case studies + 4 FAQ), structured data from the
-nazielono.pro review, 2 new case studies (zapachdomu.com, bilscy.info), device frames + carousel with autoplay.
-**Next up:** open and merge the PR, then `scripts/smoke.sh` and `scripts/indexnow.sh`, PSI on production for
-`/pl/realizacje/*`, Rich Results Test on one service page. Then items 7–12 in
-[content-audit.md](./content-audit.md), which wait on Michał's answers (F01–F05, F08–F10, F12, phone).
+Status (2026-10-15): **live at https://www.mjaniec.it**. PR #8 (`content-mvp`) **merged into `main`**
+(`5dcb454`) and deployed: content-audit items 1–6, Katowice page (case studies + 4 FAQ), structured data
+from the nazielono.pro review, 2 new case studies (zapachdomu.com, bilscy.info), device frames + carousel
+with autoplay. After the merge: smoke test passed, all 42 sitemap URLs return 200, build/lint/typecheck
+clean, IndexNow sent (42 URLs, HTTP 200), 10 URLs requested in Google Search Console, PSI and Rich
+Results Test OK. Branch `status-2026-10-15`: owner answers
+F01–F05, F08–F10, F12 applied (content-audit items 7–12, decisions in
+[business-plan-status.md](./business-plan-status.md)), phone +48 794 236 099 on contact + footer via
+`PhoneLink` (decoded after hydration, not in HTML or JSON-LD). **Next up:** merge that branch, set up
+Michał's own Google Business Profile, then section 7 (analytics, lead sheet). Optional: `/pl/realizacje`
+mobile LCP 3.0 s / Speed Index 4.0 s (score 93, not urgent).
 Plans: [business-plan.md](./business-plan.md) (what/why, D1–D6) · [technical-plan.md](./technical-plan.md)
 (how) · results: [technical-audit.md](./technical-audit.md).
 
@@ -125,7 +129,7 @@ All placeholders look like `[X]`, `[MIESIĄC]`, `[LEVEL]`. Find them with `grep 
 
 Follow-ups (not blocking launch):
 
-- [ ] Ask Konrad Bilski for permission to publish his quote (assumed for now).
+- [x] Konrad Bilski's permission confirmed (2026-10-15).
 - [ ] jemWszkole.pl number metrics (build time CRA → Vite, dev server start, Lighthouse, number of
   schools): swap them in from the `TODO(metrics)` comment in `work.ts` when available.
 - [ ] nazielono.pro mobile Lighthouse is weak: fix it on the client site, then add mobile metrics.
@@ -269,12 +273,35 @@ Follow-ups:
 
 Plan and methodology: [growth-plan.md](./growth-plan.md).
 
+### 2026-10-16: re-index pages changed by the owner answers (after the `status-2026-10-15` merge)
+
+The 10 Google requests for 2026-10-15 are used (Katowice, new services, zapachdomu, bilscy). Run these
+on 2026-10-16, only after the PR is merged and deployed. Run `scripts/indexnow.sh` right after the
+merge for Bing (no daily limit worth worrying about).
+
+- [ ] **Google Search Console → URL inspection → Request indexing** (10 URLs, most important first):
+  - `https://www.mjaniec.it/pl/cennik`
+  - `https://www.mjaniec.it/pl/uslugi/strona-internetowa-dla-firmy`
+  - `https://www.mjaniec.it/pl/uslugi/sklepy-shopify`
+  - `https://www.mjaniec.it/pl/uslugi/wordpress`
+  - `https://www.mjaniec.it/pl/uslugi/audyt-szybkosci-seo`
+  - `https://www.mjaniec.it/pl/uslugi/frontend-dla-zespolow-rails`
+  - `https://www.mjaniec.it/pl/realizacje/jemwszkole`
+  - `https://www.mjaniec.it/pl/realizacje/braintrust`
+  - `https://www.mjaniec.it/pl/kontakt`
+  - `https://www.mjaniec.it/en/pricing`
+- [ ] Optional, the day after (2026-10-17): `/en/services/business-website`,
+  `/en/services/shopify-stores`, `/en/services/wordpress`, `/en/services/speed-seo-audit`,
+  `/en/services/frontend-for-rails-teams`, `/pl/uslugi/strony-nextjs`, `/en/work/jemwszkole`,
+  `/en/work/braintrust`, `/en/contact`.
+
 ### 2026-10-13: index the new pages (updated list: business-plan-status.md, "Order of work")
 
 Google allows about 10 "Request indexing" a day per property; today's 10 are used. Bing has its own
 limit (100 a day), but it waits until tomorrow too.
 
-- [ ] **Google Search Console → URL inspection → Request indexing** (6 URLs):
+- [x] **Google Search Console → URL inspection → Request indexing** (2026-10-15, these 6 plus the 4
+  zapachdomu / bilscy case studies PL+EN):
   - `https://www.mjaniec.it/pl/strony-internetowe/katowice`
   - `https://www.mjaniec.it/pl/uslugi/strona-internetowa-dla-firmy`
   - `https://www.mjaniec.it/pl/uslugi/seo-i-google-ads`
@@ -291,7 +318,7 @@ limit (100 a day), but it waits until tomorrow too.
 
 ### Fixes found by the mini-audit (own site, 2026-10-12)
 
-- [ ] **Phone number on the site**: the only issue the audit finds on mjaniec.it is "no visible phone
+- [x] (2026-10-15, obfuscated, no JSON-LD `telephone`) **Phone number on the site**: the only issue the audit finds on mjaniec.it is "no visible phone
   number". Add `phone` in `src/content/local/settings.ts` (it already renders as a `tel:` link on the
   contact page); also show a tap-to-call link in the header or the mobile menu, and in JSON-LD
   (`telephone`, already wired). Local clients prefer calling, and the leaflet says so.

@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BriefForm } from "@/components/contact/brief-form";
 import { Container } from "@/components/ui/container";
+import { PhoneLink } from "@/components/ui/phone-link";
 import { content } from "@/content";
 import type { Locale } from "@/i18n/routing";
-import { encodeEmail } from "@/lib/email";
+import { encodeEmail, encodePhone } from "@/lib/email";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -23,8 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ContactPage({ params }: Props) {
 	const { locale } = await params;
 	setRequestLocale(locale);
-	const [t, settings] = await Promise.all([
+	const [t, tCommon, settings] = await Promise.all([
 		getTranslations("contact"),
+		getTranslations("common"),
 		content.getSiteSettings(locale),
 	]);
 
@@ -42,7 +44,11 @@ export default async function ContactPage({ params }: Props) {
 					<div className="flex flex-col gap-3.5 border-t border-ink pt-6 text-[15px]">
 						<span className="label">{t("alt")}</span>
 						{settings.phone && (
-							<a href={`tel:${settings.phone.replace(/\s/g, "")}`}>{settings.phone}</a>
+							<PhoneLink
+								encoded={encodePhone(settings.phone)}
+								label={tCommon("phone")}
+								className="text-accent"
+							/>
 						)}
 						{settings.socials.map((s) => (
 							<a
