@@ -10,8 +10,8 @@ Four branches are pushed and waiting for review, each built on the previous one,
 3. `seo-quick-wins`: SEO research applied (P0-2, P0-3, P0-4, P1-4, part of P1-3).
 4. `blog`: blog MVP (listing + post), "Blog" in the top nav, first post as a draft.
 Previews: `https://my-personal-page-git-<branch>-michals-projects-f269e437.vercel.app`.
-**Next up:** Michał writes the first article (prompt + workflow from the 2026-10-16 session; posts go into
-`src/content/local/posts.ts`), confirms AI-F1–F9, then the off-site tasks P0-5 / P0-6 / P1-2 (Google Business
+**Next up:** Michał writes the first article (prompt + workflow: [blog-prompt.md](./blog-prompt.md); posts go into
+`src/content/local/posts.ts`; AI test phrases: [ai-search-visibility.md](./ai-search-visibility.md)), confirms AI-F1–F9, then the off-site tasks P0-5 / P0-6 / P1-2 (Google Business
 Profile, reviews, Useme / Oferteo profiles).
 **Working checklist (PL): [plan-pracy-seo.md](./plan-pracy-seo.md)** · master plan with competitor report,
 SEO audit and sources: [search-growth-plan.md](./search-growth-plan.md).
@@ -148,7 +148,7 @@ Progress log:
   sitemap or llms.txt. First post (draft): "Ile kosztuje strona internetowa dla firmy w 2026" with 2
   `[DO POTWIERDZENIA]`. "Blog" in the top nav and footer.
 
-Related docs: [search-growth-plan.md](./search-growth-plan.md) · [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
+Related docs: [search-growth-plan.md](./search-growth-plan.md) · [blog-prompt.md](./blog-prompt.md) · [ai-search-visibility.md](./ai-search-visibility.md) · [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
 
 ---

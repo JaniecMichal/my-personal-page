@@ -116,7 +116,7 @@ opiniach. „Strony internetowe Katowice” w top 10: 6–12+ miesięcy.
   - [ ] Zaakceptować szkic „Ile kosztuje strona internetowa dla firmy w 2026” (2 × [DO POTWIERDZENIA]:
     cena projektu graficznego, koszt domeny .pl) i zmienić `draft` na `false`
   - [ ] Później: paginacja (od ok. 10 wpisów), tagi jako filtry, RSS, okładki i OG per wpis, link „Blog” w menu
-- [ ] **P2-2 Cztery artykuły-odpowiedzi** (A szkic z Twojej wiedzy, M akceptuje), odpowiedź w
+- [ ] **P2-2 Cztery artykuły-odpowiedzi** (A szkic z Twojej wiedzy, M akceptuje; prompt i workflow: [blog-prompt.md](./blog-prompt.md)), odpowiedź w
   pierwszym akapicie, tabele, data:
   - [ ] „Ile kosztuje strona internetowa dla firmy w 2026 (Śląsk)”
   - [ ] „Next.js czy WordPress dla strony firmowej”
