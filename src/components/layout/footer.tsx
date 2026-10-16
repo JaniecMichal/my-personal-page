@@ -25,7 +25,7 @@ export async function Footer() {
 			<Container className="grid grid-cols-1 gap-10 py-14 text-sm sm:grid-cols-2 lg:grid-cols-4">
 				<div className="flex flex-col">
 					<span className="mb-2 label">{t("footer.services")}</span>
-					{services.slice(0, 5).map((s) => (
+					{services.map((s) => (
 						<Link
 							key={s.slug}
 							href={{ pathname: "/services/[slug]", params: { slug: s.slug } }}

@@ -22,6 +22,9 @@ export async function GET() {
 		"",
 		`> ${settings.seo.description}`,
 		"",
+		// The site is Polish-first; this line is the Polish entity summary AI assistants can quote.
+		`PL: ${settings.name}, programista stron internetowych z Katowic. Strony internetowe dla firm (Next.js, WordPress, Shopify), aplikacje webowe i frontend dla zespołów Ruby on Rails. Katowice, Śląsk i zdalnie w całej Polsce. Strona-wizytówka od 1 000 zł netto, strona firmowa z panelem od 2 900 zł netto. Ponad 5 lat doświadczenia.`,
+		"",
 		`Location: ${settings.location}. Contact: brief form at ${localizedUrl("/contact", locale)}. Languages: Polish, English.`,
 		settings.availability ? `Availability: ${settings.availability}.` : "",
 		"",

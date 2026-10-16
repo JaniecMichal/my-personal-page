@@ -53,16 +53,16 @@ opiniach. „Strony internetowe Katowice” w top 10: 6–12+ miesięcy.
 
 - [ ] **P0-1 Wdrożyć poprawkę przełącznika języka** (M): merge PR `fix-locale-switch`, potem
   `scripts/smoke.sh`, `scripts/indexnow.sh`, Search Console → „Nie znaleziono (404)” → „Zatwierdź poprawkę”.
-- [ ] **P0-2 Strona Next.js z własną treścią** (A, ok. 2 h; fakt: sposób pokazania ceny):
+- [x] (2026-10-16, gałąź `seo-quick-wins`; pakiety usunięte, ceny 1 000 / 2 900 zł w FAQ) **P0-2 Strona Next.js z własną treścią** (A, ok. 2 h; fakt: sposób pokazania ceny):
   fraza „strony internetowe w Next.js”, własny tytuł i opis, wstęp dla osób, które już chcą
   Next.js (agencje, firmy odchodzące od WordPressa, startupy), sekcja „Next.js czy WordPress?”,
   FAQ 6 pytań, link do realizacji nazielono.pro, jedna linia „od 2 900 zł + wycena indywidualna”
   zamiast skopiowanych pakietów. Linki ze strony Katowic, strony „Strona internetowa dla firmy” i stopki.
-- [ ] **P0-3 Tytuły i nagłówki według mapy fraz** (A szkic, M akceptuje): strona główna
+- [x] (2026-10-16, `seo-quick-wins`: tytuły z „programista” i cenami, H2 na stronie Katowic; H1 strony głównej bez zmian) **P0-3 Tytuły i nagłówki według mapy fraz** (A szkic, M akceptuje): strona główna
   „Programista stron internetowych Katowice — Michał Janiec”; H1 zostaje problemowy, pod nim
   linijka z osobą i miejscem; na stronie Katowic H2 z „programista z Katowic”; cena w tytułach
   tam, gdzie jest potwierdzona.
-- [ ] **P0-4 Rozbudować cienkie usługi** (A, 1–2 h każda): aplikacje webowe, WordPress, audyt,
+- [x] (2026-10-16, `seo-quick-wins`: FAQ 4–5 i karty „co dostajesz” na każdej usłudze, nagłówek FAQ, wstęp na Realizacjach) **P0-4 Rozbudować cienkie usługi** (A, 1–2 h każda): aplikacje webowe, WordPress, audyt,
   Rails, Shopify, wstęp na „Realizacje”. Schemat: problem → co robię → dla kogo → realizacja →
   FAQ 3–5, każda odpowiedź zaczyna się od zdania z konkretną odpowiedzią. WordPress pod frazę
   „naprawa i przyspieszenie strony WordPress”.
@@ -96,10 +96,10 @@ opiniach. „Strony internetowe Katowice” w top 10: 6–12+ miesięcy.
   Clutch (2–3 zweryfikowane opinie), pkt.pl, Panorama Firm, LinkedIn (sekcja Usługi), GitHub. Ta
   sama nazwa, miasto, adres strony i jedno zdanie o Next.js, Katowicach i automatyzacji AI. Potem
   agent dopisuje je do `sameAs`.
-- [ ] **P1-3 Spójne dane firmy** (A, 1 h; fakt: nazwa): jedna nazwa w danych strukturalnych,
+- [ ] (częściowo 2026-10-16: polski blok w llms.txt, `areaServed` usług z Katowicami i Śląskiem; nazwa firmy czeka na decyzję) **P1-3 Spójne dane firmy** (A, 1 h; fakt: nazwa): jedna nazwa w danych strukturalnych,
   polityce prywatności i wizytówce; ta sama lista obszarów wszędzie (Kraków); polski blok o firmie na
   początku llms.txt; strona AI i ceny w llms.txt.
-- [ ] **P1-4 Linkowanie wewnętrzne** (A): stopka ze wszystkimi usługami, każda usługa linkuje do
+- [x] (2026-10-16: stopka ze wszystkimi usługami i automatyzacją AI, „AI” w menu; strona Katowic linkuje usługi przez siatkę) **P1-4 Linkowanie wewnętrzne** (A): stopka ze wszystkimi usługami, każda usługa linkuje do
   jednej realizacji i strony Katowic, cennik do usług.
 - [ ] **P1-5 Podpisy u klientów** (M): „Strona: Michał Janiec (mjaniec.it)” w stopce nazielono,
   zapachdomu, bilscy, jeśli się zgodzą. Nie przy projektach Visuality.

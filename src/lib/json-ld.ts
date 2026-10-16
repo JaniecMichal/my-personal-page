@@ -119,7 +119,7 @@ export const serviceJsonLd = (service: Service, url: string, locale: Locale) => 
 	url,
 	inLanguage: locale,
 	provider: { "@id": BUSINESS_ID },
-	areaServed: ["Poland", "European Union", "United Kingdom"],
+	areaServed: ["Katowice", "Silesia", "Poland", "European Union", "United Kingdom"],
 	...(offerFor(service, url) ? { offers: offerFor(service, url) } : {}),
 });
 
