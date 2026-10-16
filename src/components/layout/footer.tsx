@@ -25,7 +25,7 @@ export async function Footer() {
 			<Container className="grid grid-cols-1 gap-10 py-14 text-sm sm:grid-cols-2 lg:grid-cols-4">
 				<div className="flex flex-col">
 					<span className="mb-2 label">{t("footer.services")}</span>
-					{services.slice(0, 5).map((s) => (
+					{services.map((s) => (
 						<Link
 							key={s.slug}
 							href={{ pathname: "/services/[slug]", params: { slug: s.slug } }}
@@ -34,6 +34,9 @@ export async function Footer() {
 							{s.title}
 						</Link>
 					))}
+					<Link href="/ai-automation" className={linkClass}>
+						{t("footer.ai")}
+					</Link>
 					{localPages.length > 0 && <span className="mt-6 mb-2 label">{t("footer.local")}</span>}
 					{localPages.map((page) => (
 						<Link
@@ -49,6 +52,9 @@ export async function Footer() {
 					<span className="mb-2 label">{t("footer.site")}</span>
 					<Link href="/work" className={linkClass}>
 						{t("nav.work")}
+					</Link>
+					<Link href="/blog" className={linkClass}>
+						{t("footer.blog")}
 					</Link>
 					<Link href="/pricing" className={linkClass}>
 						{t("nav.pricing")}

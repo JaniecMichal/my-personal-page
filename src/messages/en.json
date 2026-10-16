@@ -8,7 +8,9 @@
 			"work": "Work",
 			"pricing": "Pricing",
 			"cv": "CV",
-			"contact": "Contact"
+			"contact": "Contact",
+			"ai": "AI",
+			"blog": "Blog"
 		},
 		"cta": {
 			"call": "Book a call",
@@ -41,14 +43,16 @@
 			"terminal": "Prefer a terminal?",
 			"privacy": "Privacy policy",
 			"rights": "© {year} Michał Janiec",
-			"local": "Local"
+			"local": "Local",
+			"ai": "AI automation",
+			"blog": "Blog"
 		},
 		"breadcrumbHome": "Home",
 		"translatedQuote": "Translated from Polish"
 	},
 	"home": {
 		"meta": {
-			"title": "Websites for businesses — Michał Janiec, Katowice",
+			"title": "Web developer in Katowice — Michał Janiec",
 			"description": "Websites for businesses in Katowice, Silesia and remotely: new sites, plus development and fixes for existing ones. Senior frontend developer, 5+ years of experience."
 		},
 		"hero": {
@@ -99,6 +103,7 @@
 		"title": "Services",
 		"lead": "One person for the code, the communication and the care after launch. Pick what you need, or describe your project in the brief.",
 		"detail": {
+			"faq": "Frequently asked questions",
 			"glance": "At a glance",
 			"from": "Price",
 			"timeline": "Timeline",
@@ -125,7 +130,7 @@
 			"description": "See how I work: a marketing agency website in Next.js, a school-meal platform modernisation and the Braintrust Web3 marketplace. Problem, approach, result."
 		},
 		"title": "Work",
-		"lead": "A few projects where I owned the frontend, with the context, the approach and the result.",
+		"lead": "Websites, online stores and web apps where I owned the frontend: from an SEO agency site in Next.js to modernising a school-meals platform. Each case study covers the context, my approach and the result.",
 		"detail": {
 			"label": "Case study",
 			"client": "Client",
@@ -270,10 +275,35 @@
 		"lead": "The link may have changed after the site rebuild.",
 		"home": "Back to home"
 	},
+	"blog": {
+		"meta": {
+			"title": "Blog: websites, stores and automation | Michał Janiec",
+			"description": "Straight answers for business owners: what a website costs, Next.js or WordPress, how to speed up a site and what can be automated."
+		},
+		"label": "Blog",
+		"title": "Blog",
+		"lead": "Straight answers to the questions clients ask me: what a website costs, which technology to pick, how to speed a site up and what can be automated. No jargon, with numbers where I have them.",
+		"latest": "Latest post",
+		"more": "More posts",
+		"empty": "The first posts are on their way.",
+		"read": "Read",
+		"minutes": "{count} min read",
+		"updated": "Updated",
+		"author": "Author",
+		"toc": "Contents",
+		"takeaways": "Key points",
+		"faq": "Frequently asked questions",
+		"related": "Read next",
+		"service": "Related service",
+		"draft": "Draft: visible in previews only, not on production.",
+		"ctaTitle": "Got a question about your website? I'll reply within 24 hours.",
+		"ctaButton": "Tell me about your project",
+		"progress": "Reading progress"
+	},
 	"local": {
 		"breadcrumb": "Web design",
 		"pointsLabel": "Why local",
-		"pointsTitle": "A developer from Katowice, not an anonymous agency",
+		"pointsTitle": "A web developer from Katowice, not an anonymous agency",
 		"districtsLabel": "Districts",
 		"districtsTitle": "I work with companies from every part of Katowice",
 		"nearbyLabel": "Nearby",

@@ -1,10 +1,10 @@
 import { localizedUrl } from "./seo";
 import { absoluteUrl, SITE_URL } from "./site";
-import type { CaseStudy, FaqItem, LocalPage, Service, SiteSettings } from "@/content";
+import type { BlogPost, CaseStudy, FaqItem, LocalPage, Service, SiteSettings } from "@/content";
 import type { Locale } from "@/i18n/routing";
 
 const PERSON_ID = `${SITE_URL}/#person`;
-const BUSINESS_ID = `${SITE_URL}/#business`;
+export const BUSINESS_ID = `${SITE_URL}/#business`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 
 const serviceUrl = (slug: string, locale: Locale) =>
@@ -119,7 +119,7 @@ export const serviceJsonLd = (service: Service, url: string, locale: Locale) => 
 	url,
 	inLanguage: locale,
 	provider: { "@id": BUSINESS_ID },
-	areaServed: ["Poland", "European Union", "United Kingdom"],
+	areaServed: ["Katowice", "Silesia", "Poland", "European Union", "United Kingdom"],
 	...(offerFor(service, url) ? { offers: offerFor(service, url) } : {}),
 });
 
@@ -195,5 +195,37 @@ export const breadcrumbJsonLd = (items: { name: string; url: string }[]) => ({
 		position: i + 1,
 		name: item.name,
 		item: item.url,
+	})),
+});
+
+/** One post: author and publisher point at the site-wide Person / business nodes, sections from the TOC. */
+export const blogPostingJsonLd = (
+	post: BlogPost,
+	url: string,
+	locale: Locale,
+	sections: { id: string; text: string }[],
+) => ({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	"@id": `${url}#article`,
+	headline: post.title,
+	description: post.excerpt,
+	url,
+	mainEntityOfPage: url,
+	inLanguage: locale,
+	isPartOf: { "@id": WEBSITE_ID },
+	datePublished: post.publishedAt,
+	dateModified: post.updatedAt ?? post.publishedAt,
+	author: { "@id": PERSON_ID },
+	publisher: { "@id": BUSINESS_ID },
+	image: post.cover ? absoluteUrl(post.cover.src) : `${SITE_URL}/mjaniec-og.jpg`,
+	keywords: post.tags.join(", "),
+	timeRequired: `PT${post.readingTime}M`,
+	about: post.services.map((s) => ({ "@id": serviceId(s.slug, locale) })),
+	hasPart: sections.map((s) => ({
+		"@type": "WebPageElement",
+		"@id": `${url}#${s.id}`,
+		name: s.text,
+		cssSelector: `#${s.id}`,
 	})),
 });

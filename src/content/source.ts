@@ -1,4 +1,5 @@
 import type {
+	BlogPost,
 	CaseStudy,
 	CvFacts,
 	Education,
@@ -34,4 +35,7 @@ export interface ContentSource {
 	getProcess(locale: Locale): Promise<ProcessStep[]>;
 	getLocalPages(locale: Locale): Promise<LocalPage[]>;
 	getLocalPage(locale: Locale, slug: string): Promise<LocalPage | null>;
+	/** Newest first. Only posts published in `locale`; drafts only outside production. */
+	getPosts(locale: Locale): Promise<BlogPost[]>;
+	getPost(locale: Locale, slug: string): Promise<BlogPost | null>;
 }

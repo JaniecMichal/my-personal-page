@@ -12,6 +12,7 @@ const STATIC: { pathname: Exclude<AppPathname, `${string}[slug]`>; priority: num
 	{ pathname: "/work", priority: 0.8 },
 	{ pathname: "/pricing", priority: 0.8 },
 	{ pathname: "/contact", priority: 0.8 },
+	{ pathname: "/blog", priority: 0.7 },
 	{ pathname: "/cv", priority: 0.6 },
 	{ pathname: "/privacy", priority: 0.2 },
 ];
@@ -31,11 +32,35 @@ function entries(hrefFor: (l: Locale) => Href, priority: number): MetadataRoute.
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	const [services, studies, localPages] = await Promise.all([
+	const [services, studies, localPages, ...postsPerLocale] = await Promise.all([
 		content.getServices(routing.defaultLocale),
 		content.getCaseStudies(routing.defaultLocale),
 		content.getLocalPages(routing.defaultLocale),
+		...routing.locales.map((l) => content.getPosts(l)),
 	]);
+	// Posts may exist in one language only: list each published version with only its real
+	// alternates, and never drafts (they render in previews only).
+	const posts = postsPerLocale.flatMap((list, i) => {
+		const locale = routing.locales[i] as Locale;
+		return list
+			.filter((p) => !p.draft)
+			.map((p): MetadataRoute.Sitemap[number] => {
+				const locales = routing.locales.filter((l) => p.slugs[l]);
+				const href = (l: Locale) => ({
+					pathname: "/blog/[slug]" as const,
+					params: { slug: p.slugs[l] ?? p.slug },
+				});
+				return {
+					url: localizedUrl(href(locale), locale),
+					lastModified: p.updatedAt ?? p.publishedAt,
+					changeFrequency: "monthly",
+					priority: 0.6,
+					alternates: {
+						languages: Object.fromEntries(locales.map((l) => [l, localizedUrl(href(l), l)])),
+					},
+				};
+			});
+	});
 	const detail = (
 		pathname: "/services/[slug]" | "/work/[slug]" | "/local/[slug]",
 		slugs: Localized<string>,
@@ -47,5 +72,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		...services.flatMap((s) => detail("/services/[slug]", s.slugs, 0.9)),
 		...studies.flatMap((s) => detail("/work/[slug]", s.slugs, 0.7)),
 		...localPages.flatMap((p) => detail("/local/[slug]", p.slugs, 0.8)),
+		...posts,
 	];
 }

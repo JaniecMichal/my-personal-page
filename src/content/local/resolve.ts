@@ -1,4 +1,4 @@
-import type { CaseStudy, LocalPage, Localized, Service } from "../types";
+import type { BlogPost, CaseStudy, LocalPage, Localized, Service } from "../types";
 import type { Locale } from "@/i18n/routing";
 
 /** A content type where any string (or list) may be stored per locale. */
@@ -44,3 +44,13 @@ export type LocalCaseStudy = LocalizedDeep<Omit<CaseStudy, "slugs" | "services">
 };
 
 export type LocalLocalPage = LocalizedDeep<Omit<LocalPage, "slugs">> & { id: string };
+
+export type LocalPost = LocalizedDeep<
+	Omit<BlogPost, "slug" | "slugs" | "services" | "readingTime">
+> & {
+	id: string;
+	/** Slug per published locale; a missing locale means the post doesn't exist in it. */
+	slug: Partial<Localized<string>>;
+	/** Ids of the services the post leads to. */
+	services: string[];
+};

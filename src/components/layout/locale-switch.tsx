@@ -8,7 +8,7 @@ import { type AppPathname, routing } from "@/i18n/routing";
 import { cn } from "@/lib/cn";
 
 /** Translated slugs of every detail page, keyed by "<internal route>/<slug in the current locale>". */
-export type AlternateSlugs = Record<string, Localized<string>>;
+export type AlternateSlugs = Record<string, Partial<Localized<string>>>;
 
 type Props = { alternates: AlternateSlugs; className?: string };
 
@@ -21,8 +21,9 @@ export function LocaleSwitch({ alternates, className }: Props) {
 		(s) => !s.startsWith("(") && !s.startsWith("__"),
 	);
 	const slugs = slug ? alternates[`${base}/${slug}`] : undefined;
-	const pathname = (slugs ? `/${base}/[slug]` : base ? `/${base}` : "/") as AppPathname;
-	const known = pathname in routing.pathnames;
+	const detail = `/${base}/[slug]` as AppPathname;
+	const listing = (base ? `/${base}` : "/") as AppPathname;
+	const hasDetail = Boolean(slug) && detail in routing.pathnames;
 
 	return (
 		<div
@@ -35,10 +36,12 @@ export function LocaleSwitch({ alternates, className }: Props) {
 		>
 			{routing.locales.map((l) => {
 				const active = l === locale;
+				// A detail page missing in the other language (e.g. a Polish-only post) links to its listing.
+				const target = slugs?.[l] ?? (l === locale ? slug : undefined);
 				const href = (
-					known && slugs
-						? { pathname, params: { slug: slugs[l] } }
-						: { pathname: known ? pathname : "/" }
+					hasDetail && target
+						? { pathname: detail, params: { slug: target } }
+						: { pathname: listing in routing.pathnames ? listing : "/" }
 				) as Parameters<typeof Link>[0]["href"];
 
 				return (

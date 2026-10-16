@@ -139,7 +139,7 @@ export default async function ServicePage({ params }: Props) {
 						{related && (
 							<Link
 								href={{ pathname: "/work/[slug]", params: { slug: related.slug } }}
-								className="link-draw self-start text-[13px] tracking-[0.1em] text-inverse-accent uppercase"
+								className="self-start link-draw text-[13px] tracking-[0.1em] text-inverse-accent uppercase"
 							>
 								{t("detail.related")}: {related.client} →
 							</Link>
@@ -162,7 +162,8 @@ export default async function ServicePage({ params }: Props) {
 
 			{service.faq.length > 0 && (
 				<section className="pb-20">
-					<Container>
+					<Container className="flex flex-col gap-10">
+						<SectionHeader title={t("detail.faq")} />
 						<FaqList items={service.faq} />
 					</Container>
 				</section>

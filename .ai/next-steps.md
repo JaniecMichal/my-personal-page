@@ -1,22 +1,22 @@
 # Next steps — mjaniec.it
 
-Status (2026-10-15, end of day): **live at https://www.mjaniec.it**. PR #8 (`content-mvp`) and PR #9
-(`status-2026-10-15`, owner answers F01–F05, F08–F10, F12) are **merged and deployed**. Both followed by
-smoke test (all passed), IndexNow (42 URLs, HTTP 200); PSI and Rich Results Test OK.
-**Next up:** 2026-10-16 request indexing for the 10 URLs in section 7 ("re-index pages changed by the
-owner answers"), set up Michał's own Google Business Profile, then section 7 (analytics, lead sheet).
-Optional: `/pl/realizacje` mobile LCP 3.0 s / Speed Index 4.0 s (score 93), 17 Dependabot alerts on
-`main`, tests for SEO helpers and fact consistency (section 5).
-**Fix ready (2026-10-16, branch `fix-locale-switch`):** Search Console showed a 404 for
-`/pl/uslugi/react-web-apps`. Cause: in the server HTML the PL/EN switch on every detail page linked the
-wrong slug or an untranslated path (`/pl/uslugi/business-website` 404, `/pl/local/katowice` 307…); it was
-fixed only after hydration (effect-based `SetAlternateSlugs`). Now the layout passes all slugs and the
-switch resolves the route on the server; unprefixed `/work`, `/services`, `/pricing`, `/cv`, `/contact`,
-`/privacy` get a permanent redirect to the Polish page (was next-intl 307). Smoke test checks the switch
-links (all 42 sitemap pages OK locally). After deploy: smoke test, IndexNow, Search Console →
-"Nie znaleziono (404)" → **Zatwierdź poprawkę**. "Strona zawiera przekierowanie" (`mjaniec.it/`, `/work`)
-is expected, no action. "Zeskanowana, jeszcze nie zindeksowana" (`/pl/cv`, `/en/services/wordpress`): wait
-2–4 weeks, then review content if still there.
+Status (2026-10-16, end of day): **live at https://www.mjaniec.it** (production = `main` from 2026-10-15).
+Four branches are pushed and waiting for review, each built on the previous one, so **merge in this order**:
+1. `fix-locale-switch`: language-switch links in the server HTML (404 slugs found by Search Console),
+   permanent redirects for unprefixed paths. After deploy: smoke test, IndexNow, Search Console →
+   "Nie znaleziono (404)" → **Zatwierdź poprawkę**.
+2. `ai-automation`: AI automation page `/pl/automatyzacja-ai` ↔ `/en/ai-automation` (MVP, **noindex** until
+   prices AI-F1–F4 replace the `[CENA]` placeholders), "AI" in the top nav and footer, research docs.
+3. `seo-quick-wins`: SEO research applied (P0-2, P0-3, P0-4, P1-4, part of P1-3).
+4. `blog`: blog MVP (listing + post), "Blog" in the top nav, first post as a draft.
+Previews: `https://my-personal-page-git-<branch>-michals-projects-f269e437.vercel.app`.
+**Next up:** Michał writes the first article (prompt + workflow from the 2026-10-16 session; posts go into
+`src/content/local/posts.ts`), confirms AI-F1–F9, then the off-site tasks P0-5 / P0-6 / P1-2 (Google Business
+Profile, reviews, Useme / Oferteo profiles).
+**Working checklist (PL): [plan-pracy-seo.md](./plan-pracy-seo.md)** · master plan with competitor report,
+SEO audit and sources: [search-growth-plan.md](./search-growth-plan.md).
+Search Console verdicts (2026-10-16): "Strona zawiera przekierowanie" (`mjaniec.it/`, `/work`) is expected;
+"Zeskanowana, jeszcze nie zindeksowana" (`/pl/cv`, `/en/services/wordpress`): wait 2–4 weeks.
 Plans: [business-plan.md](./business-plan.md) (what/why, D1–D6) · [technical-plan.md](./technical-plan.md)
 (how) · results: [technical-audit.md](./technical-audit.md).
 
@@ -118,8 +118,37 @@ Progress log:
   Shopify claims trimmed (no WooCommerce migration, feeds or named gateways); jemWszkole "sole frontend
   developer", Braintrust "Feature Owner"; phone on contact + footer via `PhoneLink` (no JSON-LD
   `telephone`). Smoke test passed, IndexNow sent after deploy.
+- 2026-10-16 (`fix-locale-switch`, `25dbd4b`): Search Console 404 for `/pl/uslugi/react-web-apps`. The PL/EN
+  switch got the translated slug from an effect (`SetAlternateSlugs`), so the server HTML linked wrong slugs
+  (404) or untranslated paths (307) on every detail page. Now the `[locale]` layout passes all slugs and
+  `LocaleSwitch` resolves the route with `useSelectedLayoutSegments`; `SetAlternateSlugs` removed. Unprefixed
+  `/work`, `/services`, `/pricing`, `/cv`, `/contact`, `/privacy` → 308 to Polish. Smoke test checks switch links.
+- 2026-10-16: research (4 agents): local competitors (websites, apps, AI automation in GZM), SEO audit of the
+  live site, AI automation market (prices, KSeF, AI Act art. 50, funding, local events), Visuality `/ai`.
+  Result: [search-growth-plan.md](./search-growth-plan.md) and the Polish checklist
+  [plan-pracy-seo.md](./plan-pracy-seo.md).
+- 2026-10-16 (`ai-automation`, `1ad133a`, `8f5ce22`): AI automation page MVP with page-local copy and components
+  (deliberately outside the content layer for now): dark stage with an accent → violet glow and the wave
+  field (Visuality-style pattern, own colours), glass cards, animated process flow, 6 use cases (KSeF
+  invoices first), industries, savings calculator, process, safety and law, pricing placeholders, FAQ 10,
+  "AI to nie dodatek" section with real counters and a GitHub calendar combining JaniecMichal +
+  JaniecMichalV (parsed from GitHub's contribution page, refreshed daily; "Include private contributions"
+  is on for the company account). New token `--accent-glow`. "AI" in the top nav and footer.
+- 2026-10-16 (`seo-quick-wins`, `5d32564`): Next.js page rewritten (own copy, who it's for, FAQ 7, packages
+  removed), FAQ on every service + "co dostajesz" cards on apps / audit / Rails, FAQ heading on service pages,
+  keyword titles (home "Programista stron internetowych Katowice — Michał Janiec", prices in service titles),
+  Katowice H2 with "programista", footer lists all services, `areaServed` Katowice + Silesia on services,
+  Polish entity line in `llms.txt`. Header nav gap tightened so 7 items fit at 1024 px.
+- 2026-10-16 (`blog`, `caba419`): blog MVP. New content type `BlogPost` (`src/content/local/posts.ts`, body as
+  typed blocks with `**bold**` / `[link](/pl/…)` inline markup, Sanity stub + GROQ), `/pl/blog` ↔ `/en/blog`
+  listing (featured newest + grid) and post view (progress bar, sticky TOC with active section, key points,
+  tables, callouts, FAQ, related service, read next). `BlogPosting` with `hasPart` from H2s, breadcrumb,
+  FAQPage; hreflang only for the languages a post exists in (`pageMetadata({ locales })`); a single-language
+  post's switch link goes to the other listing. `draft: true` = previews and local only, noindex, not in the
+  sitemap or llms.txt. First post (draft): "Ile kosztuje strona internetowa dla firmy w 2026" with 2
+  `[DO POTWIERDZENIA]`. "Blog" in the top nav and footer.
 
-Related docs: [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
+Related docs: [search-growth-plan.md](./search-growth-plan.md) · [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
 
 ---

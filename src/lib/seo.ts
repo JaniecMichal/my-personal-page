@@ -13,11 +13,16 @@ export const localizedUrl = (href: Href, locale: Locale) =>
  * hreflang alternates. `hrefFor` returns the href per locale, so detail pages can pass
  * translated slugs. `x-default` points at the default locale (never the bare root, which only redirects).
  */
-export const alternatesFor = (locale: Locale, hrefFor: (locale: Locale) => Href) => {
+export const alternatesFor = (
+	locale: Locale,
+	hrefFor: (locale: Locale) => Href,
+	locales: readonly Locale[] = routing.locales,
+) => {
 	const languages = Object.fromEntries(
-		routing.locales.map((l) => [l, localizedUrl(hrefFor(l), l)]),
+		locales.map((l) => [l, localizedUrl(hrefFor(l), l)]),
 	) as Record<string, string>;
-	languages["x-default"] = localizedUrl(hrefFor(routing.defaultLocale), routing.defaultLocale);
+	const fallback = locales.includes(routing.defaultLocale) ? routing.defaultLocale : locale;
+	languages["x-default"] = localizedUrl(hrefFor(fallback), fallback);
 
 	return { canonical: localizedUrl(hrefFor(locale), locale), languages };
 };
@@ -30,10 +35,19 @@ type PageMetadataInput = {
 	description: string;
 	hrefFor: (locale: Locale) => Href;
 	noIndex?: boolean;
+	/** Locales the page exists in (hreflang); default all. Blog posts may be single-language. */
+	locales?: readonly Locale[];
 };
 
-export function pageMetadata({ locale, title, description, hrefFor, noIndex }: PageMetadataInput): Metadata {
-	const alternates = alternatesFor(locale, hrefFor);
+export function pageMetadata({
+	locale,
+	title,
+	description,
+	hrefFor,
+	noIndex,
+	locales,
+}: PageMetadataInput): Metadata {
+	const alternates = alternatesFor(locale, hrefFor, locales);
 
 	return {
 		title,
@@ -46,7 +60,9 @@ export function pageMetadata({ locale, title, description, hrefFor, noIndex }: P
 			url: alternates.canonical,
 			siteName: "Michał Janiec",
 			locale: OG_LOCALE[locale],
-			alternateLocale: routing.locales.filter((l) => l !== locale).map((l) => OG_LOCALE[l]),
+			alternateLocale: (locales ?? routing.locales)
+				.filter((l) => l !== locale)
+				.map((l) => OG_LOCALE[l]),
 			type: "website",
 			images: [{ url: "/mjaniec-og.jpg", width: 1200, height: 630, alt: "Michał Janiec" }],
 		},

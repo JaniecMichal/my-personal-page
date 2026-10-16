@@ -8,7 +8,9 @@
 			"work": "Realizacje",
 			"pricing": "Cennik",
 			"cv": "CV",
-			"contact": "Kontakt"
+			"contact": "Kontakt",
+			"ai": "AI",
+			"blog": "Blog"
 		},
 		"cta": {
 			"call": "Umów rozmowę",
@@ -41,14 +43,16 @@
 			"terminal": "Wolisz terminal?",
 			"privacy": "Polityka prywatności",
 			"rights": "© {year} Michał Janiec",
-			"local": "Lokalnie"
+			"local": "Lokalnie",
+			"ai": "Automatyzacja AI",
+			"blog": "Blog"
 		},
 		"breadcrumbHome": "Start",
 		"translatedQuote": "Tłumaczenie z języka angielskiego"
 	},
 	"home": {
 		"meta": {
-			"title": "Strony internetowe dla firm — Michał Janiec, Katowice",
+			"title": "Programista stron internetowych Katowice — Michał Janiec",
 			"description": "Strony internetowe dla firm z Katowic i Śląska: nowe strony, rozwój i naprawy istniejących serwisów. Senior frontend developer, 5+ lat doświadczenia."
 		},
 		"hero": {
@@ -99,6 +103,7 @@
 		"title": "Usługi",
 		"lead": "Jedna osoba od kodu, kontaktu i opieki po starcie. Wybierz, czego potrzebujesz, albo opisz projekt w briefie.",
 		"detail": {
+			"faq": "Najczęstsze pytania",
 			"glance": "W skrócie",
 			"from": "Cena",
 			"timeline": "Czas",
@@ -125,7 +130,7 @@
 			"description": "Zobacz, jak pracuję: strona agencji marketingowej w Next.js, modernizacja platformy obiadów szkolnych i marketplace Web3 Braintrust. Problem, podejście, efekt."
 		},
 		"title": "Realizacje",
-		"lead": "Kilka projektów, przy których odpowiadałem za frontend. Z kontekstem, podejściem i efektem.",
+		"lead": "Strony internetowe, sklepy i aplikacje webowe, przy których odpowiadałem za frontend: od strony agencji SEO w Next.js po modernizację platformy obiadów szkolnych. Każda realizacja to kontekst, moje podejście i efekt.",
 		"detail": {
 			"label": "Case study",
 			"client": "Klient",
@@ -270,10 +275,35 @@
 		"lead": "Link mógł się zmienić po przebudowie strony.",
 		"home": "Wróć na start"
 	},
+	"blog": {
+		"meta": {
+			"title": "Blog: strony, sklepy i automatyzacja dla firm | Michał Janiec",
+			"description": "Konkretne odpowiedzi dla właścicieli firm z Katowic i Śląska: ile kosztuje strona, Next.js czy WordPress, jak przyspieszyć stronę i co da się zautomatyzować."
+		},
+		"label": "Blog",
+		"title": "Blog",
+		"lead": "Konkretne odpowiedzi na pytania, które zadają mi klienci: ile kosztuje strona, jaką technologię wybrać, jak przyspieszyć serwis i co da się zautomatyzować. Bez żargonu, z liczbami tam, gdzie je mam.",
+		"latest": "Najnowszy wpis",
+		"more": "Pozostałe wpisy",
+		"empty": "Pierwsze wpisy są w przygotowaniu.",
+		"read": "Czytaj",
+		"minutes": "{count} min czytania",
+		"updated": "Zaktualizowano",
+		"author": "Autor",
+		"toc": "Spis treści",
+		"takeaways": "Najważniejsze w skrócie",
+		"faq": "Najczęstsze pytania",
+		"related": "Czytaj dalej",
+		"service": "Powiązana usługa",
+		"draft": "Szkic: widoczny tylko w podglądzie, nie na produkcji.",
+		"ctaTitle": "Masz pytanie o swoją stronę? Odpiszę w ciągu 24 godzin.",
+		"ctaButton": "Opowiedz o projekcie",
+		"progress": "Postęp czytania"
+	},
 	"local": {
 		"breadcrumb": "Strony internetowe",
 		"pointsLabel": "Dlaczego lokalnie",
-		"pointsTitle": "Developer z Katowic, nie anonimowa agencja",
+		"pointsTitle": "Programista z Katowic, nie anonimowa agencja",
 		"districtsLabel": "Dzielnice",
 		"districtsTitle": "Pracuję z firmami z każdej dzielnicy Katowic",
 		"nearbyLabel": "Okolice",

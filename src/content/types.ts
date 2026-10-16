@@ -93,6 +93,43 @@ export type LocalPage = {
 	seo: Seo;
 };
 
+/** One block of a blog post body. Mirrors the planned Sanity Portable Text styles (see sanity/README). */
+export type PostBlock =
+	| { type: "p"; text: string }
+	| { type: "h2"; text: string }
+	| { type: "h3"; text: string }
+	| { type: "ul" | "ol"; items: string[] }
+	| { type: "table"; head: string[]; rows: string[][] }
+	| { type: "callout"; tone: "info" | "tip" | "warning"; title?: string; text: string }
+	| { type: "quote"; text: string; cite?: string };
+
+/**
+ * Blog post. Text uses light inline markup: `**bold**` and `[label](/pl/cennik)`. A post may exist
+ * in one language only, so `slugs` lists just the locales it is published in.
+ */
+export type BlogPost = {
+	slug: string;
+	slugs: Partial<Localized<string>>;
+	title: string;
+	/** Answer-first summary: card text, lead under the title and meta description fallback. */
+	excerpt: string;
+	/** ISO dates (YYYY-MM-DD). */
+	publishedAt: string;
+	updatedAt?: string;
+	tags: string[];
+	cover?: ImageAsset;
+	keyTakeaways: string[];
+	body: PostBlock[];
+	faq: FaqItem[];
+	/** Services the post leads to (CTA and internal links), resolved for the locale. */
+	services: { slug: string; title: string }[];
+	/** Drafts render in previews and locally only, always noindex, never on production. */
+	draft: boolean;
+	/** Minutes, from the word count of the body. */
+	readingTime: number;
+	seo: Seo;
+};
+
 export type CaseStudyMetric = {
 	value: string;
 	label: string;

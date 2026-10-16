@@ -26,4 +26,6 @@ export const sanitySource: ContentSource = {
 	getProcess: notReady,
 	getLocalPages: notReady,
 	getLocalPage: notReady,
+	getPosts: notReady,
+	getPost: notReady,
 };

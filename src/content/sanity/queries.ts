@@ -85,3 +85,22 @@ export const LOCAL_PAGE_QUERY = /* groq */ `
 	"slug": slug.current, city, title, intro, points[]{ title, description },
 	districts, nearby, faq[]{ "id": _key, question, answer }, seo
 }`;
+
+// Blog: one document per language (document i18n), `language` field, drafts excluded in production.
+export const POSTS_QUERY = /* groq */ `
+  *[_type == "post" && language == $locale && (!draft || $includeDrafts)] | order(publishedAt desc) {
+    "slug": slug.current, title, excerpt, publishedAt, "updatedAt": _updatedAt, tags,
+    cover, keyTakeaways, body, faq, draft, seo,
+    "services": services[]->{ "slug": slug.current, title },
+    "translations": *[_type == "translation.metadata" && references(^._id)][0].translations[]{
+      "locale": _key, "slug": value->slug.current
+    }
+  }
+`;
+
+export const POST_QUERY = /* groq */ `
+  *[_type == "post" && language == $locale && slug.current == $slug][0] {
+    ..., "slug": slug.current, "updatedAt": _updatedAt,
+    "services": services[]->{ "slug": slug.current, title }
+  }
+`;
