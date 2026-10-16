@@ -15,6 +15,8 @@
 	--rule: #d8d5ce;
 	--rule-strong: #bdb9b0;
 	--accent: #2e3bff;
+	/* Saturated accent for large glows (AI page); the same in both themes. */
+	--accent-glow: #2e3bff;
 	--accent-hover: #1a24c7;
 	--on-accent: #ffffff;
 	/* Inverse ("night") sections: dark in the light theme, a lifted surface in the dark one. */

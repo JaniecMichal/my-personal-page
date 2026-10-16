@@ -17,6 +17,7 @@ export const routing = defineRouting({
 		"/contact": { pl: "/kontakt", en: "/contact" },
 		"/privacy": { pl: "/polityka-prywatnosci", en: "/privacy" },
 		"/local/[slug]": { pl: "/strony-internetowe/[slug]", en: "/web-design/[slug]" },
+		"/ai-automation": { pl: "/automatyzacja-ai", en: "/ai-automation" },
 	},
 });
 
