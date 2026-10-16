@@ -17,6 +17,18 @@ Profile, reviews, Useme / Oferteo profiles).
 SEO audit and sources: [search-growth-plan.md](./search-growth-plan.md).
 Search Console verdicts (2026-10-16): "Strona zawiera przekierowanie" (`mjaniec.it/`, `/work`) is expected;
 "Zeskanowana, jeszcze nie zindeksowana" (`/pl/cv`, `/en/services/wordpress`): wait 2–4 weeks.
+### Open topics: where to pick up (updated 2026-10-16)
+
+| Topic | State | Where | Next action |
+|---|---|---|---|
+| Language-switch 404s (Search Console) | fixed, not deployed | branch `fix-locale-switch`; progress log 2026-10-16 | Merge, smoke test, IndexNow, Search Console → "Nie znaleziono (404)" → Zatwierdź poprawkę |
+| AI search visibility (Google AI Mode / ChatGPT tests) | method + 22 test phrases ready | [ai-search-visibility.md](./ai-search-visibility.md) §5–6 | **M**: collect answers for the 6 core phrases with the template, paste them in a session; agent compares and updates the plan |
+| SEO growth plan | P0 code done, off-site open | [plan-pracy-seo.md](./plan-pracy-seo.md) (checklist) · [search-growth-plan.md](./search-growth-plan.md) (research) · branch `seo-quick-wins` | **M**: P0-5 Google Business Profile, P0-6 reviews, P1-2 Useme / Oferteo / Clutch; **A**: P1-3 business name once decided |
+| AI automation page | MVP, noindex | branch `ai-automation`: `src/app/[locale]/ai-automation/` (copy in `content.ts`); home tile + nav + footer | **M**: facts AI-F1–F9 (prices, tools, KSeF, on-site audits); **A**: then remove noindex, add to sitemap and llms.txt; later live assistant demo (P2-5) |
+| Blog | MVP, first post is a draft | branch `blog`: `src/app/[locale]/blog/`, posts in `src/content/local/posts.ts` | **M**: first article with [blog-prompt.md](./blog-prompt.md), confirm the draft's 2 × [DO POTWIERDZENIA]; **A**: convert to `posts.ts`, `draft: false`; later pagination, tags, RSS, covers |
+| Shorter redirect chains (apex → www) | planned, not built | section 5 table, row "Shorter redirect chains" (commit `d8c7f31`) | **A**: host-based redirects in `next.config.js`, then **M**: Vercel domain setting |
+| Analytics, lead sheet, mini-audit | open | section 7 | **M**: lead sheet; **A**: brief funnel events |
+
 Plans: [business-plan.md](./business-plan.md) (what/why, D1–D6) · [technical-plan.md](./technical-plan.md)
 (how) · results: [technical-audit.md](./technical-audit.md).
 
@@ -147,6 +159,9 @@ Progress log:
   post's switch link goes to the other listing. `draft: true` = previews and local only, noindex, not in the
   sitemap or llms.txt. First post (draft): "Ile kosztuje strona internetowa dla firmy w 2026" with 2
   `[DO POTWIERDZENIA]`. "Blog" in the top nav and footer.
+- 2026-10-16 (`ec93766` on `ai-automation`, cherry-picked to `seo-quick-wins` and `blog`): home services grid
+  shows an "Automatyzacja AI" tile (dark variant) linking to the AI page; card markup moved to a shared
+  `ServiceTile`. Docs: open-topics table here, new docs listed in CLAUDE.md.
 
 Related docs: [search-growth-plan.md](./search-growth-plan.md) · [blog-prompt.md](./blog-prompt.md) · [ai-search-visibility.md](./ai-search-visibility.md) · [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)

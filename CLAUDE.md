@@ -50,6 +50,8 @@ npx next lint --dir src     # lint (add --fix for import order / type imports)
 | `src/components/sections/` | Page sections (hero, services grid, work grid, process, testimonials, pricing, FAQ, final CTA). |
 | `src/components/layout/` | Header, footer, mobile menu, locale switch, theme toggle. |
 | `src/components/effects/` | `Sphere` (2D canvas dot sphere) and `AberrationField` (pointer/scroll → CSS vars). |
+| `src/app/[locale]/ai-automation/` | AI automation page (MVP, noindex until prices are confirmed). **Deliberate exception**: copy lives in the page-local `content.ts` (`{ pl, en }`) and components in `_components/` (glow stage, flow diagram, calculator, GitHub heatmap from both accounts). Move to the content layer if it stays. |
+| `src/app/[locale]/blog/` + `src/components/blog/` | Blog listing and post view. Posts: `src/content/local/posts.ts` (`BlogPost`, body as typed blocks, inline `**bold**` / `[label](/pl/…)`). `draft: true` renders only outside production (`VERCEL_ENV`), always noindex, never in sitemap / llms.txt. A post may exist in one language: `slugs` is partial and `pageMetadata({ locales })` limits hreflang. Helpers in `src/lib/blog.ts` (heading ids, TOC, reading time). |
 | `src/components/ui/` | `ButtonLink`/`ButtonAnchor`, `Container` (+ `gutter`), `SectionHeader`, `Tag`, `JsonLd`, `ImagePlaceholder`. |
 | `src/actions/brief.ts` | Brief form server action: Zod (`src/lib/brief.ts`), honeypot, in-memory rate limit, HTML escaping, Mailgun. |
 | `src/lib/brief-options.ts` | Client-safe options/types for the form (keeps zod out of the client bundle). |
@@ -102,7 +104,11 @@ placeholder and flag it instead. Real facts: `src/content/local/cv.ts` and `src/
 
 ## Docs
 
-- `.ai/next-steps.md`: current status and to-do list (**start here**)
+- `.ai/next-steps.md`: current status, **open topics table** (where to pick up each topic) and to-do list (**start here**)
+- `.ai/plan-pracy-seo.md` (PL): working checklist P0–P3 for search visibility, facts AI-F1–F9, keyword map
+- `.ai/search-growth-plan.md`: competitor report (websites, apps, AI automation in GZM), SEO audit, full plan with sources
+- `.ai/ai-search-visibility.md`: AI-search test phrases and how to collect answers
+- `.ai/blog-prompt.md`: blog workflow and the prompt for a writing agent
 - `.ai/business-plan.md` (PL, D1–D6: offer, journeys, user stories) and `.ai/business-plan-status.md` (facts table F01–F12, order of work). **No content change without a confirmed fact.**
 - `.ai/technical-plan.md` (PL, owner-approved ADRs) and `.ai/technical-audit.md` (audit + status per TECH task)
 - `.ai/rebuild-plan.md`: original plan, IA, tech decisions

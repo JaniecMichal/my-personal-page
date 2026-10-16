@@ -90,6 +90,7 @@ opiniach. „Strony internetowe Katowice” w top 10: 6–12+ miesięcy.
   - [ ] Potwierdzić dodane obietnice: „rozmowa 30 minut bez zobowiązań”, „pilotaż: kilka tygodni”
   - [x] GitHub JaniecMichalV: „Include private contributions on my profile” włączone (2026-10-16);
     kalendarz na stronie AI sumuje oba konta z kalendarza GitHub (352 + 348 = 700)
+  - [x] Kafelek „Automatyzacja AI” na stronie głównej (siatka usług, ciemny wariant), „AI” w menu i stopce
   - [ ] Wygląd strony AI: ciemna scena z niebiesko-fioletową poświatą (hero + „Gdzie ucieka czas”)
     i sekcja „AI to nie dodatek” z licznikami i prawdziwym kalendarzem GitHub: akceptacja
 - [ ] **P1-2 Profile z jednym opisem** (M, ok. 3 h): Useme (najważniejsze), Oferteo (darmowy profil),
