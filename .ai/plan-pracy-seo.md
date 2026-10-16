@@ -109,7 +109,13 @@ opiniach. „Strony internetowe Katowice” w top 10: 6–12+ miesięcy.
 
 ## P2 — 1–3 miesiące
 
-- [ ] **P2-1 Blog** (A, pół dnia): `/pl/blog` ↔ `/en/notes`, schema Article, autor, data aktualizacji.
+- [x] (2026-10-16, gałąź `blog`) **P2-1 Blog MVP**: `/pl/blog` ↔ `/en/blog`, lista (najnowszy wpis wyróżniony + siatka),
+  wpis (spis treści sticky, pasek postępu, „najważniejsze w skrócie”, FAQ, powiązana usługa, „czytaj dalej”),
+  BlogPosting + Breadcrumb + FAQPage, hreflang tylko dla istniejących języków, sitemap i llms.txt bez szkiców.
+  Treść w `src/content/local/posts.ts`; `draft: true` = widoczny tylko w podglądzie i lokalnie (noindex).
+  - [ ] Zaakceptować szkic „Ile kosztuje strona internetowa dla firmy w 2026” (2 × [DO POTWIERDZENIA]:
+    cena projektu graficznego, koszt domeny .pl) i zmienić `draft` na `false`
+  - [ ] Później: paginacja (od ok. 10 wpisów), tagi jako filtry, RSS, okładki i OG per wpis, link „Blog” w menu
 - [ ] **P2-2 Cztery artykuły-odpowiedzi** (A szkic z Twojej wiedzy, M akceptuje), odpowiedź w
   pierwszym akapicie, tabele, data:
   - [ ] „Ile kosztuje strona internetowa dla firmy w 2026 (Śląsk)”

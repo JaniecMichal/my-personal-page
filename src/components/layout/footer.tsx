@@ -53,6 +53,9 @@ export async function Footer() {
 					<Link href="/work" className={linkClass}>
 						{t("nav.work")}
 					</Link>
+					<Link href="/blog" className={linkClass}>
+						{t("footer.blog")}
+					</Link>
 					<Link href="/pricing" className={linkClass}>
 						{t("nav.pricing")}
 					</Link>

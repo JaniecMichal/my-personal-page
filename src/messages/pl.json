@@ -43,7 +43,8 @@
 			"privacy": "Polityka prywatności",
 			"rights": "© {year} Michał Janiec",
 			"local": "Lokalnie",
-			"ai": "Automatyzacja AI"
+			"ai": "Automatyzacja AI",
+			"blog": "Blog"
 		},
 		"breadcrumbHome": "Start",
 		"translatedQuote": "Tłumaczenie z języka angielskiego"
@@ -272,6 +273,31 @@
 		"title": "Tej strony nie ma.",
 		"lead": "Link mógł się zmienić po przebudowie strony.",
 		"home": "Wróć na start"
+	},
+	"blog": {
+		"meta": {
+			"title": "Blog: strony, sklepy i automatyzacja dla firm | Michał Janiec",
+			"description": "Konkretne odpowiedzi dla właścicieli firm z Katowic i Śląska: ile kosztuje strona, Next.js czy WordPress, jak przyspieszyć stronę i co da się zautomatyzować."
+		},
+		"label": "Blog",
+		"title": "Blog",
+		"lead": "Konkretne odpowiedzi na pytania, które zadają mi klienci: ile kosztuje strona, jaką technologię wybrać, jak przyspieszyć serwis i co da się zautomatyzować. Bez żargonu, z liczbami tam, gdzie je mam.",
+		"latest": "Najnowszy wpis",
+		"more": "Pozostałe wpisy",
+		"empty": "Pierwsze wpisy są w przygotowaniu.",
+		"read": "Czytaj",
+		"minutes": "{count} min czytania",
+		"updated": "Zaktualizowano",
+		"author": "Autor",
+		"toc": "Spis treści",
+		"takeaways": "Najważniejsze w skrócie",
+		"faq": "Najczęstsze pytania",
+		"related": "Czytaj dalej",
+		"service": "Powiązana usługa",
+		"draft": "Szkic: widoczny tylko w podglądzie, nie na produkcji.",
+		"ctaTitle": "Masz pytanie o swoją stronę? Odpiszę w ciągu 24 godzin.",
+		"ctaButton": "Opowiedz o projekcie",
+		"progress": "Postęp czytania"
 	},
 	"local": {
 		"breadcrumb": "Strony internetowe",

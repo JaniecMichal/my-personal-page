@@ -43,7 +43,8 @@
 			"privacy": "Privacy policy",
 			"rights": "© {year} Michał Janiec",
 			"local": "Local",
-			"ai": "AI automation"
+			"ai": "AI automation",
+			"blog": "Blog"
 		},
 		"breadcrumbHome": "Home",
 		"translatedQuote": "Translated from Polish"
@@ -272,6 +273,31 @@
 		"title": "This page doesn't exist.",
 		"lead": "The link may have changed after the site rebuild.",
 		"home": "Back to home"
+	},
+	"blog": {
+		"meta": {
+			"title": "Blog: websites, stores and automation | Michał Janiec",
+			"description": "Straight answers for business owners: what a website costs, Next.js or WordPress, how to speed up a site and what can be automated."
+		},
+		"label": "Blog",
+		"title": "Blog",
+		"lead": "Straight answers to the questions clients ask me: what a website costs, which technology to pick, how to speed a site up and what can be automated. No jargon, with numbers where I have them.",
+		"latest": "Latest post",
+		"more": "More posts",
+		"empty": "The first posts are on their way.",
+		"read": "Read",
+		"minutes": "{count} min read",
+		"updated": "Updated",
+		"author": "Author",
+		"toc": "Contents",
+		"takeaways": "Key points",
+		"faq": "Frequently asked questions",
+		"related": "Read next",
+		"service": "Related service",
+		"draft": "Draft: visible in previews only, not on production.",
+		"ctaTitle": "Got a question about your website? I'll reply within 24 hours.",
+		"ctaButton": "Tell me about your project",
+		"progress": "Reading progress"
 	},
 	"local": {
 		"breadcrumb": "Web design",

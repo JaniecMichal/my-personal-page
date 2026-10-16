@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 /** Plain-text summary for AI assistants (https://llmstxt.org). */
 export async function GET() {
 	const locale = "en";
-	const [settings, services, studies, faq, plans, localPages, servicesPl, localPagesPl] = await Promise.all([
+	const [settings, services, studies, faq, plans, localPages, servicesPl, localPagesPl, postsPl] = await Promise.all([
 		content.getSiteSettings(locale),
 		content.getServices(locale),
 		content.getCaseStudies(locale),
@@ -15,6 +15,7 @@ export async function GET() {
 		content.getLocalPages(locale),
 		content.getServices("pl"),
 		content.getLocalPages("pl"),
+		content.getPosts("pl"),
 	]);
 
 	const body = [
@@ -51,6 +52,8 @@ export async function GET() {
 		...servicesPl.map((s) => `- [${s.title}](${localizedUrl({ pathname: "/services/[slug]", params: { slug: s.slug } }, "pl")}): ${s.summary}`),
 		...localPagesPl.map((p) => `- [${p.title}](${localizedUrl({ pathname: "/local/[slug]", params: { slug: p.slug } }, "pl")})`),
 		`- [Cennik](${localizedUrl("/pricing", "pl")})`,
+		`- [Blog](${localizedUrl("/blog", "pl")})`,
+		...postsPl.filter((p) => !p.draft).map((p) => `  - [${p.title}](${localizedUrl({ pathname: "/blog/[slug]", params: { slug: p.slug } }, "pl")}): ${p.excerpt}`),
 		`- [Kontakt / brief](${localizedUrl("/contact", "pl")})`,
 		"",
 	].join("\n");

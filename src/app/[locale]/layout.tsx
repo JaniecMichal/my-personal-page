@@ -57,18 +57,20 @@ export default async function LocaleLayout({ children, params }: Props) {
 	if (!hasLocale(routing.locales, locale)) notFound();
 	setRequestLocale(locale);
 
-	const [t, settings, services, caseStudies, localPages] = await Promise.all([
+	const [t, settings, services, caseStudies, localPages, posts] = await Promise.all([
 		getTranslations("common"),
 		content.getSiteSettings(locale),
 		content.getServices(locale),
 		content.getCaseStudies(locale),
 		content.getLocalPages(locale),
+		content.getPosts(locale),
 	]);
 	// Keys match the route folders, so the language switch links to the translated slug.
 	const alternates: AlternateSlugs = Object.fromEntries([
 		...services.map((s) => [`services/${s.slug}`, s.slugs] as const),
 		...caseStudies.map((c) => [`work/${c.slug}`, c.slugs] as const),
 		...localPages.map((p) => [`local/${p.slug}`, p.slugs] as const),
+		...posts.map((p) => [`blog/${p.slug}`, p.slugs] as const),
 	]);
 
 	return (
