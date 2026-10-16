@@ -7,6 +7,10 @@ smoke test (all passed), IndexNow (42 URLs, HTTP 200); PSI and Rich Results Test
 owner answers"), set up Michał's own Google Business Profile, then section 7 (analytics, lead sheet).
 Optional: `/pl/realizacje` mobile LCP 3.0 s / Speed Index 4.0 s (score 93), 17 Dependabot alerts on
 `main`, tests for SEO helpers and fact consistency (section 5).
+**Working checklist (PL): [plan-pracy-seo.md](./plan-pracy-seo.md).** **Master plan (2026-10-16): [search-growth-plan.md](./search-growth-plan.md)**: competitor report
+(websites, apps, AI automation in Katowice/GZM), SEO audit, P0–P3 plan, keyword map, Polish summary in
+section 0. AI automation page MVP on branch `ai-automation` (`/pl/automatyzacja-ai`, noindex until facts
+AI-F1–F9 are confirmed).
 **Fix ready (2026-10-16, branch `fix-locale-switch`):** Search Console showed a 404 for
 `/pl/uslugi/react-web-apps`. Cause: in the server HTML the PL/EN switch on every detail page linked the
 wrong slug or an untranslated path (`/pl/uslugi/business-website` 404, `/pl/local/katowice` 307…); it was
@@ -119,7 +123,7 @@ Progress log:
   developer", Braintrust "Feature Owner"; phone on contact + footer via `PhoneLink` (no JSON-LD
   `telephone`). Smoke test passed, IndexNow sent after deploy.
 
-Related docs: [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
+Related docs: [search-growth-plan.md](./search-growth-plan.md) · [content-audit.md](./content-audit.md) · [analytics-optout.md](./analytics-optout.md) · [growth-plan.md](./growth-plan.md) · [ai-services-ideas.md](./ai-services-ideas.md) · [rebuild-plan.md](./rebuild-plan.md) · [search-console.md](./search-console.md) ·
 [content-guide.md](./content-guide.md) · [Sanity migration](../src/content/sanity/README.md)
 
 ---

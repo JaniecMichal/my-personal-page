@@ -4,7 +4,7 @@ import type { CaseStudy, FaqItem, LocalPage, Service, SiteSettings } from "@/con
 import type { Locale } from "@/i18n/routing";
 
 const PERSON_ID = `${SITE_URL}/#person`;
-const BUSINESS_ID = `${SITE_URL}/#business`;
+export const BUSINESS_ID = `${SITE_URL}/#business`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 
 const serviceUrl = (slug: string, locale: Locale) =>

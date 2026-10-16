@@ -8,7 +8,8 @@
 			"work": "Realizacje",
 			"pricing": "Cennik",
 			"cv": "CV",
-			"contact": "Kontakt"
+			"contact": "Kontakt",
+			"ai": "AI"
 		},
 		"cta": {
 			"call": "Umów rozmowę",
@@ -41,7 +42,8 @@
 			"terminal": "Wolisz terminal?",
 			"privacy": "Polityka prywatności",
 			"rights": "© {year} Michał Janiec",
-			"local": "Lokalnie"
+			"local": "Lokalnie",
+			"ai": "Automatyzacja AI"
 		},
 		"breadcrumbHome": "Start",
 		"translatedQuote": "Tłumaczenie z języka angielskiego"
