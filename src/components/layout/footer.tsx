@@ -34,6 +34,9 @@ export async function Footer() {
 							{s.title}
 						</Link>
 					))}
+					<Link href="/ai-automation" className={linkClass}>
+						{t("footer.ai")}
+					</Link>
 					{localPages.length > 0 && <span className="mt-6 mb-2 label">{t("footer.local")}</span>}
 					{localPages.map((page) => (
 						<Link

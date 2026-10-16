@@ -8,7 +8,8 @@
 			"work": "Work",
 			"pricing": "Pricing",
 			"cv": "CV",
-			"contact": "Contact"
+			"contact": "Contact",
+			"ai": "AI"
 		},
 		"cta": {
 			"call": "Book a call",
@@ -41,7 +42,8 @@
 			"terminal": "Prefer a terminal?",
 			"privacy": "Privacy policy",
 			"rights": "© {year} Michał Janiec",
-			"local": "Local"
+			"local": "Local",
+			"ai": "AI automation"
 		},
 		"breadcrumbHome": "Home",
 		"translatedQuote": "Translated from Polish"
