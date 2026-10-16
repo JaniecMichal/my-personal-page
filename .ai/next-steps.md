@@ -7,6 +7,16 @@ smoke test (all passed), IndexNow (42 URLs, HTTP 200); PSI and Rich Results Test
 owner answers"), set up Michał's own Google Business Profile, then section 7 (analytics, lead sheet).
 Optional: `/pl/realizacje` mobile LCP 3.0 s / Speed Index 4.0 s (score 93), 17 Dependabot alerts on
 `main`, tests for SEO helpers and fact consistency (section 5).
+**Fix ready (2026-10-16, branch `fix-locale-switch`):** Search Console showed a 404 for
+`/pl/uslugi/react-web-apps`. Cause: in the server HTML the PL/EN switch on every detail page linked the
+wrong slug or an untranslated path (`/pl/uslugi/business-website` 404, `/pl/local/katowice` 307…); it was
+fixed only after hydration (effect-based `SetAlternateSlugs`). Now the layout passes all slugs and the
+switch resolves the route on the server; unprefixed `/work`, `/services`, `/pricing`, `/cv`, `/contact`,
+`/privacy` get a permanent redirect to the Polish page (was next-intl 307). Smoke test checks the switch
+links (all 42 sitemap pages OK locally). After deploy: smoke test, IndexNow, Search Console →
+"Nie znaleziono (404)" → **Zatwierdź poprawkę**. "Strona zawiera przekierowanie" (`mjaniec.it/`, `/work`)
+is expected, no action. "Zeskanowana, jeszcze nie zindeksowana" (`/pl/cv`, `/en/services/wordpress`): wait
+2–4 weeks, then review content if still there.
 Plans: [business-plan.md](./business-plan.md) (what/why, D1–D6) · [technical-plan.md](./technical-plan.md)
 (how) · results: [technical-audit.md](./technical-audit.md).
 

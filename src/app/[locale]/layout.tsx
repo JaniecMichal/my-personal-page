@@ -6,9 +6,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
 import { AberrationField } from "@/components/effects/aberration-field";
 import { ScrollReveal } from "@/components/effects/scroll-reveal";
-import { AlternateSlugsProvider } from "@/components/i18n/alternate-slugs";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import type { AlternateSlugs } from "@/components/layout/locale-switch";
 import { SiteAnalytics } from "@/components/layout/site-analytics";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { JsonLd } from "@/components/ui/json-ld";
@@ -57,10 +57,18 @@ export default async function LocaleLayout({ children, params }: Props) {
 	if (!hasLocale(routing.locales, locale)) notFound();
 	setRequestLocale(locale);
 
-	const [t, settings, services] = await Promise.all([
+	const [t, settings, services, caseStudies, localPages] = await Promise.all([
 		getTranslations("common"),
 		content.getSiteSettings(locale),
 		content.getServices(locale),
+		content.getCaseStudies(locale),
+		content.getLocalPages(locale),
+	]);
+	// Keys match the route folders, so the language switch links to the translated slug.
+	const alternates: AlternateSlugs = Object.fromEntries([
+		...services.map((s) => [`services/${s.slug}`, s.slugs] as const),
+		...caseStudies.map((c) => [`work/${c.slug}`, c.slugs] as const),
+		...localPages.map((p) => [`local/${p.slug}`, p.slugs] as const),
 	]);
 
 	return (
@@ -68,19 +76,17 @@ export default async function LocaleLayout({ children, params }: Props) {
 			<body className="flex min-h-screen flex-col">
 				<NextIntlClientProvider>
 					<ThemeProvider>
-						<AlternateSlugsProvider>
-							<a
-								href="#main"
-								className="fixed top-2 left-2 z-[60] -translate-y-20 bg-accent px-4 py-3 text-on-accent focus:translate-y-0"
-							>
-								{t("skipToContent")}
-							</a>
-							<Header />
-							<main id="main" tabIndex={-1} className="flex grow flex-col outline-none">
-								{children}
-							</main>
-							<Footer />
-						</AlternateSlugsProvider>
+						<a
+							href="#main"
+							className="fixed top-2 left-2 z-[60] -translate-y-20 bg-accent px-4 py-3 text-on-accent focus:translate-y-0"
+						>
+							{t("skipToContent")}
+						</a>
+						<Header alternates={alternates} />
+						<main id="main" tabIndex={-1} className="flex grow flex-col outline-none">
+							{children}
+						</main>
+						<Footer />
 					</ThemeProvider>
 				</NextIntlClientProvider>
 				<AberrationField />

@@ -23,6 +23,9 @@ echo "Old URLs"
 for p in /about /experience /skills /projects /for-business; do
 	check "$p redirects" "30[178]" "$(status $p)"
 done
+for p in /services /work /pricing /cv /contact /privacy; do
+	check "$p is permanent" "30[18]" "$(status $p)"
+done
 
 echo "Pages"
 for p in /pl /en /pl/uslugi /en/services /pl/realizacje /en/work /pl/cennik /en/pricing /pl/cv /en/cv /pl/kontakt /en/contact /terminal; do
@@ -30,6 +33,14 @@ for p in /pl /en /pl/uslugi /en/services /pl/realizacje /en/work /pl/cennik /en/
 done
 check "unknown page 404" "404" "$(status /pl/nie-ma-takiej-strony)"
 check "unknown root file 404" "404" "$(status /nie-ma.xml)"
+
+echo "Language switch (server HTML: each PL/EN link answers 200 without a redirect)"
+for p in /pl/uslugi/aplikacje-react /en/services/react-web-apps /pl/realizacje/jemwszkole /en/work/braintrust \
+	/pl/strony-internetowe/katowice /en/web-design/katowice /pl/cennik /en/cv; do
+	links="$(curl -s "$BASE$p" | grep -oE '<a hrefLang="(pl|en)"[^>]*href="[^"]+"' | grep -oE 'href="[^"]+"' | sed 's/href="//;s/"$//' | sort -u)"
+	[[ -z "$links" ]] && { check "$p has switch links" "found" "none"; continue; }
+	for l in $links; do check "$p switch -> $l" "200" "$(status "$l")"; done
+done
 
 echo "SEO"
 for p in /sitemap.xml /robots.txt /llms.txt; do check "$p 200" "200" "$(status $p)"; done

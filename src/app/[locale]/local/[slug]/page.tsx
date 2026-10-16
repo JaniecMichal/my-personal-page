@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Sphere } from "@/components/effects/sphere";
-import { SetAlternateSlugs } from "@/components/i18n/alternate-slugs";
 import { FaqList } from "@/components/sections/faq-list";
 import { WorkGrid } from "@/components/sections/work-grid";
 import { ServicesGrid } from "@/components/sections/services-grid";
@@ -59,7 +58,6 @@ export default async function LocalLandingPage({ params }: Props) {
 
 	return (
 		<>
-			<SetAlternateSlugs slugs={page.slugs} />
 			<section className="overflow-hidden border-b border-rule dotgrid">
 				<Container className="grid items-center gap-10 py-12 lg:grid-cols-12 lg:py-20">
 					<div className="flex flex-col gap-7 lg:col-span-7">

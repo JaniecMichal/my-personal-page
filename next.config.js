@@ -36,6 +36,14 @@ const nextConfig = {
 			{ source: "/projects", destination: "/en/work", permanent: true },
 			{ source: "/projects/:slug", destination: "/en/work", permanent: true },
 			{ source: "/for-business", destination: "/en/services", permanent: true },
+			// Paths without a locale prefix (e.g. /work, found by Google): one permanent hop to the Polish page,
+			// instead of next-intl's temporary 307.
+			{ source: "/services", destination: "/pl/uslugi", permanent: true },
+			{ source: "/work", destination: "/pl/realizacje", permanent: true },
+			{ source: "/pricing", destination: "/pl/cennik", permanent: true },
+			{ source: "/cv", destination: "/pl/cv", permanent: true },
+			{ source: "/contact", destination: "/pl/kontakt", permanent: true },
+			{ source: "/privacy", destination: "/pl/polityka-prywatnosci", permanent: true },
 		];
 	},
 };
