@@ -62,7 +62,12 @@
 		"trust": "Pracowałem z",
 		"services": {
 			"index": "01 — Usługi",
-			"title": "W czym mogę pomóc"
+			"title": "W czym mogę pomóc",
+			"ai": {
+				"title": "Automatyzacja AI",
+				"summary": "Faktury z KSeF, maile z zapytaniami, oferty i asystent na stronie. AI robi powtarzalną pracę, a człowiek zatwierdza.",
+				"meta": "zacznij od jednego procesu"
+			}
 		},
 		"work": {
 			"index": "02 — Realizacje",
