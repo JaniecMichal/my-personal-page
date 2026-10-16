@@ -6,6 +6,7 @@ import { Hero } from "@/components/sections/hero";
 import { PricingPlans } from "@/components/sections/pricing-plans";
 import { Process } from "@/components/sections/process";
 import { ServicesGrid } from "@/components/sections/services-grid";
+import { ServiceTile } from "@/components/sections/service-card";
 import { Testimonials } from "@/components/sections/testimonials";
 import { TrustStrip } from "@/components/sections/trust-strip";
 import { WorkGrid } from "@/components/sections/work-grid";
@@ -55,6 +56,17 @@ export default async function HomePage({ params }: Props) {
 				title={t("services.title")}
 				index={t("services.index")}
 				services={services.filter((s) => s.showOnHome !== false)}
+				extra={(index) => (
+					<ServiceTile
+						href="/ai-automation"
+						index={index}
+						title={t("services.ai.title")}
+						summary={t("services.ai.summary")}
+						tags={["AI", "KSeF"]}
+						meta={t("services.ai.meta")}
+						inverse
+					/>
+				)}
 			/>
 			<WorkGrid studies={studies} />
 			<Process title={t("process.title")} index={t("process.index")} steps={steps} />
