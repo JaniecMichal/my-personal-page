@@ -60,7 +60,12 @@
 		"trust": "Worked with",
 		"services": {
 			"index": "01 — Services",
-			"title": "How I can help"
+			"title": "How I can help",
+			"ai": {
+				"title": "AI automation",
+				"summary": "KSeF invoices, enquiry emails, quotes and a website assistant. AI does the repetitive work, a person approves.",
+				"meta": "start with one process"
+			}
 		},
 		"work": {
 			"index": "02 — Case studies",

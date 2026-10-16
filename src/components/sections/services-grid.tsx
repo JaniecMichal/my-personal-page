@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { ServiceCard } from "./service-card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -7,10 +8,13 @@ export function ServicesGrid({
 	title,
 	index,
 	services,
+	extra,
 }: {
 	title: string;
 	index?: string;
 	services: Service[];
+	/** Tiles after the services, e.g. offers with their own page (AI automation). */
+	extra?: (index: number) => ReactNode;
 }) {
 	return (
 		<section id="services" className="py-20 lg:py-32">
@@ -20,6 +24,7 @@ export function ServicesGrid({
 					{services.map((service, i) => (
 						<ServiceCard key={service.slug} service={service} index={i} />
 					))}
+					{extra?.(services.length)}
 				</div>
 			</Container>
 		</section>
