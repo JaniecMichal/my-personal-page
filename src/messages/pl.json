@@ -8,7 +8,8 @@
 			"work": "Realizacje",
 			"pricing": "Cennik",
 			"cv": "CV",
-			"contact": "Kontakt"
+			"contact": "Kontakt",
+			"ai": "AI"
 		},
 		"cta": {
 			"call": "Umów rozmowę",
@@ -41,14 +42,15 @@
 			"terminal": "Wolisz terminal?",
 			"privacy": "Polityka prywatności",
 			"rights": "© {year} Michał Janiec",
-			"local": "Lokalnie"
+			"local": "Lokalnie",
+			"ai": "Automatyzacja AI"
 		},
 		"breadcrumbHome": "Start",
 		"translatedQuote": "Tłumaczenie z języka angielskiego"
 	},
 	"home": {
 		"meta": {
-			"title": "Strony internetowe dla firm — Michał Janiec, Katowice",
+			"title": "Programista stron internetowych Katowice — Michał Janiec",
 			"description": "Strony internetowe dla firm z Katowic i Śląska: nowe strony, rozwój i naprawy istniejących serwisów. Senior frontend developer, 5+ lat doświadczenia."
 		},
 		"hero": {
@@ -99,6 +101,7 @@
 		"title": "Usługi",
 		"lead": "Jedna osoba od kodu, kontaktu i opieki po starcie. Wybierz, czego potrzebujesz, albo opisz projekt w briefie.",
 		"detail": {
+			"faq": "Najczęstsze pytania",
 			"glance": "W skrócie",
 			"from": "Cena",
 			"timeline": "Czas",
@@ -125,7 +128,7 @@
 			"description": "Zobacz, jak pracuję: strona agencji marketingowej w Next.js, modernizacja platformy obiadów szkolnych i marketplace Web3 Braintrust. Problem, podejście, efekt."
 		},
 		"title": "Realizacje",
-		"lead": "Kilka projektów, przy których odpowiadałem za frontend. Z kontekstem, podejściem i efektem.",
+		"lead": "Strony internetowe, sklepy i aplikacje webowe, przy których odpowiadałem za frontend: od strony agencji SEO w Next.js po modernizację platformy obiadów szkolnych. Każda realizacja to kontekst, moje podejście i efekt.",
 		"detail": {
 			"label": "Case study",
 			"client": "Klient",
@@ -273,7 +276,7 @@
 	"local": {
 		"breadcrumb": "Strony internetowe",
 		"pointsLabel": "Dlaczego lokalnie",
-		"pointsTitle": "Developer z Katowic, nie anonimowa agencja",
+		"pointsTitle": "Programista z Katowic, nie anonimowa agencja",
 		"districtsLabel": "Dzielnice",
 		"districtsTitle": "Pracuję z firmami z każdej dzielnicy Katowic",
 		"nearbyLabel": "Okolice",

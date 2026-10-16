@@ -11,8 +11,8 @@ export const localPages: LocalLocalPage[] = [
 		city: "Katowice",
 		title: { pl: "Strony internetowe Katowice", en: "Web design in Katowice" },
 		intro: {
-			pl: "Jestem frontend developerem z Katowic. Robię strony firmowe, sklepy i aplikacje dla firm z Katowic i całego Śląska. Możemy spotkać się na kawę przy Rynku albo u Ciebie w firmie, a resztę załatwić zdalnie.",
-			en: "I'm a frontend developer based in Katowice. I build business websites, online stores and web apps for companies in Katowice and across Silesia. We can meet for coffee in the city centre or at your office, and handle the rest remotely.",
+			pl: "Jestem programistą z Katowic. Robię strony firmowe, sklepy i aplikacje dla firm z Katowic i całego Śląska, najczęściej w Next.js: szybkie, bezpieczne i z panelem do edycji. Możemy spotkać się na kawę przy Rynku albo u Ciebie w firmie, a resztę załatwić zdalnie.",
+			en: "I'm a web developer based in Katowice. I build business websites, online stores and web apps for companies in Katowice and across Silesia, most often in Next.js: fast, secure and with a content editor. We can meet for coffee in the city centre or at your office, and handle the rest remotely.",
 		},
 		points: [
 			{

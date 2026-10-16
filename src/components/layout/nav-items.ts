@@ -1,5 +1,6 @@
 export const NAV_ITEMS = [
 	{ href: "/services", key: "services" },
+	{ href: "/ai-automation", key: "ai" },
 	{ href: "/work", key: "work" },
 	{ href: "/pricing", key: "pricing" },
 	{ href: "/cv", key: "cv" },

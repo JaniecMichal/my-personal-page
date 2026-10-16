@@ -1,0 +1,141 @@
+/* Animated process flow: a dot travels along each connector in turn, nodes light up as it arrives. */
+
+.flow {
+	--gap: 2.25rem;
+	--cycle: 6s;
+	display: grid;
+	gap: var(--gap);
+	counter-reset: step;
+}
+
+.step {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	padding: 1rem 1.1rem 1.1rem;
+	/* Glass on the dark stage (see field.module.css .glass). */
+	background: color-mix(in oklab, var(--ink) 7%, transparent);
+	-webkit-backdrop-filter: blur(18px) saturate(160%);
+	backdrop-filter: blur(18px) saturate(160%);
+	box-shadow:
+		inset 0 1px 0 color-mix(in oklab, var(--ink) 28%, transparent),
+		inset 0 0 0 1px color-mix(in oklab, var(--ink) 14%, transparent);
+	animation: node var(--cycle) infinite;
+	animation-delay: calc(var(--i) * var(--cycle) / 4);
+}
+
+.step::before {
+	counter-increment: step;
+	content: "0" counter(step);
+	font-family: var(--font-dots);
+	font-weight: 900;
+	font-size: 1.5rem;
+	line-height: 1;
+	color: var(--accent);
+}
+
+/* Connector to the next node: vertical on phones, horizontal from lg. */
+.step:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	left: 1.75rem;
+	top: 100%;
+	width: 1px;
+	height: var(--gap);
+	background: color-mix(in oklab, var(--ink) 30%, transparent);
+}
+
+.pulse {
+	position: absolute;
+	left: calc(1.75rem - 3px);
+	top: 100%;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--accent);
+	opacity: 0;
+	animation: travel-y var(--cycle) infinite;
+	animation-delay: calc(var(--i) * var(--cycle) / 4);
+}
+
+@media (min-width: 1024px) {
+	.flow {
+		--gap: 2.75rem;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.step:not(:last-child)::after {
+		left: 100%;
+		top: 50%;
+		width: var(--gap);
+		height: 1px;
+	}
+
+	.pulse {
+		left: 100%;
+		top: calc(50% - 3px);
+		animation-name: travel-x;
+	}
+}
+
+@keyframes node {
+	0%,
+	22% {
+		box-shadow:
+			inset 0 1px 0 color-mix(in oklab, var(--ink) 28%, transparent),
+			inset 0 0 0 1px var(--accent),
+			0 0 32px color-mix(in oklab, var(--accent) 45%, transparent);
+	}
+	30%,
+	100% {
+		box-shadow:
+			inset 0 1px 0 color-mix(in oklab, var(--ink) 28%, transparent),
+			inset 0 0 0 1px color-mix(in oklab, var(--ink) 14%, transparent);
+	}
+}
+
+@keyframes travel-y {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+	4% {
+		opacity: 1;
+	}
+	22% {
+		opacity: 1;
+		transform: translateY(calc(var(--gap) - 7px));
+	}
+	26%,
+	100% {
+		opacity: 0;
+		transform: translateY(calc(var(--gap) - 7px));
+	}
+}
+
+@keyframes travel-x {
+	0% {
+		opacity: 0;
+		transform: translateX(0);
+	}
+	4% {
+		opacity: 1;
+	}
+	22% {
+		opacity: 1;
+		transform: translateX(calc(var(--gap) - 7px));
+	}
+	26%,
+	100% {
+		opacity: 0;
+		transform: translateX(calc(var(--gap) - 7px));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.step,
+	.pulse {
+		animation: none;
+	}
+}

@@ -29,7 +29,7 @@ export async function Header({ alternates }: { alternates: AlternateSlugs }) {
 
 			<nav
 				aria-label={t("nav.label")}
-				className="hidden gap-6 text-[13px] tracking-[0.14em] uppercase lg:flex xl:gap-9"
+				className="hidden gap-4 text-[13px] tracking-[0.14em] uppercase lg:flex xl:gap-9"
 			>
 				{NAV_ITEMS.map((item) => (
 					<NavLink key={item.href} href={item.href} className="pb-1.5">
@@ -41,7 +41,7 @@ export async function Header({ alternates }: { alternates: AlternateSlugs }) {
 			<div className="hidden items-center gap-3 lg:flex">
 				<LocaleSwitch alternates={alternates} />
 				<ThemeToggle />
-				<ButtonLink href="/contact" size="sm" className="ml-3">
+				<ButtonLink href="/contact" size="sm" className="ml-3 whitespace-nowrap">
 					{t("cta.tellProject")} ↗
 				</ButtonLink>
 			</div>

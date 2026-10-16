@@ -8,7 +8,8 @@
 			"work": "Work",
 			"pricing": "Pricing",
 			"cv": "CV",
-			"contact": "Contact"
+			"contact": "Contact",
+			"ai": "AI"
 		},
 		"cta": {
 			"call": "Book a call",
@@ -41,14 +42,15 @@
 			"terminal": "Prefer a terminal?",
 			"privacy": "Privacy policy",
 			"rights": "© {year} Michał Janiec",
-			"local": "Local"
+			"local": "Local",
+			"ai": "AI automation"
 		},
 		"breadcrumbHome": "Home",
 		"translatedQuote": "Translated from Polish"
 	},
 	"home": {
 		"meta": {
-			"title": "Websites for businesses — Michał Janiec, Katowice",
+			"title": "Web developer in Katowice — Michał Janiec",
 			"description": "Websites for businesses in Katowice, Silesia and remotely: new sites, plus development and fixes for existing ones. Senior frontend developer, 5+ years of experience."
 		},
 		"hero": {
@@ -99,6 +101,7 @@
 		"title": "Services",
 		"lead": "One person for the code, the communication and the care after launch. Pick what you need, or describe your project in the brief.",
 		"detail": {
+			"faq": "Frequently asked questions",
 			"glance": "At a glance",
 			"from": "Price",
 			"timeline": "Timeline",
@@ -125,7 +128,7 @@
 			"description": "See how I work: a marketing agency website in Next.js, a school-meal platform modernisation and the Braintrust Web3 marketplace. Problem, approach, result."
 		},
 		"title": "Work",
-		"lead": "A few projects where I owned the frontend, with the context, the approach and the result.",
+		"lead": "Websites, online stores and web apps where I owned the frontend: from an SEO agency site in Next.js to modernising a school-meals platform. Each case study covers the context, my approach and the result.",
 		"detail": {
 			"label": "Case study",
 			"client": "Client",
@@ -273,7 +276,7 @@
 	"local": {
 		"breadcrumb": "Web design",
 		"pointsLabel": "Why local",
-		"pointsTitle": "A developer from Katowice, not an anonymous agency",
+		"pointsTitle": "A web developer from Katowice, not an anonymous agency",
 		"districtsLabel": "Districts",
 		"districtsTitle": "I work with companies from every part of Katowice",
 		"nearbyLabel": "Nearby",

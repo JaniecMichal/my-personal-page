@@ -183,8 +183,8 @@ export const services: LocalService[] = [
 		],
 		seo: {
 			title: {
-				pl: "Strona internetowa dla firmy | Michał Janiec",
-				en: "Website for your business | Michał Janiec",
+				pl: "Strona internetowa dla firmy od 1 000 zł | Michał Janiec",
+				en: "Business website from 1,000 PLN | Michał Janiec",
 			},
 			description: {
 				pl: "Nowa strona dla firmy z Katowic i całego Śląska: czytelna oferta, łatwy kontakt, szybka na telefonie i gotowa pod Google. Od 1 000 zł netto.",
@@ -198,14 +198,14 @@ export const services: LocalService[] = [
 		showOnHome: false,
 		slug: { pl: "strony-nextjs", en: "nextjs-websites" },
 		order: 8,
-		title: { pl: "Strony firmowe w Next.js", en: "Business websites in Next.js" },
+		title: { pl: "Strony internetowe w Next.js", en: "Websites in Next.js" },
 		summary: {
-			pl: "Strony w Next.js, które edytujesz sam. Szybkość i SEO techniczne sprawdzam przed oddaniem projektu.",
-			en: "Next.js websites you can edit yourself. I check speed and technical SEO before handover.",
+			pl: "Szybkie strony w Next.js z panelem do edycji. Dla agencji, startupów i firm, które odchodzą od WordPressa.",
+			en: "Fast Next.js websites with a content editor. For agencies, startups and companies moving off WordPress.",
 		},
 		intro: {
-			pl: "Strona firmowa, która szybko się ładuje, dobrze wygląda na telefonie i jest przygotowana technicznie pod SEO. Zbudowana w Next.js, z wygodnym CMS do edycji treści.",
-			en: "A business website that loads fast, looks great on phones and is technically ready for SEO. Built in Next.js with a friendly CMS for your content.",
+			pl: "Next.js to moja główna technologia. Strony ładują się szybko, są bezpieczne i mają SEO techniczne zapisane w kodzie, a treści zmieniasz sam w panelu. Robię je dla firm z Katowic, Śląska i całej Polski. Ta strona jest dla tych, którzy już wiedzą, że chcą Next.js; jeśli dopiero wybierasz, zacznij od strony internetowej dla firmy.",
+			en: "Next.js is my main technology. The sites load fast, are secure and have technical SEO written into the code, and you edit the content yourself. I build them for businesses in Katowice, Silesia and across Poland. This page is for people who already know they want Next.js; if you are still choosing, start with the business website page.",
 		},
 		tags: ["Next.js", "SEO", "CMS"],
 		priceFrom: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
@@ -213,101 +213,115 @@ export const services: LocalService[] = [
 		support: { pl: "1 runda poprawek albo 30 dni", en: "1 fix round or 30 days" },
 		included: [
 			{
-				title: { pl: "Projekt i wdrożenie", en: "Design to launch" },
+				title: { pl: "Agencje marketingowe i SEO", en: "Marketing and SEO agencies" },
 				description: {
-					pl: "Od makiety w Figmie albo Twoich materiałów do działającej strony na Twojej domenie.",
-					en: "From a Figma mock-up or your materials to a live site on your domain.",
+					pl: "Strona, która sama dowodzi kompetencji: szybka, z SEO technicznym zapisanym w kodzie. Tak powstała strona nazielono.pro.",
+					en: "A site that proves your skills by itself: fast, with technical SEO written into the code. That's how nazielono.pro was built.",
 				},
 			},
 			{
-				title: { pl: "CMS do edycji", en: "Editable content" },
+				title: { pl: "Firmy odchodzące od WordPressa", en: "Companies leaving WordPress" },
 				description: {
-					pl: "Sam zmieniasz teksty, zdjęcia i wpisy, bez dzwonienia do programisty.",
-					en: "Change copy, images and posts yourself, without calling a developer.",
+					pl: "Koniec z aktualizacjami wtyczek i wolnym ładowaniem. Treści przenoszę, a adresy zachowuję albo przekierowuję, żeby nie stracić pozycji w Google.",
+					en: "No more plugin updates and slow loading. I move the content and keep or redirect the URLs, so you don't lose your Google rankings.",
 				},
 			},
 			{
-				title: { pl: "SEO techniczne", en: "Technical SEO" },
+				title: { pl: "Startupy i produkty", en: "Startups and products" },
 				description: {
-					pl: "Metadane, dane strukturalne, mapa strony, hreflang i Search Console.",
-					en: "Metadata, structured data, sitemap, hreflang and Search Console.",
+					pl: "Strona i aplikacja w jednej technologii, gotowe na rozwój: logowanie, panel klienta, integracje.",
+					en: "The website and the app in one technology, ready to grow: login, client portal, integrations.",
 				},
 			},
 			{
-				title: { pl: "Szybkość", en: "Speed" },
+				title: { pl: "Szybkość i SEO w kodzie", en: "Speed and SEO in code" },
 				description: {
-					pl: "Optymalizacja obrazów i fontów, raport Lighthouse przed i po wdrożeniu.",
-					en: "Optimised images and fonts, with a Lighthouse report before and after launch.",
+					pl: "Metadane, dane strukturalne, mapa strony i Core Web Vitals sprawdzane przed oddaniem projektu.",
+					en: "Metadata, structured data, sitemap and Core Web Vitals checked before handover.",
 				},
 			},
 		],
-		plans: [
+		plans: [],
+		faq: [
 			{
-				id: "nextjs-landing",
-				kicker: { pl: "Na dobry start", en: "Quick start" },
-				name: { pl: "Strona-wizytówka", en: "One-page site" },
-				price: { pl: "od 1 000 zł", en: "from 1,000 PLN" },
-				features: {
-					pl: [
-						"1 strona, do 6 sekcji",
-						"z Twojego projektu graficznego",
-						"prosty panel do edycji w cenie",
-						"wdrożenie + 1 runda poprawek",
-					],
-					en: [
-						"1 page, up to 6 sections",
-						"from your ready design",
-						"simple content editor included",
-						"launch + 1 round of fixes",
-					],
+				id: "nextjs-faq-1",
+				question: {
+					pl: "Next.js czy WordPress: co wybrać?",
+					en: "Next.js or WordPress: which one?",
 				},
-				highlighted: false,
+				answer: {
+					pl: "Next.js, gdy zależy Ci na szybkości, bezpieczeństwie i stronie, która rośnie razem z firmą: nie ma wtyczek do aktualizowania, a SEO techniczne mam pod kontrolą w kodzie. WordPress zostaje dobrym wyborem, gdy masz już na nim stronę i zespół, który go zna, albo potrzebujesz gotowej wtyczki do czegoś nietypowego. Doradzam uczciwie, także wtedy, gdy lepszy będzie WordPress.",
+					en: "Next.js when you care about speed, security and a site that grows with the business: there are no plugins to keep updating, and technical SEO is under control in code. WordPress is still a good choice when you already have a site on it and a team that knows it, or you need a ready-made plugin for something unusual. I advise honestly, also when WordPress is the better fit.",
+				},
 			},
 			{
-				id: "nextjs-website",
-				kicker: { pl: "Dla małych firm", en: "For small businesses" },
-				name: { pl: "Strona firmowa z panelem", en: "Website with an editor" },
-				price: { pl: "od 2 900 zł", en: "from 2,900 PLN" },
-				features: {
-					pl: [
-						"do 4 podstron",
-						"panel do edycji treści",
-						"SEO i dane strukturalne",
-						"wdrożenie + 30 dni wsparcia",
-					],
-					en: [
-						"up to 4 pages",
-						"content editor",
-						"SEO and structured data",
-						"launch + 30 days support",
-					],
+				id: "nextjs-faq-2",
+				question: {
+					pl: "Ile kosztuje strona w Next.js?",
+					en: "How much does a Next.js website cost?",
 				},
-				highlighted: true,
+				answer: {
+					pl: "Strona-wizytówka zaczyna się od 1 000 zł netto, a strona firmowa z panelem do edycji (do 4 podstron) od 2 900 zł netto. Większe i niestandardowe projekty wyceniam indywidualnie. Wycenę z zakresem dostajesz w 2–3 dni robocze od briefu.",
+					en: "A one-page site starts at 1,000 PLN net, and a business website with an editor (up to 4 pages) at 2,900 PLN net. Larger and custom projects are quoted individually. You get a quote with the scope within 2–3 working days of the brief.",
+				},
 			},
 			{
-				id: "nextjs-care",
-				kicker: { pl: "Dla działających stron", en: "For live sites" },
-				name: { pl: "Zmiany i opieka", en: "Changes and care" },
-				price: { pl: "90–150 zł/h", en: "90–150 PLN/h" },
-				features: {
-					pl: [
-						"nowe sekcje, poprawki, aktualizacje",
-						"stały pakiet od 2–4 h miesięcznie",
-						"priorytetowa odpowiedź w pakiecie",
-						"albo jednorazowe zlecenia",
-					],
-					en: [
-						"new sections, fixes, updates",
-						"monthly plan from 2–4 h",
-						"priority response on a plan",
-						"or one-off jobs",
-					],
+				id: "nextjs-faq-3",
+				question: { pl: "Czy sam będę edytować treści?", en: "Can I edit the content myself?" },
+				answer: {
+					pl: "Tak. Strona dostaje panel do edycji, na przykład Sanity albo inny headless CMS, w którym zmieniasz teksty, zdjęcia i wpisy bez dzwonienia do programisty.",
+					en: "Yes. The site gets a content editor, for example Sanity or another headless CMS, where you change copy, images and posts without calling a developer.",
 				},
-				highlighted: false,
+			},
+			{
+				id: "nextjs-faq-4",
+				question: {
+					pl: "Czy przeniesiesz moją stronę z WordPressa?",
+					en: "Can you move my site from WordPress?",
+				},
+				answer: {
+					pl: "Tak. Przenoszę treści, zachowuję adresy albo ustawiam przekierowania, żeby strona nie straciła pozycji w Google. Zakres wyceniam po sprawdzeniu obecnej strony.",
+					en: "Yes. I move the content and keep the URLs or set up redirects, so the site doesn't lose its Google rankings. I quote the scope after checking the current site.",
+				},
+			},
+			{
+				id: "nextjs-faq-5",
+				question: {
+					pl: "Czy Google dobrze indeksuje strony w JavaScripcie?",
+					en: "Does Google index JavaScript sites well?",
+				},
+				answer: {
+					pl: "Tak, jeśli są dobrze zbudowane. Next.js wysyła gotowy HTML z serwera, więc Google widzi treść od razu. Właśnie to chciał sprawdzić klient nazielono.pro, agencja SEO, i dlatego wybrał Next.js zamiast WordPressa.",
+					en: "Yes, when they're built well. Next.js sends ready HTML from the server, so Google sees the content straight away. That's exactly what the client behind nazielono.pro, an SEO agency, wanted to test, and why it chose Next.js over WordPress.",
+				},
+			},
+			{
+				id: "nextjs-faq-6",
+				question: { pl: "Ile kosztuje hosting?", en: "How much does hosting cost?" },
+				answer: {
+					pl: "To zależy od ruchu i dostawcy, na przykład Vercel albo Netlify. Przed startem podaję koszt dla Twojej strony, a konto zakładamy na Ciebie, więc płacisz bezpośrednio dostawcy.",
+					en: "It depends on the traffic and the provider, for example Vercel or Netlify. Before we start I give you the cost for your site, and the account is set up in your name, so you pay the provider directly.",
+				},
+			},
+			{
+				id: "nextjs-faq-7",
+				question: { pl: "Czy możemy spotkać się w Katowicach?", en: "Can we meet in Katowice?" },
+				answer: {
+					pl: "Tak. Mieszkam w Katowicach, więc chętnie spotkam się na kawę albo u Ciebie w firmie. Resztę pracy robimy zdalnie.",
+					en: "Yes. I live in Katowice, so I'm happy to meet for coffee or at your office. The rest of the work is done remotely.",
+				},
 			},
 		],
-		faq: [],
-		seo: {},
+		seo: {
+			title: {
+				pl: "Strony internetowe w Next.js, Katowice | Michał Janiec",
+				en: "Next.js websites, Katowice | Michał Janiec",
+			},
+			description: {
+				pl: "Strony internetowe w Next.js dla firm z Katowic i Śląska: szybkie, bezpieczne, z panelem do edycji i SEO technicznym w kodzie. Od 1 000 zł netto.",
+				en: "Next.js websites for businesses in Katowice and Silesia: fast, secure, with a content editor and technical SEO in code. From 1,000 PLN net.",
+			},
+		},
 	},
 	{
 		id: "shopify",
@@ -435,11 +449,58 @@ export const services: LocalService[] = [
 				highlighted: false,
 			},
 		],
-		faq: [],
+		faq: [
+			{
+				id: "shopify-faq-1",
+				question: {
+					pl: "Ile kosztuje sklep na Shopify?",
+					en: "How much does a Shopify store cost?",
+				},
+				answer: {
+					pl: "Pakiet Starter zaczyna się od 2 500 zł netto: dopasowany motyw, do 50 produktów, płatności i dostawy. Sklep marki od 5 900 zł netto: własne sekcje, import produktów, przegląd szybkości i SEO, szkolenie i 30 dni opieki. Do tego dochodzi abonament Shopify, który płacisz bezpośrednio Shopify.",
+					en: "The Starter package starts at 2,500 PLN net: a customised theme, up to 50 products, payments and shipping. A brand store starts at 5,900 PLN net: custom sections, product import, a speed and SEO pass, training and 30 days of care. On top comes the Shopify subscription, which you pay to Shopify directly.",
+				},
+			},
+			{
+				id: "shopify-faq-2",
+				question: { pl: "Ile trwa uruchomienie sklepu?", en: "How long does it take to launch?" },
+				answer: {
+					pl: "Zwykle 3–5 tygodni, zależnie od liczby produktów i tego, czy zdjęcia i opisy są gotowe.",
+					en: "Usually 3–5 weeks, depending on the number of products and whether photos and descriptions are ready.",
+				},
+			},
+			{
+				id: "shopify-faq-3",
+				question: {
+					pl: "Czy przeniesiesz sklep z innej platformy?",
+					en: "Can you move my store from another platform?",
+				},
+				answer: {
+					pl: "Przeniesienie wyceniam po sprawdzeniu danych: liczby produktów, wariantów i zamówień. Prosty import produktów z pliku CSV mieści się w pakietach.",
+					en: "I quote a migration after checking the data: the number of products, variants and orders. A simple product import from a CSV file is included in the packages.",
+				},
+			},
+			{
+				id: "shopify-faq-4",
+				question: { pl: "Jakie płatności można podłączyć?", en: "Which payments can I use?" },
+				answer: {
+					pl: "Konfiguruję płatności dostępne w Shopify w prostym wariancie. Nietypowe bramki płatności i integracje omawiamy przy wycenie.",
+					en: "I set up the payments available in Shopify in a simple configuration. Unusual payment gateways and integrations are discussed in the quote.",
+				},
+			},
+			{
+				id: "shopify-faq-5",
+				question: { pl: "Kto jest właścicielem sklepu?", en: "Who owns the store?" },
+				answer: {
+					pl: "Ty. Sklep i konto Shopify są na Ciebie, a ja pracuję na dostępie współpracownika, który możesz w każdej chwili odebrać.",
+					en: "You do. The store and the Shopify account are in your name, and I work through collaborator access that you can remove at any time.",
+				},
+			},
+		],
 		seo: {
 			title: {
-				pl: "Sklep internetowy na Shopify | Michał Janiec",
-				en: "Shopify store setup | Michał Janiec",
+				pl: "Sklep internetowy na Shopify od 2 500 zł | Michał Janiec",
+				en: "Shopify store setup from 2,500 PLN | Michał Janiec",
 			},
 			description: {
 				pl: "Chcesz sprzedawać online? Zakładam sklep Shopify z płatnościami i dostawami, dopasowuję motyw do marki i importuję produkty. Od 2 500 zł netto.",
@@ -494,10 +555,63 @@ export const services: LocalService[] = [
 			},
 		],
 		plans: [],
-		faq: [],
+		faq: [
+			{
+				id: "wordpress-faq-1",
+				question: {
+					pl: "Ile kosztuje naprawa strony na WordPressie?",
+					en: "How much does a WordPress fix cost?",
+				},
+				answer: {
+					pl: "Rozliczam się godzinowo: 90–150 zł/h netto, zależnie od złożoności. Przed pracą sprawdzam stronę i szacuję liczbę godzin, więc wiesz, ile zapłacisz.",
+					en: "I bill by the hour: 90–150 PLN/h net, depending on complexity. Before I start I check the site and estimate the hours, so you know what you'll pay.",
+				},
+			},
+			{
+				id: "wordpress-faq-2",
+				question: {
+					pl: "Dlaczego moja strona na WordPressie działa wolno?",
+					en: "Why is my WordPress site slow?",
+				},
+				answer: {
+					pl: "Najczęściej przez ciężki motyw, za dużo wtyczek, nieoptymalizowane zdjęcia albo słaby hosting. Zaczynam od pomiaru Core Web Vitals, żeby poprawiać to, co naprawdę spowalnia stronę.",
+					en: "Most often a heavy theme, too many plugins, unoptimised images or weak hosting. I start by measuring Core Web Vitals, so I fix what actually slows the site down.",
+				},
+			},
+			{
+				id: "wordpress-faq-3",
+				question: { pl: "Czy trzeba robić stronę od nowa?", en: "Does the site need a rebuild?" },
+				answer: {
+					pl: "Zwykle nie. Najpierw naprawiam i przyspieszam to, co jest. Nową stronę proponuję dopiero wtedy, gdy poprawki kosztowałyby więcej niż przebudowa, i mówię to wprost.",
+					en: "Usually not. First I fix and speed up what's there. I suggest a new site only when fixes would cost more than a rebuild, and I say so plainly.",
+				},
+			},
+			{
+				id: "wordpress-faq-4",
+				question: {
+					pl: "Czy mam podać hasło do panelu w formularzu?",
+					en: "Should I send my admin password in the form?",
+				},
+				answer: {
+					pl: "Nie. W formularzu wystarczy adres strony i opis problemu. Dostęp ustalamy osobno, najlepiej przez osobne konto dla mnie, które później usuniesz.",
+					en: "No. The form only needs the site address and a description of the problem. We arrange access separately, ideally with a separate account for me that you remove later.",
+				},
+			},
+			{
+				id: "wordpress-faq-5",
+				question: {
+					pl: "Czy zajmiesz się stroną na stałe?",
+					en: "Can you look after the site long term?",
+				},
+				answer: {
+					pl: "Tak. Możesz wybrać stały pakiet od 2–4 godzin miesięcznie z priorytetową odpowiedzią albo pojedyncze zlecenia, gdy coś trzeba zmienić.",
+					en: "Yes. You can choose a monthly plan from 2–4 hours with priority response, or one-off jobs whenever something needs changing.",
+				},
+			},
+		],
 		seo: {
 			title: {
-				pl: "Naprawa i przyspieszenie WordPress | Michał Janiec",
+				pl: "Naprawa i przyspieszenie strony WordPress | Michał Janiec",
 				en: "WordPress fixes and speed-ups | Michał Janiec",
 			},
 			description: {
@@ -522,9 +636,74 @@ export const services: LocalService[] = [
 		tags: ["React", "TypeScript", "Next.js"],
 		priceFrom: { pl: "120 zł/h", en: "120 PLN/h" },
 		timeline: { pl: "zależnie od zakresu", en: "depends on scope" },
-		included: [],
+		included: [
+			{
+				title: { pl: "Interfejs od makiety", en: "From mock-up to interface" },
+				description: {
+					pl: "Od projektu w Figmie do działających ekranów w React i Next.js, z TypeScriptem.",
+					en: "From a Figma design to working screens in React and Next.js, with TypeScript.",
+				},
+			},
+			{
+				title: { pl: "Modernizacja bez przepisywania", en: "Modernising without a rewrite" },
+				description: {
+					pl: "Porządkuję starszy kod krok po kroku, bez zatrzymywania produktu. Tak pracuję przy jemWszkole.pl.",
+					en: "I clean up older code step by step, without stopping the product. That's how I work on jemWszkole.pl.",
+				},
+			},
+			{
+				title: { pl: "Integracje z API", en: "API integrations" },
+				description: {
+					pl: "REST i GraphQL, logowanie i zewnętrzne usługi.",
+					en: "REST and GraphQL, login and third-party services.",
+				},
+			},
+			{
+				title: { pl: "Testy i jakość", en: "Tests and quality" },
+				description: {
+					pl: "Testy z Jest i Testing Library, przegląd kodu i dokumentacja.",
+					en: "Tests with Jest and Testing Library, code review and documentation.",
+				},
+			},
+		],
 		plans: [],
-		faq: [],
+		faq: [
+			{
+				id: "apps-faq-1",
+				question: { pl: "Ile kosztuje aplikacja webowa?", en: "How much does a web app cost?" },
+				answer: {
+					pl: "Rozliczam się godzinowo, 120 zł/h netto. Po krótkim briefie szacuję zakres i liczbę godzin, a większy projekt dzielimy na etapy.",
+					en: "I bill by the hour, 120 PLN/h net. After a short brief I estimate the scope and hours, and we split a larger project into stages.",
+				},
+			},
+			{
+				id: "apps-faq-2",
+				question: {
+					pl: "Czy dołączysz do istniejącego projektu?",
+					en: "Can you join an existing project?",
+				},
+				answer: {
+					pl: "Tak. Mogę przejąć frontend istniejącej aplikacji albo dołączyć do zespołu na część etatu lub ustaloną liczbę godzin w tygodniu.",
+					en: "Yes. I can take over the frontend of an existing app or join your team part-time or for an agreed number of hours a week.",
+				},
+			},
+			{
+				id: "apps-faq-3",
+				question: { pl: "Robisz też backend?", en: "Do you do the backend too?" },
+				answer: {
+					pl: "Moja specjalność to frontend: React, Next.js, TypeScript. Dobrze współpracuję z backendem przez REST i GraphQL oraz w aplikacjach Ruby on Rails. Przy rozbudowanym backendzie mówię wprost, czego potrzebujesz od zespołu backendowego.",
+					en: "My specialty is the frontend: React, Next.js, TypeScript. I work well with backends over REST and GraphQL and inside Ruby on Rails apps. For a complex backend I tell you plainly what you need from a backend team.",
+				},
+			},
+			{
+				id: "apps-faq-4",
+				question: { pl: "Czy robisz aplikacje mobilne?", en: "Do you build mobile apps?" },
+				answer: {
+					pl: "Współtworzę aplikację mobilną w React Native i Expo (Gainflow), więc znam ten ekosystem. Projekty mobilne omawiam indywidualnie.",
+					en: "I co-build a mobile app in React Native and Expo (Gainflow), so I know the ecosystem. Mobile projects are discussed individually.",
+				},
+			},
+		],
 		seo: {
 			title: {
 				pl: "Aplikacje webowe na zamówienie | Michał Janiec",
@@ -552,13 +731,75 @@ export const services: LocalService[] = [
 		tags: ["Rails", "Stimulus", "Tailwind"],
 		priceFrom: { pl: "120 zł/h", en: "120 PLN/h" },
 		timeline: { pl: "start do ustalenia", en: "start date by agreement" },
-		included: [],
+		included: [
+			{
+				title: { pl: "Widoki ERB i Tailwind", en: "ERB views and Tailwind" },
+				description: {
+					pl: "Interfejs zgodny z projektem, bez osobnej aplikacji frontendowej.",
+					en: "An interface that matches the design, without a separate frontend app.",
+				},
+			},
+			{
+				title: { pl: "Stimulus i Hotwire", en: "Stimulus and Hotwire" },
+				description: {
+					pl: "Interaktywność bez ciężkiego frontendu: kontrolery Stimulus i Turbo.",
+					en: "Interactivity without a heavy frontend: Stimulus controllers and Turbo.",
+				},
+			},
+			{
+				title: { pl: "Współpraca z backendem", en: "Working with the backend" },
+				description: {
+					pl: "Czytam kod Rails i rozumiem kontrolery oraz modele, więc nie czekam na backend przy każdej zmianie widoku.",
+					en: "I read Rails code and understand controllers and models, so I don't wait on the backend for every view change.",
+				},
+			},
+			{
+				title: { pl: "Na część etatu", en: "Part-time" },
+				description: {
+					pl: "Stała liczba godzin w tygodniu albo część etatu, 120 zł/h netto, faktura VAT.",
+					en: "A fixed number of hours a week or part-time, 120 PLN/h net, VAT invoice.",
+				},
+			},
+		],
 		plans: [],
-		faq: [],
+		faq: [
+			{
+				id: "rails-faq-1",
+				question: { pl: "Jakie masz doświadczenie z Rails?", en: "What's your Rails experience?" },
+				answer: {
+					pl: "Na co dzień, jako Senior Frontend Developer w Visuality, przebudowuję interfejs dużej aplikacji enterprise w Rails: ERB, Stimulus i Tailwind, w międzynarodowym zespole.",
+					en: "Day to day, as a Senior Frontend Developer at Visuality, I redesign the interface of a large enterprise Rails application: ERB, Stimulus and Tailwind, in an international team.",
+				},
+			},
+			{
+				id: "rails-faq-2",
+				question: { pl: "Jak wygląda współpraca?", en: "How does it work?" },
+				answer: {
+					pl: "Dołączam do zespołu na część etatu albo na ustaloną liczbę godzin w tygodniu. Pracuję w Waszych narzędziach: repozytorium, zadania, code review.",
+					en: "I join your team part-time or for an agreed number of hours a week. I work in your tools: repository, tickets, code review.",
+				},
+			},
+			{
+				id: "rails-faq-3",
+				question: { pl: "Ile to kosztuje?", en: "What does it cost?" },
+				answer: {
+					pl: "120 zł/h netto, rozliczenie B2B z fakturą VAT.",
+					en: "120 PLN/h net, billed B2B with a VAT invoice.",
+				},
+			},
+			{
+				id: "rails-faq-4",
+				question: { pl: "Czy znasz też React?", en: "Do you know React too?" },
+				answer: {
+					pl: "Tak. React i Next.js to mój główny stack od ponad 5 lat, więc pomogę też, gdy część aplikacji jest w React.",
+					en: "Yes. React and Next.js have been my main stack for over 5 years, so I can also help when part of the app is in React.",
+				},
+			},
+		],
 		seo: {
 			title: {
-				pl: "Frontend developer dla zespołów Rails | Michał Janiec",
-				en: "Frontend developer for Rails teams | Michał Janiec",
+				pl: "Frontend developer Ruby on Rails i Hotwire | Michał Janiec",
+				en: "Ruby on Rails and Hotwire frontend developer | Michał Janiec",
 			},
 			description: {
 				pl: "Brakuje frontendowca w zespole Rails? Dołączam z doświadczeniem w Stimulus, Hotwire, ERB i Tailwind i dowożę interfejs. B2B, faktura VAT.",
@@ -582,13 +823,86 @@ export const services: LocalService[] = [
 		tags: ["Lighthouse", "CWV", "SEO"],
 		priceFrom: { pl: "od 900 zł", en: "from 900 PLN" },
 		timeline: { pl: "3–5 dni", en: "3–5 days" },
-		included: [],
+		included: [
+			{
+				title: { pl: "Core Web Vitals", en: "Core Web Vitals" },
+				description: {
+					pl: "Pomiar LCP, INP i CLS na telefonie i komputerze, w PageSpeed Insights i Lighthouse.",
+					en: "LCP, INP and CLS measured on mobile and desktop, in PageSpeed Insights and Lighthouse.",
+				},
+			},
+			{
+				title: { pl: "SEO techniczne", en: "Technical SEO" },
+				description: {
+					pl: "Indeksowanie, metadane, mapa strony, dane strukturalne, przekierowania i linkowanie wewnętrzne.",
+					en: "Indexing, metadata, sitemap, structured data, redirects and internal links.",
+				},
+			},
+			{
+				title: { pl: "Dostępność", en: "Accessibility" },
+				description: {
+					pl: "Kontrast, nagłówki, formularze i obsługa z klawiatury.",
+					en: "Contrast, headings, forms and keyboard use.",
+				},
+			},
+			{
+				title: { pl: "Raport i rozmowa", en: "Report and call" },
+				description: {
+					pl: "Raport PDF z poprawkami od najważniejszych i rozmowa, na której wyceniam potrzebne prace.",
+					en: "A PDF report with fixes, most important first, and a call where I quote the work needed.",
+				},
+			},
+		],
 		plans: [],
-		faq: [],
+		faq: [
+			{
+				id: "audit-faq-1",
+				question: { pl: "Ile kosztuje audyt strony?", en: "How much does the audit cost?" },
+				answer: {
+					pl: "Od 900 zł netto. Dokładną kwotę podaję po zobaczeniu adresu strony.",
+					en: "From 900 PLN net. I give you the exact amount after seeing the site address.",
+				},
+			},
+			{
+				id: "audit-faq-2",
+				question: { pl: "Ile trwa audyt?", en: "How long does it take?" },
+				answer: {
+					pl: "3–5 dni od otrzymania adresu strony i, jeśli je masz, dostępu do Google Search Console.",
+					en: "3–5 days from receiving the site address and, if you have it, Google Search Console access.",
+				},
+			},
+			{
+				id: "audit-faq-3",
+				question: { pl: "Co dostanę po audycie?", en: "What do I get?" },
+				answer: {
+					pl: "Raport PDF z listą poprawek uporządkowaną od najważniejszych oraz rozmowę, na której omawiam wyniki i wyceniam prace.",
+					en: "A PDF report with a list of fixes ordered by importance, and a call where I walk you through the results and quote the work.",
+				},
+			},
+			{
+				id: "audit-faq-4",
+				question: { pl: "Czy wdrożysz poprawki?", en: "Can you implement the fixes?" },
+				answer: {
+					pl: "Tak. Poprawki mogę wdrożyć sam, w Next.js, WordPressie albo Shopify. Wyceniam je po audycie.",
+					en: "Yes. I can implement the fixes myself, in Next.js, WordPress or Shopify. I quote them after the audit.",
+				},
+			},
+			{
+				id: "audit-faq-5",
+				question: {
+					pl: "Czym audyt różni się od usługi SEO i Google Ads?",
+					en: "How is this different from SEO and Google Ads?",
+				},
+				answer: {
+					pl: "Audyt to jednorazowe sprawdzenie strony od strony technicznej. Stałe pozycjonowanie i kampanie reklamowe to osobna, ciągła usługa.",
+					en: "The audit is a one-off technical check of the site. Ongoing SEO and ad campaigns are a separate, continuous service.",
+				},
+			},
+		],
 		seo: {
 			title: {
-				pl: "Audyt szybkości strony i SEO | Michał Janiec",
-				en: "Website speed and SEO audit | Michał Janiec",
+				pl: "Audyt szybkości strony i SEO od 900 zł | Michał Janiec",
+				en: "Website speed and SEO audit from 900 PLN | Michał Janiec",
 			},
 			description: {
 				pl: "Strona wolno się ładuje albo nie widać jej w Google? Sprawdzam, co ją blokuje, i daję raport z priorytetami, a poprawki mogę wdrożyć sam. Od 900 zł netto.",
