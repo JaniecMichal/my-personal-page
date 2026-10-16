@@ -63,9 +63,11 @@ npx next lint --dir src     # lint (add --fix for import order / type imports)
 - **i18n:** every user-facing string goes into both `pl.json` and `en.json`, or into content with `{ pl, en }`.
   Never hardcode copy in components. next-intl rejects **arrays inside namespaces** in typed keys; use keyed
   objects (`{ p1, p2 }`) instead.
-- **Slugs differ per locale.** `Service` and `CaseStudy` carry `slug` (current locale) and `slugs` (all
-  locales). Detail pages must render `<SetAlternateSlugs slugs={…} />` so the language switch and hreflang
-  point to the translated URL. Pass `hrefFor: (l) => ({ pathname, params: { slug: x.slugs[l] } })` to `pageMetadata`.
+- **Slugs differ per locale.** `Service`, `CaseStudy` and `LocalPage` carry `slug` (current locale) and `slugs`
+  (all locales). The `[locale]` layout passes a map of all `slugs` to the header, keyed `<route folder>/<slug>`,
+  and `LocaleSwitch` resolves the route with `useSelectedLayoutSegments`, so the switch links are correct in
+  the server HTML (crawlers). A new detail route needs its entries added to that map. For hreflang, pass
+  `hrefFor: (l) => ({ pathname, params: { slug: x.slugs[l] } })` to `pageMetadata`.
 - **Every page** exports `generateMetadata` using `pageMetadata(...)` and calls `setRequestLocale(locale)`.
 - **New content type:** add the type in `types.ts`, a method in `source.ts`, local data + adapter method in
   `local/`, a stub in `sanity/index.ts`, and a GROQ query in `sanity/queries.ts`.

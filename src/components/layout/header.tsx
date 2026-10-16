@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { LocaleSwitch } from "./locale-switch";
+import { type AlternateSlugs, LocaleSwitch } from "./locale-switch";
 import { MobileMenu } from "./mobile-menu";
 import { NAV_ITEMS } from "./nav-items";
 import { NavLink } from "./nav-link";
@@ -9,7 +9,7 @@ import { Link } from "@/i18n/navigation";
 import { gutter } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button-link";
 
-export async function Header() {
+export async function Header({ alternates }: { alternates: AlternateSlugs }) {
 	const t = await getTranslations("common");
 
 	return (
@@ -39,7 +39,7 @@ export async function Header() {
 			</nav>
 
 			<div className="hidden items-center gap-3 lg:flex">
-				<LocaleSwitch />
+				<LocaleSwitch alternates={alternates} />
 				<ThemeToggle />
 				<ButtonLink href="/contact" size="sm" className="ml-3">
 					{t("cta.tellProject")} ↗
@@ -47,7 +47,7 @@ export async function Header() {
 			</div>
 
 			<div className="flex items-center gap-2 lg:hidden">
-				<LocaleSwitch />
+				<LocaleSwitch alternates={alternates} />
 				<MobileMenu />
 			</div>
 		</header>

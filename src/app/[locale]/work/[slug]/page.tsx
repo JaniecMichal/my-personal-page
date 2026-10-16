@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Sphere } from "@/components/effects/sphere";
-import { SetAlternateSlugs } from "@/components/i18n/alternate-slugs";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { CaseStudyGallery } from "@/components/sections/case-study-gallery";
@@ -60,7 +59,6 @@ export default async function CaseStudyPage({ params }: Props) {
 
 	return (
 		<article>
-			<SetAlternateSlugs slugs={study.slugs} />
 			<header className="relative overflow-hidden inverse bg-[radial-gradient(60%_70%_at_78%_40%,rgb(46_59_255/0.5),rgb(46_59_255/0.1)_45%,transparent_70%)]">
 				<div className="pointer-events-none absolute top-10 -right-32 w-[520px] opacity-80 lg:w-[620px]">
 					<Sphere className="text-inverse-ink" count={700} />

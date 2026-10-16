@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { SetAlternateSlugs } from "@/components/i18n/alternate-slugs";
 import { FaqList } from "@/components/sections/faq-list";
 import { PricingPlans } from "@/components/sections/pricing-plans";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -57,7 +56,6 @@ export default async function ServicePage({ params }: Props) {
 
 	return (
 		<>
-			<SetAlternateSlugs slugs={service.slugs} />
 			<section className="border-b border-rule dotgrid">
 				<Container className="grid gap-10 py-12 lg:grid-cols-12 lg:py-20">
 					<nav aria-label="Breadcrumb" className="label lg:col-span-12">

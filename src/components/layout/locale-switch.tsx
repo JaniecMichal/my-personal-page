@@ -1,18 +1,28 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useParams } from "next/navigation";
-import { useAlternateSlugs } from "@/components/i18n/alternate-slugs";
-import { Link, usePathname } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
+import { useSelectedLayoutSegments } from "next/navigation";
+import type { Localized } from "@/content/types";
+import { Link } from "@/i18n/navigation";
+import { type AppPathname, routing } from "@/i18n/routing";
 import { cn } from "@/lib/cn";
 
-export function LocaleSwitch({ className }: { className?: string }) {
+/** Translated slugs of every detail page, keyed by "<internal route>/<slug in the current locale>". */
+export type AlternateSlugs = Record<string, Localized<string>>;
+
+type Props = { alternates: AlternateSlugs; className?: string };
+
+export function LocaleSwitch({ alternates, className }: Props) {
 	const t = useTranslations("common.language");
 	const locale = useLocale();
-	const pathname = usePathname();
-	const params = useParams<{ slug?: string }>();
-	const alternates = useAlternateSlugs();
+	// Folders under [locale] are the internal pathnames ("services", "work", "local"…). Unlike usePathname,
+	// segments resolve during server rendering too, so crawlers get the right links, not a 404 slug.
+	const [base, slug] = useSelectedLayoutSegments().filter(
+		(s) => !s.startsWith("(") && !s.startsWith("__"),
+	);
+	const slugs = slug ? alternates[`${base}/${slug}`] : undefined;
+	const pathname = (slugs ? `/${base}/[slug]` : base ? `/${base}` : "/") as AppPathname;
+	const known = pathname in routing.pathnames;
 
 	return (
 		<div
@@ -25,11 +35,11 @@ export function LocaleSwitch({ className }: { className?: string }) {
 		>
 			{routing.locales.map((l) => {
 				const active = l === locale;
-				const slug = alternates?.[l] ?? params.slug;
-				// Pathname is the internal template (e.g. "/services/[slug]"); params fill it in.
-				const href = (slug ? { pathname, params: { slug } } : { pathname }) as Parameters<
-					typeof Link
-				>[0]["href"];
+				const href = (
+					known && slugs
+						? { pathname, params: { slug: slugs[l] } }
+						: { pathname: known ? pathname : "/" }
+				) as Parameters<typeof Link>[0]["href"];
 
 				return (
 					<Link
